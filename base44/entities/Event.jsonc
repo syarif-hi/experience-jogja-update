@@ -1,0 +1,84 @@
+{
+  "name": "Event",
+  "type": "object",
+  "title": "Event",
+  "properties": {
+    "slug": {
+      "type": "string"
+    },
+    "title_id": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "festival",
+        "music",
+        "cultural",
+        "outdoor"
+      ],
+      "default": "festival"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "festival",
+        "cultural-performance",
+        "exhibition",
+        "sports",
+        "other"
+      ],
+      "description": "Powers the Events nav group filters"
+    },
+    "price_idr": {
+      "type": "number",
+      "default": 0
+    },
+    "cover_image_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "is_homepage_highlight": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "slug",
+    "title_id",
+    "title_en",
+    "start_date"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "MapPinPosition",
+  "type": "object",
+  "title": "MapPinPosition",
+  "description": "Saved x/y coordinate (percent) for a map pin, keyed by destination slug. Shared across all map tabs.",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "Unique destination slug this position applies to"
+    },
+    "x": {
+      "type": "number",
+      "description": "Horizontal position as percent (0-100)"
+    },
+    "y": {
+      "type": "number",
+      "description": "Vertical position as percent (0-100)"
+    }
+  },
+  "required": [
+    "slug",
+    "x",
+    "y"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

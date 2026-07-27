@@ -1,0 +1,144 @@
+{
+  "name": "Destination",
+  "type": "object",
+  "title": "Destination",
+  "description": "A place, attraction, or point of interest featured on the site.",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "URL-safe unique identifier"
+    },
+    "name_id": {
+      "type": "string",
+      "description": "Name (Bahasa Indonesia)"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Name (English)"
+    },
+    "descriptor_id": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "descriptor_en": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "landmarks",
+        "nature-outdoor",
+        "cultural-heritage-temples",
+        "art-museums",
+        "eat-drink",
+        "shopping",
+        "events-festivals",
+        "villages-local-life",
+        "things-to-do"
+      ]
+    },
+    "regency": {
+      "type": "string",
+      "enum": [
+        "yogyakarta-city",
+        "sleman",
+        "bantul",
+        "kulon-progo",
+        "gunungkidul",
+        "villages-hidden-gems"
+      ],
+      "description": "Which DIY regency this destination is in \u2014 powers the Destinations nav group"
+    },
+    "experience_type": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "heritage-culture",
+          "entertainment-creative",
+          "sports-adventure",
+          "culinary-lifestyle",
+          "health-wellness",
+          "mice-business"
+        ]
+      },
+      "description": "One or more intent-based tags \u2014 powers the Things To Do nav group. Independent from category (place-type)"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "address": {
+      "type": "string"
+    },
+    "opening_hours": {
+      "type": "string",
+      "description": "Free-text (e.g. 'Daily 6:00\u201317:00')"
+    },
+    "highlights": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Facility/amenity chip labels for the detail page"
+    },
+    "typical_duration": {
+      "type": "string",
+      "description": "e.g. '1\u20132 hours' \u2014 shown in the detail page quick-facts strip"
+    },
+    "hero_image_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "gallery_image_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "price_idr": {
+      "type": "number",
+      "description": "Entry/ticket price in IDR, 0 if free"
+    },
+    "is_featured_top_destination": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_recommended_today": {
+      "type": "boolean",
+      "default": false
+    },
+    "display_order": {
+      "type": "integer",
+      "description": "Manual sort weight for curated sections"
+    }
+  },
+  "required": [
+    "slug",
+    "name_id",
+    "name_en",
+    "category"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

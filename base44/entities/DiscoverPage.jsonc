@@ -1,0 +1,56 @@
+{
+  "name": "DiscoverPage",
+  "type": "object",
+  "title": "DiscoverPage",
+  "description": "Flexible editorial content page, backing the 6 Discover nav sub-items.",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "e.g. 'about-jogja', 'why-visit-jogja'"
+    },
+    "title_id": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "hero_image_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "body_id": {
+      "type": "string",
+      "format": "richtext"
+    },
+    "body_en": {
+      "type": "string",
+      "format": "richtext"
+    },
+    "display_order": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "slug",
+    "title_id",
+    "title_en"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

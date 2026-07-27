@@ -1,0 +1,57 @@
+{
+  "name": "VisitorInfoCategory",
+  "type": "object",
+  "title": "VisitorInfoCategory",
+  "description": "Backs the Visitor Information directory page.",
+  "properties": {
+    "title_id": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "items_id": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "items_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "display_order": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "title_id",
+    "title_en",
+    "items_id",
+    "items_en"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

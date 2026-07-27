@@ -1,0 +1,72 @@
+{
+  "name": "Article",
+  "type": "object",
+  "title": "Article",
+  "properties": {
+    "slug": {
+      "type": "string"
+    },
+    "title_id": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "excerpt_id": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "excerpt_en": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "body_id": {
+      "type": "string",
+      "format": "richtext"
+    },
+    "body_en": {
+      "type": "string",
+      "format": "richtext"
+    },
+    "cover_image_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "published_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "topic_tag": {
+      "type": "string",
+      "enum": [
+        "travel-tips",
+        "events-recap",
+        "local-updates"
+      ]
+    }
+  },
+  "required": [
+    "slug",
+    "title_id",
+    "title_en",
+    "published_date"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

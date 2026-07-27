@@ -1,0 +1,78 @@
+{
+  "name": "Itinerary",
+  "type": "object",
+  "title": "Itinerary",
+  "description": "Curated, read-only sample trips (distinct from the interactive Trip Planner tool).",
+  "properties": {
+    "slug": {
+      "type": "string"
+    },
+    "title_id": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "duration_days": {
+      "type": "integer"
+    },
+    "cover_image_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "summary_id": {
+      "type": "string"
+    },
+    "summary_en": {
+      "type": "string"
+    },
+    "day_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day_number": {
+            "type": "integer"
+          },
+          "title_id": {
+            "type": "string"
+          },
+          "title_en": {
+            "type": "string"
+          },
+          "destination_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "References to Destination records for that day"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "slug",
+    "title_id",
+    "title_en",
+    "duration_days"
+  ],
+  "rls": {
+    "read": true,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
