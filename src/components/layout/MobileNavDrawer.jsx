@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { X, Search, ChevronDown, User, LogOut } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -18,7 +19,7 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {open && (
         <>
@@ -149,6 +150,7 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
           </motion.aside>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

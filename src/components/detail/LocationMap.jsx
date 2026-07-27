@@ -23,7 +23,7 @@ export default function LocationMap({ latitude, longitude, label, markers = [] }
       <h2 className="mb-4 font-heading text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>
         {t("detail.location") || "Location"}
       </h2>
-      <div className="overflow-hidden rounded-2xl" style={{ height: 340, boxShadow: "var(--elevation-1)" }}>
+      <div className="relative z-0 overflow-hidden rounded-2xl" style={{ height: 340, boxShadow: "var(--elevation-1)" }}>
         <MapContainer center={[latitude, longitude]} zoom={12} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
           <TileLayer
             attribution='&copy; OpenStreetMap'

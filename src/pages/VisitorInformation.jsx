@@ -101,12 +101,13 @@ export default function VisitorInformation({ hideShell }) {
               >
                 <div className={`grid grid-cols-1 md:grid-cols-2 ${isEven ? "" : "md:[direction:rtl]"}`}>
                   {/* Image */}
-                  <div className="aspect-[4/3] md:aspect-auto md:min-h-[320px]">
+                  <div className="h-full aspect-[4/3] md:aspect-auto md:min-h-[320px]">
                     <img
-                      src={c.image_url}
+                      src={c.image_url || `https://picsum.photos/seed/${c.id}/800/600`}
                       alt={title}
                       className="h-full w-full object-cover"
                       loading="lazy"
+                      onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${c.id}/800/600`; }}
                     />
                   </div>
 

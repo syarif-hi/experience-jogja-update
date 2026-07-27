@@ -28,7 +28,7 @@ export default function ArticleDetail() {
 
   return (
     <PageShell>
-      <div className="mx-auto max-w-[1120px] px-4 py-8 md:px-6">
+      <div className="content-wrap py-8">
         <Link to="/news" className="focus-ring mb-6 inline-flex items-center gap-1.5 rounded text-[14px] font-semibold" style={{ color: "var(--color-primary)" }}>
           <ArrowLeft className="h-4 w-4" /> {t("back")}
         </Link>

@@ -9,7 +9,7 @@ export default function DetailHeroGallery({ heroImageUrl, gallery = [], alt = ""
   const photos = [heroImageUrl, ...gallery].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
 
   const [lightbox, setLightbox] = useState(-1); // index open in lightbox, -1 = closed
-  const [mobileIdx, setMobileIdx] = useState(0);
+  const [selectedIdx, setSelectedIdx] = useState(0);
 
   useEffect(() => {
     if (lightbox < 0) return;
@@ -26,83 +26,51 @@ export default function DetailHeroGallery({ heroImageUrl, gallery = [], alt = ""
     return <div className="aspect-[16/9] rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />;
   }
 
-  const hero = photos[0];
-  const thumbs = photos.slice(1, 6); // up to 5
-  const extraCount = photos.length - 6; // photos beyond the 6 shown
+  const hero = photos[selectedIdx] || photos[0];
+  const thumbs = photos.slice(0, 5); // show first 5 photos as selector
+  const extraCount = photos.length - 5; // photos beyond the 5 shown
 
   return (
-    <div>
-      {/* ── Mobile: single swipeable hero + count badge ── */}
-      <div className="md:hidden">
-        <button
-          type="button"
-          onClick={() => setLightbox(mobileIdx)}
-          className="focus-ring relative block aspect-[4/3] w-full overflow-hidden rounded-2xl"
-        >
-          <SmartImage src={photos[mobileIdx]} alt={alt} className="h-full w-full object-cover" />
-          <span
-            className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[12px] font-semibold"
-            style={{ backgroundColor: "rgba(0,0,0,0.6)", color: "#fff" }}
-          >
-            <Images className="h-3.5 w-3.5" /> {mobileIdx + 1} / {photos.length}
-          </span>
-        </button>
-        {photos.length > 1 && (
-          <div className="mt-2 flex justify-center gap-1.5">
-            {photos.map((_, i) => (
+    <div className="w-full">
+      {/* ── Unified Layout: Hero + row of up to 5 thumbnails ── */}
+      <button
+        type="button"
+        onClick={() => setLightbox(selectedIdx)}
+        className="focus-ring block aspect-[16/9] w-full overflow-hidden rounded-2xl transition-opacity"
+      >
+        <SmartImage src={hero} alt={alt} className="h-full w-full object-cover" />
+      </button>
+      {thumbs.length > 1 && (
+        <div className="mt-2 grid grid-cols-5 gap-2">
+          {thumbs.map((url, i) => {
+            const isLastShown = i === thumbs.length - 1;
+            const showOverlay = isLastShown && extraCount > 0;
+            const isActive = selectedIdx === i;
+            return (
               <button
                 key={i}
                 type="button"
-                aria-label={`Photo ${i + 1}`}
-                onClick={() => setMobileIdx(i)}
-                className="focus-ring h-2 rounded-full transition-all"
-                style={{
-                  width: i === mobileIdx ? 20 : 8,
-                  backgroundColor: i === mobileIdx ? "var(--color-primary)" : "var(--border)",
+                onClick={() => {
+                  if (showOverlay) setLightbox(0);
+                  else setSelectedIdx(i);
                 }}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* ── Desktop / tablet: hero + row of up to 5 thumbnails ── */}
-      <div className="hidden md:block">
-        <button
-          type="button"
-          onClick={() => setLightbox(0)}
-          className="focus-ring block aspect-[21/9] w-full overflow-hidden rounded-2xl"
-        >
-          <SmartImage src={hero} alt={alt} className="h-full w-full object-cover" />
-        </button>
-        {thumbs.length > 0 && (
-          <div className="mt-3 grid grid-cols-5 gap-3">
-            {thumbs.map((url, i) => {
-              const isLastShown = i === thumbs.length - 1;
-              const showOverlay = isLastShown && extraCount > 0;
-              return (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => setLightbox(i + 1)}
-                  className="focus-ring relative aspect-[4/3] overflow-hidden rounded-md"
-                  style={{ borderRadius: "var(--radius-md)" }}
-                >
-                  <SmartImage src={url} alt={`${alt} ${i + 2}`} className="h-full w-full object-cover" />
-                  {showOverlay && (
-                    <span
-                      className="absolute inset-0 flex items-center justify-center text-[18px] font-bold"
-                      style={{ backgroundColor: "rgba(0,0,0,0.55)", color: "#fff" }}
-                    >
-                      +{extraCount + 1} more
-                    </span>
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        )}
-      </div>
+                className={`focus-ring relative aspect-[4/3] overflow-hidden rounded-md transition-all ${isActive ? "ring-2 ring-[var(--color-primary)] ring-offset-2 opacity-100" : "opacity-60 hover:opacity-100"}`}
+                style={{ borderRadius: "var(--radius-md)" }}
+              >
+                <SmartImage src={url} alt={`${alt} ${i + 1}`} className="h-full w-full object-cover" />
+                {showOverlay && (
+                  <span
+                    className="absolute inset-0 flex items-center justify-center text-[12px] sm:text-[16px] font-bold"
+                    style={{ backgroundColor: "rgba(0,0,0,0.55)", color: "#fff" }}
+                  >
+                    +{extraCount}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {/* ── Lightbox ── */}
       {lightbox >= 0 && (
