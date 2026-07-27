@@ -1,7 +1,9 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import { ExternalLink, ArrowRight, Landmark, Trees, Waves, Building2, Move, Save, Loader2, Plus, Pencil, ZoomIn, ZoomOut, Maximize } from "lucide-react";
+import { ExternalLink, X, ArrowRight, Landmark, Trees, Waves, Building2, Move, Save, Loader2, Plus, Pencil, ZoomIn, ZoomOut, Maximize } from "lucide-react";
 import SectionHeading from "@/components/home/SectionHeading";
 import SmartImage from "@/components/shared/SmartImage";
 import { useTranslation } from "@/lib/i18n";
@@ -99,7 +101,7 @@ function PinPopover({ pin, color, t }) {
   return createPortal(
     <div
       ref={popoverRef}
-      className="absolute z-[9999] mb-2 w-[220px] -translate-x-1/2 -translate-y-full overflow-hidden rounded-2xl text-left"
+      className="absolute z-[9999] mb-2 w-[220px] -translate-x-1/2 -translate-y-full overflow-hidden rounded-2xl text-left hidden lg:block"
       style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-3)" }}
     >
       <div className="h-[120px] w-full" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
@@ -142,6 +144,109 @@ function PinPopover({ pin, color, t }) {
   );
 }
 
+function MobilePinModal({ openPin, setOpenPin, pins, t }) {
+  if (!openPin) return null;
+  const pin = pins.find(p => p.id === openPin);
+  if (!pin) return null;
+
+  const { color: kc, Icon } = kindOf(pin);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[10000] flex flex-col lg:hidden pointer-events-none">
+      
+      {/* Row 1: Map View (Transparent backdrop that dismisses on click) */}
+      <div 
+        className="flex-1 pointer-events-auto" 
+        onClick={() => setOpenPin(null)} 
+      />
+
+      {/* The Bottom Sheet (Row 2 & 3) */}
+      <div className="h-[65vh] w-full flex flex-col pointer-events-auto shadow-[0_-10px_40px_rgba(0,0,0,0.2)] rounded-t-3xl overflow-hidden animate-in slide-in-from-bottom-full duration-300 relative" style={{ backgroundColor: "var(--bg-surface)" }}>
+        
+        {/* Floating Close Button */}
+        <button
+          type="button"
+          onClick={() => setOpenPin(null)}
+          className="absolute top-4 right-4 z-50 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        {/* Row 2: Cover and details (flex-1 so it scrolls if needed) */}
+        <div className="flex-1 overflow-y-auto">
+          {/* Hero Image */}
+          <div className="h-[200px] w-full shrink-0 relative bg-black/5">
+            <SmartImage src={photoFor(pin)} alt={pin.label} loading="eager" className="h-full w-full object-cover" />
+            <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full shadow-lg border-2 border-white" style={{ backgroundColor: kc, color: "#fff" }}>
+              <Icon className="h-5 w-5" />
+            </div>
+          </div>
+
+          {/* Details & Actions */}
+          <div className="p-5 pb-6">
+            <p className="text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>{pin.label}</p>
+            
+            <div className="mt-2 mb-3 flex items-center gap-2">
+              {(pin.distanceKm != null && pin.distanceKm > 0) && (
+                <span className="text-[13px] font-mono-num font-bold" style={{ color: "var(--color-primary)" }}>
+                  {pin.distanceKm} KM · ~{pin.durationMin} min from Kraton
+                </span>
+              )}
+              {pin.distanceKm === 0 && (
+                <span className="text-[13px] font-mono-num font-bold" style={{ color: "var(--color-primary)" }}>
+                  0 KM anchor point
+                </span>
+              )}
+            </div>
+
+            <p className="text-[14px] leading-relaxed mb-6 line-clamp-3" style={{ color: "var(--text-secondary)" }}>{pin.shortDesc}</p>
+            
+            <div className="flex gap-3">
+              <Link to={`/destinations/${pin.slug}`} className="focus-ring flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-[14px] font-bold text-white shadow-md" style={{ backgroundColor: "var(--color-primary)" }}>
+                {t("viewDetails") || "View Details"}
+              </Link>
+              <a href={pin.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="focus-ring flex items-center justify-center gap-2 rounded-xl px-4 py-3 shadow-sm border transition-colors" style={{ backgroundColor: "var(--bg-surface-alt)", borderColor: "var(--border)", color: "var(--text-secondary)" }}>
+                <ExternalLink className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 3: Carousel places */}
+        <div className="shrink-0 pt-4 pb-safe bg-gray-100 border-none">
+          <p className="px-5 mb-3 text-[14px] font-bold text-gray-900">Other Places</p>
+          <div className="w-full">
+            <Swiper
+              slidesPerView="auto"
+              spaceBetween={12}
+              slidesOffsetBefore={20}
+              slidesOffsetAfter={20}
+              className="w-full pb-3"
+            >
+              {pins.filter(p => p.id !== openPin).map(otherPin => (
+                <SwiperSlide key={otherPin.id} style={{ width: "130px", height: "auto" }}>
+                  <button
+                    onClick={() => setOpenPin(otherPin.id)}
+                    className="w-full h-full text-left overflow-hidden rounded-xl transition-transform active:scale-95 flex flex-col focus-ring border border-gray-200 bg-white"
+                  >
+                    <div className="h-[75px] w-full shrink-0 bg-black/5">
+                      <SmartImage src={photoFor(otherPin)} alt={otherPin.label} loading="eager" className="h-full w-full object-cover" />
+                    </div>
+                    <div className="p-2.5 flex-1 flex flex-col justify-center bg-white h-[56px] shrink-0">
+                      <p className="text-[12px] font-semibold line-clamp-2 leading-tight text-gray-900">{otherPin.label}</p>
+                    </div>
+                  </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // All unique slugs across every mode — the shared position map is keyed by slug.
 const slugOf = (pin) => pin.slug;
 
@@ -164,7 +269,7 @@ export default function InteractiveMapsSection() {
   const dragRef = useRef(null); // { slug }
 
   // Touch-only pinch-zoom + pan. Disabled in edit mode so admin pin-dragging keeps raw coords.
-  const { enabled: zoomEnabled, transform, zoomBy, reset, canReset } = useMapZoom(mapRef, {
+  const { enabled: zoomEnabled, transform, zoomBy, reset, canReset, panToPct } = useMapZoom(mapRef, {
     initialScale: 2,
     enabledWhen: !editMode,
   });
@@ -175,6 +280,19 @@ export default function InteractiveMapsSection() {
       setPlaces(recs);
     } catch { /* ignore */ }
   };
+
+  // Scroll the map into view automatically when a pin is opened on mobile
+  useEffect(() => {
+    if (openPin && window.innerWidth < 1024 && mapRef.current) {
+      const pin = pins.find((p) => p.id === openPin);
+      if (pin) {
+        const { x, y } = coordOf(pin);
+        panToPct(x, y);
+      }
+      const yScroll = mapRef.current.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: yScroll, behavior: 'smooth' });
+    }
+  }, [openPin]);
 
   // Load saved positions + custom places + detect admin
   useEffect(() => {
@@ -339,8 +457,8 @@ export default function InteractiveMapsSection() {
         {/* Map */}
         <div
           ref={mapRef}
-          className="relative mx-auto w-full overflow-hidden rounded-2xl"
-          style={{ aspectRatio: "16 / 10", touchAction: zoomEnabled ? "none" : undefined }}
+          className="relative mx-auto w-full overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-[16/10]"
+          style={{ touchAction: zoomEnabled ? "none" : undefined }}
           onClick={() => setOpenPin(null)}
         >
           {/* Zoom controls — touch devices only */}
@@ -361,9 +479,10 @@ export default function InteractiveMapsSection() {
           )}
 
           {/* Transformed stage — scaled/panned as one unit so pins stay aligned */}
-          <div
-            ref={stageRef}
-            className="absolute inset-0"
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div
+              ref={stageRef}
+              className="w-full aspect-[16/10] pointer-events-auto"
             style={{
               transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.scale})`,
               transformOrigin: "center center",
@@ -418,8 +537,8 @@ export default function InteractiveMapsSection() {
                     if (editMode) return;
                     setOpenPin(isOpen ? null : pin.id);
                   }}
-                  onMouseEnter={() => { if (!editMode) setOpenPin(pin.id); }}
-                  onMouseLeave={() => { if (!editMode) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
+                  onMouseEnter={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin(pin.id); }}
+                  onMouseLeave={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
                 >
                   <button
                     id={`pin-btn-${pin.id}`}
@@ -457,6 +576,7 @@ export default function InteractiveMapsSection() {
                 </div>
               );
             })}
+          </div>
           </div>
         </div>
       </div>
@@ -576,6 +696,12 @@ export default function InteractiveMapsSection() {
         onClose={() => setEditorOpen(false)}
         place={editingPlace}
         onSaved={loadPlaces}
+      />
+      <MobilePinModal
+        openPin={openPin}
+        setOpenPin={setOpenPin}
+        pins={pins}
+        t={t}
       />
     </section>
   );

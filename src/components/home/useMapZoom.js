@@ -7,9 +7,9 @@ import { useEffect, useRef, useState, useCallback } from "react";
 const MIN_SCALE = 1;
 const MAX_SCALE = 4;
 
-function isTouchDevice() {
+function shouldEnableZoom() {
   if (typeof window === "undefined") return false;
-  return window.matchMedia("(pointer: coarse)").matches || "ontouchstart" in window;
+  return window.innerWidth < 1024 || window.matchMedia("(pointer: coarse)").matches || "ontouchstart" in window;
 }
 
 const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
@@ -26,9 +26,20 @@ export default function useMapZoom(viewportRef, { initialScale = 2, enabledWhen 
   const constrain = useCallback((next) => {
     const el = viewportRef.current;
     if (!el) return next;
-    const { width, height } = el.getBoundingClientRect();
-    const maxX = (next.scale - 1) * width * 0.5;
-    const maxY = (next.scale - 1) * height * 0.5;
+    const { width: wrapperW, height: wrapperH } = el.getBoundingClientRect();
+    
+    // The stage has a fixed aspect ratio of 16/10 relative to width.
+    const stageW = wrapperW;
+    const stageH = stageW / 1.6;
+
+    // Maximum pan bounds are calculated based on the difference
+    // between the scaled stage dimensions and the wrapper dimensions.
+    let maxX = (stageW * next.scale - wrapperW) / 2;
+    let maxY = (stageH * next.scale - wrapperH) / 2;
+
+    if (maxX < 0) maxX = 0;
+    if (maxY < 0) maxY = 0;
+
     return {
       scale: next.scale,
       x: clamp(next.x, -maxX, maxX),
@@ -45,9 +56,9 @@ export default function useMapZoom(viewportRef, { initialScale = 2, enabledWhen 
   // Enable on touch devices and set the initial zoomed-to-center view.
   useEffect(() => {
     if (!enabledWhen) { setEnabled(false); return; }
-    const touch = isTouchDevice();
-    setEnabled(touch);
-    if (touch && !didInit.current) {
+    const enable = shouldEnableZoom();
+    setEnabled(enable);
+    if (enable && !didInit.current) {
       didInit.current = true;
       // Centered zoom → translation stays 0 (origin is the middle).
       apply({ scale: clamp(initialScale, MIN_SCALE, MAX_SCALE), x: 0, y: 0 });
@@ -103,13 +114,48 @@ export default function useMapZoom(viewportRef, { initialScale = 2, enabledWhen 
       if (e.touches.length === 0) gestureRef.current = null;
     };
 
+    const onMouseDown = (e) => {
+      if (e.button !== 0 || gestureRef.current) return;
+      if (stateRef.current.scale > 1) {
+        gestureRef.current = {
+          mode: "pan",
+          startTouch: { x: e.clientX, y: e.clientY },
+          startX: stateRef.current.x,
+          startY: stateRef.current.y,
+        };
+      }
+    };
+
+    const onMouseMove = (e) => {
+      const g = gestureRef.current;
+      if (!g || g.mode !== "pan") return;
+      e.preventDefault();
+      const dx = e.clientX - g.startTouch.x;
+      const dy = e.clientY - g.startTouch.y;
+      apply({ scale: stateRef.current.scale, x: g.startX + dx, y: g.startY + dy });
+    };
+
+    const onMouseUp = () => {
+      if (gestureRef.current && gestureRef.current.mode === "pan") {
+        gestureRef.current = null;
+      }
+    };
+
     el.addEventListener("touchstart", onTouchStart, { passive: true });
     el.addEventListener("touchmove", onTouchMove, { passive: false });
     el.addEventListener("touchend", onTouchEnd, { passive: true });
+    
+    el.addEventListener("mousedown", onMouseDown);
+    window.addEventListener("mousemove", onMouseMove, { passive: false });
+    window.addEventListener("mouseup", onMouseUp);
+
     return () => {
       el.removeEventListener("touchstart", onTouchStart);
       el.removeEventListener("touchmove", onTouchMove);
       el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("mousedown", onMouseDown);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
     };
   }, [enabled, apply, viewportRef]);
 
@@ -118,5 +164,22 @@ export default function useMapZoom(viewportRef, { initialScale = 2, enabledWhen 
     apply({ scale: clamp(stateRef.current.scale * factor, MIN_SCALE, MAX_SCALE), x: stateRef.current.x, y: stateRef.current.y });
   }, [apply]);
 
-  return { enabled, transform, reset, zoomBy, canReset: transform.scale > 1 };
+  const panToPct = useCallback((px, py) => {
+    const el = viewportRef.current;
+    if (!el) return;
+    const { width: wrapperW } = el.getBoundingClientRect();
+    const stageW = wrapperW;
+    const stageH = stageW / 1.6;
+    
+    const dx = ((50 - px) / 100) * stageW;
+    const dy = ((50 - py) / 100) * stageH;
+    
+    apply({ 
+      scale: stateRef.current.scale, 
+      x: dx * stateRef.current.scale, 
+      y: dy * stateRef.current.scale 
+    });
+  }, [apply, viewportRef]);
+
+  return { enabled, transform, reset, zoomBy, canReset: transform.scale > 1, panToPct };
 }

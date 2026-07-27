@@ -363,7 +363,7 @@
       "display_order": 9,
       "regency": "bantul",
       "name_id": "Pantai Parangtritis",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Pantai pasir hitam dramatis dengan gumuk pasir dan pemandangan senja.",
       "price_idr": 10000,
@@ -393,7 +393,7 @@
       "display_order": 10,
       "regency": "bantul",
       "name_id": "Hutan Pinus Mangunan",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Hutan pinus dataran tinggi berkabut dengan dek kayu fotogenik.",
       "price_idr": 5000,
@@ -422,7 +422,7 @@
       "display_order": 11,
       "regency": "sleman",
       "name_id": "Tebing Breksi",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Tebing kapur berukir dengan titik pandang senja panoramik.",
       "price_idr": 10000,
@@ -452,7 +452,7 @@
       "display_order": 12,
       "regency": "yogyakarta-city",
       "name_id": "Pasar Beringharjo",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Pasar bersejarah penuh batik, rempah, dan jajanan.",
       "price_idr": 0,
@@ -482,7 +482,7 @@
       "display_order": 13,
       "regency": "sleman",
       "name_id": "Candi Ratu Boko",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Kompleks arkeologi di bukit, terkenal dengan sunset keemasan.",
       "price_idr": 40000,
@@ -511,7 +511,7 @@
       "display_order": 14,
       "regency": "gunungkidul",
       "name_id": "Gunung Api Purba Nglanggeran",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Perbukitan vulkanik purba dengan wisata desa dan embung.",
       "price_idr": 15000,
@@ -541,7 +541,7 @@
       "display_order": 1,
       "regency": "villages-hidden-gems",
       "name_id": "Candi Borobudur",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Candi Buddha terbesar di dunia, paling memukau saat matahari terbit.",
       "price_idr": 375000,
@@ -570,7 +570,7 @@
       "display_order": 2,
       "regency": "sleman",
       "name_id": "Candi Prambanan",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Menara candi Hindu abad ke-9 yang menjulang di tepi kota.",
       "price_idr": 375000,
@@ -599,7 +599,7 @@
       "display_order": 3,
       "regency": "yogyakarta-city",
       "name_id": "Jalan Malioboro",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Jalan pejalan kaki ikonik Jogja yang hidup siang dan malam.",
       "price_idr": 0,
@@ -629,7 +629,7 @@
       "display_order": 4,
       "regency": "yogyakarta-city",
       "name_id": "Tugu Jogja",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Landmark tengah kota tercinta dan spot foto favorit.",
       "price_idr": 0,
@@ -658,7 +658,7 @@
       "display_order": 5,
       "regency": "yogyakarta-city",
       "name_id": "Taman Sari",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Bekas taman dan pemandian kerajaan dengan lorong-lorong tersembunyi.",
       "price_idr": 15000,
@@ -687,7 +687,7 @@
       "display_order": 6,
       "regency": "yogyakarta-city",
       "name_id": "Kraton Yogyakarta",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Jantung tradisi kerajaan Jawa yang masih hidup, istana yang aktif hingga kini.",
       "price_idr": 15000,
@@ -716,7 +716,7 @@
       "display_order": 7,
       "regency": "gunungkidul",
       "name_id": "Goa Pindul",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Menyusuri sungai dalam gua batu kapur di atas ban pelampung.",
       "price_idr": 45000,
@@ -745,7 +745,7 @@
       "display_order": 8,
       "regency": "sleman",
       "name_id": "Kaliurang & Lereng Merapi",
-      "gallery_image_urls": ["https://picsum.photos/seed/prambanan1/800/600", "https://picsum.photos/seed/prambanan2/800/600", "https://picsum.photos/seed/prambanan3/800/600"],
+      "gallery_image_urls": [],
       "typical_duration": null,
       "descriptor_id": "Udara sejuk pegunungan dan panorama gunung di lereng selatan Merapi.",
       "price_idr": 20000,
@@ -1689,70 +1689,112 @@
       "id": "P8VMZHpJgBY"
     },
     {
-      "slug": "kaliurang-park",
       "x": 63.12146595283927,
       "y": 31.240375360923966,
       "id": "BYMHDcJILpI"
     },
     {
-      "slug": "prambanan",
       "x": 81.5759594562079,
       "y": 37.347208854667954,
       "id": "-WVYhfx8NbQ"
     },
     {
-      "slug": "mount-merapi",
       "x": 65.94231231953802,
       "y": 18.21583253128008,
       "id": "2iSW0cSvaOA"
     },
     {
-      "slug": "borobudur",
       "x": 35.63936176612127,
       "y": 34.859239653512994,
       "id": "XiJ86DZ8Gco"
     },
     {
-      "slug": "taman-sari",
       "x": 55.46160671318575,
       "y": 60.74410490856593,
       "id": "ls96NF4iMb4"
     },
     {
-      "slug": "malioboro",
       "x": 55.948854066410014,
       "y": 49.91879210779596,
       "id": "OR_7tFJ_OrI"
     },
     {
-      "slug": "tugu-jogja",
       "x": 58.95993743984601,
       "y": 43.948508180943215,
       "id": "emIrd6chqpE"
     },
     {
-      "slug": "nglanggeran",
       "x": 70.86817252165544,
       "y": 71.73063041385947,
       "id": "0dfjWcvp3nU"
     },
     {
-      "slug": "pindul-cave",
       "x": 82.60120909528392,
       "y": 67.86393166506257,
       "id": "OCopECFusJ8"
     },
     {
-      "slug": "indrayanti",
       "x": 73.56570320019249,
       "y": 92.68768046198268,
       "id": "lq4wrWq8O_s"
     },
     {
-      "slug": "parangtritis",
       "x": 47.24193936477382,
       "y": 87.4560875842156,
       "id": "z1IF0WPvg8I"
+    },
+    {
+      "x": 59.79079299358537,
+      "y": 54.93200428587648,
+      "id": "m6d2-PYk3GE"
+    },
+    {
+      "slug": "taman-sari",
+      "x": 54.090364405937784,
+      "y": 60.13930872502271,
+      "id": "U-Z3zZI29C4"
+    },
+    {
+      "slug": "malioboro",
+      "x": 56.22285848092643,
+      "y": 49.58406065508629,
+      "id": "hkahq6awVt8"
+    },
+    {
+      "slug": "tugu-jogja",
+      "x": 59.14757890554042,
+      "y": 43.77316785876476,
+      "id": "7pljmRDhTVg"
+    },
+    {
+      "slug": "jomblang-cave",
+      "x": 83.96166836966394,
+      "y": 79.39118734389191,
+      "id": "BhGzfMSrVzs"
+    },
+    {
+      "slug": "borobudur",
+      "x": 35.478433579558356,
+      "y": 35.040463924841056,
+      "id": "uSEWCeEybZc"
+    },
+    {
+      "slug": "prambanan",
+      "x": 74.07887360921889,
+      "y": 39.78815423478656,
+      "id": "kXR5NldTTtc"
+    },
+    {
+      "slug": "mount-merapi",
+      "x": 65.25499723262944,
+      "y": 16.933265568233423,
+      "id": "4MKBuyoJ9rQ"
+    },
+    {
+      "slug": "kaliurang-park",
+      "x": 61.427843473262946,
+      "y": 31.40139823172116,
+      "id": "ul0LG10oCT8"
     }
   ],
   "article": [
