@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { ExternalLink, ArrowRight, Landmark, Trees, Waves, Building2, Move, Save, Loader2, Plus, Pencil, ZoomIn, ZoomOut, Maximize } from "lucide-react";
 import SectionHeading from "@/components/home/SectionHeading";
@@ -82,9 +83,23 @@ function pinColor(mode, pin) {
 }
 
 function PinPopover({ pin, color, t }) {
-  return (
+  const popoverRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const el = document.getElementById(`pin-btn-${pin.id}`);
+    if (!el || !popoverRef.current) return;
+    const rect = el.getBoundingClientRect();
+    const left = window.scrollX + rect.left + rect.width / 2;
+    const top = window.scrollY + rect.top;
+    
+    popoverRef.current.style.left = `${left}px`;
+    popoverRef.current.style.top = `${top}px`;
+  });
+
+  return createPortal(
     <div
-      className="absolute bottom-full left-1/2 z-30 mb-2 w-[220px] -translate-x-1/2 overflow-hidden rounded-2xl text-left"
+      ref={popoverRef}
+      className="absolute z-[9999] mb-2 w-[220px] -translate-x-1/2 -translate-y-full overflow-hidden rounded-2xl text-left"
       style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-3)" }}
     >
       <div className="h-[120px] w-full" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
@@ -122,7 +137,8 @@ function PinPopover({ pin, color, t }) {
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -193,6 +209,7 @@ export default function InteractiveMapsSection() {
     isCustom: true,
     slug: rec.slug,
     label: rec.label,
+    shortLabel: rec.short_label || rec.label,
     shortDesc: rec.short_desc || "",
     kind: rec.kind,
     zone: rec.zone,
@@ -287,96 +304,42 @@ export default function InteractiveMapsSection() {
   };
 
   return (
-    <section className="section-y" style={{ backgroundColor: "var(--bg-page)" }}>
+    <section className="section-y">
       <div className="content-wrap">
         <SectionHeading title={t("maps.heading") || "Explore the Region"} subtitle={t("maps.subtitle") || "Discover D.I. Yogyakarta by distance, zone, or a ready-made 3-day route."} />
 
-        {/* Mode toggle + admin edit controls */}
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <div className="inline-flex flex-wrap gap-1 rounded-xl p-1" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
-            {MODES.map((m) => {
-              const active = mode === m.key;
-              return (
-                <button
-                  key={m.key}
-                  type="button"
-                  onClick={() => { setMode(m.key); setOpenPin(null); }}
-                  aria-pressed={active}
-                  className="focus-ring rounded-lg px-4 py-2 text-[13px] font-semibold transition-colors"
-                  style={{ backgroundColor: active ? "var(--color-primary)" : "transparent", color: active ? "var(--on-primary)" : "var(--text-secondary)" }}
-                >
-                  {m.label}
-                </button>
-              );
-            })}
-          </div>
-
-          {isAdmin && (
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => { setEditingPlace(null); setEditorOpen(true); }}
-                className="focus-ring inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-[13px] font-semibold transition-colors"
-                style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }}
-              >
-                <Plus className="h-4 w-4" /> Add place
-              </button>
-              <button
-                type="button"
-                onClick={() => setEditMode((v) => !v)}
-                className="focus-ring inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-[13px] font-semibold transition-colors"
-                style={{
-                  backgroundColor: editMode ? "var(--color-accent)" : "var(--bg-surface-alt)",
-                  color: editMode ? "var(--on-accent)" : "var(--text-secondary)",
-                }}
-              >
-                <Move className="h-4 w-4" /> {editMode ? "Editing positions" : "Edit positions"}
-              </button>
-              {editMode && (
-                <button
-                  type="button"
-                  onClick={handleSave}
-                  disabled={saving || !dirty}
-                  className="focus-ring inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-[13px] font-semibold transition-colors disabled:opacity-50"
-                  style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}
-                >
-                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-                  {saving ? "Saving…" : "Save"}
-                </button>
+        <div className="mt-6 flex flex-col lg:flex-row gap-6 relative">
+          {/* Left Column (Map) */}
+          <div className="flex-1 min-w-0 flex flex-col">
+            {editMode && (
+              <p className="mb-3 text-[12px]" style={{ color: "var(--text-secondary)" }}>
+                Drag any pin to reposition it. Click the pencil to edit a custom pin. Click Save when done.
+              </p>
+            )}
+            
+            {/* Legend */}
+            <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+              {mode === "zones" && Object.values(ZONES).map((z) => (
+                <span key={z.label} className="flex items-center gap-1.5 text-[12px]" style={{ color: "var(--text-secondary)" }}>
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: z.color }} /> {z.label}
+                </span>
+              ))}
+              {mode === "itinerary" && Object.values(DAYS).map((d) => (
+                <span key={d.label} className="flex items-center gap-1.5 text-[12px]" style={{ color: "var(--text-secondary)" }}>
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: d.color }} /> {d.label}
+                </span>
+              ))}
+              {mode === "distance" && (
+                <span className="text-[12px]" style={{ color: "var(--text-secondary)" }}>
+                  Distances & travel times measured from the Kraton (0 KM anchor).
+                </span>
               )}
             </div>
-          )}
-        </div>
-
-        {editMode && (
-          <p className="mt-2 text-[12px]" style={{ color: "var(--text-secondary)" }}>
-            Drag any pin to reposition it (shared across all tabs). Click the pencil on a custom pin to edit it. Click Save when done.
-          </p>
-        )}
-
-        {/* Legend */}
-        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
-          {mode === "zones" && Object.values(ZONES).map((z) => (
-            <span key={z.label} className="flex items-center gap-1.5 text-[12px]" style={{ color: "var(--text-secondary)" }}>
-              <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: z.color }} /> {z.label}
-            </span>
-          ))}
-          {mode === "itinerary" && Object.values(DAYS).map((d) => (
-            <span key={d.label} className="flex items-center gap-1.5 text-[12px]" style={{ color: "var(--text-secondary)" }}>
-              <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: d.color }} /> {d.label}
-            </span>
-          ))}
-          {mode === "distance" && (
-            <span className="text-[12px]" style={{ color: "var(--text-secondary)" }}>
-              Distances & travel times measured from the Kraton (0 KM anchor).
-            </span>
-          )}
-        </div>
 
         {/* Map */}
         <div
           ref={mapRef}
-          className="relative mt-4 mx-auto w-full md:w-[60%] overflow-hidden rounded-2xl"
+          className="relative mx-auto w-full overflow-hidden rounded-2xl"
           style={{ aspectRatio: "16 / 10", touchAction: zoomEnabled ? "none" : undefined }}
           onClick={() => setOpenPin(null)}
         >
@@ -448,7 +411,7 @@ export default function InteractiveMapsSection() {
                 <div
                   key={pin.id}
                   className={`absolute -translate-x-1/2 -translate-y-full ${editMode ? "cursor-move" : ""}`}
-                  style={{ left: `${x}%`, top: `${y}%`, zIndex: isOpen ? 40 : 20, touchAction: editMode ? "none" : undefined }}
+                  style={{ left: `${x}%`, top: `${y}%`, zIndex: isOpen ? 100 : 20, touchAction: editMode ? "none" : undefined }}
                   onPointerDown={onPointerDownPin(pin)}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -459,6 +422,7 @@ export default function InteractiveMapsSection() {
                   onMouseLeave={() => { if (!editMode) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
                 >
                   <button
+                    id={`pin-btn-${pin.id}`}
                     type="button"
                     aria-label={pin.label}
                     className={`focus-ring relative flex flex-col items-center transition-transform duration-200 origin-bottom ${editMode ? "" : "hover:scale-110"}`}
@@ -473,7 +437,7 @@ export default function InteractiveMapsSection() {
                         <Icon className="h-2.5 w-2.5" style={{ color: "#FFFFFF" }} />
                       </span>
                       <span className="text-[11px] font-semibold leading-none" style={{ color: "#3a2c1a" }}>
-                        {pin.label}
+                        {pin.shortLabel}
                       </span>
                     </span>
                   </button>
@@ -496,6 +460,116 @@ export default function InteractiveMapsSection() {
           </div>
         </div>
       </div>
+      
+        {/* Spacer to hold space for the absolute right column on desktop */}
+        <div className="hidden lg:block w-[320px] shrink-0" />
+
+        {/* Right Column (Controls & Place List) */}
+        <div className="w-full lg:w-[320px] lg:absolute lg:right-0 lg:top-0 lg:bottom-0 shrink-0 flex flex-col gap-4 rounded-2xl p-4" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+          
+          {/* Mode toggle tabs */}
+          <div className="flex flex-col gap-2">
+            <span className="text-[13px] font-semibold" style={{ color: "var(--text-primary)" }}>Filter by</span>
+            <div className="inline-flex flex-wrap gap-1 rounded-xl p-1" style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-1)" }}>
+              {MODES.map((m) => {
+                const active = mode === m.key;
+                return (
+                  <button
+                    key={m.key}
+                    type="button"
+                    onClick={() => { setMode(m.key); setOpenPin(null); }}
+                    aria-pressed={active}
+                    className="focus-ring flex-1 rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors"
+                    style={{ backgroundColor: active ? "var(--color-primary)" : "transparent", color: active ? "var(--on-primary)" : "var(--text-secondary)" }}
+                  >
+                    {m.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {isAdmin && (
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => { setEditingPlace(null); setEditorOpen(true); }}
+                className="focus-ring inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors"
+                style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }}
+              >
+                <Plus className="h-3.5 w-3.5" /> Add place
+              </button>
+              <button
+                type="button"
+                onClick={() => setEditMode((v) => !v)}
+                className="focus-ring inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors"
+                style={{
+                  backgroundColor: editMode ? "var(--color-accent)" : "var(--bg-surface-alt)",
+                  color: editMode ? "var(--on-accent)" : "var(--text-secondary)",
+                }}
+              >
+                <Move className="h-3.5 w-3.5" /> {editMode ? "Editing" : "Edit pins"}
+              </button>
+              {editMode && (
+                <button
+                  type="button"
+                  onClick={handleSave}
+                  disabled={saving || !dirty}
+                  className="focus-ring inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors disabled:opacity-50"
+                  style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}
+                >
+                  {saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Save className="h-3.5 w-3.5" />}
+                  {saving ? "Saving" : "Save"}
+                </button>
+              )}
+            </div>
+          )}
+
+          {/* Places List */}
+          <div className="flex flex-col gap-2 overflow-y-auto pr-1 flex-1 min-h-0 max-h-[400px] lg:max-h-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {pins.length === 0 ? (
+              <p className="text-[13px] text-center mt-4" style={{ color: "var(--text-secondary)" }}>No places in this view.</p>
+            ) : (
+              pins.map((pin) => {
+                const { color: kc, Icon } = kindOf(pin);
+                const isActive = openPin === pin.id;
+                return (
+                  <Link
+                    key={pin.id}
+                    to={`/destinations/${pin.slug}`}
+                    onMouseEnter={() => { if (!editMode) setOpenPin(pin.id); }}
+                    onMouseLeave={() => { if (!editMode) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
+                    onClick={(e) => {
+                      if (editMode) {
+                        e.preventDefault();
+                      }
+                    }}
+                    className={`group flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition-colors ${isActive ? 'bg-black/5' : ''}`}
+                    style={{ 
+                      backgroundColor: isActive ? "var(--bg-surface-alt)" : "var(--bg-surface)",
+                      borderColor: isActive ? "var(--color-primary)" : "transparent"
+                    }}
+                  >
+                    <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white" style={{ backgroundColor: kc }}>
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-[14px] font-semibold leading-tight truncate" style={{ color: "var(--text-primary)" }}>
+                        {pin.label}
+                      </span>
+                      <span className="mt-1 text-[12px] leading-snug line-clamp-2" style={{ color: "var(--text-secondary)" }}>
+                        {pin.shortDesc}
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })
+            )}
+          </div>
+
+        </div>
+      </div>
+    </div>
 
       <MapPlaceEditor
         open={editorOpen}

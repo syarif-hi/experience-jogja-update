@@ -56,7 +56,7 @@ function UserAvatarDropdown({ user, onLogout }) {
       {open && (
         <div
           className="absolute right-0 top-full z-50 mt-2 w-[220px] rounded-2xl p-2"
-          style={{ backgroundColor: "rgb(232, 232, 232)", boxShadow: "var(--elevation-3)" }}
+          style={{ backgroundColor: "var(--bg-surface-alt)", boxShadow: "var(--elevation-3)" }}
         >
           {/* User info header */}
           <div className="mb-2 rounded-lg px-3 py-2.5" style={{ backgroundColor: "var(--bg-page)" }}>

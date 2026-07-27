@@ -29,7 +29,7 @@ export default function MegaMenu() {
             {open && (
               <div
                 className="absolute left-0 top-full z-50 min-w-[260px] rounded-2xl p-2"
-                style={{ backgroundColor: "rgb(232, 232, 232)", boxShadow: "var(--elevation-3)" }}
+                style={{ backgroundColor: "var(--bg-surface-alt)", boxShadow: "var(--elevation-3)" }}
               >
                 {group.items.map((item) => (
                   <Link
