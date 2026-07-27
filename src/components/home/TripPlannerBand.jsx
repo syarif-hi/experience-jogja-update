@@ -6,7 +6,7 @@ import { useTranslation } from "@/lib/i18n";
 export default function TripPlannerBand() {
   const { t } = useTranslation();
   return (
-    <section className="section-y" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+    <section className="section-y" style={{ backgroundColor: "var(--bg-page)" }}>
       <div className="content-wrap">
         <div
           className="flex flex-col items-start gap-6 rounded-3xl p-8 md:flex-row md:items-center md:justify-between md:p-12"
