@@ -17,7 +17,7 @@ const slugify = (s) =>
   s.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
 const EMPTY = {
-  slug: "", label: "", short_desc: "", kind: "culture", google_maps_url: "",
+  slug: "", label: "", short_label: "", short_desc: "", kind: "culture", google_maps_url: "",
   photo_url: "", x: 50, y: 50, zone: "city", day: "", day_order: "",
   distance_km: "", duration_min: "", show_in_distance: true,
 };
@@ -54,6 +54,7 @@ export default function MapPlaceEditor({ open, onClose, place, onSaved }) {
     const payload = {
       slug,
       label,
+      short_label: form.short_label?.trim() || "",
       short_desc: form.short_desc?.trim() || "",
       kind: form.kind,
       google_maps_url: form.google_maps_url?.trim() || "",
@@ -131,9 +132,23 @@ export default function MapPlaceEditor({ open, onClose, place, onSaved }) {
             </div>
           </div>
 
-          <div>
-            <Label htmlFor="mp-label" className="mb-1.5 block text-[13px]">Name</Label>
-            <Input id="mp-label" value={form.label} onChange={(e) => set("label", e.target.value)} placeholder="e.g. Merapi Volcano" />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <Label>Full Name</Label>
+              <Input
+                value={form.label}
+                onChange={(e) => set("label", e.target.value)}
+                placeholder="e.g. Candi Borobudur"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <Label>Short Label (Map Pin)</Label>
+              <Input
+                value={form.short_label}
+                onChange={(e) => set("short_label", e.target.value)}
+                placeholder="e.g. Borobudur"
+              />
+            </div>
           </div>
 
           <div>
