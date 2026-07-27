@@ -1,4 +1,7 @@
 import axios from 'axios';
+import mockDb from '../../mock-backend/db.json';
+
+const isProd = import.meta.env.PROD;
 
 const api = axios.create({
   // Use json-server mock backend URL
@@ -61,6 +64,7 @@ export const base44 = {
       
       return {
         list: async (sort = '', limit = 100) => {
+          if (isProd) return mockDb[entityName.toLowerCase()] || [];
           const params = {};
           if (sort.startsWith('-')) {
             params._sort = `-${sort.substring(1)}`;
@@ -69,10 +73,24 @@ export const base44 = {
           }
           if (limit) params._per_page = limit; // v1 uses _per_page
           
-          const res = await api.get(route, { params });
-          return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
+          try {
+            const res = await api.get(route, { params });
+            return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
+          } catch (e) {
+            return mockDb[entityName.toLowerCase()] || [];
+          }
         },
         filter: async (filters = {}, sort = '', limit = 100) => {
+          const getMockData = () => {
+            let data = mockDb[entityName.toLowerCase()] || [];
+            for (const [k, v] of Object.entries(filters)) {
+              data = data.filter(item => item[k] === v);
+            }
+            return data;
+          };
+
+          if (isProd) return getMockData();
+
           const params = { ...filters };
           if (sort.startsWith('-')) {
             params._sort = `-${sort.substring(1)}`;
@@ -81,8 +99,12 @@ export const base44 = {
           }
           if (limit) params._per_page = limit;
           
-          const res = await api.get(route, { params });
-          return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
+          try {
+            const res = await api.get(route, { params });
+            return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
+          } catch (e) {
+            return getMockData();
+          }
         },
         create: async (data) => {
           const res = await api.post(route, data);
@@ -97,8 +119,19 @@ export const base44 = {
           return res.data;
         },
         get: async (id) => {
-          const res = await api.get(`${route}/${id}`);
-          return res.data;
+          const getMockData = () => {
+            const data = mockDb[entityName.toLowerCase()] || [];
+            return data.find(item => item.id === id) || null;
+          };
+
+          if (isProd) return getMockData();
+
+          try {
+            const res = await api.get(`${route}/${id}`);
+            return res.data;
+          } catch (e) {
+            return getMockData();
+          }
         }
       };
     }
