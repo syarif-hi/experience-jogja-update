@@ -13,7 +13,7 @@ BEFORE=$(git rev-parse HEAD)
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 git pull --ff-only origin "$BRANCH"
 
-if [ "$BEFORE" = "$(git rev-parse HEAD)" ]; then
+if [ "$BEFORE" = "$(git rev-parse HEAD)" ] && [ -d "dist" ]; then
     echo "No new commits"
     exit 0
 fi

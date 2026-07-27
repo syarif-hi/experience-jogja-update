@@ -2,33 +2,47 @@
 
 ## Project Context
 
-This is a Base44 app repository. Treat it as user-owned application code, keep changes focused on the user's request, and preserve existing project conventions.
+This is a Yogyakarta tourism demo site built with React + Vite. Uses a mock backend (`json-server`) — Base44 is NOT used in production.
 
-Start with `README.md` for local setup, environment variables, and publish workflow.
+## Commands
 
-## Base44 References
-
-- CLI overview: https://docs.base44.com/developers/references/cli/get-started/overview.md
-- Agent skills: https://docs.base44.com/developers/backend/overview/skills.md
-
-If your agent supports Agent Skills, install or update Base44 skills before Base44-specific work:
-
-```bash
-npx skills add base44/skills
-```
+| Command | Description |
+|---|---|
+| `npm run dev` | Start Vite + json-server mock backend concurrently |
+| `npm run build` | Build production to `dist/` |
+| `npm run lint` | Run ESLint |
+| `npm run typecheck` | Run TypeScript checks |
 
 ## Key Files
 
-- `src/`: frontend application source.
-- `src/api/base44Client.js`: frontend Base44 SDK client.
-- `vite.config.js`: Vite config and Base44 Vite plugin setup.
-- `.env.local`: local-only environment values; never commit secrets.
+- `src/api/base44Client.js`: Custom API client — wraps axios, points to `http://localhost:3001` (json-server). All data fetching goes through this.
+- `mock-backend/db.json`: json-server database (events, destinations, articles, map places, etc.)
+- `mock-backend/populate_map.cjs`: Script to repopulate map data in `db.json` — run with `node mock-backend/populate_map.cjs`
+- `mock-backend/sync_data.mjs`: Script to pull latest data from Base44 into `db.json`
+- `vite.config.js`: Vite config with Base44 plugin (ignored in production, no env needed)
+- `deploy.sh`: Auto-deploy script for VPS (git pull → npm ci → npm run build)
+
+## VPS Deployment
+
+- Build output: `dist/` — point Nginx `root` to this folder.
+- **SPA fallback required** for react-router:
+  ```nginx
+  location / {
+      try_files $uri $uri/ /index.html;
+  }
+  ```
+- **Cron auto-deploy** (every 5 min):
+  ```cron
+  */5 * * * * /path/to/deploy.sh >> /var/log/deploy.log 2>&1
+  ```
+- `deploy.sh` uses `flock` to prevent concurrent runs, checks for new commits before build.
+- **json-server must be running** at port 3001 for data to load. Either:
+  - Deploy json-server as a systemd service running `json-server mock-backend/db.json --port 3001 --host 0.0.0.0`
+  - Or proxy through Nginx
 
 ## Working Notes
 
-- Use `base44 dev` as the default local development command when you need the local Base44 backend. It can run the backend and frontend together.
-- When docs or code mention the frontend being started automatically, that usually means the Base44 project config includes `site.serveCommand`, for example `"serveCommand": "npm run dev"` in `base44/config.jsonc`.
-- Use `npm run dev` only for frontend-only work against the hosted Base44 backend.
-- Prefer the existing Base44 CLI workflow over adding new npm scripts for Base44-specific tasks.
-- Reuse the existing SDK client and Vite plugin patterns before adding new Base44 integration paths.
-- Run the relevant checks from `package.json` before finishing code changes.
+- Base44 folder (`base44/`), plugin (`@base44/vite-plugin`), and SDK (`@base44/sdk`) are **not needed** for production. The app's custom API client in `src/api/base44Client.js` replaces them.
+- No `.env.local` required for build. `VITE_BASE44_*` env vars are optional and unused in production.
+- `src/lib/AuthContext.jsx` imports `@base44/sdk` but falls back silently on failure — safe to ignore.
+- When making changes, update `mock-backend/db.json` if adding new entities or data.
