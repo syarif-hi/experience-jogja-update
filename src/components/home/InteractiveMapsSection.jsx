@@ -243,11 +243,11 @@ export default function InteractiveMapsSection() {
     const onMove = (e) => {
       if (!dragRef.current || !stageRef.current) return;
       if (rafId) cancelAnimationFrame(rafId);
-      
+
       const rect = stageRef.current.getBoundingClientRect();
       const cx = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
       const cy = e.clientY ?? e.touches?.[0]?.clientY ?? 0;
-      
+
       rafId = requestAnimationFrame(() => {
         if (!dragRef.current) return;
         const x = Math.min(100, Math.max(0, ((cx - rect.left) / rect.width) * 100));
@@ -466,7 +466,7 @@ export default function InteractiveMapsSection() {
                   >
                     {/* Category badge + name label (no landmark illustration) */}
                     <span
-                      className="flex items-center gap-1.5 whitespace-nowrap rounded-full pr-2 pl-1"
+                      className="flex items-center gap-1.5 whitespace-nowrap rounded-full pr-2"
                       style={{ backgroundColor: "rgba(255,255,255,0.92)", boxShadow: "0 1px 3px rgba(0,0,0,0.25)" }}
                     >
                       <span className="flex h-4 w-4 items-center justify-center rounded-full ring-1 ring-white" style={{ backgroundColor: kc }}>
