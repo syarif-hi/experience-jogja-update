@@ -10,7 +10,7 @@ import useMapZoom from "@/components/home/useMapZoom";
 
 // ── Illustrated graphic map background ──
 // Cache-buster appended so the refreshed asset (same filename) reloads instead of serving a stale cached copy.
-const MAP_BG = "https://ik.imagekit.io/ibrproject/jogja_maps_bg.jpg?v=20260723";
+const MAP_BG = "https://ik.imagekit.io/ibrproject/jogja_maps_bg_compressed_2.jpg";
 
 // ── Real place photos for the hover popover, keyed by slug ──
 const PHOTOS = {
@@ -219,13 +219,13 @@ export default function InteractiveMapsSection() {
   // route line segments per day for itinerary, ordered by day_order
   const itineraryPaths = mode === "itinerary"
     ? [1, 2, 3].map((day) => ({
-        day,
-        color: DAYS[day].color,
-        points: pins
-          .filter((p) => p.day === day)
-          .sort((a, b) => a.dayOrder - b.dayOrder)
-          .map((p) => ({ ...p, ...coordOf(p) })),
-      }))
+      day,
+      color: DAYS[day].color,
+      points: pins
+        .filter((p) => p.day === day)
+        .sort((a, b) => a.dayOrder - b.dayOrder)
+        .map((p) => ({ ...p, ...coordOf(p) })),
+    }))
     : [];
 
   // ── Drag handling (edit mode only) ──
@@ -239,15 +239,23 @@ export default function InteractiveMapsSection() {
 
   useEffect(() => {
     if (!editMode) return;
+    let rafId = null;
     const onMove = (e) => {
       if (!dragRef.current || !stageRef.current) return;
+      if (rafId) cancelAnimationFrame(rafId);
+
       const rect = stageRef.current.getBoundingClientRect();
-      const cx = e.touches ? e.touches[0].clientX : e.clientX;
-      const cy = e.touches ? e.touches[0].clientY : e.clientY;
-      const x = Math.min(100, Math.max(0, ((cx - rect.left) / rect.width) * 100));
-      const y = Math.min(100, Math.max(0, ((cy - rect.top) / rect.height) * 100));
-      setPositions((prev) => ({ ...prev, [dragRef.current.slug]: { x, y } }));
-      setDirty(true);
+      const cx = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+      const cy = e.clientY ?? e.touches?.[0]?.clientY ?? 0;
+
+      rafId = requestAnimationFrame(() => {
+        if (!dragRef.current) return;
+        const x = Math.min(100, Math.max(0, ((cx - rect.left) / rect.width) * 100));
+        const y = Math.min(100, Math.max(0, ((cy - rect.top) / rect.height) * 100));
+        setPositions((prev) => ({ ...prev, [dragRef.current.slug]: { x, y } }));
+        setDirty(true);
+        rafId = null;
+      });
     };
     const onUp = () => { dragRef.current = null; };
     window.addEventListener("pointermove", onMove);
@@ -458,7 +466,7 @@ export default function InteractiveMapsSection() {
                   >
                     {/* Category badge + name label (no landmark illustration) */}
                     <span
-                      className="flex items-center gap-1.5 whitespace-nowrap rounded-full px-2 py-1"
+                      className="flex items-center gap-1.5 whitespace-nowrap rounded-full pr-2"
                       style={{ backgroundColor: "rgba(255,255,255,0.92)", boxShadow: "0 1px 3px rgba(0,0,0,0.25)" }}
                     >
                       <span className="flex h-4 w-4 items-center justify-center rounded-full ring-1 ring-white" style={{ backgroundColor: kc }}>

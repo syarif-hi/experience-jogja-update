@@ -9,35 +9,48 @@ const api = axios.create({
 export const base44 = {
   auth: {
     me: async () => {
-      try {
-        const res = await api.get('/auth_me');
-        return res.data;
-      } catch (e) {
-        throw new Error('Not logged in');
-      }
+      // For local development without a backend, return a mock user
+      return {
+        id: 'u123',
+        name: 'John Doe',
+        email: 'john@example.com',
+        phone: '+6281234567890',
+        avatar: '',
+        role: 'admin'
+      };
     },
     loginWithProvider: async (provider, redirect) => {
       console.log(`Mock login with ${provider}`);
+      localStorage.setItem('base44_access_token', 'mock-token-123');
       window.location.href = redirect || '/';
     },
     loginViaEmailPassword: async (email, password) => {
-      const res = await api.get('/auth_login');
-      return res.data;
+      // Simulate successful login by setting the exact key expected by app-params.js
+      localStorage.setItem('base44_access_token', 'mock-token-123');
+      try {
+        const res = await api.get('/auth_login');
+        return res.data;
+      } catch (e) {
+        return { success: true };
+      }
     },
     register: async (data) => {
+      localStorage.setItem('base44_access_token', 'mock-token-123');
       return { success: true };
     },
     verifyOtp: async (data) => {
+      localStorage.setItem('base44_access_token', 'mock-token-123');
       return { access_token: 'mock-token-123' };
     },
     setToken: (token) => {
-      localStorage.setItem('mock_token', token);
+      localStorage.setItem('base44_access_token', token);
     },
     resendOtp: async (email) => {
       return { success: true };
     },
     logout: async () => {
-      localStorage.removeItem('mock_token');
+      localStorage.removeItem('base44_access_token');
+      localStorage.removeItem('token');
       window.location.reload();
     }
   },

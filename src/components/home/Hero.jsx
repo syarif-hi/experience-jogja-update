@@ -13,7 +13,7 @@ const SLIDES = [
   "https://ik.imagekit.io/ibrproject/borobudur_sunset_edit-upscale-2x_cropped-w2000.png",
   "https://ik.imagekit.io/ibrproject/traditional_dance_expanded-upscale-2x-w2000.jpeg",
   "https://ik.imagekit.io/ibrproject/prambanan_temple_human_interest-w2000.png",
-  "https://ik.imagekit.io/ibrproject/traditional_event-w2000.jpg",
+  "https://ik.imagekit.io/ibrproject/traditional_event_expand-upscale-2x-w2000.jpeg",
   "https://ik.imagekit.io/ibrproject/borobudur-w2000.jpg",
   "https://ik.imagekit.io/ibrproject/prambanan_and_statue-w2000.jpg",
 ];
@@ -74,18 +74,20 @@ export default function Hero() {
       </div>
 
       {/* Menu row — below the slider */}
-      <div className="content-wrap mt-6">
-        <div className="flex flex-wrap items-center justify-start gap-x-10 gap-y-2">
-          {PILLS.map((p) => (
-            <Link
-              key={p.label}
-              to={p.to}
-              className="focus-ring whitespace-nowrap text-[17px] font-normal uppercase tracking-wide transition-opacity hover:opacity-70"
-              style={{ color: "var(--text-primary)" }}
-            >
-              {p.label}
-            </Link>
-          ))}
+      <div className="py-4" style={{ backgroundColor: "var(--bg-page)" }}>
+        <div className="content-wrap">
+          <div className="flex flex-wrap items-center justify-start gap-x-10 gap-y-2">
+            {PILLS.map((p) => (
+              <Link
+                key={p.label}
+                to={p.to}
+                className="focus-ring whitespace-nowrap text-[17px] font-normal uppercase tracking-wide transition-opacity hover:opacity-70"
+                style={{ color: "var(--text-primary)" }}
+              >
+                {p.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

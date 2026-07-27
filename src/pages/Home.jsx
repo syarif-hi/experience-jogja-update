@@ -10,6 +10,7 @@ import NewsSection from "@/components/home/NewsSection";
 import CalendarSection from "@/components/home/CalendarSection";
 import InteractiveMapsSection from "@/components/home/InteractiveMapsSection";
 import TripPlannerBand from "@/components/home/TripPlannerBand";
+import VisitorInfoSection from "@/components/home/VisitorInfoSection";
 import NewsletterCapture from "@/components/home/NewsletterCapture";
 
 export default function Home() {
@@ -47,6 +48,8 @@ export default function Home() {
         </div>
         {/* 6. Explore Jogja */}
         <div id="explore" className="scroll-mt-28"><CategoryGrid /></div>
+        {/* 7. Visitor Information */}
+        <div id="visitor-info" className="scroll-mt-28"><VisitorInfoSection /></div>
         <div id="trip-planner" className="scroll-mt-28"><TripPlannerBand /></div>
         <NewsletterCapture />
       </main>
