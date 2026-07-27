@@ -31,6 +31,10 @@ import BookExperienceLanding from '@/pages/BookExperienceLanding';
 import DiscoverLanding from '@/pages/DiscoverLanding';
 import ThingsToDoLanding from '@/pages/ThingsToDoLanding';
 import DestinationsLanding from '@/pages/DestinationsLanding';
+import AccountLayout from '@/pages/account/AccountLayout';
+import AccountOverview from '@/pages/account/AccountOverview';
+import NotificationPreferences from '@/pages/account/NotificationPreferences';
+import ProfileSettings from '@/pages/account/ProfileSettings';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -79,6 +83,12 @@ const AuthenticatedApp = () => {
       <Route path="/itineraries/:slug" element={<ItineraryDetail />} />
       <Route path="/trip-planner" element={<TripPlanner />} />
       <Route path="/coming-soon" element={<ComingSoon />} />
+      {/* Account panel (protected) */}
+      <Route path="/account" element={<AccountLayout />}>
+        <Route index element={<AccountOverview />} />
+        <Route path="notifications" element={<NotificationPreferences />} />
+        <Route path="profile" element={<ProfileSettings />} />
+      </Route>
       {/* Add your page Route elements here */}
       <Route path="*" element={<PageNotFound />} />
     </Routes>

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { X, Search, ChevronDown } from "lucide-react";
+import { X, Search, ChevronDown, User, LogOut } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "@/lib/i18n";
+import { useAuth } from "@/lib/AuthContext";
 import Toggles from "@/components/layout/Toggles";
 import { NAV_GROUPS, NAV_STANDALONE } from "@/lib/navConfig";
 
 export default function MobileNavDrawer({ open, onClose, onAuth }) {
   const { t, language } = useTranslation();
+  const { user, isAuthenticated, logout } = useAuth();
   const [openGroup, setOpenGroup] = useState(-1);
   const lbl = (o) => (language === "id" ? o.label_id : o.label_en);
 
@@ -112,16 +114,37 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
               ))}
             </nav>
 
-            <div className="flex flex-col gap-4 border-t p-4" style={{ borderColor: "var(--border)" }}>
+            <div className="flex flex-col gap-3 border-t p-4" style={{ borderColor: "var(--border)" }}>
               <Toggles showCurrency={false} />
-              <button
-                type="button"
-                onClick={() => { onClose(); onAuth?.(); }}
-                className="focus-ring w-full rounded-lg py-2.5 text-center text-[15px] font-semibold uppercase tracking-wide"
-                style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}
-              >
-                Log In | Sign Up
-              </button>
+              {isAuthenticated ? (
+                <>
+                  <Link
+                    to="/account"
+                    onClick={onClose}
+                    className="focus-ring flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-center text-[15px] font-semibold uppercase tracking-wide"
+                    style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}
+                  >
+                    <User className="h-4 w-4" /> My Account
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => { onClose(); logout(); }}
+                    className="focus-ring flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-center text-[15px] font-semibold uppercase tracking-wide transition-colors"
+                    style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }}
+                  >
+                    <LogOut className="h-4 w-4" /> Log Out
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => { onClose(); onAuth?.(); }}
+                  className="focus-ring w-full rounded-lg py-2.5 text-center text-[15px] font-semibold uppercase tracking-wide"
+                  style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}
+                >
+                  Log In | Sign Up
+                </button>
+              )}
             </div>
           </motion.aside>
         </>
