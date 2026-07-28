@@ -1,8 +1,12 @@
 import axios from 'axios';
 
+const isHttps = typeof window !== 'undefined' && window.location.protocol === 'https:';
+const baseURL = isHttps 
+  ? '/api' 
+  : (typeof window !== 'undefined' ? `http://${window.location.hostname}:3001` : 'http://localhost:3001');
+
 const api = axios.create({
-  // Use json-server mock backend URL dynamically based on host
-  baseURL: typeof window !== 'undefined' ? `http://${window.location.hostname}:3001` : 'http://localhost:3001',
+  baseURL,
 });
 
 // Mocking Base44 SDK behavior using standard REST API
