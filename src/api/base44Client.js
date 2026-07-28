@@ -75,7 +75,8 @@ export const base44 = {
           
           try {
             const res = await api.get(route, { params });
-            return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
+            const data = Array.isArray(res.data) ? res.data : (res.data?.data || res.data);
+            return Array.isArray(data) ? data : [];
           } catch (e) {
             console.error(`Error fetching list for ${route}:`, e);
             return [];
@@ -92,7 +93,8 @@ export const base44 = {
           
           try {
             const res = await api.get(route, { params });
-            return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
+            const data = Array.isArray(res.data) ? res.data : (res.data?.data || res.data);
+            return Array.isArray(data) ? data : [];
           } catch (e) {
             console.error(`Error filtering ${route}:`, e);
             return [];
