@@ -64,10 +64,10 @@ export default function VisitorInfoSection() {
               >
                 {/* Icon */}
                 <div
-                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl"
+                  className="mb-4 flex h-[88px] w-[88px] items-center justify-center rounded-2xl"
                   style={{ backgroundColor: color + "18", color }}
                 >
-                  <Icon className="h-5 w-5" />
+                  <Icon className="h-10 w-10" />
                 </div>
 
                 {/* Title */}

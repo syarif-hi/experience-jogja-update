@@ -112,7 +112,9 @@
     @apply border-border;
   }
 
-  html {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
     scroll-behavior: smooth;
   }
 
@@ -121,6 +123,11 @@
     color: var(--text-primary);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
   }
 
   h1, h2, h3, h4 {
@@ -137,6 +144,9 @@
 
   /* Section rhythm: vertical --spacing-xl, horizontal --content-padding, capped width for 4k+ */
   .section-y { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+  @media (min-width: 1024px) {
+    .section-y { padding-top: calc(var(--spacing-xl) * 2); }
+  }
   .content-wrap {
     width: 100%;
     max-width: var(--content-max);

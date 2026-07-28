@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "@/lib/i18n";
 import { Image } from "@/components/ui/image";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
 const SLIDES = [
   "https://ik.imagekit.io/ibrproject/tamansari-w2000.jpg",
   "https://ik.imagekit.io/ibrproject/malioboro_street-w2000.jpg",
@@ -30,29 +33,32 @@ const PILLS = [
 export default function Hero() {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => setIndex((i) => (i + 1) % SLIDES.length), 5000);
-    return () => clearInterval(timer);
-  }, []);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   return (
     <section className="pb-[var(--spacing-xl)]" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
       {/* Fluid image slider — full-bleed, no radius */}
       <div className="relative">
-        <div className="relative aspect-[21/9] max-h-[calc(100vh-220px)] min-h-[320px] w-full overflow-hidden">
-          {/* All slides preloaded and stacked. The active slide sits on top; the
-              rest stay mounted underneath so the next one is ready instantly with
-              no empty state and no fade. */}
-          {SLIDES.map((src, i) => (
-            <img
-              key={src}
-              src={src}
-              alt="Yogyakarta"
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{ zIndex: i === index ? 1 : 0, visibility: i === index ? "visible" : "hidden" }}
-            />
-          ))}
+        <div className="relative aspect-[4/3] md:aspect-[21/9] max-h-[calc(100vh-220px)] min-h-[320px] w-full overflow-hidden">
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            onSlideChange={(swiper) => setIndex(swiper.realIndex)}
+            onSwiper={setSwiperInstance}
+            loop={true}
+            speed={1}
+            className="h-full w-full"
+          >
+            {SLIDES.map((src, i) => (
+              <SwiperSlide key={src} className="h-full w-full">
+                <img
+                  src={src}
+                  alt="Yogyakarta"
+                  className="h-full w-full object-cover"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
           {/* Bullet indicators — bottom left */}
           <div className="absolute bottom-6 left-6 z-10 flex gap-2">
@@ -60,7 +66,10 @@ export default function Hero() {
               <button
                 key={i}
                 type="button"
-                onClick={() => setIndex(i)}
+                onClick={() => {
+                  setIndex(i);
+                  if (swiperInstance) swiperInstance.slideToLoop(i);
+                }}
                 aria-label={`Slide ${i + 1}`}
                 className="focus-ring h-2.5 rounded-full transition-all"
                 style={{

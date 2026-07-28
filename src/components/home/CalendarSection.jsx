@@ -158,14 +158,14 @@ export default function CalendarSection() {
                         backgroundColor: isSelected
                           ? "var(--color-primary)"
                           : hasEvent
-                          ? "var(--color-accent)"
+                          ? "#F3F4F6"
                           : "transparent",
                         opacity: inMonth ? 1 : 0.35,
                       }}
                     >
                       <span
                         className="text-[12px] leading-none"
-                        style={{ color: isSelected ? "var(--on-primary)" : hasEvent ? "var(--on-accent)" : "var(--text-primary)", fontWeight: 400 }}
+                        style={{ color: isSelected ? "var(--on-primary)" : "var(--text-primary)", fontWeight: 400 }}
                       >
                         {format(day, "d")}
                       </span>
@@ -183,7 +183,7 @@ export default function CalendarSection() {
                               <span key={ev.id} className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: eventCategoryColor(eventCategoryOf(ev)) }} />
                             ))}
                             {dayEvents.length > 3 && (
-                              <span className="text-[9px] font-semibold leading-none" style={{ color: "var(--on-accent)" }}>
+                              <span className="text-[9px] font-semibold leading-none" style={{ color: "var(--text-secondary)" }}>
                                 +{dayEvents.length - 3}
                               </span>
                             )}

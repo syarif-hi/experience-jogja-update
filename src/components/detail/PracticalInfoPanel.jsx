@@ -7,7 +7,7 @@ export default function PracticalInfoPanel({ title, rows = [], cta, priceLine })
   return (
     <div className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-2)" }}>
       {title && (
-        <h3 className="mb-3 text-[15px] font-bold uppercase tracking-wide" style={{ color: "var(--text-primary)" }}>{title}</h3>
+        <h3 className="mb-3 text-[15px] font-bold  tracking-wide" style={{ color: "var(--text-primary)" }}>{title}</h3>
       )}
       {priceLine && (
         <p className="mb-4 text-[22px] font-bold" style={{ color: "var(--color-primary)" }}>{priceLine}</p>
@@ -20,7 +20,7 @@ export default function PracticalInfoPanel({ title, rows = [], cta, priceLine })
                 <r.icon className="h-4 w-4" />
               </span>
               <div className="min-w-0">
-                <p className="text-[12px] uppercase tracking-wide" style={{ color: "var(--text-secondary)" }}>{r.label}</p>
+                <p className="text-[12px]  tracking-wide" style={{ color: "var(--text-secondary)" }}>{r.label}</p>
                 <p className="text-[14px] font-semibold" style={{ color: "var(--text-primary)" }}>{r.value}</p>
               </div>
             </li>

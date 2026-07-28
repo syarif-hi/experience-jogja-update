@@ -4,8 +4,8 @@ import mockDb from '../../mock-backend/db.json';
 const isProd = import.meta.env.PROD;
 
 const api = axios.create({
-  // Use json-server mock backend URL
-  baseURL: 'http://localhost:3001',
+  // Use json-server mock backend URL dynamically based on host
+  baseURL: typeof window !== 'undefined' ? `http://${window.location.hostname}:3001` : 'http://localhost:3001',
 });
 
 // Mocking Base44 SDK behavior using standard REST API

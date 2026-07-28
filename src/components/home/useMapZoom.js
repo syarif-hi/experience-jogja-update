@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 // On touch devices the initial view is zoomed to `initialScale` centered on the map middle (Kraton area).
 
 const MIN_SCALE = 1;
-const MAX_SCALE = 4;
+const MAX_SCALE = 2.5;
 
 function shouldEnableZoom() {
   if (typeof window === "undefined") return false;

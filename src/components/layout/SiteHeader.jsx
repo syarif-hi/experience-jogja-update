@@ -139,7 +139,7 @@ export default function SiteHeader() {
     <button
       type="button"
       onClick={() => setAuthOpen(true)}
-      className="focus-ring inline-flex shrink-0 items-center justify-center rounded-lg h-10 px-4 text-[14px] font-semibold uppercase leading-none tracking-wide transition-colors"
+      className="focus-ring inline-flex shrink-0 items-center justify-center rounded-lg h-10 px-4 text-[14px] font-semibold  leading-none tracking-wide transition-colors"
       style={authBtnStyle}
       onMouseEnter={authBtnEnter}
       onMouseLeave={authBtnLeave}
@@ -150,13 +150,16 @@ export default function SiteHeader() {
 
   const wordmark = (
     <Link to="/" className="focus-ring flex shrink-0 flex-col gap-1 rounded-md leading-none">
-      <span className="text-[22px] tracking-wide" style={{ color: "var(--text-secondary)" }}>experiencejogja.com</span>
-      <span className="font-wordmark text-[29px] font-semibold uppercase tracking-[0.08em] md:text-[34px]" style={{ color: "var(--color-primary)" }}>
-        Experience Jogja
-      </span>
-      <span className="hidden text-[25px] font-medium md:block" style={{ color: "var(--color-accent)" }}>
-        {t("brand.tagline")}
-      </span>
+      <div className="hidden">
+        <span className="text-[22px] tracking-wide" style={{ color: "var(--text-secondary)" }}>experiencejogja.com</span>
+        <span className="font-wordmark text-[29px] font-semibold  tracking-[0.08em] md:text-[34px]" style={{ color: "var(--color-primary)" }}>
+          Experience Jogja
+        </span>
+        <span className="hidden text-[25px] font-medium md:block" style={{ color: "var(--color-accent)" }}>
+          {t("brand.tagline")}
+        </span>
+      </div>
+      <img src="/experience_jogja_logo.png" alt="Experience Jogja" className="max-h-[48px] md:max-h-[88px] w-auto object-contain" />
     </Link>
   );
 

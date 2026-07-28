@@ -10,7 +10,7 @@ export default function DetailEssentials({ rows = [] }) {
 
   return (
     <div className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-1)" }}>
-      <h3 className="mb-4 text-[15px] font-bold uppercase tracking-wide" style={{ color: "var(--text-primary)" }}>
+      <h3 className="mb-4 text-[15px] font-bold  tracking-wide" style={{ color: "var(--text-primary)" }}>
         {t("essentials.title")}
       </h3>
       <ul className="space-y-4">
@@ -20,7 +20,7 @@ export default function DetailEssentials({ rows = [] }) {
               <r.icon className="h-4 w-4" />
             </span>
             <div>
-              <p className="text-[12px] uppercase tracking-wide" style={{ color: "var(--text-secondary)" }}>{r.label}</p>
+              <p className="text-[12px]  tracking-wide" style={{ color: "var(--text-secondary)" }}>{r.label}</p>
               <p className="text-[14px] font-semibold" style={{ color: "var(--text-primary)" }}>{r.value}</p>
             </div>
           </li>

@@ -40,9 +40,12 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
             transition={{ type: "tween", duration: 0.28, ease: "easeOut" }}
           >
             <div className="flex items-center justify-between p-4">
-              <span className="font-wordmark text-[18px] font-semibold uppercase tracking-[0.08em]" style={{ color: "var(--color-primary)" }}>
-                Experience Jogja
-              </span>
+              <div className="hidden">
+                <span className="font-wordmark text-[18px] font-semibold uppercase tracking-[0.08em]" style={{ color: "var(--color-primary)" }}>
+                  Experience Jogja
+                </span>
+              </div>
+              <img src="/experience_jogja_logo.png" alt="Experience Jogja" className="max-h-[88px] w-auto object-contain" />
               <button
                 type="button"
                 onClick={onClose}

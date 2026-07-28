@@ -58,6 +58,7 @@ export default function CategoryGrid() {
             640: { slidesPerView: 3, grid: { rows: 2, fill: "row" } },
             1280: { slidesPerView: 4, grid: { rows: 2, fill: "row" } },
           }}
+          style={{ overflow: "visible" }}
           onBeforeInit={(swiper) => {
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;

@@ -18,7 +18,7 @@ export default function MegaMenu() {
           <div key={group.label_en} className="relative" onMouseEnter={() => setOpenIdx(i)}>
             <Link
               to={group.to || "#"}
-              className="focus-ring inline-flex items-center gap-1 rounded-md py-1 text-[17px] font-normal uppercase transition-colors"
+              className="focus-ring inline-flex items-center gap-1 rounded-md py-1 text-[17px] font-semibold uppercase tracking-wide transition-colors"
               style={{ color: open ? "var(--color-primary)" : "var(--text-secondary)" }}
               aria-expanded={open}
             >
@@ -54,7 +54,7 @@ export default function MegaMenu() {
         <Link
           key={item.label_en}
           to={item.to}
-          className="focus-ring rounded-md py-1 text-[17px] font-normal uppercase transition-colors"
+          className="focus-ring rounded-md py-1 text-[17px] font-semibold uppercase tracking-wide transition-colors"
           style={{ color: "var(--text-secondary)" }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-primary)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}

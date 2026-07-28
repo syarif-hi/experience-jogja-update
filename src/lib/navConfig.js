@@ -57,10 +57,23 @@ export const NAV_GROUPS = [
       { label_en: "Villages & Hidden Gems", label_id: "Desa & Permata Tersembunyi", to: "/destinations/villages-hidden-gems" },
     ],
   },
+  {
+    label_en: "Visitor Information", label_id: "Informasi Wisatawan",
+    to: "/visitor-information",
+    items: [
+      { label_en: "Visa & Immigration", label_id: "Visa & Imigrasi", to: "/visitor-information#visa" },
+      { label_en: "Getting Around", label_id: "Transportasi Lokal", to: "/visitor-information#transport" },
+      { label_en: "Weather & Climate", label_id: "Cuaca & Iklim", to: "/visitor-information#weather" },
+      { label_en: "Currency & Banks", label_id: "Mata Uang & Bank", to: "/visitor-information#currency" },
+      { label_en: "Health & Safety", label_id: "Kesehatan & Keselamatan", to: "/visitor-information#health-safety" },
+      { label_en: "Local Etiquette", label_id: "Etiket Lokal", to: "/visitor-information#etiquette" },
+      { label_en: "Internet & Connectivity", label_id: "Internet & Konektivitas", to: "/visitor-information#connectivity" },
+      { label_en: "Emergency Contacts", label_id: "Kontak Darurat", to: "/visitor-information#emergency" },
+    ],
+  },
 ];
 
 // Standalone top-level item (also linked from within Plan Your Trip — intentional).
 export const NAV_STANDALONE = [
   { label_en: "Events", label_id: "Acara", to: "/events" },
-  { label_en: "Visitor Information", label_id: "Informasi Wisatawan", to: "/visitor-information" },
 ];

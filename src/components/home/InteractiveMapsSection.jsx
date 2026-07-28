@@ -154,59 +154,51 @@ function MobilePinModal({ openPin, setOpenPin, pins, t }) {
   return createPortal(
     <div className="fixed inset-0 z-[10000] flex flex-col lg:hidden pointer-events-none">
       
-      {/* Row 1: Map View (Transparent backdrop that dismisses on click) */}
-      <div 
-        className="flex-1 pointer-events-auto" 
-        onClick={() => setOpenPin(null)} 
-      />
+      {/* Row 1: Map View (Transparent backdrop allows clicks to pass through to the map) */}
+      <div className="flex-1 pointer-events-none" />
 
       {/* The Bottom Sheet (Row 2 & 3) */}
-      <div className="h-[65vh] w-full flex flex-col pointer-events-auto shadow-[0_-10px_40px_rgba(0,0,0,0.2)] rounded-t-3xl overflow-hidden animate-in slide-in-from-bottom-full duration-300 relative" style={{ backgroundColor: "var(--bg-surface)" }}>
+      <div className="w-full max-h-[85vh] flex flex-col pointer-events-auto shadow-[0_-10px_40px_rgba(0,0,0,0.2)] rounded-t-3xl overflow-hidden animate-in slide-in-from-bottom-full duration-300 relative" style={{ backgroundColor: "var(--bg-surface)" }}>
         
         {/* Floating Close Button */}
         <button
           type="button"
           onClick={() => setOpenPin(null)}
-          className="absolute top-4 right-4 z-50 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md"
+          className="absolute top-4 right-4 z-50 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md"
         >
-          <X className="h-5 w-5" />
+          <X className="h-4 w-4" />
         </button>
 
-        {/* Row 2: Cover and details (flex-1 so it scrolls if needed) */}
-        <div className="flex-1 overflow-y-auto">
-          {/* Hero Image */}
-          <div className="h-[200px] w-full shrink-0 relative bg-black/5">
+        {/* Row 2: Horizontal Card Layout */}
+        <div className="flex flex-row overflow-hidden p-4 gap-4 pt-5">
+          {/* Left Column: Image Thumbnail */}
+          <div className="w-[110px] h-[130px] shrink-0 relative rounded-xl overflow-hidden bg-black/5">
             <SmartImage src={photoFor(pin)} alt={pin.label} loading="eager" className="h-full w-full object-cover" />
-            <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full shadow-lg border-2 border-white" style={{ backgroundColor: kc, color: "#fff" }}>
-              <Icon className="h-5 w-5" />
+            <div className="absolute bottom-1.5 right-1.5 flex h-6 w-6 items-center justify-center rounded-full shadow-lg border-2 border-white" style={{ backgroundColor: kc, color: "#fff" }}>
+              <Icon className="h-3 w-3" />
             </div>
           </div>
 
-          {/* Details & Actions */}
-          <div className="p-5 pb-6">
-            <p className="text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>{pin.label}</p>
+          {/* Right Column: Details & Actions */}
+          <div className="flex-1 flex flex-col justify-center overflow-hidden py-1">
+            <p className="text-[16px] font-bold leading-tight line-clamp-2" style={{ color: "var(--text-primary)" }}>{pin.label}</p>
             
-            <div className="mt-2 mb-3 flex items-center gap-2">
+            <div className="mt-1 flex items-center gap-2">
               {(pin.distanceKm != null && pin.distanceKm > 0) && (
-                <span className="text-[13px] font-mono-num font-bold" style={{ color: "var(--color-primary)" }}>
-                  {pin.distanceKm} KM · ~{pin.durationMin} min from Kraton
-                </span>
-              )}
-              {pin.distanceKm === 0 && (
-                <span className="text-[13px] font-mono-num font-bold" style={{ color: "var(--color-primary)" }}>
-                  0 KM anchor point
+                <span className="text-[12px] font-mono-num font-bold" style={{ color: "var(--color-primary)" }}>
+                  {pin.distanceKm} KM
                 </span>
               )}
             </div>
 
-            <p className="text-[14px] leading-relaxed mb-6 line-clamp-3" style={{ color: "var(--text-secondary)" }}>{pin.shortDesc}</p>
+            <p className="text-[12px] leading-snug mt-1.5 line-clamp-3" style={{ color: "var(--text-secondary)" }}>{pin.shortDesc}</p>
             
-            <div className="flex gap-3">
-              <Link to={`/destinations/${pin.slug}`} className="focus-ring flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-[14px] font-bold text-white shadow-md" style={{ backgroundColor: "var(--color-primary)" }}>
-                {t("viewDetails") || "View Details"}
+            <div className="mt-auto pt-3 flex gap-2">
+              <Link to={`/destinations/${pin.slug}`} className="focus-ring flex-1 flex items-center justify-center rounded-lg py-2 text-[12px] font-bold text-white shadow-md" style={{ backgroundColor: "var(--color-primary)" }}>
+                {t("viewDetails") || "Details"}
               </Link>
-              <a href={pin.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="focus-ring flex items-center justify-center gap-2 rounded-xl px-4 py-3 shadow-sm border transition-colors" style={{ backgroundColor: "var(--bg-surface-alt)", borderColor: "var(--border)", color: "var(--text-secondary)" }}>
-                <ExternalLink className="h-5 w-5" />
+              <a href={pin.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="focus-ring flex items-center justify-center rounded-lg px-3 py-2 shadow-sm border transition-colors" style={{ backgroundColor: "var(--bg-surface-alt)", borderColor: "var(--border)", color: "var(--text-secondary)" }}>
+                <ExternalLink className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -223,21 +215,25 @@ function MobilePinModal({ openPin, setOpenPin, pins, t }) {
               slidesOffsetAfter={20}
               className="w-full pb-3"
             >
-              {pins.filter(p => p.id !== openPin).map(otherPin => (
-                <SwiperSlide key={otherPin.id} style={{ width: "130px", height: "auto" }}>
-                  <button
-                    onClick={() => setOpenPin(otherPin.id)}
-                    className="w-full h-full text-left overflow-hidden rounded-xl transition-transform active:scale-95 flex flex-col focus-ring border border-gray-200 bg-white"
-                  >
-                    <div className="h-[75px] w-full shrink-0 bg-black/5">
-                      <SmartImage src={photoFor(otherPin)} alt={otherPin.label} loading="eager" className="h-full w-full object-cover" />
-                    </div>
-                    <div className="p-2.5 flex-1 flex flex-col justify-center bg-white h-[56px] shrink-0">
-                      <p className="text-[12px] font-semibold line-clamp-2 leading-tight text-gray-900">{otherPin.label}</p>
-                    </div>
-                  </button>
-                </SwiperSlide>
-              ))}
+              {pins.map(otherPin => {
+                const isActive = openPin === otherPin.id;
+                return (
+                  <SwiperSlide key={otherPin.id} style={{ width: "130px", height: "auto" }}>
+                    <button
+                      onClick={() => setOpenPin(otherPin.id)}
+                      className={`w-full h-full text-left overflow-hidden rounded-xl transition-transform active:scale-95 flex flex-col focus-ring ${isActive ? "border-transparent shadow-md" : "border border-gray-200 bg-white"}`}
+                      style={isActive ? { borderWidth: 1 } : {}} // Keep 1px width to prevent layout shift
+                    >
+                      <div className="h-[75px] w-full shrink-0 bg-black/5">
+                        <SmartImage src={photoFor(otherPin)} alt={otherPin.label} loading="eager" className="h-full w-full object-cover" />
+                      </div>
+                      <div className={`p-2.5 flex-1 flex flex-col justify-center h-[56px] shrink-0 ${isActive ? "bg-[var(--color-primary)] text-white" : "bg-white text-gray-900"}`}>
+                        <p className="text-[12px] font-semibold line-clamp-2 leading-tight">{otherPin.label}</p>
+                      </div>
+                    </button>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
         </div>
@@ -287,11 +283,38 @@ export default function InteractiveMapsSection() {
       const pin = pins.find((p) => p.id === openPin);
       if (pin) {
         const { x, y } = coordOf(pin);
-        panToPct(x, y);
+        panToPct(x, y + 28);
       }
       const yScroll = mapRef.current.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: yScroll, behavior: 'smooth' });
     }
+  }, [openPin]);
+
+  // Close modal when the user scrolls the window manually
+  useEffect(() => {
+    if (!openPin || window.innerWidth >= 1024) return;
+    
+    // Use a slight delay so the automated scroll to the map doesn't trigger the close immediately
+    let lastScroll = window.scrollY;
+    let isActive = false;
+    
+    const tId = setTimeout(() => {
+      lastScroll = window.scrollY;
+      isActive = true;
+    }, 500); // 500ms should be enough for smooth scroll to finish
+    
+    const handleScroll = () => {
+      if (!isActive) return;
+      if (Math.abs(window.scrollY - lastScroll) > 20) {
+        setOpenPin(null);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      clearTimeout(tId);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [openPin]);
 
   // Load saved positions + custom places + detect admin
