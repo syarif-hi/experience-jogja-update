@@ -18,17 +18,19 @@ export default function EventStrip() {
   }, []);
 
   return (
-    <section className="section-y" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
-      <div className="content-wrap">
-        <SectionHeading title={t("events.title")} subtitle={t("events.subtitle")} seeMoreTo="/events" />
-        <HScrollStrip>
-          {events === null
-            ? Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="aspect-[16/10] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
-              ))
-            : events.map((e) => <EventCard key={e.id} event={e} />)}
-        </HScrollStrip>
-      </div>
-    </section>
+    <div className="relative w-screen -ml-[50vw] left-1/2" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+      <section className="section-y mx-auto w-full max-w-[100vw]">
+        <div className="content-wrap">
+          <SectionHeading title={t("events.title")} subtitle={t("events.subtitle")} seeMoreTo="/events" />
+          <HScrollStrip>
+            {events === null
+              ? Array.from({ length: 4 }).map((_, i) => (
+                  <div key={i} className="aspect-[16/10] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
+                ))
+              : events.map((e) => <EventCard key={e.id} event={e} />)}
+          </HScrollStrip>
+        </div>
+      </section>
+    </div>
   );
 }

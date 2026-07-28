@@ -40,7 +40,7 @@ export default function SiteFooter() {
               <span className="font-wordmark text-[22px] font-semibold uppercase tracking-[0.08em] md:text-[26px]" style={{ color: "#FF0000" }}>
                 Experience Jogja
               </span>
-              <span className="text-[16px] font-medium" style={{ color: "#E3AE4E" }}>
+              <span className="text-[16px] md:text-[18px] font-medium" style={{ color: "#E3AE4E" }}>
                 {t("brand.tagline")}
               </span>
             </div>

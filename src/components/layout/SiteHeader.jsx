@@ -172,26 +172,11 @@ export default function SiteHeader() {
       }}
     >
       <div className="content-wrap py-3">
-        {/* Tablet utility row (md ≤ width < xl): search + language + auth, above the logo */}
-        <div className="mb-3 hidden items-center gap-3 md:flex xl:hidden">
-          <div className="relative flex-1">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" style={{ color: "var(--text-secondary)" }} />
-            <input
-              type="text"
-              placeholder={t("search.placeholder")}
-              className="focus-ring h-10 w-full rounded-lg pl-9 pr-3 text-[14px]"
-              style={{ backgroundColor: SEARCH_BG, color: "var(--text-primary)", border: "none" }}
-            />
-          </div>
-          <Toggles showCurrency={false} />
-          {authOrAvatar}
-        </div>
-
         <div className="flex items-center justify-between gap-3">
           {/* Wordmark */}
           {wordmark}
 
-          {/* Mobile Search */}
+          {/* Mobile Search (< md) */}
           <div className="relative flex-1 md:hidden">
             <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2" style={{ color: "var(--text-secondary)" }} />
             <input
@@ -200,6 +185,21 @@ export default function SiteHeader() {
               className="focus-ring h-10 w-full rounded-lg pl-8 pr-3 text-[16px] md:text-[14px]"
               style={{ backgroundColor: SEARCH_BG, color: "var(--text-primary)", border: "none" }}
             />
+          </div>
+
+          {/* Tablet Middle (md ≤ width < xl) */}
+          <div className="hidden flex-1 items-center justify-end gap-3 md:flex xl:hidden">
+            <div className="relative w-full max-w-[320px] lg:max-w-md">
+              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" style={{ color: "var(--text-secondary)" }} />
+              <input
+                type="text"
+                placeholder={t("search.placeholder")}
+                className="focus-ring h-10 w-full rounded-lg pl-9 pr-3 text-[14px]"
+                style={{ backgroundColor: SEARCH_BG, color: "var(--text-primary)", border: "none" }}
+              />
+            </div>
+            <Toggles showCurrency={false} />
+            {authOrAvatar}
           </div>
 
           <div className="flex items-center gap-3 shrink-0">

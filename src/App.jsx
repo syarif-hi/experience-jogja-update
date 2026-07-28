@@ -22,6 +22,7 @@ import ArticleDetail from '@/pages/ArticleDetail';
 import Stays from '@/pages/Stays';
 import StayDetail from '@/pages/StayDetail';
 import VisitorInformation from '@/pages/VisitorInformation';
+import VisitorInfoDetail from '@/pages/VisitorInfoDetail';
 import DiscoverPageTemplate from '@/pages/DiscoverPageTemplate';
 import Itineraries from '@/pages/Itineraries';
 import ItineraryDetail from '@/pages/ItineraryDetail';
@@ -78,7 +79,7 @@ const AuthenticatedApp = () => {
       <Route path="/discover/*" element={<DiscoverLanding />} />
       <Route path="/stays" element={<Stays />} />
       <Route path="/stays/:slug" element={<StayDetail />} />
-      <Route path="/visitor-information" element={<VisitorInformation />} />
+      <Route path="/visitor-information/*" element={<VisitorInformation />} />
       <Route path="/itineraries" element={<Itineraries />} />
       <Route path="/itineraries/:slug" element={<ItineraryDetail />} />
       <Route path="/trip-planner" element={<TripPlanner />} />

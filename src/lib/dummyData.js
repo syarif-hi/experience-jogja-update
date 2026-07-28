@@ -42,76 +42,102 @@ export const DUMMY_TOURS = [
 
 export const DUMMY_VISITOR_INFO = [
   {
-    id: 'd1', slug: 'visa', icon_name: 'Passport', display_order: 1,
-    title_en: 'Visa & Immigration', title_id: 'Visa & Imigrasi',
-    desc_en: 'Entry requirements and visa policies for international visitors to Yogyakarta.',
-    desc_id: 'Persyaratan masuk dan kebijakan visa untuk pengunjung internasional ke Yogyakarta.',
-    image_url: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&q=80',
-    items_en: ['Visa-free entry for 169 countries (30 days)', 'Visa on Arrival available at Adisucipto Airport', 'Passport must be valid for at least 6 months', 'E-Visa application through Indonesian Immigration website'],
-    items_id: ['Bebas visa untuk 169 negara (30 hari)', 'Visa on Arrival tersedia di Bandara Adisucipto', 'Paspor harus berlaku minimal 6 bulan', 'Aplikasi E-Visa melalui situs Imigrasi Indonesia'],
+    id: 'v1', slug: 'getting-to-jogja', icon_name: 'Plane', display_order: 1,
+    title_en: 'Getting to Jogja', title_id: 'Menuju ke Jogja',
+    desc_en: 'Information on airports, train stations, and bus terminals.',
+    desc_id: 'Informasi tentang bandara, stasiun kereta, dan terminal bus.',
+    image_url: 'https://images.unsplash.com/photo-rIW0doyBrK0?w=600&q=80',
+    items: [
+      {
+        title_en: 'Airports', title_id: 'Bandara',
+        desc_en: 'Yogyakarta International Airport (YIA) serves both domestic and international flights with modern facilities.',
+        desc_id: 'Bandara Internasional Yogyakarta (YIA) melayani penerbangan domestik dan internasional dengan fasilitas modern.',
+        image_url: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80'
+      },
+      {
+        title_en: 'Train Stations', title_id: 'Stasiun Kereta',
+        desc_en: 'Tugu Station is the main railway hub for executive trains, located right in the city center.',
+        desc_id: 'Stasiun Tugu adalah pusat kereta api utama untuk kelas eksekutif, terletak tepat di pusat kota.',
+        image_url: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80'
+      },
+      {
+        title_en: 'Bus Terminals', title_id: 'Terminal Bus',
+        desc_en: 'Giwangan is the primary intercity bus terminal connecting Jogja to various regions in Java.',
+        desc_id: 'Giwangan adalah terminal bus antarkota utama yang menghubungkan Jogja ke berbagai wilayah di Jawa.',
+        image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80'
+      },
+      {
+        title_en: 'Intercity Transportation', title_id: 'Transportasi Antar Kota',
+        desc_en: 'Minibuses and private shuttles offer convenient point-to-point connections to neighboring cities.',
+        desc_id: 'Minibus dan travel pribadi menawarkan koneksi dari titik ke titik yang nyaman ke kota-kota tetangga.',
+        image_url: 'https://images.unsplash.com/photo-1638210342930-1b777a82c40c?w=600&q=80'
+      }
+    ]
   },
   {
-    id: 'd2', slug: 'transport', icon_name: 'Bus', display_order: 2,
+    id: 'v2', slug: 'transport', icon_name: 'Bus', display_order: 2,
     title_en: 'Getting Around', title_id: 'Transportasi Lokal',
     desc_en: 'Navigate Yogyakarta with ease using various local transport options.',
     desc_id: 'Jelajahi Yogyakarta dengan mudah menggunakan berbagai pilihan transportasi lokal.',
-    image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80',
-    items_en: ['Trans Jogja bus (Rp 3,500 flat fare)', 'Ride-hailing apps: Grab & Gojek', 'Andong (horse-drawn carriage) around Malioboro', 'Becak (pedicab) for short distances', 'Motorbike & car rental available'],
-    items_id: ['Bus Trans Jogja (Rp 3.500 tarif flat)', 'Aplikasi ride-hailing: Grab & Gojek', 'Andong (kereta kuda) di sekitar Malioboro', 'Becak untuk jarak pendek', 'Sewa motor & mobil tersedia'],
+    image_url: 'https://images.unsplash.com/photo-c5dXzwnPkOk?w=600&q=80',
+    items: [
+      { title_en: 'Taxi', title_id: 'Taksi', desc_en: 'Metered taxis are widely available across the city.', desc_id: 'Taksi argo tersedia secara luas di seluruh kota.', image_url: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80' },
+      { title_en: 'Online Transportation', title_id: 'Transportasi Online', desc_en: 'Ride-hailing apps like Gojek and Grab are very popular and affordable.', desc_id: 'Aplikasi transportasi seperti Gojek dan Grab sangat populer dan terjangkau.', image_url: 'https://images.unsplash.com/photo-1621538355029-768132ce0d96?w=600&q=80' },
+      { title_en: 'Trans Jogja', title_id: 'Trans Jogja', desc_en: 'An affordable BRT system that covers major tourist spots.', desc_id: 'Sistem BRT terjangkau yang menjangkau tempat wisata utama.', image_url: 'https://images.unsplash.com/photo-1520627581566-51e44f808fcb?w=600&q=80' },
+      { title_en: 'Car Rental', title_id: 'Sewa Mobil', desc_en: 'Rent a car with or without a driver for flexible exploration.', desc_id: 'Sewa mobil dengan atau tanpa sopir untuk penjelajahan yang fleksibel.', image_url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80' }
+    ]
   },
   {
-    id: 'd3', slug: 'weather', icon_name: 'Sun', display_order: 3,
-    title_en: 'Weather & Climate', title_id: 'Cuaca & Iklim',
-    desc_en: 'Yogyakarta enjoys a tropical climate with warm temperatures year-round.',
-    desc_id: 'Yogyakarta menikmati iklim tropis dengan suhu hangat sepanjang tahun.',
-    image_url: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&q=80',
-    items_en: ['Average temperature: 26–32°C (78–90°F)', 'Dry season: April to October (best for sightseeing)', 'Wet season: November to March', 'Bring light clothing, sunscreen, and rain gear'],
-    items_id: ['Suhu rata-rata: 26–32°C', 'Musim kemarau: April hingga Oktober (terbaik untuk wisata)', 'Musim hujan: November hingga Maret', 'Bawa pakaian ringan, tabir surya, dan perlengkapan hujan'],
+    id: 'v3', slug: 'health-emergency', icon_name: 'HeartPulse', display_order: 3,
+    title_en: 'Health & Emergency', title_id: 'Kesehatan & Darurat',
+    desc_en: 'Important information regarding healthcare facilities and emergency contacts.',
+    desc_id: 'Informasi penting mengenai fasilitas kesehatan dan kontak darurat.',
+    image_url: 'https://images.unsplash.com/photo-msyQNw7AfJ0?w=600&q=80',
+    items: [
+      { title_en: 'Hospitals', title_id: 'Rumah Sakit', desc_en: 'International standard hospitals available 24/7 for emergencies.', desc_id: 'Rumah sakit standar internasional tersedia 24/7 untuk keadaan darurat.', image_url: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80' },
+      { title_en: 'Pharmacies', title_id: 'Apotek', desc_en: 'Many pharmacies (Apotek) operate late or 24 hours around the city center.', desc_id: 'Banyak apotek beroperasi larut malam atau 24 jam di sekitar pusat kota.', image_url: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80' },
+      { title_en: 'Police Stations', title_id: 'Kantor Polisi', desc_en: 'Tourist police are helpful for reporting lost items or incidents.', desc_id: 'Polisi pariwisata sangat membantu untuk melaporkan barang hilang atau insiden.', image_url: 'https://images.unsplash.com/photo-1598463943360-6435c2b0c1ec?w=600&q=80' },
+      { title_en: 'Emergency Numbers', title_id: 'Nomor Darurat', desc_en: 'Dial 112 for general emergencies, 118 for ambulance, 110 for police.', desc_id: 'Hubungi 112 untuk keadaan darurat umum, 118 untuk ambulans, 110 untuk polisi.', image_url: 'https://images.unsplash.com/photo-1534081333815-ae5019106622?w=600&q=80' }
+    ]
   },
   {
-    id: 'd4', slug: 'currency', icon_name: 'Banknote', display_order: 4,
-    title_en: 'Currency & Banks', title_id: 'Mata Uang & Bank',
-    desc_en: 'Practical tips on money, ATMs, and currency exchange in Yogyakarta.',
-    desc_id: 'Tips praktis tentang uang, ATM, dan penukaran mata uang di Yogyakarta.',
-    image_url: 'https://images.unsplash.com/photo-1554672407-607cff89d5e3?w=600&q=80',
-    items_en: ['Currency: Indonesian Rupiah (IDR)', 'ATMs widely available (BCA, Mandiri, BNI)', 'Credit cards accepted at major hotels & malls', 'Money changers on Jl. Malioboro and Jl. Solo', 'Tipping is not required but appreciated (5–10%)'],
-    items_id: ['Mata uang: Rupiah Indonesia (IDR)', 'ATM tersedia luas (BCA, Mandiri, BNI)', 'Kartu kredit diterima di hotel & mall besar', 'Penukaran uang di Jl. Malioboro dan Jl. Solo', 'Tip tidak wajib tapi dihargai (5–10%)'],
+    id: 'v4', slug: 'money-communication', icon_name: 'Banknote', display_order: 4,
+    title_en: 'Money & Communication', title_id: 'Uang & Komunikasi',
+    desc_en: 'Practical tips on money changers, ATMs, and internet access.',
+    desc_id: 'Tips praktis tentang penukaran uang, ATM, dan akses internet.',
+    image_url: 'https://images.unsplash.com/photo-UGg0AODkGJs?w=600&q=80',
+    items: [
+      { title_en: 'Money Changers', title_id: 'Penukaran Uang', desc_en: 'Authorized money changers offer competitive rates without hidden fees.', desc_id: 'Tempat penukaran uang resmi menawarkan nilai tukar kompetitif tanpa biaya tersembunyi.', image_url: 'https://images.unsplash.com/photo-1580519542036-ed47f3e404b9?w=600&q=80' },
+      { title_en: 'Banks and ATMs', title_id: 'Bank dan ATM', desc_en: 'ATMs are everywhere. Most accept major international cards.', desc_id: 'ATM ada di mana-mana. Sebagian besar menerima kartu internasional.', image_url: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=600&q=80' },
+      { title_en: 'SIM Cards', title_id: 'Kartu SIM', desc_en: 'Prepaid SIM cards for data can be easily purchased at phone kiosks.', desc_id: 'Kartu SIM prabayar untuk data dapat dengan mudah dibeli di kios ponsel.', image_url: 'https://images.unsplash.com/photo-1592890288564-76628a30a657?w=600&q=80' },
+      { title_en: 'Internet and Wi-Fi', title_id: 'Internet dan Wi-Fi', desc_en: 'Free Wi-Fi is common in cafes, hotels, and some public spaces.', desc_id: 'Wi-Fi gratis umum ditemukan di kafe, hotel, dan beberapa ruang publik.', image_url: 'https://images.unsplash.com/photo-1563207153-f403bf289096?w=600&q=80' }
+    ]
   },
   {
-    id: 'd5', slug: 'health-safety', icon_name: 'HeartPulse', display_order: 5,
-    title_en: 'Health & Safety', title_id: 'Kesehatan & Keselamatan',
-    desc_en: 'Stay safe and healthy during your trip to Yogyakarta.',
-    desc_id: 'Tetap aman dan sehat selama perjalanan Anda ke Yogyakarta.',
-    image_url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80',
-    items_en: ['Tap water is not drinkable — use bottled water', 'International hospitals: Siloam & JIH Hospital', 'Emergency number: 112 (national)', 'Travel insurance recommended', 'Pharmacies (Apotek) available in all areas'],
-    items_id: ['Air keran tidak layak minum — gunakan air kemasan', 'Rumah sakit internasional: Siloam & RS JIH', 'Nomor darurat: 112 (nasional)', 'Asuransi perjalanan direkomendasikan', 'Apotek tersedia di semua area'],
+    id: 'v5', slug: 'wellness-fitness', icon_name: 'Activity', display_order: 5,
+    title_en: 'Wellness & Fitness', title_id: 'Kebugaran & Kesehatan',
+    desc_en: 'Facilities and places for wellness, spa, and fitness activities.',
+    desc_id: 'Fasilitas dan tempat untuk aktivitas kebugaran, spa, dan kesehatan.',
+    image_url: 'https://images.unsplash.com/photo-sAHn3crnwAU?w=600&q=80',
+    items: [
+      { title_en: 'Spas', title_id: 'Spa', desc_en: 'Indulge in traditional Javanese massage and spa treatments.', desc_id: 'Manjakan diri dengan pijat tradisional Jawa dan perawatan spa.', image_url: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80' },
+      { title_en: 'Gyms', title_id: 'Gym', desc_en: 'Modern fitness centers are available in major hotels and malls.', desc_id: 'Pusat kebugaran modern tersedia di hotel-hotel besar dan mal.', image_url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80' },
+      { title_en: 'Yoga', title_id: 'Yoga', desc_en: 'Join yoga retreats and daily classes scattered around cultural hubs.', desc_id: 'Ikuti retret yoga dan kelas harian yang tersebar di pusat budaya.', image_url: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80' },
+      { title_en: 'Swimming Pools', title_id: 'Kolam Renang', desc_en: 'Public and hotel pools offer a great way to cool down.', desc_id: 'Kolam renang umum dan hotel menawarkan cara yang bagus untuk menyegarkan diri.', image_url: 'https://images.unsplash.com/photo-1519682577862-22b62b24e493?w=600&q=80' }
+    ]
   },
   {
-    id: 'd6', slug: 'etiquette', icon_name: 'Heart', display_order: 6,
-    title_en: 'Cultural Etiquette', title_id: 'Etika & Budaya',
-    desc_en: 'Respect local customs and traditions during your visit.',
-    desc_id: 'Hormati adat dan tradisi lokal selama kunjungan Anda.',
-    image_url: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
-    items_en: ['Remove shoes before entering homes and temples', 'Dress modestly when visiting religious sites', 'Use your right hand for giving and receiving', 'Ask permission before photographing people', 'Learn basic Javanese greetings (e.g., "Sugeng rawuh")'],
-    items_id: ['Lepas sepatu sebelum masuk rumah dan candi', 'Berpakaian sopan saat mengunjungi tempat ibadah', 'Gunakan tangan kanan untuk memberi dan menerima', 'Minta izin sebelum memfoto orang', 'Pelajari salam Jawa dasar (mis., "Sugeng rawuh")'],
-  },
-  {
-    id: 'd7', slug: 'connectivity', icon_name: 'Wifi', display_order: 7,
-    title_en: 'Connectivity & SIM Cards', title_id: 'Konektivitas & Kartu SIM',
-    desc_en: 'Stay connected with affordable data plans and Wi-Fi access.',
-    desc_id: 'Tetap terhubung dengan paket data terjangkau dan akses Wi-Fi.',
-    image_url: 'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=600&q=80',
-    items_en: ['Local SIM: Telkomsel, XL, Indosat (from Rp 50,000)', 'Free Wi-Fi at most cafés, hotels, and malls', '4G/LTE coverage throughout Yogyakarta', 'eSIM options available for newer phones', 'International roaming can be expensive — use local SIM'],
-    items_id: ['SIM lokal: Telkomsel, XL, Indosat (dari Rp 50.000)', 'Wi-Fi gratis di kebanyakan kafe, hotel, dan mall', 'Jangkauan 4G/LTE di seluruh Yogyakarta', 'eSIM tersedia untuk ponsel terbaru', 'Roaming internasional bisa mahal — gunakan SIM lokal'],
-  },
-  {
-    id: 'd8', slug: 'emergency', icon_name: 'Phone', display_order: 8,
-    title_en: 'Emergency Contacts', title_id: 'Kontak Darurat',
-    desc_en: 'Important phone numbers and contacts for emergencies.',
-    desc_id: 'Nomor telepon dan kontak penting untuk keadaan darurat.',
-    image_url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80',
-    items_en: ['Police: 110', 'Ambulance: 118 / 119', 'Fire Department: 113', 'Tourism Police: (0274) 587 360', 'Search & Rescue (SAR): 115'],
-    items_id: ['Polisi: 110', 'Ambulans: 118 / 119', 'Pemadam Kebakaran: 113', 'Polisi Pariwisata: (0274) 587 360', 'Pencarian & Pertolongan (SAR): 115'],
-  },
+    id: 'v6', slug: 'public-facilities', icon_name: 'Wifi', display_order: 6,
+    title_en: 'Public Facilities', title_id: 'Fasilitas Umum',
+    desc_en: 'Access public toilets, information centers, and other essential facilities.',
+    desc_id: 'Akses toilet umum, pusat informasi, dan fasilitas penting lainnya.',
+    image_url: 'https://images.unsplash.com/photo-8yDJZ92_H9Y?w=600&q=80',
+    items: [
+      { title_en: 'Information Centers', title_id: 'Pusat Informasi', desc_en: 'Tourist information centers are located in Malioboro and airports.', desc_id: 'Pusat informasi turis berlokasi di Malioboro dan bandara.', image_url: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&q=80' },
+      { title_en: 'Prayer Facilities', title_id: 'Fasilitas Ibadah', desc_en: 'Musholas (prayer rooms) are easily found in all public areas and malls.', desc_id: 'Mushola mudah ditemukan di seluruh area publik dan mal.', image_url: 'https://images.unsplash.com/photo-1564287827878-a006db231f4e?w=600&q=80' },
+      { title_en: 'Public Toilets', title_id: 'Toilet Umum', desc_en: 'Maintained public toilets are available in tourist districts for a small fee.', desc_id: 'Toilet umum yang terawat tersedia di kawasan wisata dengan biaya kecil.', image_url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80' },
+      { title_en: 'Luggage Storage', title_id: 'Penitipan Barang', desc_en: 'Available at Tugu Station for travelers wanting to explore hands-free.', desc_id: 'Tersedia di Stasiun Tugu untuk wisatawan yang ingin menjelajah tanpa beban.', image_url: 'https://images.unsplash.com/photo-1555353133-c2890529d2f2?w=600&q=80' }
+    ]
+  }
 ];
 
