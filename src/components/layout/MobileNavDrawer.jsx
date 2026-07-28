@@ -57,17 +57,6 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
               </button>
             </div>
 
-            <div className="px-4">
-              <div className="relative">
-                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" style={{ color: "var(--text-secondary)" }} />
-                <input
-                  type="text"
-                  placeholder={t("search.placeholder")}
-                  className="focus-ring w-full rounded-lg py-2.5 pl-9 pr-3 text-[14px]"
-                  style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--text-primary)", border: "none" }}
-                />
-              </div>
-            </div>
 
             <nav className="mt-2 flex-1 overflow-y-auto p-2">
               {NAV_GROUPS.map((group, i) => {

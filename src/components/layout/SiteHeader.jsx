@@ -187,11 +187,22 @@ export default function SiteHeader() {
           {authOrAvatar}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between gap-3">
           {/* Wordmark */}
           {wordmark}
 
-          <div className="ml-auto flex items-center gap-3">
+          {/* Mobile Search */}
+          <div className="relative flex-1 md:hidden">
+            <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2" style={{ color: "var(--text-secondary)" }} />
+            <input
+              type="text"
+              placeholder={t("search.placeholder")}
+              className="focus-ring h-10 w-full rounded-lg pl-8 pr-3 text-[16px] md:text-[14px]"
+              style={{ backgroundColor: SEARCH_BG, color: "var(--text-primary)", border: "none" }}
+            />
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
             {/* Desktop (xl+): search stacked above login button */}
             <div className="hidden xl:flex xl:flex-col xl:items-end xl:gap-2">
               <div className="relative w-[640px]">

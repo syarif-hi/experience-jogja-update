@@ -90,7 +90,7 @@ export default function HScrollStrip({ children, perView = 4, rows = 1, spaceBet
       spaceBetween={spaceBetween}
       slidesPerView={rows > 1 ? 1 : 1.15}
       breakpoints={bp}
-      style={{ overflow: "visible" }}
+      className="!overflow-visible xl:!overflow-hidden"
       onSwiper={(swiper) => { swiperRef.current = swiper; syncEdges(swiper); }}
       onSlideChange={syncEdges}
       onResize={syncEdges}

@@ -26,7 +26,7 @@ const PHOTOS = {
   borobudur: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80",
   mendut: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80",
   pawon: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80",
-  parangtritis: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",
+  parangtritis: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
   indrayanti: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
   "kukup-beach": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80",
   "timang-beach": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80",
@@ -221,13 +221,12 @@ function MobilePinModal({ openPin, setOpenPin, pins, t }) {
                   <SwiperSlide key={otherPin.id} style={{ width: "130px", height: "auto" }}>
                     <button
                       onClick={() => setOpenPin(otherPin.id)}
-                      className={`w-full h-full text-left overflow-hidden rounded-xl transition-transform active:scale-95 flex flex-col focus-ring ${isActive ? "border-transparent shadow-md" : "border border-gray-200 bg-white"}`}
-                      style={isActive ? { borderWidth: 1 } : {}} // Keep 1px width to prevent layout shift
+                      className={`w-full h-full text-left overflow-hidden rounded-xl transition-transform active:scale-95 flex flex-col focus-ring ${isActive ? "bg-[var(--color-primary)]" : "bg-white"}`}
                     >
                       <div className="h-[75px] w-full shrink-0 bg-black/5">
                         <SmartImage src={photoFor(otherPin)} alt={otherPin.label} loading="eager" className="h-full w-full object-cover" />
                       </div>
-                      <div className={`p-2.5 flex-1 flex flex-col justify-center h-[56px] shrink-0 ${isActive ? "bg-[var(--color-primary)] text-white" : "bg-white text-gray-900"}`}>
+                      <div className={`p-2.5 flex-1 flex flex-col justify-center min-h-[56px] ${isActive ? "bg-[var(--color-primary)] text-white" : "bg-white text-gray-900"}`}>
                         <p className="text-[12px] font-semibold line-clamp-2 leading-tight">{otherPin.label}</p>
                       </div>
                     </button>
@@ -283,10 +282,21 @@ export default function InteractiveMapsSection() {
       const pin = pins.find((p) => p.id === openPin);
       if (pin) {
         const { x, y } = coordOf(pin);
-        panToPct(x, y + 28);
+        panToPct(x, y + 20);
+        
+        // Wait briefly for React to apply the pan transform, then scroll the page
+        // so the pin itself is clearly visible above the modal
+        setTimeout(() => {
+          const pinEl = document.getElementById(`pin-btn-${openPin}`);
+          if (pinEl) {
+            const pinRect = pinEl.getBoundingClientRect();
+            const absolutePinY = window.scrollY + pinRect.top;
+            // Scroll so the pin sits at ~35% from the top of the screen
+            const targetY = absolutePinY - (window.innerHeight * 0.35);
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+          }
+        }, 50);
       }
-      const yScroll = mapRef.current.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: yScroll, behavior: 'smooth' });
     }
   }, [openPin]);
 
@@ -572,13 +582,16 @@ export default function InteractiveMapsSection() {
                   >
                     {/* Category badge + name label (no landmark illustration) */}
                     <span
-                      className="flex items-center gap-1.5 whitespace-nowrap rounded-full pr-2"
-                      style={{ backgroundColor: "rgba(255,255,255,0.92)", boxShadow: "0 1px 3px rgba(0,0,0,0.25)" }}
+                      className="flex items-center gap-1.5 whitespace-nowrap rounded-full pr-2 transition-colors"
+                      style={{ 
+                        backgroundColor: isOpen ? "var(--color-primary)" : "rgba(255,255,255,0.92)", 
+                        boxShadow: "0 1px 3px rgba(0,0,0,0.25)" 
+                      }}
                     >
                       <span className="flex h-4 w-4 items-center justify-center rounded-full ring-1 ring-white" style={{ backgroundColor: kc }}>
                         <Icon className="h-2.5 w-2.5" style={{ color: "#FFFFFF" }} />
                       </span>
-                      <span className="text-[11px] font-semibold leading-none" style={{ color: "#3a2c1a" }}>
+                      <span className="text-[11px] font-semibold leading-none transition-colors" style={{ color: isOpen ? "#FFFFFF" : "#3a2c1a" }}>
                         {pin.shortLabel}
                       </span>
                     </span>
