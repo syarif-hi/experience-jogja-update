@@ -76,7 +76,7 @@ export default function VisitorInfoDetail({ hideShell }) {
                     
                     {/* Section Content */}
                     <div className="flex flex-col md:flex-row gap-8 items-center">
-                      <div className="w-full md:w-1/2 overflow-hidden rounded-2xl relative aspect-[16/9]">
+                      <div className="w-full md:w-1/2 overflow-hidden rounded-2xl relative aspect-[4/3]">
                         <SmartImage src={item.image_url} alt={itemTitle} className="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
                       </div>
                       <div className="w-full md:w-1/2 flex flex-col justify-center">

@@ -3,7 +3,7 @@
 export const CATEGORIES = [
   { value: "landmarks", label_id: "Landmark", label_en: "Landmarks", desc_id: "Ikon kota yang tak boleh dilewatkan", desc_en: "Iconic city sights you can't miss", tagColor: "var(--tag-heritage)" },
   { value: "nature-outdoor", label_id: "Alam & Luar Ruangan", label_en: "Nature & Outdoor", desc_id: "Petualangan di alam terbuka", desc_en: "Your gateway to pure adventure", tagColor: "var(--tag-nature)" },
-  { value: "cultural-heritage-temples", label_id: "Warisan Budaya & Candi", label_en: "Cultural Heritage & Temples", desc_id: "Menjaga warisan untuk dunia", desc_en: "Preserving heritage for the world to see", tagColor: "var(--tag-heritage)" },
+  { value: "cultural-heritage-temples", label_id: "Candi", label_en: "Temples", desc_id: "Menjaga warisan untuk dunia", desc_en: "Preserving heritage for the world to see", tagColor: "var(--tag-heritage)" },
   { value: "art-museums", label_id: "Seni & Museum", label_en: "Art & Museums", desc_id: "Karya dan cerita di setiap dinding", desc_en: "Art and stories on every wall", tagColor: "var(--tag-culture)" },
   { value: "eat-drink", label_id: "Kuliner", label_en: "Eat & Drink", desc_id: "Cita rasa untuk setiap penjelajah", desc_en: "A signature taste for every traveler", tagColor: "var(--tag-lifestyle)" },
   { value: "shopping", label_id: "Belanja", label_en: "Shopping", desc_id: "Oleh-oleh dan kerajinan khas Jogja", desc_en: "Local crafts and souvenirs to bring home", tagColor: "var(--tag-lifestyle)" },

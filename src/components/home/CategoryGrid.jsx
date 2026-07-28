@@ -52,11 +52,12 @@ export default function CategoryGrid() {
         <Swiper
           modules={[Grid, Navigation]}
           spaceBetween={16}
-          slidesPerView={2}
+          slidesPerView={2.1}
           grid={{ rows: 2, fill: "row" }}
           breakpoints={{
-            640: { slidesPerView: 3, grid: { rows: 2, fill: "row" } },
-            1280: { slidesPerView: 4, grid: { rows: 2, fill: "row" } },
+            640: { slidesPerView: 2, grid: { rows: 2, fill: "row" } },
+            768: { slidesPerView: 3, grid: { rows: 1, fill: "row" } },
+            1024: { slidesPerView: 4, grid: { rows: 1, fill: "row" } },
           }}
           className="!overflow-visible xl:!overflow-hidden"
           onBeforeInit={(swiper) => {
@@ -79,7 +80,7 @@ export default function CategoryGrid() {
                   />
                 </div>
                 <div className="pt-3">
-                  <h3 className="text-[15px] font-medium md:text-[16px]" style={{ color: "var(--color-primary)" }}>
+                  <h3 className="line-clamp-2 text-[15px] font-medium md:text-[16px]" style={{ color: "var(--color-primary)" }}>
                     {language === "id" ? c.label_id : c.label_en}
                   </h3>
                   <p className="mt-1 text-[12px] font-normal leading-snug md:text-[13px]" style={{ color: "var(--text-secondary)" }}>

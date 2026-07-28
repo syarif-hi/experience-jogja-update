@@ -85,12 +85,12 @@ export default function Hero() {
       {/* Menu row — below the slider */}
       <div className="py-4" style={{ backgroundColor: "var(--bg-page)" }}>
         <div className="content-wrap">
-          <div className="flex flex-wrap items-center justify-start gap-x-10 gap-y-2">
+          <div className="flex flex-col md:flex-row md:flex-wrap items-start md:items-center justify-start gap-x-10 gap-y-4 md:gap-y-2">
             {PILLS.map((p) => (
               <Link
                 key={p.label}
                 to={p.to}
-                className="focus-ring whitespace-nowrap text-[17px] font-normal uppercase tracking-wide transition-opacity hover:opacity-70"
+                className="focus-ring block w-full md:w-auto text-[17px] font-normal uppercase tracking-wide transition-opacity hover:opacity-70"
                 style={{ color: "var(--text-primary)" }}
               >
                 {p.label}

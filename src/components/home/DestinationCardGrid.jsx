@@ -20,7 +20,7 @@ export default function DestinationCardGrid({ title, subtitle, filterField, alt 
     <section className="section-y" style={{ backgroundColor: alt ? "var(--bg-surface-alt)" : "transparent" }}>
       <div className="content-wrap">
         <SectionHeading title={title} subtitle={subtitle} seeMoreTo={seeMoreTo} />
-        <HScrollStrip>
+        <HScrollStrip rows={2}>
           {items === null
             ? Array.from({ length: 4 }).map((_, i) => (
                 <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />

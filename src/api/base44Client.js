@@ -1,7 +1,4 @@
 import axios from 'axios';
-import mockDb from '../../mock-backend/db.json';
-
-const isProd = import.meta.env.PROD;
 
 const api = axios.create({
   // Use json-server mock backend URL dynamically based on host
@@ -64,7 +61,6 @@ export const base44 = {
       
       return {
         list: async (sort = '', limit = 100) => {
-          if (isProd) return mockDb[entityName.toLowerCase()] || [];
           const params = {};
           if (sort.startsWith('-')) {
             params._sort = `-${sort.substring(1)}`;
@@ -77,20 +73,11 @@ export const base44 = {
             const res = await api.get(route, { params });
             return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
           } catch (e) {
-            return mockDb[entityName.toLowerCase()] || [];
+            console.error(`Error fetching list for ${route}:`, e);
+            return [];
           }
         },
         filter: async (filters = {}, sort = '', limit = 100) => {
-          const getMockData = () => {
-            let data = mockDb[entityName.toLowerCase()] || [];
-            for (const [k, v] of Object.entries(filters)) {
-              data = data.filter(item => item[k] === v);
-            }
-            return data;
-          };
-
-          if (isProd) return getMockData();
-
           const params = { ...filters };
           if (sort.startsWith('-')) {
             params._sort = `-${sort.substring(1)}`;
@@ -103,7 +90,8 @@ export const base44 = {
             const res = await api.get(route, { params });
             return Array.isArray(res.data) ? res.data : (res.data.data || res.data);
           } catch (e) {
-            return getMockData();
+            console.error(`Error filtering ${route}:`, e);
+            return [];
           }
         },
         create: async (data) => {
@@ -119,18 +107,12 @@ export const base44 = {
           return res.data;
         },
         get: async (id) => {
-          const getMockData = () => {
-            const data = mockDb[entityName.toLowerCase()] || [];
-            return data.find(item => item.id === id) || null;
-          };
-
-          if (isProd) return getMockData();
-
           try {
             const res = await api.get(`${route}/${id}`);
             return res.data;
           } catch (e) {
-            return getMockData();
+            console.error(`Error getting ${route}/${id}:`, e);
+            return null;
           }
         }
       };

@@ -22,10 +22,10 @@ export default function EventCard({ event }) {
       to={`/events/${event.slug}`}
       className="group flex w-full flex-col focus-ring rounded-2xl"
     >
-      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
         <SmartImage src={event.cover_image_url} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
         <div
-          className="absolute left-3 top-3 flex items-center gap-1.5 rounded-md px-3 py-1.5 font-mono-num text-[12px] font-medium"
+          className="hidden md:flex absolute left-3 top-3 items-center gap-1.5 rounded-md px-3 py-1.5 font-mono-num text-[12px] font-medium"
           style={{ backgroundColor: "var(--color-accent)", color: "var(--on-accent)" }}
         >
           <CalendarDays className="h-3.5 w-3.5" />
@@ -33,9 +33,16 @@ export default function EventCard({ event }) {
         </div>
       </div>
       <div className="flex flex-1 flex-col pt-3">
-        <h3 className="truncate text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
+        <h3 className="line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
           {title}
         </h3>
+        <div
+          className="md:hidden mt-2 inline-flex self-start items-center gap-1.5 rounded-md px-2.5 py-1 font-mono-num text-[11px] font-medium max-w-full"
+          style={{ backgroundColor: "var(--color-accent)", color: "var(--on-accent)" }}
+        >
+          <CalendarDays className="h-3.5 w-3.5 shrink-0" />
+          <span className="truncate">{dateLabel}</span>
+        </div>
         {event.venue && (
           <p className="mt-1.5 flex items-center gap-1.5 text-[13px] font-normal" style={{ color: "var(--text-secondary)" }}>
             <MapPin className="h-3.5 w-3.5 shrink-0" />

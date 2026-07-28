@@ -55,7 +55,7 @@ export default function Events({ hideShell }) {
         {filtered === null ? (
           <div className="mt-8 grid grid-cols-1 gap-6 pb-16 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="aspect-[16/10] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
+              <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
             ))}
           </div>
         ) : filtered.length === 0 ? (

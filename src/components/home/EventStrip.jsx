@@ -22,10 +22,12 @@ export default function EventStrip() {
       <section className="section-y mx-auto w-full max-w-[100vw]">
         <div className="content-wrap">
           <SectionHeading title={t("events.title")} subtitle={t("events.subtitle")} seeMoreTo="/events" />
-          <HScrollStrip>
+        </div>
+        <div className="mt-6 md:mt-0 md:px-0 pl-4 md:content-wrap">
+          <HScrollStrip rows={2}>
             {events === null
               ? Array.from({ length: 4 }).map((_, i) => (
-                  <div key={i} className="aspect-[16/10] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
+                  <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
                 ))
               : events.map((e) => <EventCard key={e.id} event={e} />)}
           </HScrollStrip>

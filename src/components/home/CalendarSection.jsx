@@ -237,8 +237,8 @@ export default function CalendarSection() {
         </div>
 
         {/* ROW 2 — event notes / list, 3-row horizontal swiper */}
-        <div className="mt-4 rounded-2xl p-4" style={{ backgroundColor: "var(--bg-surface)" }}>
-          <div className="mb-3 flex items-center justify-between gap-2">
+        <div className="mt-4 rounded-2xl p-4 md:px-4 md:mx-0 -mx-4" style={{ backgroundColor: "var(--bg-surface)" }}>
+          <div className="mb-3 flex items-center justify-between gap-2 px-4 md:px-0">
             <h3 className="text-[16px] font-semibold" style={{ color: "var(--text-primary)" }}>
               {selectedDay ? format(selectedDay, "d MMM yyyy") : t("calendar.eventsThisMonth")}
             </h3>
@@ -262,13 +262,15 @@ export default function CalendarSection() {
             </div>
           </div>
           {listedEvents.length === 0 ? (
-            <p className="mt-2 text-[14px]" style={{ color: "var(--text-secondary)" }}>{t("calendar.noEvents")}</p>
+            <p className="mt-2 text-[14px] px-4 md:px-0" style={{ color: "var(--text-secondary)" }}>{t("calendar.noEvents")}</p>
           ) : (
-            <HScrollStrip rows={3} perView={3} spaceBetween={12} navPlacement="external" onNavState={setNav}>
-              {listedEvents.map((ev) => (
-                <ul key={ev.id} className="h-full list-none"><CalendarEventItem event={ev} /></ul>
-              ))}
-            </HScrollStrip>
+            <div className="pl-4 md:pl-0">
+              <HScrollStrip rows={3} perView={3} spaceBetween={12} navPlacement="external" onNavState={setNav} mobileCols={1.1}>
+                {listedEvents.map((ev) => (
+                  <ul key={ev.id} className="h-full list-none"><CalendarEventItem event={ev} /></ul>
+                ))}
+              </HScrollStrip>
+            </div>
           )}
         </div>
       </div>

@@ -16,11 +16,11 @@ export default function ArticleCard({ article }) {
 
   return (
     <Link to={`/news/${article.slug}`} className="group flex flex-col focus-ring rounded-2xl">
-      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
         <SmartImage src={article.cover_image_url} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
         {article.topic_tag && (
           <span
-            className="absolute left-3 top-3 inline-flex items-center rounded-md px-3 py-1 text-[12px] font-semibold"
+            className="hidden md:inline-flex absolute left-3 top-3 items-center rounded-md px-3 py-1 text-[12px] font-semibold"
             style={{ backgroundColor: "var(--tag-culture)", color: "#FFFFFF" }}
           >
             {t(`topic.${article.topic_tag}`)}
@@ -29,9 +29,17 @@ export default function ArticleCard({ article }) {
       </div>
       <div className="flex flex-1 flex-col pt-3">
         <span className="font-body text-[12px]" style={{ color: "var(--text-secondary)" }}>{dateLabel}</span>
-        <h3 className="mt-1 truncate text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
+        <h3 className="mt-1 line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
           {title}
         </h3>
+        {article.topic_tag && (
+          <span
+            className="md:hidden mt-2 inline-flex self-start items-center rounded-md px-2.5 py-1 text-[11px] font-semibold max-w-full"
+            style={{ backgroundColor: "var(--tag-culture)", color: "#FFFFFF" }}
+          >
+            <span className="truncate">{t(`topic.${article.topic_tag}`)}</span>
+          </span>
+        )}
         <p className="mt-1.5 text-[13px] font-normal leading-snug line-clamp-3" style={{ color: "var(--text-secondary)" }}>
           {excerpt}
         </p>

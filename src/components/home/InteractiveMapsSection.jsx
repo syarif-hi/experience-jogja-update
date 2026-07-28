@@ -488,10 +488,10 @@ export default function InteractiveMapsSection() {
             </div>
 
         {/* Map */}
-        <div
-          ref={mapRef}
-          className="relative mx-auto w-full overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-[16/10]"
-          style={{ touchAction: zoomEnabled ? "none" : undefined }}
+          <div
+            ref={mapRef}
+            className="relative mx-auto w-full overflow-hidden rounded-2xl aspect-[4/5] md:aspect-[16/10]"
+            style={{ touchAction: zoomEnabled ? "none" : undefined }}
           onClick={() => setOpenPin(null)}
         >
           {/* Zoom controls — touch devices only */}
@@ -693,8 +693,8 @@ export default function InteractiveMapsSection() {
                   <Link
                     key={pin.id}
                     to={`/destinations/${pin.slug}`}
-                    onMouseEnter={() => { if (!editMode) setOpenPin(pin.id); }}
-                    onMouseLeave={() => { if (!editMode) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
+                    onMouseEnter={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin(pin.id); }}
+                    onMouseLeave={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
                     onClick={(e) => {
                       if (editMode) {
                         e.preventDefault();

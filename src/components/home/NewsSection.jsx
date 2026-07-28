@@ -21,10 +21,10 @@ export default function NewsSection() {
     <section className="section-y" style={{ backgroundColor: "var(--bg-page)" }}>
       <div className="content-wrap">
         <SectionHeading title={t("news.title")} subtitle={t("news.subtitle")} seeMoreTo="/news" />
-        <HScrollStrip>
+        <HScrollStrip mobileCols={2.1}>
           {articles === null
             ? Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="aspect-[16/10] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface)" }} />
+                <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface)" }} />
               ))
             : articles.map((a) => <ArticleCard key={a.id} article={a} />)}
         </HScrollStrip>

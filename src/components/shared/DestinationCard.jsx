@@ -23,14 +23,17 @@ export default function DestinationCard({ destination }) {
           alt={name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute left-3 top-3">
+        <div className="hidden md:block absolute left-3 top-3">
           <CategoryTag category={destination.category} />
         </div>
       </div>
       <div className="pt-3">
-        <h3 className="truncate text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
+        <h3 className="line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
           {name}
         </h3>
+        <div className="md:hidden mt-2 flex">
+          <CategoryTag category={destination.category} className="max-w-full truncate" />
+        </div>
         <p className="mt-1 text-[13px] font-medium leading-snug line-clamp-2" style={{ color: "var(--text-secondary)" }}>
           {descriptor}
         </p>

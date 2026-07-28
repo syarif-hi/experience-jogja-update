@@ -159,7 +159,7 @@ export default function SiteHeader() {
           {t("brand.tagline")}
         </span>
       </div>
-      <img src="/experience_jogja_logo.png" alt="Experience Jogja" className="max-h-[48px] md:max-h-[88px] w-auto object-contain" />
+      <img src="/experience_jogja_logo.png" alt="Experience Jogja" className="max-h-[78px] md:max-h-[88px] w-auto object-contain" />
     </Link>
   );
 
@@ -171,7 +171,7 @@ export default function SiteHeader() {
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
       }}
     >
-      <div className="content-wrap py-3">
+      <div className="content-wrap py-4">
         <div className="flex items-center justify-between gap-3">
           {/* Wordmark */}
           {wordmark}
