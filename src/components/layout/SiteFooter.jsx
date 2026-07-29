@@ -35,15 +35,12 @@ export default function SiteFooter() {
           {/* LEFT column — brand + explore */}
           <div>
             {/* Brand section */}
-            <div className="flex flex-col gap-1 leading-none">
-              <span className="text-[10px] tracking-wide" style={{ color: "#BDB0A3" }}>experiencejogja.com</span>
-              <span className="font-wordmark text-[22px] font-semibold uppercase tracking-[0.08em] md:text-[26px]" style={{ color: "#FF0000" }}>
-                Experience Jogja
-              </span>
-              <span className="text-[16px] md:text-[18px] font-medium" style={{ color: "#E3AE4E" }}>
+            <Link to="/" className="flex flex-col gap-2 leading-none">
+              <img src="/brand-logo-black.png" alt="Experience Jogja" className="max-h-[60px] md:max-h-[80px] w-auto object-contain object-left" />
+              <span className="text-[14px] md:text-[16px] font-medium mt-2" style={{ color: "#E3AE4E" }}>
                 {t("brand.tagline")}
               </span>
-            </div>
+            </Link>
 
             {/* Explore menu */}
             <div className="mt-8">
