@@ -31,7 +31,7 @@ This is a Yogyakarta tourism demo site built with React + Vite. Uses a mock back
       try_files $uri $uri/ /index.html;
   }
   ```
-- **API proxy** — Nginx forwards `/api/*` to json-server:
+- **API proxy** — Nginx forwards `/api/*` to experiencejogja-json-server:
   ```nginx
   location /api {
       proxy_pass http://127.0.0.1:3001/;
@@ -44,10 +44,10 @@ This is a Yogyakarta tourism demo site built with React + Vite. Uses a mock back
   ```cron
   */5 * * * * /path/to/deploy.sh >> /var/log/deploy.log 2>&1
   ```
-- `deploy.sh` uses `flock` to prevent concurrent runs, checks for new commits before build. It also restarts `json-server.service` after build to pick up `db.json` changes.
-- **json-server systemd service** — runs at port 3001, auto-restarts on failure, enabled on boot:
+- `deploy.sh` uses `flock` to prevent concurrent runs, checks for new commits before build. It also restarts `experiencejogja-json-server.service` after build to pick up `db.json` changes.
+- **experiencejogja-json-server systemd service** — runs at port 3001, auto-restarts on failure, enabled on boot:
   ```bash
-  # /etc/systemd/system/json-server.service
+  # /etc/systemd/system/experiencejogja-json-server.service
   [Unit]
   Description=JSON Server for Experience Jogja
   After=network.target
