@@ -176,16 +176,7 @@ export default function SiteHeader() {
           {/* Wordmark */}
           {wordmark}
 
-          {/* Mobile Search (< md) */}
-          <div className="relative flex-1 md:hidden">
-            <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2" style={{ color: "var(--text-secondary)" }} />
-            <input
-              type="text"
-              placeholder={t("search.placeholder")}
-              className="focus-ring h-10 w-full rounded-lg pl-8 pr-3 text-[16px] md:text-[14px]"
-              style={{ backgroundColor: SEARCH_BG, color: "var(--text-primary)", border: "none" }}
-            />
-          </div>
+
 
           {/* Tablet Middle (md ≤ width < xl) */}
           <div className="hidden flex-1 items-center justify-end gap-3 md:flex xl:hidden">
