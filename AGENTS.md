@@ -31,14 +31,45 @@ This is a Yogyakarta tourism demo site built with React + Vite. Uses a mock back
       try_files $uri $uri/ /index.html;
   }
   ```
+- **API proxy** — Nginx forwards `/api/*` to json-server:
+  ```nginx
+  location /api {
+      proxy_pass http://127.0.0.1:3001/;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+  }
+  ```
+  Note: trailing `/` in `proxy_pass` strips the `/api` prefix so `/api/event` → `/event`.
 - **Cron auto-deploy** (every 5 min):
   ```cron
   */5 * * * * /path/to/deploy.sh >> /var/log/deploy.log 2>&1
   ```
-- `deploy.sh` uses `flock` to prevent concurrent runs, checks for new commits before build.
-- **json-server must be running** at port 3001 for data to load. Either:
-  - Deploy json-server as a systemd service running `json-server mock-backend/db.json --port 3001 --host 0.0.0.0`
-  - Or proxy through Nginx
+- `deploy.sh` uses `flock` to prevent concurrent runs, checks for new commits before build. It also restarts `json-server.service` after build to pick up `db.json` changes.
+- **json-server systemd service** — runs at port 3001, auto-restarts on failure, enabled on boot:
+  ```bash
+  # /etc/systemd/system/json-server.service
+  [Unit]
+  Description=JSON Server for Experience Jogja
+  After=network.target
+
+  [Service]
+  Type=simple
+  User=ibradm
+  WorkingDirectory=/var/www/demo.experiencejogja.com
+  ExecStart=/usr/bin/npx json-server mock-backend/db.json --port 3001 --host 0.0.0.0
+  Restart=on-failure
+  RestartSec=5
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
+  Commands:
+  ```bash
+  sudo systemctl daemon-reload
+  sudo systemctl enable --now json-server
+  sudo systemctl status json-server
+  sudo journalctl -u json-server -f  # tail logs
+  ```
 
 ## Working Notes
 

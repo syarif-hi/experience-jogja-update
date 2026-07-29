@@ -21,4 +21,6 @@ fi
 npm ci --production=false
 npm run build
 
+sudo systemctl restart experiencejogja-json-server.service
+
 echo "Deploy done: $(date)"
