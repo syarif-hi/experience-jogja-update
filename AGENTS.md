@@ -56,7 +56,7 @@ This is a Yogyakarta tourism demo site built with React + Vite. Uses a mock back
   Type=simple
   User=ibradm
   WorkingDirectory=/var/www/demo.experiencejogja.com
-  ExecStart=/usr/bin/npx json-server mock-backend/db.json --port 3001 --host 0.0.0.0
+  ExecStart=/usr/bin/npx json-server mock-backend/db.json --port 3001 --host 127.0.0.1
   Restart=on-failure
   RestartSec=5
 
