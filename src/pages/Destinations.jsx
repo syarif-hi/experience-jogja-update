@@ -73,7 +73,7 @@ export default function Destinations({ hideShell = false, forcedType, forcedRege
         </div>
       )}
 
-      <div className="mt-8 grid grid-cols-1 gap-6 pb-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="mt-8 grid grid-cols-2 gap-4 pb-16 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
         {filtered === null ? (
           Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />

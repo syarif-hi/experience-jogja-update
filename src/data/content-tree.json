@@ -1,0 +1,894 @@
+{
+  "id": "visitor-info-root",
+  "kind": "hub",
+  "slug": "visitor-information",
+  "title": {
+    "en": "Visitor Information",
+    "id": "Informasi Pengunjung"
+  },
+  "children": [
+    {
+      "id": "getting-to-jogja",
+      "kind": "section",
+      "slug": "getting-to-jogja",
+      "title": {
+        "en": "Getting to Jogja",
+        "id": "Menuju Jogja"
+      },
+      "icon": "plane",
+      "coverImage": "/images/visitor-info/getting-to-jogja.jpg",
+      "summary": {
+        "en": "Planes, trains, and buses.",
+        "id": "Pesawat, kereta, dan bus."
+      },
+      "children": [
+        {
+          "id": "page-airports",
+          "kind": "page",
+          "slug": "airports",
+          "title": {
+            "en": "Airports",
+            "id": "Bandara"
+          },
+          "icon": "plane",
+          "coverImage": "https://picsum.photos/seed/Airports/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Airports in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Bandara di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          },
+          "children": [
+            {
+              "id": "page-yia-yogyakarta-international-airport-",
+              "kind": "page",
+              "slug": "yia-yogyakarta-international-airport-",
+              "title": {
+                "en": "YIA (Yogyakarta International Airport)",
+                "id": "YIA (Bandara Internasional Yogyakarta)"
+              },
+              "icon": "plane",
+              "coverImage": "https://picsum.photos/seed/YIA%20Airport%20Terminal/800/600",
+              "summary": {
+                "en": "Your complete guide to Yogyakarta International Airport (YIA) — Indonesia's newest and most modern airport serving the Yogyakarta region.",
+                "id": "Panduan lengkap Bandara Internasional Yogyakarta (YIA) — bandara terbaru dan termodern di Indonesia yang melayani wilayah Yogyakarta."
+              },
+              "meta": {
+                "estReadMins": 8,
+                "lastUpdated": "2026-06-15",
+                "tags": [
+                  "transport",
+                  "airport",
+                  "essential"
+                ],
+                "quickFacts": {
+                  "iataCode": "YIA",
+                  "fullName": "Yogyakarta International Airport",
+                  "opened": "2020",
+                  "operator": "PT Angkasa Pura I",
+                  "terminals": "1 (Domestic & International)",
+                  "annualCapacity": "20 million passengers",
+                  "distanceToCity": "42 km southwest of Yogyakarta city center",
+                  "elevation": "27 m (89 ft)"
+                },
+                "images": [
+                  {
+                    "url": "https://picsum.photos/seed/YIA-terminal-interior/900/500",
+                    "caption": {
+                      "en": "YIA's modern terminal building with its distinctive Javanese-inspired roof design",
+                      "id": "Terminal modern YIA dengan desain atap khas Jawa"
+                    }
+                  },
+                  {
+                    "url": "https://picsum.photos/seed/YIA-departure-hall/900/500",
+                    "caption": {
+                      "en": "Spacious departure hall with check-in counters and digital displays",
+                      "id": "Ruang keberangkatan yang luas dengan konter check-in dan layar digital"
+                    }
+                  },
+                  {
+                    "url": "https://picsum.photos/seed/YIA-runway-aerial/900/500",
+                    "caption": {
+                      "en": "Aerial view of YIA's 3,250-meter runway along the southern coast",
+                      "id": "Pemandangan udara landasan pacu YIA sepanjang 3.250 meter di pesisir selatan"
+                    }
+                  }
+                ],
+                "nearbyPlaces": [
+                  {
+                    "name": "Borobudur Temple",
+                    "distance": "35 min drive",
+                    "type": "landmark"
+                  },
+                  {
+                    "name": "Congot Beach",
+                    "distance": "12 min drive",
+                    "type": "landmark"
+                  },
+                  {
+                    "name": "Kulon Progo Town Center",
+                    "distance": "15 min drive",
+                    "type": "landmark"
+                  },
+                  {
+                    "name": "Menoreh Hills",
+                    "distance": "25 min drive",
+                    "type": "landmark"
+                  },
+                  {
+                    "name": "JOG (Adisutjipto Intl.)",
+                    "distance": "55 min drive",
+                    "type": "airport"
+                  }
+                ],
+                "mapImage": "/images/visitor/yia-area-map.jpg"
+              },
+              "body": {
+                "en": "## Overview\nYogyakarta International Airport (YIA) is Indonesia's newest gateway to the cultural heartland of Java. Opened in 2020 in the Kulon Progo regency, this state-of-the-art facility replaced much of the traffic from the older Adisutjipto Airport (JOG) and now serves as the primary airport for Yogyakarta and the surrounding region.\n\nDesigned by a team of Indonesian architects, the terminal building features a striking contemporary design inspired by traditional Javanese pendopo (open pavilion) architecture, with sweeping roof lines that echo the peaks of nearby Menoreh Hills.\n\n## Terminal & Facilities\nYIA operates from a single integrated terminal handling both domestic and international flights. The terminal is organized into clearly marked zones:\n\n- **Departure Hall (2F)** — Check-in counters, automated kiosks, immigration, and security screening\n- **Arrival Hall (1F)** — Baggage claim carousels, customs, and a visitor information desk\n- **Commercial Zone** — Restaurants, cafes, duty-free shops, and souvenir stores featuring local Javanese crafts\n- **Prayer Rooms** — Located on both floors with ablution facilities\n- **Lounges** — Concordia Lounge (international) and Saphire Lounge (domestic) offer comfortable seating, complimentary food, and Wi-Fi\n\n### Dining & Shopping\nThe airport offers a good selection of dining options ranging from Indonesian cuisine to international fast food:\n\n1. **Jejamuran Restaurant** — Local mushroom-based Javanese cuisine, a must-try\n2. **Gudeg Yu Djum** — Authentic Yogyakarta gudeg, a sweet jackfruit stew\n3. **Starbucks & J.CO Donuts** — Familiar international brands\n4. **Batik Keris** — High-quality batik clothing and accessories\n5. **Dagadu Djokdja** — Iconic Yogyakarta souvenir T-shirts and merchandise\n\n### Currency Exchange & Banking\nMultiple currency exchange counters and ATMs from major Indonesian banks (BCA, BNI, Mandiri, BRI) are available in both arrival and departure areas. Exchange rates at the airport are competitive but slightly below city-center rates.\n\n## Getting To & From YIA\nYIA is located approximately 42 km southwest of Yogyakarta city center. Several transportation options are available:\n\n### Airport Train (Recommended)\nThe **KA Bandara YIA** train connects the airport to Yogyakarta's Tugu Station in about 45 minutes. Trains run every 1–2 hours from early morning to late evening. Tickets cost around IDR 50,000 (≈ $3.20 USD) and can be purchased at the station or via the KAI Access app.\n\n### DAMRI Airport Bus\nDAMRI operates direct buses between YIA and several destinations:\n- **Yogyakarta city center** (Malioboro) — IDR 50,000, approximately 1.5 hours\n- **Magelang** — IDR 50,000, approximately 1 hour\n- **Purworejo** — IDR 35,000, approximately 1 hour\n\n### Taxi & Ride-hailing\nOfficial airport taxis (Blue Bird, Rajawali) are available at the designated taxi stand outside arrivals. Ride-hailing services (Grab, Gojek) can be ordered to the designated pick-up area. Expect to pay around IDR 250,000–350,000 for a ride to central Yogyakarta.\n\n### Car Rental\nSeveral car rental agencies operate counters in the arrival hall, including TRAC Astra and Bluebird Rental. Rates start from around IDR 400,000/day for a basic sedan with driver.\n\n## Airlines & Destinations\nYIA serves a growing number of domestic and international routes:\n\n**Domestic Airlines:** Garuda Indonesia, Lion Air, Batik Air, Citilink, AirAsia Indonesia, NAM Air, Sriwijaya Air\n\n**International Destinations:** Kuala Lumpur (AirAsia), Singapore (Scoot, Jetstar), and seasonal charter flights to various Asian destinations.\n\n## Practical Tips\n\n- **Arrive Early:** Allow at least 2 hours for domestic flights and 3 hours for international flights, as the airport can get busy during peak periods\n- **SIM Cards:** Purchase a local SIM card at counters near the arrival exit for affordable data during your trip\n- **Power Outlets:** Available throughout the terminal with Indonesian Type C/F sockets (220V). Bring a universal adapter\n- **Free Wi-Fi:** Available throughout the terminal — connect to \"YIA-FreeWiFi\" and register with your phone number\n- **Luggage Storage:** Available near the arrival hall, rates start from IDR 30,000/bag for 24 hours\n\n> **Pro Tip:** If you're heading to Borobudur Temple, YIA is actually closer than taking a flight to JOG airport. Consider arranging a direct transfer from YIA to Borobudur (approximately 35 minutes by car).\n",
+                "id": "## Ringkasan\nBandara Internasional Yogyakarta (YIA) adalah gerbang terbaru Indonesia menuju jantung budaya Pulau Jawa. Dibuka pada tahun 2020 di Kabupaten Kulon Progo, fasilitas canggih ini menggantikan sebagian besar lalu lintas dari Bandara Adisutjipto (JOG) yang lebih tua dan kini menjadi bandara utama untuk Yogyakarta dan wilayah sekitarnya.\n\nDirancang oleh tim arsitek Indonesia, bangunan terminal ini menampilkan desain kontemporer yang terinspirasi dari arsitektur pendopo Jawa tradisional, dengan garis atap yang menyapu yang menggemakan puncak Perbukitan Menoreh di dekatnya.\n\n## Terminal & Fasilitas\nYIA beroperasi dari terminal terintegrasi tunggal yang menangani penerbangan domestik dan internasional. Terminal ini diatur dalam zona-zona yang ditandai dengan jelas:\n\n- **Ruang Keberangkatan (2F)** — Konter check-in, kios otomatis, imigrasi, dan pemeriksaan keamanan\n- **Ruang Kedatangan (1F)** — Carousel bagasi, bea cukai, dan meja informasi pengunjung\n- **Zona Komersial** — Restoran, kafe, toko bebas bea, dan toko oleh-oleh yang menampilkan kerajinan Jawa lokal\n- **Ruang Ibadah** — Tersedia di kedua lantai dengan fasilitas wudhu\n- **Lounge** — Concordia Lounge (internasional) dan Saphire Lounge (domestik) menawarkan tempat duduk nyaman, makanan gratis, dan Wi-Fi\n\n### Makan & Belanja\nBandara menawarkan pilihan kuliner yang beragam mulai dari masakan Indonesia hingga makanan cepat saji internasional:\n\n1. **Restoran Jejamuran** — Kuliner Jawa berbasis jamur lokal, wajib dicoba\n2. **Gudeg Yu Djum** — Gudeg autentik Yogyakarta\n3. **Starbucks & J.CO Donuts** — Merek internasional yang familiar\n4. **Batik Keris** — Pakaian dan aksesori batik berkualitas tinggi\n5. **Dagadu Djokdja** — Kaos dan merchandise oleh-oleh ikonik Yogyakarta\n\n### Penukaran Mata Uang & Perbankan\nBeberapa konter penukaran mata uang dan ATM dari bank-bank besar Indonesia (BCA, BNI, Mandiri, BRI) tersedia di area kedatangan dan keberangkatan.\n\n## Menuju & Dari YIA\nYIA terletak sekitar 42 km barat daya pusat kota Yogyakarta. Beberapa pilihan transportasi tersedia:\n\n### Kereta Bandara (Direkomendasikan)\n**KA Bandara YIA** menghubungkan bandara ke Stasiun Tugu Yogyakarta dalam sekitar 45 menit. Kereta beroperasi setiap 1-2 jam dari pagi hingga malam. Tiket sekitar Rp 50.000 dan dapat dibeli di stasiun atau melalui aplikasi KAI Access.\n\n### Bus Bandara DAMRI\nDAMRI mengoperasikan bus langsung antara YIA dan beberapa tujuan:\n- **Pusat kota Yogyakarta** (Malioboro) — Rp 50.000, sekitar 1,5 jam\n- **Magelang** — Rp 50.000, sekitar 1 jam\n- **Purworejo** — Rp 35.000, sekitar 1 jam\n\n### Taksi & Transportasi Online\nTaksi bandara resmi (Blue Bird, Rajawali) tersedia di pangkalan taksi di luar kedatangan. Layanan transportasi online (Grab, Gojek) dapat dipesan ke area penjemputan khusus. Perkiraan biaya sekitar Rp 250.000-350.000 ke pusat kota Yogyakarta.\n\n### Sewa Mobil\nBeberapa agen rental mobil beroperasi di ruang kedatangan, termasuk TRAC Astra dan Bluebird Rental. Tarif mulai dari sekitar Rp 400.000/hari untuk sedan dasar dengan sopir.\n\n## Maskapai & Tujuan\nYIA melayani rute domestik dan internasional yang terus bertambah:\n\n**Maskapai Domestik:** Garuda Indonesia, Lion Air, Batik Air, Citilink, AirAsia Indonesia, NAM Air, Sriwijaya Air\n\n**Tujuan Internasional:** Kuala Lumpur (AirAsia), Singapura (Scoot, Jetstar), dan penerbangan charter musiman ke berbagai tujuan di Asia.\n\n## Tips Praktis\n\n- **Datang Lebih Awal:** Sisakan minimal 2 jam untuk penerbangan domestik dan 3 jam untuk internasional\n- **Kartu SIM:** Beli kartu SIM lokal di konter dekat pintu kedatangan untuk data terjangkau selama perjalanan\n- **Stop Kontak:** Tersedia di seluruh terminal dengan soket Indonesia Tipe C/F (220V)\n- **Wi-Fi Gratis:** Tersedia di seluruh terminal — hubungkan ke \"YIA-FreeWiFi\" dan daftar dengan nomor telepon Anda\n- **Penitipan Bagasi:** Tersedia di dekat ruang kedatangan, tarif mulai dari Rp 30.000/tas untuk 24 jam\n\n> **Tips Pro:** Jika Anda menuju Candi Borobudur, YIA sebenarnya lebih dekat daripada terbang ke bandara JOG. Pertimbangkan untuk mengatur transfer langsung dari YIA ke Borobudur (sekitar 35 menit dengan mobil).\n"
+              }
+            },
+            {
+              "id": "page-jog-adisutjipto-international-airport-",
+              "kind": "page",
+              "slug": "jog-adisutjipto-international-airport-",
+              "title": {
+                "en": "JOG (Adisutjipto International Airport)",
+                "id": "JOG (Bandara Internasional Adisutjipto)"
+              },
+              "icon": "plane",
+              "coverImage": "https://picsum.photos/seed/JOG%20(Adisutjipto%20International%20Airport)/800/600",
+              "summary": {
+                "en": "Comprehensive guide and information about JOG (Adisutjipto International Airport) in Yogyakarta.",
+                "id": "Panduan dan informasi lengkap tentang JOG (Bandara Internasional Adisutjipto) di Yogyakarta."
+              },
+              "meta": {
+                "estReadMins": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "page-train-stations",
+          "kind": "page",
+          "slug": "train-stations",
+          "title": {
+            "en": "Train Stations",
+            "id": "Stasiun Kereta"
+          },
+          "icon": "train",
+          "coverImage": "https://picsum.photos/seed/Train%20Stations/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Train Stations in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Stasiun Kereta di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          },
+          "children": [
+            {
+              "id": "page-tugu-station",
+              "kind": "page",
+              "slug": "tugu-station",
+              "title": {
+                "en": "Tugu Station",
+                "id": "Stasiun Tugu"
+              },
+              "icon": "train",
+              "coverImage": "https://picsum.photos/seed/Tugu%20Station/800/600",
+              "summary": {
+                "en": "Comprehensive guide and information about Tugu Station in Yogyakarta.",
+                "id": "Panduan dan informasi lengkap tentang Stasiun Tugu di Yogyakarta."
+              },
+              "meta": {
+                "estReadMins": 3
+              }
+            },
+            {
+              "id": "page-lempuyangan-station",
+              "kind": "page",
+              "slug": "lempuyangan-station",
+              "title": {
+                "en": "Lempuyangan Station",
+                "id": "Stasiun Lempuyangan"
+              },
+              "icon": "train",
+              "coverImage": "https://picsum.photos/seed/Lempuyangan%20Station/800/600",
+              "summary": {
+                "en": "Comprehensive guide and information about Lempuyangan Station in Yogyakarta.",
+                "id": "Panduan dan informasi lengkap tentang Stasiun Lempuyangan di Yogyakarta."
+              },
+              "meta": {
+                "estReadMins": 4
+              }
+            }
+          ]
+        },
+        {
+          "id": "page-bus-terminals",
+          "kind": "page",
+          "slug": "bus-terminals",
+          "title": {
+            "en": "Bus Terminals",
+            "id": "Terminal Bus"
+          },
+          "icon": "bus",
+          "coverImage": "https://picsum.photos/seed/Bus%20Terminals/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Bus Terminals in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Terminal Bus di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-intercity-transportation",
+          "kind": "page",
+          "slug": "intercity-transportation",
+          "title": {
+            "en": "Intercity Transportation",
+            "id": "Transportasi Antarkota"
+          },
+          "icon": "car",
+          "coverImage": "https://picsum.photos/seed/Intercity%20Transportation/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Intercity Transportation in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Transportasi Antarkota di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "getting-around",
+      "kind": "section",
+      "slug": "getting-around",
+      "title": {
+        "en": "Getting Around",
+        "id": "Berkeliling Jogja"
+      },
+      "icon": "map",
+      "coverImage": "/images/visitor-info/getting-around.jpg",
+      "summary": {
+        "en": "Local transport and rentals.",
+        "id": "Transportasi lokal dan persewaan."
+      },
+      "children": [
+        {
+          "id": "page-taxi",
+          "kind": "page",
+          "slug": "taxi",
+          "title": {
+            "en": "Taxi",
+            "id": "Taksi"
+          },
+          "icon": "car",
+          "coverImage": "https://picsum.photos/seed/Taxi/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Taxi in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Taksi di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-online-transportation",
+          "kind": "page",
+          "slug": "online-transportation",
+          "title": {
+            "en": "Online Transportation",
+            "id": "Transportasi Online"
+          },
+          "icon": "smartphone",
+          "coverImage": "https://picsum.photos/seed/Online%20Transportation/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Online Transportation in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Transportasi Online di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-trans-jogja",
+          "kind": "page",
+          "slug": "trans-jogja",
+          "title": {
+            "en": "Trans Jogja",
+            "id": "Trans Jogja"
+          },
+          "icon": "bus",
+          "coverImage": "https://picsum.photos/seed/Trans%20Jogja/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Trans Jogja in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Trans Jogja di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        },
+        {
+          "id": "page-car-rental",
+          "kind": "page",
+          "slug": "car-rental",
+          "title": {
+            "en": "Car Rental",
+            "id": "Sewa Mobil"
+          },
+          "icon": "car",
+          "coverImage": "https://picsum.photos/seed/Car%20Rental/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Car Rental in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Sewa Mobil di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-motorcycle-rental",
+          "kind": "page",
+          "slug": "motorcycle-rental",
+          "title": {
+            "en": "Motorcycle Rental",
+            "id": "Sewa Motor"
+          },
+          "icon": "bike",
+          "coverImage": "https://picsum.photos/seed/Motorcycle%20Rental/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Motorcycle Rental in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Sewa Motor di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-bicycle-rental",
+          "kind": "page",
+          "slug": "bicycle-rental",
+          "title": {
+            "en": "Bicycle Rental",
+            "id": "Sewa Sepeda"
+          },
+          "icon": "bike",
+          "coverImage": "https://picsum.photos/seed/Bicycle%20Rental/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Bicycle Rental in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Sewa Sepeda di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        },
+        {
+          "id": "page-parking-information",
+          "kind": "page",
+          "slug": "parking-information",
+          "title": {
+            "en": "Parking Information",
+            "id": "Informasi Parkir"
+          },
+          "icon": "map-pin",
+          "coverImage": "https://picsum.photos/seed/Parking%20Information/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Parking Information in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Informasi Parkir di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "health-emergency",
+      "kind": "section",
+      "slug": "health-emergency",
+      "title": {
+        "en": "Health & Emergency",
+        "id": "Kesehatan & Darurat"
+      },
+      "icon": "heart-pulse",
+      "coverImage": "/images/visitor-info/health-and-safety.jpg",
+      "summary": {
+        "en": "Medical services and safety.",
+        "id": "Layanan medis dan keamanan."
+      },
+      "children": [
+        {
+          "id": "page-hospitals",
+          "kind": "page",
+          "slug": "hospitals",
+          "title": {
+            "en": "Hospitals",
+            "id": "Rumah Sakit"
+          },
+          "icon": "hospital",
+          "coverImage": "https://picsum.photos/seed/Hospitals/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Hospitals in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Rumah Sakit di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        },
+        {
+          "id": "page-clinics",
+          "kind": "page",
+          "slug": "clinics",
+          "title": {
+            "en": "Clinics",
+            "id": "Klinik"
+          },
+          "icon": "stethoscope",
+          "coverImage": "https://picsum.photos/seed/Clinics/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Clinics in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Klinik di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        },
+        {
+          "id": "page-pharmacies",
+          "kind": "page",
+          "slug": "pharmacies",
+          "title": {
+            "en": "Pharmacies",
+            "id": "Apotek"
+          },
+          "icon": "pill",
+          "coverImage": "https://picsum.photos/seed/Pharmacies/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Pharmacies in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Apotek di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-police-stations",
+          "kind": "page",
+          "slug": "police-stations",
+          "title": {
+            "en": "Police Stations",
+            "id": "Kantor Polisi"
+          },
+          "icon": "shield",
+          "coverImage": "https://picsum.photos/seed/Police%20Stations/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Police Stations in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Kantor Polisi di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-fire-department",
+          "kind": "page",
+          "slug": "fire-department",
+          "title": {
+            "en": "Fire Department",
+            "id": "Pemadam Kebakaran"
+          },
+          "icon": "flame",
+          "coverImage": "https://picsum.photos/seed/Fire%20Department/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Fire Department in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Pemadam Kebakaran di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-emergency-numbers",
+          "kind": "page",
+          "slug": "emergency-numbers",
+          "title": {
+            "en": "Emergency Numbers",
+            "id": "Nomor Darurat"
+          },
+          "icon": "phone",
+          "coverImage": "https://picsum.photos/seed/Emergency%20Numbers/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Emergency Numbers in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Nomor Darurat di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        },
+        {
+          "id": "page-tourist-assistance",
+          "kind": "page",
+          "slug": "tourist-assistance",
+          "title": {
+            "en": "Tourist Assistance",
+            "id": "Bantuan Wisatawan"
+          },
+          "icon": "life-buoy",
+          "coverImage": "https://picsum.photos/seed/Tourist%20Assistance/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Tourist Assistance in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Bantuan Wisatawan di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "money-communication",
+      "kind": "section",
+      "slug": "money-communication",
+      "title": {
+        "en": "Money & Communication",
+        "id": "Uang & Komunikasi"
+      },
+      "icon": "wallet",
+      "coverImage": "/images/visitor-info/money-and-costs.jpg",
+      "summary": {
+        "en": "ATMs, SIM cards, and Wi-Fi.",
+        "id": "ATM, kartu SIM, dan Wi-Fi."
+      },
+      "children": [
+        {
+          "id": "page-money-changers",
+          "kind": "page",
+          "slug": "money-changers",
+          "title": {
+            "en": "Money Changers",
+            "id": "Penukaran Uang"
+          },
+          "icon": "banknote",
+          "coverImage": "https://picsum.photos/seed/Money%20Changers/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Money Changers in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Penukaran Uang di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-banks-and-atms",
+          "kind": "page",
+          "slug": "banks-and-atms",
+          "title": {
+            "en": "Banks and ATMs",
+            "id": "Bank dan ATM"
+          },
+          "icon": "credit-card",
+          "coverImage": "https://picsum.photos/seed/Banks%20and%20ATMs/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Banks and ATMs in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Bank dan ATM di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-sim-cards",
+          "kind": "page",
+          "slug": "sim-cards",
+          "title": {
+            "en": "SIM Cards",
+            "id": "Kartu SIM"
+          },
+          "icon": "smartphone",
+          "coverImage": "https://picsum.photos/seed/SIM%20Cards/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about SIM Cards in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Kartu SIM di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-internet-and-wi-fi",
+          "kind": "page",
+          "slug": "internet-and-wi-fi",
+          "title": {
+            "en": "Internet and Wi-Fi",
+            "id": "Internet dan Wi-Fi"
+          },
+          "icon": "wifi",
+          "coverImage": "https://picsum.photos/seed/Internet%20and%20Wi-Fi/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Internet and Wi-Fi in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Internet dan Wi-Fi di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-post-offices",
+          "kind": "page",
+          "slug": "post-offices",
+          "title": {
+            "en": "Post Offices",
+            "id": "Kantor Pos"
+          },
+          "icon": "mail",
+          "coverImage": "https://picsum.photos/seed/Post%20Offices/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Post Offices in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Kantor Pos di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "wellness-fitness",
+      "kind": "section",
+      "slug": "wellness-fitness",
+      "title": {
+        "en": "Wellness & Fitness",
+        "id": "Kebugaran & Kesehatan"
+      },
+      "icon": "activity",
+      "coverImage": "/images/visitor-info/culture-and-etiquette.jpg",
+      "summary": {
+        "en": "Spas, gyms, and sports.",
+        "id": "Spa, gym, dan olahraga."
+      },
+      "children": [
+        {
+          "id": "page-spas",
+          "kind": "page",
+          "slug": "spas",
+          "title": {
+            "en": "Spas",
+            "id": "Spa"
+          },
+          "icon": "flower",
+          "coverImage": "https://picsum.photos/seed/Spas/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Spas in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Spa di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-massage-and-wellness-centers",
+          "kind": "page",
+          "slug": "massage-and-wellness-centers",
+          "title": {
+            "en": "Massage and Wellness Centers",
+            "id": "Pusat Pijat dan Kebugaran"
+          },
+          "icon": "heart",
+          "coverImage": "https://picsum.photos/seed/Massage%20and%20Wellness%20Centers/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Massage and Wellness Centers in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Pusat Pijat dan Kebugaran di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-gyms",
+          "kind": "page",
+          "slug": "gyms",
+          "title": {
+            "en": "Gyms",
+            "id": "Pusat Kebugaran"
+          },
+          "icon": "dumbbell",
+          "coverImage": "https://picsum.photos/seed/Gyms/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Gyms in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Pusat Kebugaran di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-sports-centers",
+          "kind": "page",
+          "slug": "sports-centers",
+          "title": {
+            "en": "Sports Centers",
+            "id": "Pusat Olahraga"
+          },
+          "icon": "activity",
+          "coverImage": "https://picsum.photos/seed/Sports%20Centers/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Sports Centers in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Pusat Olahraga di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        },
+        {
+          "id": "page-swimming-pools",
+          "kind": "page",
+          "slug": "swimming-pools",
+          "title": {
+            "en": "Swimming Pools",
+            "id": "Kolam Renang"
+          },
+          "icon": "droplet",
+          "coverImage": "https://picsum.photos/seed/Swimming%20Pools/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Swimming Pools in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Kolam Renang di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-yoga-and-meditation",
+          "kind": "page",
+          "slug": "yoga-and-meditation",
+          "title": {
+            "en": "Yoga and Meditation",
+            "id": "Yoga dan Meditasi"
+          },
+          "icon": "sun",
+          "coverImage": "https://picsum.photos/seed/Yoga%20and%20Meditation/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Yoga and Meditation in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Yoga dan Meditasi di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "public-facilities",
+      "kind": "section",
+      "slug": "public-facilities",
+      "title": {
+        "en": "Public Facilities",
+        "id": "Fasilitas Umum"
+      },
+      "icon": "building",
+      "coverImage": "/images/visitor-info/where-to-stay.jpg",
+      "summary": {
+        "en": "Toilets, storage, and more.",
+        "id": "Toilet, penyimpanan, dan lainnya."
+      },
+      "children": [
+        {
+          "id": "page-public-toilets",
+          "kind": "page",
+          "slug": "public-toilets",
+          "title": {
+            "en": "Public Toilets",
+            "id": "Toilet Umum"
+          },
+          "icon": "droplets",
+          "coverImage": "https://picsum.photos/seed/Public%20Toilets/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Public Toilets in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Toilet Umum di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-information-centers",
+          "kind": "page",
+          "slug": "information-centers",
+          "title": {
+            "en": "Information Centers",
+            "id": "Pusat Informasi"
+          },
+          "icon": "info",
+          "coverImage": "https://picsum.photos/seed/Information%20Centers/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Information Centers in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Pusat Informasi di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 2
+          }
+        },
+        {
+          "id": "page-prayer-facilities",
+          "kind": "page",
+          "slug": "prayer-facilities",
+          "title": {
+            "en": "Prayer Facilities",
+            "id": "Fasilitas Ibadah"
+          },
+          "icon": "moon",
+          "coverImage": "https://picsum.photos/seed/Prayer%20Facilities/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Prayer Facilities in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Fasilitas Ibadah di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-accessibility-services",
+          "kind": "page",
+          "slug": "accessibility-services",
+          "title": {
+            "en": "Accessibility Services",
+            "id": "Layanan Aksesibilitas"
+          },
+          "icon": "wheelchair",
+          "coverImage": "https://picsum.photos/seed/Accessibility%20Services/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Accessibility Services in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Layanan Aksesibilitas di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-luggage-storage",
+          "kind": "page",
+          "slug": "luggage-storage",
+          "title": {
+            "en": "Luggage Storage",
+            "id": "Penyimpanan Bagasi"
+          },
+          "icon": "briefcase",
+          "coverImage": "https://picsum.photos/seed/Luggage%20Storage/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Luggage Storage in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Penyimpanan Bagasi di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 4
+          }
+        },
+        {
+          "id": "page-laundromats",
+          "kind": "page",
+          "slug": "laundromats",
+          "title": {
+            "en": "Laundromats",
+            "id": "Laundry"
+          },
+          "icon": "shirt",
+          "coverImage": "https://picsum.photos/seed/Laundromats/800/600",
+          "summary": {
+            "en": "Comprehensive guide and information about Laundromats in Yogyakarta.",
+            "id": "Panduan dan informasi lengkap tentang Laundry di Yogyakarta."
+          },
+          "meta": {
+            "estReadMins": 3
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "en": "Everything you need to know for a seamless trip to Yogyakarta. From transportation to essential travel tips, find your complete guide here.",
+    "id": "Semua yang perlu Anda ketahui untuk perjalanan yang lancar ke Yogyakarta. Dari transportasi hingga tips perjalanan penting, temukan panduan lengkap Anda di sini."
+  }
+}

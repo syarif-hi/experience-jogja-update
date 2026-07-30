@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, MapPin, Share2, Clock, Wallet, Tag, CalendarPlus } from "lucide-react";
+import { ArrowLeft, MapPin, Share2, Clock, Wallet, Tag } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
 import { useCurrency } from "@/lib/CurrencyContext";

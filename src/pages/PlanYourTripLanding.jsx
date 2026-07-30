@@ -66,7 +66,7 @@ export default function PlanYourTripLanding() {
         </div>
       </div>
           
-      <div className="content-wrap mt-6 pb-16">
+      <div className="content-wrap mt-2 md:mt-6 pb-16">
         <Routes>
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
           <Route path="trip-planner" element={<TripPlanner hideShell />} />

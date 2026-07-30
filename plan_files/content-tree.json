@@ -1,0 +1,355 @@
+{
+  "$schema": "visitor-information-tree.v1",
+  "id": "visitor-information",
+  "slug": "visitor-information",
+  "kind": "hub",
+  "icon": "compass",
+  "title": { "en": "Visitor Information", "id": "Informasi Wisatawan" },
+  "summary": {
+    "en": "Everything you need to plan, arrive, and get around Yogyakarta — organised the way a trip actually unfolds.",
+    "id": "Semua yang perlu Anda ketahui untuk merencanakan, tiba, dan berkeliling Yogyakarta — disusun sesuai alur perjalanan sesungguhnya."
+  },
+  "children": [
+    {
+      "id": "getting-to-jogja",
+      "slug": "getting-to-jogja",
+      "kind": "section",
+      "icon": "plane",
+      "title": { "en": "Getting to Jogja", "id": "Menuju Jogja" },
+      "summary": {
+        "en": "Every way into the city: by air, rail, road, or sea.",
+        "id": "Semua jalur menuju kota: udara, kereta, darat, dan laut."
+      },
+      "coverImage": "/images/visitor-info/getting-to-jogja.jpg",
+      "children": [
+        {
+          "id": "airports",
+          "slug": "airports",
+          "kind": "section",
+          "icon": "plane-landing",
+          "title": { "en": "Airports", "id": "Bandara" },
+          "summary": {
+            "en": "Yogyakarta is served by two airports — here's how each one works.",
+            "id": "Yogyakarta dilayani oleh dua bandara — berikut cara kerja masing-masing."
+          },
+          "children": [
+            {
+              "id": "airport-yia",
+              "slug": "yogyakarta-international-airport-yia",
+              "kind": "page",
+              "icon": "plane-landing",
+              "title": { "en": "Yogyakarta International Airport (YIA)", "id": "Bandara Internasional Yogyakarta (YIA)" },
+              "summary": {
+                "en": "The main gateway in Kulon Progo, with direct rail into the city.",
+                "id": "Gerbang utama di Kulon Progo, dengan kereta langsung ke pusat kota."
+              },
+              "body": {
+                "en": "## Overview\nYIA (airport code: YIA) opened in 2019 and now handles almost all commercial flights to Yogyakarta, domestic and international.\n\n## Getting into the city\n- **Airport Rail**: direct service to Tugu Station, ~40 minutes.\n- **DAMRI shuttle bus**: connects to Malioboro and Prambanan.\n- **Ride-hailing**: pickup available from the designated zone on the ground floor.\n\n## Facilities\nPrayer rooms, nursing rooms, lounges, and a batik-themed retail corridor referencing local craft.",
+                "id": "## Ikhtisar\nYIA (kode bandara: YIA) dibuka pada 2019 dan kini melayani hampir seluruh penerbangan komersial ke Yogyakarta, domestik maupun internasional.\n\n## Menuju kota\n- **Kereta Bandara**: layanan langsung ke Stasiun Tugu, ±40 menit.\n- **Bus DAMRI**: terhubung ke Malioboro dan Prambanan.\n- **Ride-hailing**: penjemputan tersedia di zona khusus lantai dasar."
+              },
+              "meta": { "lastUpdated": "2026-06-01", "estReadMins": 4, "tags": ["airport", "transport"], "relatedPageIds": ["airport-jog", "by-train"] }
+            },
+            {
+              "id": "airport-jog",
+              "slug": "adisutjipto-airport-jog",
+              "kind": "page",
+              "icon": "plane-landing",
+              "title": { "en": "Adisutjipto Airport (JOG)", "id": "Bandara Adisutjipto (JOG)" },
+              "summary": {
+                "en": "The older in-city airport, now used for limited domestic routes.",
+                "id": "Bandara lama di dalam kota, kini hanya melayani rute domestik terbatas."
+              },
+              "body": {
+                "en": "## Overview\nJOG sits inside the city ring road and mainly handles a small number of domestic flights and military/charter traffic since YIA opened.\n\n## Getting into the city\nJust 10–15 minutes by car or ride-hailing to Malioboro.",
+                "id": "## Ikhtisar\nJOG berada di dalam lingkar kota dan kini hanya melayani sejumlah kecil penerbangan domestik serta lalu lintas militer/charter sejak YIA beroperasi.\n\n## Menuju kota\nHanya 10–15 menit berkendara atau ride-hailing menuju Malioboro."
+              },
+              "meta": { "lastUpdated": "2026-05-12", "estReadMins": 3, "tags": ["airport", "transport"], "relatedPageIds": ["airport-yia"] }
+            }
+          ]
+        },
+        {
+          "id": "by-train",
+          "slug": "by-train",
+          "kind": "page",
+          "icon": "train-front",
+          "title": { "en": "By Train", "id": "Dengan Kereta Api" },
+          "summary": {
+            "en": "Scenic rail routes from Jakarta, Bandung, and Surabaya into Tugu Station.",
+            "id": "Rute kereta yang indah dari Jakarta, Bandung, dan Surabaya menuju Stasiun Tugu."
+          },
+          "body": {
+            "en": "## Main routes\nTugu Station is the primary stop, with services from Jakarta (Gambir), Bandung, and Surabaya on multiple daily schedules.\n\n## Booking\nBook via KAI Access at least a few days ahead during peak holiday seasons.",
+            "id": "## Rute utama\nStasiun Tugu adalah pemberhentian utama, dengan layanan dari Jakarta (Gambir), Bandung, dan Surabaya beberapa kali sehari.\n\n## Pemesanan\nPesan melalui KAI Access, terutama beberapa hari sebelumnya saat musim liburan."
+          },
+          "meta": { "lastUpdated": "2026-04-20", "estReadMins": 3, "tags": ["train", "transport"], "relatedPageIds": ["airport-yia"] }
+        },
+        {
+          "id": "by-bus-car",
+          "slug": "by-bus-and-car",
+          "kind": "page",
+          "icon": "bus-front",
+          "title": { "en": "By Bus & Car", "id": "Dengan Bus & Mobil" },
+          "summary": {
+            "en": "Intercity buses and toll roads connecting Jogja to the rest of Java.",
+            "id": "Bus antarkota dan jalan tol yang menghubungkan Jogja dengan wilayah lain di Jawa."
+          },
+          "body": {
+            "en": "## Intercity buses\nOperators depart from Jakarta, Bandung, and Surabaya bus terminals, typically overnight.\n\n## By car\nThe Trans-Java toll road connects Jogja to Semarang and Solo, cutting travel time significantly versus arterial roads.",
+            "id": "## Bus antarkota\nOperator berangkat dari terminal bus Jakarta, Bandung, dan Surabaya, umumnya perjalanan malam hari.\n\n## Dengan mobil\nJalan tol Trans-Jawa menghubungkan Jogja dengan Semarang dan Solo, memangkas waktu tempuh dibanding jalur arteri."
+          },
+          "meta": { "lastUpdated": "2026-03-02", "estReadMins": 3, "tags": ["bus", "car", "transport"], "relatedPageIds": [] }
+        }
+      ]
+    },
+    {
+      "id": "getting-around",
+      "slug": "getting-around",
+      "kind": "section",
+      "icon": "map",
+      "title": { "en": "Getting Around", "id": "Berkeliling Kota" },
+      "summary": {
+        "en": "Trans Jogja, trains, ride-hailing, and rentals for exploring once you've arrived.",
+        "id": "Trans Jogja, kereta, ride-hailing, dan sewa kendaraan untuk berkeliling setelah tiba."
+      },
+      "coverImage": "/images/visitor-info/getting-around.jpg",
+      "children": [
+        {
+          "id": "public-transport",
+          "slug": "public-transport",
+          "kind": "section",
+          "icon": "bus",
+          "title": { "en": "Public Transport", "id": "Transportasi Umum" },
+          "summary": {
+            "en": "Buses and rail within the city and toward nearby sites.",
+            "id": "Bus dan kereta di dalam kota serta menuju destinasi terdekat."
+          },
+          "children": [
+            {
+              "id": "trans-jogja",
+              "slug": "trans-jogja-bus",
+              "kind": "page",
+              "icon": "bus",
+              "title": { "en": "Trans Jogja Bus", "id": "Bus Trans Jogja" },
+              "summary": { "en": "The city's low-cost bus network, tap-to-pay by card.", "id": "Jaringan bus murah kota, bayar dengan kartu tap." },
+              "body": {
+                "en": "## How it works\nFlat fare, tap-in with a Trans Jogja or compatible e-money card at the shelter, not on board.\n\n## Useful lines\nRoutes reach Malioboro, the Kraton area, and UGM; check the current route map, as lines are periodically renumbered.",
+                "id": "## Cara kerja\nTarif rata, tap masuk menggunakan kartu Trans Jogja atau e-money yang kompatibel di halte, bukan di dalam bus.\n\n## Rute berguna\nRute menjangkau Malioboro, area Kraton, dan UGM; periksa peta rute terkini karena nomor rute berubah secara berkala."
+              },
+              "meta": { "lastUpdated": "2026-02-14", "estReadMins": 3, "tags": ["bus", "public-transport"], "relatedPageIds": [] }
+            },
+            {
+              "id": "krl-train",
+              "slug": "commuter-rail",
+              "kind": "page",
+              "icon": "train-front",
+              "title": { "en": "Commuter Rail", "id": "Kereta Rel Listrik" },
+              "summary": { "en": "Local rail connecting Jogja to Solo and Kutoarjo.", "id": "Kereta lokal yang menghubungkan Jogja dengan Solo dan Kutoarjo." },
+              "body": {
+                "en": "## Route\nCommuter rail runs between Palur (Solo) and Kutoarjo via Yogyakarta, useful for day trips.\n\n## Tickets\nBuy at station kiosks or via the KRL access app.",
+                "id": "## Rute\nKereta komuter beroperasi antara Palur (Solo) dan Kutoarjo melalui Yogyakarta, cocok untuk perjalanan sehari.\n\n## Tiket\nBeli di loket stasiun atau melalui aplikasi KRL access."
+              },
+              "meta": { "lastUpdated": "2026-01-30", "estReadMins": 2, "tags": ["train", "public-transport"], "relatedPageIds": [] }
+            }
+          ]
+        },
+        {
+          "id": "ride-hailing",
+          "slug": "ride-hailing-and-taxis",
+          "kind": "page",
+          "icon": "car-taxi-front",
+          "title": { "en": "Ride-Hailing & Taxis", "id": "Ride-Hailing & Taksi" },
+          "summary": { "en": "App-based rides and metered taxis, and where each is and isn't allowed to stop.", "id": "Ride-hailing berbasis aplikasi dan taksi argo, serta area yang boleh dan tidak boleh untuk berhenti." },
+          "body": {
+            "en": "## Apps\nBoth major ride-hailing apps operate city-wide; fares are metered by the app, not negotiated.\n\n## Pickup zones\nSome tourist areas restrict where app-based rides can stop — look for the marked pickup point rather than the exact pin.",
+            "id": "## Aplikasi\nKedua aplikasi ride-hailing besar beroperasi di seluruh kota; tarif diatur otomatis oleh aplikasi, bukan tawar-menawar.\n\n## Zona penjemputan\nBeberapa kawasan wisata membatasi titik penjemputan ride-hailing — cari titik jemput yang ditandai, bukan pin lokasi persis."
+          },
+          "meta": { "lastUpdated": "2026-05-02", "estReadMins": 2, "tags": ["taxi", "ride-hailing"], "relatedPageIds": [] }
+        }
+      ]
+    },
+    {
+      "id": "where-to-stay",
+      "slug": "where-to-stay",
+      "kind": "section",
+      "icon": "bed-double",
+      "title": { "en": "Where to Stay", "id": "Tempat Menginap" },
+      "summary": { "en": "Neighbourhoods and budget tiers to help you pick a base.", "id": "Kawasan dan tingkatan anggaran untuk membantu memilih tempat menginap." },
+      "coverImage": "/images/visitor-info/where-to-stay.jpg",
+      "children": [
+        {
+          "id": "by-area",
+          "slug": "by-area",
+          "kind": "section",
+          "icon": "map-pinned",
+          "title": { "en": "By Area", "id": "Berdasarkan Kawasan" },
+          "summary": { "en": "Three very different bases for very different trips.", "id": "Tiga kawasan berbeda untuk gaya perjalanan yang berbeda." },
+          "children": [
+            {
+              "id": "malioboro-area",
+              "slug": "malioboro-and-city-center",
+              "kind": "page",
+              "icon": "map-pinned",
+              "title": { "en": "Malioboro & City Center", "id": "Malioboro & Pusat Kota" },
+              "summary": { "en": "Walkable, central, and close to the Kraton.", "id": "Mudah dijangkau jalan kaki, sentral, dekat Kraton." },
+              "body": { "en": "The classic first-timer base — Malioboro Street, the Kraton, and Taman Sari are all within an easy walk or short becak ride.", "id": "Kawasan klasik untuk pengunjung pertama kali — Jalan Malioboro, Kraton, dan Taman Sari dapat dijangkau dengan berjalan kaki atau becak singkat." },
+              "meta": { "lastUpdated": "2026-04-11", "estReadMins": 2, "tags": ["accommodation"], "relatedPageIds": [] }
+            },
+            {
+              "id": "prawirotaman-area",
+              "slug": "prawirotaman",
+              "kind": "page",
+              "icon": "map-pinned",
+              "title": { "en": "Prawirotaman", "id": "Prawirotaman" },
+              "summary": { "en": "A quieter, cafe-dense area popular with longer-stay travellers.", "id": "Kawasan yang lebih tenang, banyak kafe, populer untuk perjalanan lebih lama." },
+              "body": { "en": "South of the Kraton, known for guesthouses, cafes, and a slower pace than Malioboro.", "id": "Di selatan Kraton, dikenal dengan guesthouse, kafe, dan suasana yang lebih santai dibanding Malioboro." },
+              "meta": { "lastUpdated": "2026-03-18", "estReadMins": 2, "tags": ["accommodation"], "relatedPageIds": [] }
+            },
+            {
+              "id": "kaliurang-area",
+              "slug": "kaliurang-and-merapi-slopes",
+              "kind": "page",
+              "icon": "mountain",
+              "title": { "en": "Kaliurang & Slopes of Merapi", "id": "Kaliurang & Lereng Merapi" },
+              "summary": { "en": "Cooler air and mountain views, an hour from the city center.", "id": "Udara lebih sejuk dan pemandangan gunung, sekitar satu jam dari pusat kota." },
+              "body": { "en": "A good base for travellers prioritising nature and Merapi tours over city nightlife.", "id": "Basis yang baik bagi pelancong yang mengutamakan alam dan tur Merapi dibanding kehidupan malam kota." },
+              "meta": { "lastUpdated": "2026-02-25", "estReadMins": 2, "tags": ["accommodation", "nature"], "relatedPageIds": [] }
+            }
+          ]
+        },
+        {
+          "id": "by-budget",
+          "slug": "by-budget",
+          "kind": "page",
+          "icon": "wallet",
+          "title": { "en": "By Budget", "id": "Berdasarkan Anggaran" },
+          "summary": { "en": "What to expect at backpacker, mid-range, and luxury price points.", "id": "Gambaran harga untuk backpacker, kelas menengah, dan mewah." },
+          "body": { "en": "Rough nightly ranges from hostel dorms through boutique hotels, with notes on what changes at each tier.", "id": "Kisaran harga per malam mulai dari dorm hostel hingga hotel butik, disertai catatan perbedaan di tiap tingkatan." },
+          "meta": { "lastUpdated": "2026-04-30", "estReadMins": 3, "tags": ["accommodation", "budget"], "relatedPageIds": [] }
+        }
+      ]
+    },
+    {
+      "id": "money-and-costs",
+      "slug": "money-and-costs",
+      "kind": "section",
+      "icon": "banknote",
+      "title": { "en": "Money & Costs", "id": "Uang & Biaya" },
+      "summary": { "en": "Currency, cards, and what a typical day costs.", "id": "Mata uang, kartu, dan perkiraan biaya harian." },
+      "coverImage": "/images/visitor-info/money-and-costs.jpg",
+      "children": [
+        {
+          "id": "currency-exchange",
+          "slug": "currency-and-exchange",
+          "kind": "page",
+          "icon": "coins",
+          "title": { "en": "Currency & Exchange", "id": "Mata Uang & Penukaran" },
+          "summary": { "en": "Indonesian Rupiah basics and where to change money safely.", "id": "Dasar Rupiah Indonesia dan tempat aman menukar uang." },
+          "body": { "en": "Rupiah (IDR) only; use licensed moneychangers (look for the Bank Indonesia authorisation sticker) rather than street rates.", "id": "Hanya Rupiah (IDR); gunakan money changer berizin (cari stiker izin Bank Indonesia), bukan kurs jalanan." },
+          "meta": { "lastUpdated": "2026-05-20", "estReadMins": 2, "tags": ["money"], "relatedPageIds": ["atms-digital-payments"] }
+        },
+        {
+          "id": "atms-digital-payments",
+          "slug": "atms-and-digital-payments",
+          "kind": "page",
+          "icon": "credit-card",
+          "title": { "en": "ATMs & Digital Payments", "id": "ATM & Pembayaran Digital" },
+          "summary": { "en": "Card acceptance, ATM withdrawal limits, and QRIS.", "id": "Penerimaan kartu, batas tarik tunai ATM, dan QRIS." },
+          "body": { "en": "QRIS is widely accepted even at small vendors; carry some cash for markets and becak/andong rides.", "id": "QRIS diterima luas bahkan di pedagang kecil; tetap bawa uang tunai untuk pasar dan naik becak/andong." },
+          "meta": { "lastUpdated": "2026-05-20", "estReadMins": 2, "tags": ["money", "digital-payments"], "relatedPageIds": ["currency-exchange"] }
+        },
+        {
+          "id": "daily-budget",
+          "slug": "typical-daily-budget",
+          "kind": "page",
+          "icon": "receipt",
+          "title": { "en": "Typical Daily Budget", "id": "Perkiraan Anggaran Harian" },
+          "summary": { "en": "Rough daily spend across backpacker, mid-range, and comfortable trips.", "id": "Perkiraan pengeluaran harian untuk gaya backpacker, menengah, dan nyaman." },
+          "body": { "en": "A range covering food, local transport, and one paid attraction per day at each tier.", "id": "Kisaran mencakup makan, transportasi lokal, dan satu tempat wisata berbayar per hari di tiap tingkatan." },
+          "meta": { "lastUpdated": "2026-04-05", "estReadMins": 2, "tags": ["money", "budget"], "relatedPageIds": [] }
+        }
+      ]
+    },
+    {
+      "id": "health-and-safety",
+      "slug": "health-and-safety",
+      "kind": "section",
+      "icon": "shield-plus",
+      "title": { "en": "Health & Safety", "id": "Kesehatan & Keamanan" },
+      "summary": { "en": "Emergency numbers, clinics, and practical safety notes.", "id": "Nomor darurat, klinik, dan catatan keamanan praktis." },
+      "coverImage": "/images/visitor-info/health-and-safety.jpg",
+      "children": [
+        {
+          "id": "emergency-numbers",
+          "slug": "emergency-numbers",
+          "kind": "page",
+          "icon": "phone-call",
+          "title": { "en": "Emergency Numbers", "id": "Nomor Darurat" },
+          "summary": { "en": "Who to call for police, ambulance, and tourist assistance.", "id": "Nomor yang dihubungi untuk polisi, ambulans, dan bantuan wisatawan." },
+          "body": { "en": "National emergency line 112 covers police, fire, and ambulance dispatch; the regional tourism office also runs a visitor hotline.", "id": "Saluran darurat nasional 112 mencakup polisi, pemadam kebakaran, dan ambulans; dinas pariwisata daerah juga memiliki hotline wisatawan." },
+          "meta": { "lastUpdated": "2026-06-10", "estReadMins": 1, "tags": ["safety", "emergency"], "relatedPageIds": [] }
+        },
+        {
+          "id": "health-facilities",
+          "slug": "health-facilities-and-pharmacies",
+          "kind": "page",
+          "icon": "cross",
+          "title": { "en": "Health Facilities & Pharmacies", "id": "Fasilitas Kesehatan & Apotek" },
+          "summary": { "en": "Hospitals with international-standard care and 24-hour pharmacies.", "id": "Rumah sakit dengan layanan standar internasional dan apotek 24 jam." },
+          "body": { "en": "Several private hospitals in the city center offer English-speaking staff; note which take international insurance directly.", "id": "Beberapa rumah sakit swasta di pusat kota memiliki staf berbahasa Inggris; perhatikan mana yang menerima asuransi internasional langsung." },
+          "meta": { "lastUpdated": "2026-03-28", "estReadMins": 2, "tags": ["health"], "relatedPageIds": [] }
+        },
+        {
+          "id": "travel-insurance",
+          "slug": "travel-insurance-tips",
+          "kind": "page",
+          "icon": "shield-check",
+          "title": { "en": "Travel Insurance Tips", "id": "Tips Asuransi Perjalanan" },
+          "summary": { "en": "What to check before you land, especially for Merapi treks and diving.", "id": "Yang perlu diperiksa sebelum tiba, terutama untuk trekking Merapi dan menyelam." },
+          "body": { "en": "Confirm your policy covers volcano trekking and adventure activities, which standard plans sometimes exclude.", "id": "Pastikan polis Anda mencakup trekking gunung berapi dan aktivitas petualangan, yang terkadang dikecualikan pada paket standar." },
+          "meta": { "lastUpdated": "2026-02-02", "estReadMins": 2, "tags": ["safety", "insurance"], "relatedPageIds": [] }
+        }
+      ]
+    },
+    {
+      "id": "culture-and-etiquette",
+      "slug": "culture-and-etiquette",
+      "kind": "section",
+      "icon": "landmark",
+      "title": { "en": "Culture & Etiquette", "id": "Budaya & Etika" },
+      "summary": { "en": "Local customs, dress code, and a handful of useful phrases.", "id": "Adat lokal, kode berpakaian, dan beberapa frasa yang berguna." },
+      "coverImage": "/images/visitor-info/culture-and-etiquette.jpg",
+      "children": [
+        {
+          "id": "local-customs",
+          "slug": "local-customs-and-dress-code",
+          "kind": "page",
+          "icon": "shirt",
+          "title": { "en": "Local Customs & Dress Code", "id": "Adat Lokal & Kode Berpakaian" },
+          "summary": { "en": "What's expected at the Kraton, mosques, and everyday interactions.", "id": "Yang diharapkan saat mengunjungi Kraton, masjid, dan interaksi sehari-hari." },
+          "body": { "en": "Modest dress is expected inside the Kraton and religious sites; sarongs are often available to borrow at the entrance.", "id": "Berpakaian sopan diharapkan di dalam Kraton dan tempat ibadah; sarung biasanya tersedia untuk dipinjam di pintu masuk." },
+          "meta": { "lastUpdated": "2026-01-15", "estReadMins": 2, "tags": ["culture"], "relatedPageIds": ["visiting-temples-palaces"] }
+        },
+        {
+          "id": "visiting-temples-palaces",
+          "slug": "visiting-temples-and-palaces",
+          "kind": "page",
+          "icon": "landmark",
+          "title": { "en": "Visiting Temples & Palaces", "id": "Mengunjungi Candi & Keraton" },
+          "summary": { "en": "Etiquette and timing tips for Borobudur, Prambanan, and the Kraton.", "id": "Etika dan waktu terbaik mengunjungi Borobudur, Prambanan, dan Kraton." },
+          "body": { "en": "Arrive early to avoid both crowds and midday heat; some inner courtyards close during prayer times.", "id": "Datang lebih pagi untuk menghindari keramaian dan panas siang hari; beberapa halaman dalam ditutup saat waktu salat." },
+          "meta": { "lastUpdated": "2026-01-15", "estReadMins": 3, "tags": ["culture", "attractions"], "relatedPageIds": ["local-customs"] }
+        },
+        {
+          "id": "basic-phrases",
+          "slug": "language-and-basic-phrases",
+          "kind": "page",
+          "icon": "languages",
+          "title": { "en": "Language & Basic Phrases", "id": "Bahasa & Frasa Dasar" },
+          "summary": { "en": "A handful of Indonesian and Javanese phrases that go a long way.", "id": "Beberapa frasa Bahasa Indonesia dan Jawa yang sangat membantu." },
+          "body": { "en": "Bahasa Indonesia is the common language; a few Javanese greetings are appreciated but not expected.", "id": "Bahasa Indonesia adalah bahasa yang umum digunakan; beberapa sapaan Bahasa Jawa akan dihargai meski tidak wajib." },
+          "meta": { "lastUpdated": "2025-12-20", "estReadMins": 2, "tags": ["culture", "language"], "relatedPageIds": [] }
+        }
+      ]
+    }
+  ]
+}

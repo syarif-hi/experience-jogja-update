@@ -4,7 +4,17 @@ import React, { useState } from "react";
 export default function SmartImage({ src, alt, className = "", ...props }) {
   const [failed, setFailed] = useState(false);
   if (failed || !src) {
-    return <div className={className} style={{ backgroundColor: "var(--bg-surface-alt)" }} aria-label={alt} role="img" />;
+    // Use a clean placeholder image from Unsplash (via picsum) if the source is missing
+    const seed = encodeURIComponent(alt || "placeholder");
+    return (
+      <img 
+        src={`https://picsum.photos/seed/${seed}/600/400`} 
+        alt={alt || "Placeholder image"} 
+        className={className} 
+        style={{ objectFit: "cover" }}
+        {...props} 
+      />
+    );
   }
   return (
     <img

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import SmartImage from "@/components/shared/SmartImage";
 
 // Universal hero gallery: desktop/tablet = 1 hero + row of 5 thumbnails;

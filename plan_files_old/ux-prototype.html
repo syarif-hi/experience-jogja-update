@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Information — Navigation Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F3ECDD;
+    --paper:#FBF8F0;
+    --charcoal:#2B2622;
+    --charcoal-soft:#5B5349;
+    --line:rgba(43,38,34,.14);
+    --line-soft:rgba(43,38,34,.08);
+    --blue:#3C7A89;
+    --blue-tint:#E4EFF1;
+    --green:#5C7A4C;
+    --green-tint:#EAEFE3;
+    --gold:#B9852E;
+    --gold-tint:#F6ECD8;
+    --terracotta:#B5502D;
+    --terracotta-tint:#F5E5DC;
+    --slate:#6B6459;
+    --slate-tint:#ECE8E0;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;margin:0;}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.02em;text-transform:uppercase;}
+
+  /* ---------- site header (minimal, for context only) ---------- */
+  .site-header{
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .site-header .logo{font-family:'Fraunces',serif;font-size:19px;font-weight:600;}
+  .site-header .logo span{color:var(--gold);}
+  .site-header nav{font-size:13px;opacity:.75;display:flex;gap:22px;}
+  @media (max-width:640px){.site-header nav{display:none;}}
+
+  /* ---------- breadcrumb ---------- */
+  .breadcrumb-bar{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:12px 28px;
+    position:sticky;top:0;z-index:20;
+  }
+  .breadcrumb{
+    display:flex;align-items:center;gap:6px;
+    overflow-x:auto;white-space:nowrap;
+    font-size:13px;
+    scrollbar-width:none;
+  }
+  .breadcrumb::-webkit-scrollbar{display:none;}
+  .breadcrumb a, .breadcrumb .crumb-current{
+    color:var(--charcoal-soft);text-decoration:none;padding:4px 2px;border-radius:6px;
+    cursor:pointer;
+  }
+  .breadcrumb a:hover{color:var(--charcoal);text-decoration:underline;}
+  .breadcrumb .crumb-current{color:var(--charcoal);font-weight:600;cursor:default;}
+  .breadcrumb .sep{color:var(--line);opacity:1;color:#C9C0AE;font-size:13px;}
+
+  /* ---------- layout shell ---------- */
+  .shell{display:flex;align-items:flex-start;max-width:1180px;margin:0 auto;}
+  .sidebar-col{
+    width:288px;flex-shrink:0;
+    position:sticky;top:53px;
+    height:calc(100vh - 53px);
+    overflow-y:auto;
+    border-right:1px solid var(--line);
+    background:var(--paper);
+    padding:18px 14px 40px;
+  }
+  .content-col{flex:1;min-width:0;padding:32px 40px 80px;}
+
+  /* mobile drawer trigger, hidden on desktop */
+  .mobile-browse{display:none;}
+
+  @media (max-width:900px){
+    .sidebar-col{display:none;}
+    .content-col{padding:22px 18px 60px;}
+    .mobile-browse{
+      display:flex;align-items:center;justify-content:space-between;
+      margin:14px 18px 0;padding:11px 14px;
+      background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+      cursor:pointer;font-size:13.5px;font-weight:600;
+    }
+    .mobile-browse svg{width:16px;height:16px;}
+  }
+
+  /* ---------- sidebar tree ---------- */
+  .sidebar-search{
+    display:flex;align-items:center;gap:8px;
+    background:var(--cream);border:1px solid var(--line);border-radius:8px;
+    padding:8px 10px;margin-bottom:14px;
+  }
+  .sidebar-search input{
+    border:none;background:transparent;outline:none;font-size:13px;width:100%;
+    font-family:'Inter',sans-serif;color:var(--charcoal);
+  }
+  .sidebar-search svg{flex-shrink:0;opacity:.5;width:15px;height:15px;}
+  .sidebar-clear{background:none;border:none;color:var(--charcoal-soft);font-size:12px;cursor:pointer;padding:0 2px;}
+
+  .tree-label{
+    font-size:10.5px;color:var(--charcoal-soft);margin:0 4px 8px;letter-spacing:.08em;
+  }
+
+  ul.tree, ul.tree ul{list-style:none;margin:0;padding:0;}
+  ul.tree ul{margin-left:14px;border-left:1px solid var(--line-soft);padding-left:8px;}
+  .tree li{margin:1px 0;}
+
+  .node-row{
+    display:flex;align-items:center;gap:6px;
+    padding:7px 8px;border-radius:7px;cursor:pointer;
+    font-size:13.5px;line-height:1.3;
+    color:var(--charcoal-soft);
+  }
+  .node-row:hover{background:var(--line-soft);}
+  .node-row.active{
+    background:var(--sw, var(--slate-tint));
+    color:var(--charcoal);font-weight:600;
+    box-shadow:inset 3px 0 0 var(--sc,var(--slate));
+  }
+  .node-row.ancestor{color:var(--charcoal);font-weight:600;}
+  .node-row .chev{
+    width:14px;height:14px;flex-shrink:0;transition:transform .15s ease;
+    opacity:.55;
+  }
+  .node-row .chev.open{transform:rotate(90deg);}
+  .node-row .chev.spacer{visibility:hidden;}
+  .node-row .dot{
+    width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--sc,#999);opacity:.85;
+  }
+  .node-row .lbl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .node-row mark{background:var(--gold-tint);color:inherit;border-radius:3px;padding:0 1px;}
+
+  .no-match{font-size:12.5px;color:var(--charcoal-soft);padding:10px 8px;font-style:italic;}
+
+  /* ---------- content templates ---------- */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;
+    background:var(--sw,var(--slate-tint));color:var(--sc,var(--slate));
+    margin-bottom:14px;
+  }
+  .content-col h1{font-size:30px;margin-bottom:10px;}
+  .intro{font-size:15.5px;color:var(--charcoal-soft);max-width:640px;line-height:1.6;margin-bottom:28px;}
+
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px;cursor:pointer;transition:box-shadow .15s ease, transform .15s ease;
+    border-top:3px solid var(--sc,var(--slate));
+  }
+  .card:hover{box-shadow:0 6px 18px rgba(43,38,34,.08);transform:translateY(-1px);}
+  .card h3{font-size:15.5px;margin-bottom:5px;}
+  .card p{font-size:12.5px;color:var(--charcoal-soft);margin:0;line-height:1.5;}
+  .card .meta{font-size:11px;color:var(--charcoal-soft);margin-top:10px;opacity:.75;}
+
+  .detail-body{max-width:660px;}
+  .detail-body h2{font-size:17px;margin:26px 0 8px;}
+  .detail-body p{font-size:14.5px;line-height:1.7;color:var(--charcoal-soft);margin:0 0 4px;}
+
+  .sibling-nav{
+    display:flex;justify-content:space-between;gap:16px;
+    max-width:660px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);
+  }
+  .sib-btn{
+    display:flex;flex-direction:column;gap:2px;
+    padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius);
+    cursor:pointer;background:var(--paper);max-width:48%;
+  }
+  .sib-btn:hover{border-color:var(--charcoal-soft);}
+  .sib-btn.next{text-align:right;margin-left:auto;}
+  .sib-btn .dir{font-size:10.5px;color:var(--charcoal-soft);}
+  .sib-btn .name{font-size:13.5px;font-weight:600;}
+
+  /* ---------- mobile drawer ---------- */
+  .drawer-backdrop{
+    display:none;position:fixed;inset:0;background:rgba(43,38,34,.4);z-index:40;
+  }
+  .drawer-backdrop.open{display:block;}
+  .drawer{
+    position:fixed;top:0;left:0;bottom:0;width:min(320px,84vw);
+    background:var(--paper);z-index:41;
+    transform:translateX(-100%);transition:transform .22s ease;
+    padding:16px 14px 30px;overflow-y:auto;
+  }
+  .drawer.open{transform:translateX(0);}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .drawer-head .mono{font-size:11px;color:var(--charcoal-soft);}
+  .drawer-close{background:none;border:none;font-size:20px;line-height:1;cursor:pointer;color:var(--charcoal-soft);}
+
+  /* color chip variants applied via inline style using --sc/--sw */
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo">Experience <span>Jogja</span></div>
+    <nav><span>Explore</span><span>Events</span><span>Stories</span><span>Visitor Information</span></nav>
+  </header>
+
+  <div class="breadcrumb-bar">
+    <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
+  </div>
+
+  <div class="mobile-browse" id="mobileBrowseBtn">
+    <span id="mobileBrowseLabel">Browse Visitor Information</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+  </div>
+
+  <div class="shell">
+    <aside class="sidebar-col" id="sidebarCol">
+      <div class="sidebar-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="searchInput" type="text" placeholder="Find a page in this section…" />
+      </div>
+      <div class="tree-label mono" id="treeLabel">Visitor information</div>
+      <ul class="tree" id="treeRoot"></ul>
+    </aside>
+
+    <main class="content-col" id="contentCol"></main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-head">
+      <span class="mono">Visitor information</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close">×</button>
+    </div>
+    <div class="sidebar-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="searchInputMobile" type="text" placeholder="Find a page in this section…" />
+    </div>
+    <ul class="tree" id="treeRootMobile"></ul>
+  </div>
+
+<script>
+/* ============ DATA ============ */
+const TREE = {
+  id:"visitor-information", label:"Visitor Information", slug:"/visitor-information",
+  intro:"Everything you need to plan the practical side of your trip to Yogyakarta — getting here, getting around, where to stay, and the essentials.",
+  children:[
+    { id:"getting-to-jogja", label:"Getting to Jogja", color:"blue",
+      intro:"Yogyakarta is reachable by air, rail, road, and bus. Pick your arrival method for terminal-by-terminal detail.",
+      children:[
+        { id:"airports", label:"Airports",
+          intro:"Two airports serve the Yogyakarta area, each with a different distance to the city center.",
+          children:[
+            { id:"yia", label:"Yogyakarta International Airport (YIA)" },
+            { id:"adisutjipto", label:"Adisutjipto Airport (JOG)" }
+          ]},
+        { id:"train-stations", label:"Train Stations",
+          intro:"Two main stations connect Jogja to Java's rail network.",
+          children:[
+            { id:"tugu", label:"Tugu Station" },
+            { id:"lempuyangan", label:"Lempuyangan Station" }
+          ]},
+        { id:"bus-terminals", label:"Bus Terminals",
+          intro:"Long-distance and regional buses arrive at these terminals.",
+          children:[
+            { id:"jombor", label:"Jombor Bus Terminal" },
+            { id:"giwangan", label:"Giwangan Bus Terminal" }
+          ]},
+        { id:"by-car", label:"By Car & Toll Roads" }
+      ]},
+    { id:"getting-around", label:"Getting Around", color:"green",
+      intro:"Once you're here, here's how locals and visitors get from A to B.",
+      children:[
+        { id:"public-transport", label:"Public Transport",
+          intro:"Bus rapid transit covering the city and greater region.",
+          children:[
+            { id:"transjogja", label:"TransJogja Bus" },
+            { id:"trans-jateng", label:"Trans Jateng" }
+          ]},
+        { id:"ride-hailing", label:"Ride-Hailing Apps" },
+        { id:"rentals", label:"Car & Motorbike Rental" }
+      ]},
+    { id:"accommodation", label:"Accommodation", color:"gold",
+      intro:"From heritage hotels to homestays, here's where to stay.",
+      children:[
+        { id:"hotels", label:"Hotels" },
+        { id:"homestays", label:"Homestays & Guesthouses" },
+        { id:"villas", label:"Villas" }
+      ]},
+    { id:"travel-essentials", label:"Travel Essentials", color:"terracotta",
+      intro:"Practical things worth knowing before and during your trip.",
+      children:[
+        { id:"visa", label:"Visa & Entry Requirements" },
+        { id:"currency", label:"Currency & Money" },
+        { id:"health-safety", label:"Health & Safety" },
+        { id:"etiquette", label:"Local Etiquette & Culture" },
+        { id:"emergency", label:"Emergency Contacts" }
+      ]},
+    { id:"weather", label:"Weather & Best Time to Visit", color:"slate" },
+    { id:"tourist-info-centers", label:"Tourist Information Centers", color:"slate" }
+  ]
+};
+
+function iconFor(color){
+  switch(color){
+    case 'blue': return '<path d="M2 16l20-7-8 8 2 6-4-3-4 3 1-5-7-2z"/>';
+    case 'green': return '<circle cx="12" cy="12" r="9"/><path d="M8 13l3 3 5-6"/>';
+    case 'gold': return '<rect x="3" y="10" width="18" height="8" rx="2"/><path d="M6 10V8a3 3 0 013-3h6a3 3 0 013 3v2"/>';
+    case 'terracotta': return '<circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.6" fill="currentColor"/>';
+    default: return '<circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/>';
+  }
+}
+const COLOR_VAR = { blue:['--blue','--blue-tint'], green:['--green','--green-tint'], gold:['--gold','--gold-tint'], terracotta:['--terracotta','--terracotta-tint'], slate:['--slate','--slate-tint'] };
+
+/* ============ INDEX BUILD ============ */
+const byId = {};
+const parentOf = {};
+(function walk(node, parent){
+  byId[node.id] = node;
+  if(parent) parentOf[node.id] = parent.id;
+  (node.children||[]).forEach(c=>walk(c,node));
+})(TREE, null);
+
+function ancestors(id){ // returns [root ... id] inclusive
+  const chain=[id]; let p=parentOf[id];
+  while(p){ chain.unshift(p); p=parentOf[p]; }
+  return chain;
+}
+function nodeColor(id){
+  let cur = byId[id];
+  while(cur){ if(cur.color) return cur.color; cur = parentOf[cur.id]?byId[parentOf[cur.id]]:null; }
+  return 'slate';
+}
+function siblingsOf(id){
+  const pid = parentOf[id];
+  const list = pid ? byId[pid].children : TREE.children;
+  return list;
+}
+
+/* ============ STATE ============ */
+let currentId = 'visitor-information';
+let expanded = new Set(ancestors(currentId));
+let searchTerm = '';
+
+/* ============ RENDER: BREADCRUMB ============ */
+function renderBreadcrumb(){
+  const chain = ancestors(currentId);
+  const el = document.getElementById('breadcrumb');
+  el.innerHTML = chain.map((id,i)=>{
+    const node = byId[id];
+    const last = i===chain.length-1;
+    const label = i===0 ? 'Visitor Information' : node.label;
+    const sep = i>0 ? '<span class="sep">/</span>' : '<span class="sep">Home /</span>';
+    if(last){
+      return `${sep}<span class="crumb-current" aria-current="page">${label}</span>`;
+    }
+    return `${sep}<a data-nav="${id}">${label}</a>`;
+  }).join('');
+}
+
+/* ============ RENDER: TREE ============ */
+function matchesSearch(node){
+  if(!searchTerm) return true;
+  if(node.label.toLowerCase().includes(searchTerm)) return true;
+  return (node.children||[]).some(matchesSearch);
+}
+function highlight(label){
+  if(!searchTerm) return label;
+  const idx = label.toLowerCase().indexOf(searchTerm);
+  if(idx===-1) return label;
+  return label.slice(0,idx) + '<mark>' + label.slice(idx,idx+searchTerm.length) + '</mark>' + label.slice(idx+searchTerm.length);
+}
+function renderNode(node, ancestorChain){
+  if(searchTerm && !matchesSearch(node)) return '';
+  const hasKids = node.children && node.children.length;
+  const isActive = node.id === currentId;
+  const isAncestor = ancestorChain.includes(node.id) && !isActive;
+  const isOpen = searchTerm ? true : expanded.has(node.id);
+  const color = nodeColor(node.id);
+  const [cVar,tVar] = COLOR_VAR[color] || COLOR_VAR.slate;
+  const rowClasses = ['node-row'];
+  if(isActive) rowClasses.push('active');
+  if(isAncestor) rowClasses.push('ancestor');
+
+  const chev = hasKids
+    ? `<svg class="chev ${isOpen?'open':''}" data-toggle="${node.id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>`
+    : `<svg class="chev spacer" viewBox="0 0 24 24"></svg>`;
+  const dot = `<span class="dot" style="--sc:var(${cVar})"></span>`;
+
+  let html = `<li>
+    <div class="${rowClasses.join(' ')}" style="--sc:var(${cVar});--sw:var(${tVar})" data-nav="${node.id}">
+      ${chev}${dot}<span class="lbl">${highlight(node.label)}</span>
+    </div>`;
+  if(hasKids && isOpen){
+    html += `<ul>${node.children.map(c=>renderNode(c, ancestorChain)).join('')}</ul>`;
+  }
+  html += `</li>`;
+  return html;
+}
+function renderTree(targetId){
+  const chain = ancestors(currentId);
+  const html = TREE.children.map(c=>renderNode(c, chain)).join('');
+  const el = document.getElementById(targetId);
+  el.innerHTML = html || '<div class="no-match">No pages match your search.</div>';
+}
+
+/* ============ RENDER: CONTENT ============ */
+function cardHTML(node){
+  const color = nodeColor(node.id);
+  const [cVar] = COLOR_VAR[color] || COLOR_VAR.slate;
+  const kids = node.children ? node.children.length : 0;
+  const desc = node.intro || (kids ? `${kids} pages inside.` : 'Tap for details.');
+  return `<div class="card" style="--sc:var(${cVar})" data-nav="${node.id}">
+    <h3>${node.label}</h3>
+    <p>${desc}</p>
+    ${kids ? `<div class="meta">${kids} page${kids>1?'s':''}</div>` : ''}
+  </div>`;
+}
+function detailCopy(node){
+  return `
+    <h2>Overview</h2>
+    <p>${node.label} is one of the practical stops covered in this section. This paragraph is placeholder body copy — replace with the real editorial content for ${node.label} during implementation.</p>
+    <h2>How to get there</h2>
+    <p>Directions, typical travel time, and transport options connecting to ${node.label} go here.</p>
+    <h2>Good to know</h2>
+    <p>Facilities, opening hours, contact details, or visitor tips specific to ${node.label} go here.</p>
+  `;
+}
+function renderContent(){
+  const node = byId[currentId];
+  const color = nodeColor(currentId);
+  const [cVar,tVar] = COLOR_VAR[color] || COLOR_VAR.slate;
+  const isRoot = currentId === 'visitor-information';
+  const hasKids = node.children && node.children.length;
+  const el = document.getElementById('contentCol');
+
+  let html = '';
+
+  if(isRoot){
+    html += `<h1>Visitor Information</h1><p class="intro">${node.intro}</p>
+      <div class="card-grid">${node.children.map(cardHTML).join('')}</div>`;
+  } else if(hasKids){
+    const parentChainLabel = byId[currentId].label;
+    html += `<span class="eyebrow" style="--sc:var(${cVar});--sw:var(${tVar})"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">${iconFor(color)}</svg>${parentOf[currentId] && byId[parentOf[currentId]].id!=='visitor-information' ? byId[parentOf[currentId]].label : 'Category'}</span>
+      <h1>${node.label}</h1>
+      <p class="intro">${node.intro || ''}</p>
+      <div class="card-grid">${node.children.map(cardHTML).join('')}</div>`;
+  } else {
+    // detail page
+    const sibs = siblingsOf(currentId);
+    const idx = sibs.findIndex(s=>s.id===currentId);
+    const prev = sibs[idx-1], next = sibs[idx+1];
+    const parentLabel = parentOf[currentId] && byId[parentOf[currentId]].id!=='visitor-information' ? byId[parentOf[currentId]].label : 'Visitor Information';
+    html += `<span class="eyebrow" style="--sc:var(${cVar});--sw:var(${tVar})"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">${iconFor(color)}</svg>${parentLabel}</span>
+      <h1>${node.label}</h1>
+      <div class="detail-body">${detailCopy(node)}</div>
+      <div class="sibling-nav">
+        ${prev ? `<div class="sib-btn" data-nav="${prev.id}"><span class="dir">← Previous</span><span class="name">${prev.label}</span></div>` : '<div></div>'}
+        ${next ? `<div class="sib-btn next" data-nav="${next.id}"><span class="dir">Next →</span><span class="name">${next.label}</span></div>` : ''}
+      </div>`;
+  }
+  el.innerHTML = html;
+  el.scrollTop = 0;
+  window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+}
+
+/* ============ RENDER ALL ============ */
+function renderAll(){
+  renderBreadcrumb();
+  renderTree('treeRoot');
+  renderTree('treeRootMobile');
+  renderContent();
+  document.getElementById('mobileBrowseLabel').textContent = 'Browse: ' + byId[currentId].label;
+}
+
+/* ============ INTERACTIONS ============ */
+function navigate(id){
+  currentId = id;
+  ancestors(id).forEach(a=>expanded.add(a));
+  closeDrawer();
+  renderAll();
+}
+function toggle(id){
+  if(expanded.has(id)) expanded.delete(id); else expanded.add(id);
+  renderTree('treeRoot');
+  renderTree('treeRootMobile');
+}
+document.addEventListener('click', (e)=>{
+  const toggleEl = e.target.closest('[data-toggle]');
+  if(toggleEl){ e.stopPropagation(); toggle(toggleEl.getAttribute('data-toggle')); return; }
+  const navEl = e.target.closest('[data-nav]');
+  if(navEl){ navigate(navEl.getAttribute('data-nav')); return; }
+});
+
+/* search */
+function bindSearch(inputId){
+  document.getElementById(inputId).addEventListener('input', (e)=>{
+    searchTerm = e.target.value.trim().toLowerCase();
+    renderTree('treeRoot');
+    renderTree('treeRootMobile');
+  });
+}
+bindSearch('searchInput');
+bindSearch('searchInputMobile');
+
+/* mobile drawer */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('drawerBackdrop');
+function openDrawer(){ drawer.classList.add('open'); backdrop.classList.add('open'); }
+function closeDrawer(){ drawer.classList.remove('open'); backdrop.classList.remove('open'); }
+document.getElementById('mobileBrowseBtn').addEventListener('click', openDrawer);
+document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+backdrop.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
+
+renderAll();
+</script>
+</body>
+</html>

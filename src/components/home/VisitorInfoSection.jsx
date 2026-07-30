@@ -6,7 +6,6 @@ import { Grid, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/navigation";
-import { useTranslation } from "@/lib/i18n";
 import { useLanguage } from "@/lib/LanguageContext";
 import { DUMMY_VISITOR_INFO } from "@/lib/dummyData";
 import SectionHeading from "@/components/home/SectionHeading";

@@ -65,7 +65,7 @@ export default function DiscoverLanding() {
         </div>
       </div>
           
-      <div className="content-wrap mt-6 pb-16">
+      <div className="content-wrap mt-2 md:mt-6 pb-16">
         <Routes>
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
           <Route path=":slug" element={<DiscoverContent />} />

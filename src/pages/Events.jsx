@@ -53,7 +53,7 @@ export default function Events({ hideShell }) {
     <PageShell title={title} subtitle={subtitle} hideShell={hideShell}>
       <div className={hideShell ? "pt-2" : "content-wrap"}>
         {filtered === null ? (
-          <div className="mt-8 grid grid-cols-1 gap-6 pb-16 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-4 pb-16 sm:gap-6 lg:grid-cols-3">
             {Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
             ))}
@@ -65,14 +65,14 @@ export default function Events({ hideShell }) {
             {Object.entries(byMonth).map(([month, evs]) => (
               <div key={month}>
                 <h2 className="mb-4 font-heading text-[20px] font-bold" style={{ color: "var(--color-primary)" }}>{month}</h2>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
                   {evs.map((e) => <EventCard key={e.id} event={e} />)}
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="mt-8 grid grid-cols-1 gap-6 pb-16 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-4 pb-16 sm:gap-6 lg:grid-cols-3">
             {filtered.map((e) => <EventCard key={e.id} event={e} />)}
           </div>
         )}

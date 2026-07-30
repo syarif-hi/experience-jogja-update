@@ -1,0 +1,97 @@
+{
+  "id": "visitor-information",
+  "label": "Visitor Information",
+  "slug": "/visitor-information",
+  "intro": "Everything you need to plan the practical side of your trip to Yogyakarta — getting here, getting around, where to stay, and the essentials.",
+  "children": [
+    {
+      "id": "getting-to-jogja",
+      "label": "Getting to Jogja",
+      "slug": "/getting-to-jogja",
+      "color": "blue",
+      "intro": "Yogyakarta is reachable by air, rail, road, and bus. Pick your arrival method below for terminal-by-terminal detail.",
+      "children": [
+        {
+          "id": "airports",
+          "label": "Airports",
+          "slug": "/getting-to-jogja/airports",
+          "intro": "Two airports serve the Yogyakarta area, each with different distances to the city center.",
+          "children": [
+            { "id": "yia", "label": "Yogyakarta International Airport (YIA)", "slug": "/getting-to-jogja/airports/yogyakarta-international-airport" },
+            { "id": "adisutjipto", "label": "Adisutjipto Airport (JOG)", "slug": "/getting-to-jogja/airports/adisutjipto-airport" }
+          ]
+        },
+        {
+          "id": "train-stations",
+          "label": "Train Stations",
+          "slug": "/getting-to-jogja/train-stations",
+          "intro": "Two main stations connect Jogja to Java's rail network.",
+          "children": [
+            { "id": "tugu", "label": "Tugu Station", "slug": "/getting-to-jogja/train-stations/tugu-station" },
+            { "id": "lempuyangan", "label": "Lempuyangan Station", "slug": "/getting-to-jogja/train-stations/lempuyangan-station" }
+          ]
+        },
+        {
+          "id": "bus-terminals",
+          "label": "Bus Terminals",
+          "slug": "/getting-to-jogja/bus-terminals",
+          "intro": "Long-distance and regional buses arrive at these terminals.",
+          "children": [
+            { "id": "jombor", "label": "Jombor Bus Terminal", "slug": "/getting-to-jogja/bus-terminals/jombor" },
+            { "id": "giwangan", "label": "Giwangan Bus Terminal", "slug": "/getting-to-jogja/bus-terminals/giwangan" }
+          ]
+        },
+        { "id": "by-car", "label": "By Car & Toll Roads", "slug": "/getting-to-jogja/by-car" }
+      ]
+    },
+    {
+      "id": "getting-around",
+      "label": "Getting Around",
+      "slug": "/getting-around",
+      "color": "green",
+      "intro": "Once you're here, here's how locals and visitors get from A to B.",
+      "children": [
+        {
+          "id": "public-transport",
+          "label": "Public Transport",
+          "slug": "/getting-around/public-transport",
+          "intro": "Bus rapid transit covering the city and greater region.",
+          "children": [
+            { "id": "transjogja", "label": "TransJogja Bus", "slug": "/getting-around/public-transport/transjogja" },
+            { "id": "trans-jateng", "label": "Trans Jateng", "slug": "/getting-around/public-transport/trans-jateng" }
+          ]
+        },
+        { "id": "ride-hailing", "label": "Ride-Hailing Apps", "slug": "/getting-around/ride-hailing" },
+        { "id": "rentals", "label": "Car & Motorbike Rental", "slug": "/getting-around/rentals" }
+      ]
+    },
+    {
+      "id": "accommodation",
+      "label": "Accommodation",
+      "slug": "/accommodation",
+      "color": "gold",
+      "intro": "From heritage hotels to homestays, here's where to stay.",
+      "children": [
+        { "id": "hotels", "label": "Hotels", "slug": "/accommodation/hotels" },
+        { "id": "homestays", "label": "Homestays & Guesthouses", "slug": "/accommodation/homestays" },
+        { "id": "villas", "label": "Villas", "slug": "/accommodation/villas" }
+      ]
+    },
+    {
+      "id": "travel-essentials",
+      "label": "Travel Essentials",
+      "slug": "/travel-essentials",
+      "color": "terracotta",
+      "intro": "Practical things worth knowing before and during your trip.",
+      "children": [
+        { "id": "visa", "label": "Visa & Entry Requirements", "slug": "/travel-essentials/visa" },
+        { "id": "currency", "label": "Currency & Money", "slug": "/travel-essentials/currency" },
+        { "id": "health-safety", "label": "Health & Safety", "slug": "/travel-essentials/health-safety" },
+        { "id": "etiquette", "label": "Local Etiquette & Culture", "slug": "/travel-essentials/etiquette" },
+        { "id": "emergency", "label": "Emergency Contacts", "slug": "/travel-essentials/emergency" }
+      ]
+    },
+    { "id": "weather", "label": "Weather & Best Time to Visit", "slug": "/weather", "color": "slate" },
+    { "id": "tourist-info-centers", "label": "Tourist Information Centers", "slug": "/tourist-information-centers", "color": "slate" }
+  ]
+}

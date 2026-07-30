@@ -8,7 +8,6 @@ import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
 import EventCategoryFilter from "@/components/home/calendar/EventCategoryFilter";
 import EventCard from "@/components/shared/EventCard";
-import SmartImage from "@/components/shared/SmartImage";
 import { EVENT_CATEGORIES, eventCategoryOf, eventCategoryColor } from "@/lib/eventCategories";
 
 const WEEKDAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];

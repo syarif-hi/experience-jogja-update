@@ -15,8 +15,17 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
   const lbl = (o) => (language === "id" ? o.label_id : o.label_en);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (open) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
   }, [open]);
 
   return createPortal(
@@ -119,8 +128,10 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
               ))}
             </nav>
 
-            <div className="flex flex-col gap-3 border-t p-4" style={{ borderColor: "var(--border)" }}>
-              <Toggles showCurrency={false} />
+            <div className="flex flex-col gap-3 p-4">
+              <div className="flex justify-end">
+                <Toggles showCurrency={false} />
+              </div>
               {isAuthenticated ? (
                 <>
                   <Link

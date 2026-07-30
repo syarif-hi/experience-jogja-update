@@ -22,7 +22,6 @@ import ArticleDetail from '@/pages/ArticleDetail';
 import Stays from '@/pages/Stays';
 import StayDetail from '@/pages/StayDetail';
 import VisitorInformation from '@/pages/VisitorInformation';
-import VisitorInfoDetail from '@/pages/VisitorInfoDetail';
 import DiscoverPageTemplate from '@/pages/DiscoverPageTemplate';
 import Itineraries from '@/pages/Itineraries';
 import ItineraryDetail from '@/pages/ItineraryDetail';
