@@ -107,7 +107,7 @@ export default function Hero() {
           className="w-full max-w-[320px] md:max-w-[960px] h-auto mb-6 md:mx-0"
         />
 
-        <div className="space-y-4 text-[15px] md:text-[24px] leading-[1.2] max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-16" style={{ color: "var(--text-secondary)" }}>
+        <div className="space-y-4 text-[15px] md:text-[20px] leading-relaxed max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-16" style={{ color: "var(--text-secondary)" }}>
           <p>{t("hero.welcome1")}</p>
           <p>{t("hero.welcome2")}</p>
           <p>{t("hero.welcome3")}</p>
