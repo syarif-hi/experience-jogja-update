@@ -36,7 +36,7 @@ export default function SiteFooter() {
           <div>
             {/* Brand section */}
             <Link to="/" className="flex flex-col gap-2 leading-none">
-              <img src="/brand-logo-black.png" alt="Experience Jogja" className="max-h-[60px] md:max-h-[80px] w-auto object-contain object-left" />
+              <img src="/brand-logo-black_2.png" alt="Experience Jogja" className="max-h-[60px] md:max-h-[80px] w-auto object-contain object-left" />
             </Link>
 
             {/* Explore menu */}
