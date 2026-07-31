@@ -44,8 +44,7 @@ export default function VisitorInfoSection() {
   );
 
   return (
-    <div className="relative w-screen -ml-[50vw] left-1/2" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
-      <section className="section-y mx-auto w-full max-w-[100vw]">
+    <section className="section-y" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
         <div className="content-wrap">
           <SectionHeading
             title={language === "id" ? "Informasi Pengunjung" : "Visitor Information"}
@@ -151,6 +150,5 @@ export default function VisitorInfoSection() {
           </div>
         </div>
       </section>
-    </div>
   );
 }

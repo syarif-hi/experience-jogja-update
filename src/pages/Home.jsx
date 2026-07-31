@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div style={{ backgroundColor: "var(--bg-page)" }}>
       <SiteHeader />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         {/* Interactive Maps */}
         <div id="maps" className="scroll-mt-28"><InteractiveMapsSection /></div>

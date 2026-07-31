@@ -21,7 +21,7 @@ export default function NewsSection() {
     <section className="section-y" style={{ backgroundColor: "var(--bg-page)" }}>
       <div className="content-wrap">
         <SectionHeading title={t("news.title")} subtitle={t("news.subtitle")} seeMoreTo="/news" />
-        <HScrollStrip mobileCols={2.1}>
+        <HScrollStrip rows={2}>
           {articles === null
             ? Array.from({ length: 4 }).map((_, i) => (
                 <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface)" }} />

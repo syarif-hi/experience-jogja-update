@@ -29,7 +29,7 @@ export default function ArticleCard({ article }) {
       </div>
       <div className="flex flex-1 flex-col pt-3">
         <span className="font-body text-[12px]" style={{ color: "var(--text-secondary)" }}>{dateLabel}</span>
-        <h3 className="mt-1 line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
+        <h3 className="mt-1 line-clamp-2 text-[15px] md:text-[16px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
           {title}
         </h3>
         {article.topic_tag && (

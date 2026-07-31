@@ -28,7 +28,7 @@ export function StripNavButton({ onClick, direction = "next", disabled, label })
 //                 "top" renders arrows in a top-right control row above the strip.
 // `perView` controls how many cards are visible at the largest breakpoint.
 // `rows` renders a multi-row horizontal grid (each swipe page is rows x cols).
-export default function HScrollStrip({ children, perView = 4, rows = 1, spaceBetween = 20, navPlacement = "sides", onNavState, mobileCols }) {
+export default function HScrollStrip({ children, perView = 4, rows = 1, spaceBetween = 16, navPlacement = "sides", onNavState, mobileCols }) {
   const swiperRef = useRef(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -42,14 +42,12 @@ export default function HScrollStrip({ children, perView = 4, rows = 1, spaceBet
     ? {
         640: { slidesPerView: 2, grid: { rows: 2, fill: "row" } },
         768: { slidesPerView: 3, grid: { rows: 1, fill: "row" } },
-        1024: { slidesPerView: 3, grid: { rows: 1, fill: "row" } },
-        1280: { slidesPerView: perView, grid: { rows: 1, fill: "row" } },
+        1024: { slidesPerView: 4, grid: { rows: 1, fill: "row" } },
       }
     : {
         640: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
-        1024: { slidesPerView: 3 },
-        1280: { slidesPerView: perView },
+        1024: { slidesPerView: 4 },
       };
 
   const goPrev = () => swiperRef.current?.slidePrev();

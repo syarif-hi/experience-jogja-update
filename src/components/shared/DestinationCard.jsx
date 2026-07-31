@@ -28,7 +28,7 @@ export default function DestinationCard({ destination }) {
         </div>
       </div>
       <div className="pt-3">
-        <h3 className="line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
+        <h3 className="line-clamp-2 text-[15px] md:text-[16px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
           {name}
         </h3>
         <div className="md:hidden mt-2 flex">

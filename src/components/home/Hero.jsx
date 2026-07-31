@@ -35,7 +35,7 @@ export default function Hero() {
   const [swiperInstance, setSwiperInstance] = useState(null);
 
   return (
-    <section className="pb-[var(--spacing-xl)]" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+    <section className="pb-[var(--spacing-xl)]" style={{ backgroundColor: "#FFFFFF" }}>
       {/* Fluid image slider — full-bleed, no radius */}
       <div className="relative">
         <div className="relative aspect-[4/3] md:aspect-[21/9] max-h-[calc(100vh-220px)] min-h-[320px] w-full overflow-hidden">
@@ -82,7 +82,7 @@ export default function Hero() {
       </div>
 
       {/* Menu row — below the slider */}
-      <div className="py-4" style={{ backgroundColor: "var(--bg-page)" }}>
+      <div className="py-4" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="content-wrap">
           <div className="flex flex-col md:flex-row md:flex-wrap items-start md:items-center justify-start gap-x-10 gap-y-4 md:gap-y-2">
             {PILLS.map((p) => (
@@ -100,14 +100,13 @@ export default function Hero() {
       </div>
 
       {/* Heading / subheading / CTA — below the slider, left aligned */}
-      <div className="content-wrap mt-12 text-left">
-        <h1 className="font-display max-w-[18ch] text-[34px] font-normal leading-[1.1] md:text-[56px]" style={{ color: "var(--color-primary)" }}>
-          {t("hero.title")}
-        </h1>
-        <p className="mt-4 max-w-[52ch] text-[15px] font-normal leading-relaxed md:text-[18px]" style={{ color: "var(--text-secondary)" }}>
-          {t("hero.subtitle")}
-        </p>
-        <div className="mt-6">
+      <div className="content-wrap mt-12 text-center md:text-left">
+        <img 
+          src="/discover-jogja-artwork.png" 
+          alt="Discover Your Yogyakarta" 
+          className="w-full max-w-[320px] md:max-w-[480px] h-auto mb-6 mx-auto md:mx-0"
+        />
+        <div className="mt-8 flex justify-center md:justify-start">
           <Link
             to="/destinations"
             className="focus-ring inline-flex items-center rounded-lg px-6 py-3 text-[15px] font-semibold transition-colors"
