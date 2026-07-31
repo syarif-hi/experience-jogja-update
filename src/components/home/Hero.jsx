@@ -104,7 +104,7 @@ export default function Hero() {
         <img
           src="/discover-jogja-artwork.png"
           alt="Discover Your Yogyakarta"
-          className="w-full max-w-[320px] md:max-w-[480px] h-auto mb-6 md:mx-0"
+          className="w-full max-w-[320px] md:max-w-[960px] h-auto mb-6 md:mx-0"
         />
 
       </div>
