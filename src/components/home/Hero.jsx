@@ -104,9 +104,9 @@ export default function Hero() {
         <img
           src="/discover-jogja-artwork.png"
           alt="Discover Your Yogyakarta"
-          className="w-full max-w-[320px] md:max-w-[960px] h-auto mb-6 md:mx-0 mx-auto"
+          className="w-full max-w-[320px] md:max-w-[960px] h-auto mb-6 md:mx-0"
         />
-        
+
         <div className="space-y-4 text-[15px] md:text-[17px] leading-relaxed max-w-4xl mx-auto md:mx-0 text-left md:text-left mb-16" style={{ color: "var(--text-secondary)" }}>
           <p>{t("hero.welcome1")}</p>
           <p>{t("hero.welcome2")}</p>
