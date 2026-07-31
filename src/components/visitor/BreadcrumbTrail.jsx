@@ -8,13 +8,9 @@ export default function BreadcrumbTrail({ trail }) {
   const [popoverOpenMobile, setPopoverOpenMobile] = useState(false);
   const [popoverOpenDesktop, setPopoverOpenDesktop] = useState(false);
 
-  // DESKTOP: collapse if > 3
+  // DESKTOP: never collapse
   let desktopVisible = trail;
   let desktopCollapsed = [];
-  if (trail.length > 3) {
-    desktopCollapsed = trail.slice(1, trail.length - 2);
-    desktopVisible = [trail[0], { isEllipsis: true }, trail[trail.length - 2], trail[trail.length - 1]];
-  }
 
   // MOBILE: collapse if > 2
   let mobileVisible = trail;

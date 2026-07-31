@@ -54,7 +54,7 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
                   Experience Jogja
                 </span>
               </div>
-              <img src="/brand-logo-color_3.png" alt="Experience Jogja" className="max-h-[88px] w-auto object-contain" />
+              <img src="/brand-logo-color-7.png" alt="Experience Jogja" className="max-h-[88px] w-auto object-contain" />
               <button
                 type="button"
                 onClick={onClose}
