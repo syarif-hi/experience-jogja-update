@@ -37,7 +37,12 @@
             "id": "Panduan dan informasi lengkap tentang Bandara di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "Main Hubs": "YIA (Kulon Progo) and JOG (Sleman)",
+              "Accessibility": "Airport train, buses, taxis",
+              "Best for": "International and domestic travelers"
+            }
           },
           "children": [
             {
@@ -144,10 +149,23 @@
                 "id": "Panduan dan informasi lengkap tentang JOG (Bandara Internasional Adisutjipto) di Yogyakarta."
               },
               "meta": {
-                "estReadMins": 2
+                "estReadMins": 3,
+                "quickFacts": {
+                  "Location": "Sleman, DIY",
+                  "Status": "Domestic, Limited Commercial",
+                  "Transport": "TransJogja, Commuter Train (Maguwo Station)"
+                }
+              },
+              "body": {
+                "en": "## Overview\nAdisutjipto International Airport (JOG) was the principal airport serving the Yogyakarta area until the opening of YIA. Located just 9 kilometers east of the city center, it now primarily handles training flights, military operations, and a limited number of commercial flights using propeller aircraft.\n\n## Facilities\nDespite its reduced role, JOG still offers essential passenger facilities. You will find small cafes, convenience stores, ATMs, and comfortable waiting areas. The airport is directly integrated with Maguwo Railway Station, providing seamless access to the local commuter line (Prambanan Ekspres).\n\n## Practical Tips\nIf your flight departs from JOG, taking the TransJogja bus or the commuter train to Maguwo Station is highly recommended for avoiding traffic. Remember that most major airlines now operate out of YIA, so double-check your ticket before heading to the airport.",
+                "id": "## Gambaran Umum\nBandara Internasional Adisutjipto (JOG) adalah bandara utama yang melayani wilayah Yogyakarta hingga pembukaan YIA. Terletak hanya 9 kilometer di timur pusat kota, bandara ini sekarang utamanya menangani penerbangan pelatihan, operasi militer, dan sejumlah penerbangan komersial terbatas menggunakan pesawat baling-baling.\n\n## Fasilitas\nMeskipun perannya berkurang, JOG masih menawarkan fasilitas penumpang yang penting. Anda akan menemukan kafe kecil, toko serba ada, ATM, dan area tunggu yang nyaman. Bandara ini terintegrasi langsung dengan Stasiun Kereta Api Maguwo, memberikan akses mudah ke jalur komuter lokal (Prambanan Ekspres).\n\n## Tips Praktis\nJika penerbangan Anda berangkat dari JOG, naik bus TransJogja atau kereta komuter ke Stasiun Maguwo sangat disarankan untuk menghindari kemacetan. Ingatlah bahwa sebagian besar maskapai besar sekarang beroperasi dari YIA, jadi periksa kembali tiket Anda sebelum menuju ke bandara."
               }
             }
-          ]
+          ],
+          "body": {
+            "en": "## Overview\nYogyakarta, a major cultural hub in Indonesia, is primarily served by two airports. The newer, larger Yogyakarta International Airport (YIA) in Kulon Progo handles most commercial flights, while the older Adisutjipto International Airport (JOG) is closer to the city center but serves limited routes.\n\n## Connectivity\nBoth airports offer various transportation options to reach the city center, including airport trains, buses, and taxis. The airport train from YIA to Tugu Station is a popular and efficient choice, taking about 40 minutes.\n\n## Practical Tips\nWhen booking flights, always check the airport code carefully. YIA is the main gateway for international and domestic flights, whereas JOG mainly handles propeller planes and military flights. Plan your ground transportation in advance, especially during peak holiday seasons.",
+            "id": "## Gambaran Umum\nYogyakarta, pusat budaya utama di Indonesia, utamanya dilayani oleh dua bandara. Yogyakarta International Airport (YIA) yang lebih baru dan besar di Kulon Progo menangani sebagian besar penerbangan komersial, sementara Bandara Internasional Adisutjipto (JOG) yang lebih tua berada lebih dekat ke pusat kota tetapi melayani rute terbatas.\n\n## Konektivitas\nKedua bandara menawarkan berbagai pilihan transportasi untuk mencapai pusat kota, termasuk kereta bandara, bus, dan taksi. Kereta bandara dari YIA ke Stasiun Tugu adalah pilihan yang populer dan efisien, memakan waktu sekitar 40 menit.\n\n## Tips Praktis\nSaat memesan penerbangan, selalu periksa kode bandara dengan cermat. YIA adalah gerbang utama untuk penerbangan internasional dan domestik, sedangkan JOG sebagian besar menangani pesawat baling-baling dan penerbangan militer. Rencanakan transportasi darat Anda sebelumnya, terutama selama musim liburan puncak."
+          }
         },
         {
           "id": "page-train-stations",
@@ -164,7 +182,12 @@
             "id": "Panduan dan informasi lengkap tentang Stasiun Kereta di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 4,
+            "quickFacts": {
+              "Main Hubs": "Tugu Station, Lempuyangan Station",
+              "Ticketing": "KAI Access, Travel Portals",
+              "Best for": "Intercity and commuter travel"
+            }
           },
           "children": [
             {
@@ -182,7 +205,16 @@
                 "id": "Panduan dan informasi lengkap tentang Stasiun Tugu di Yogyakarta."
               },
               "meta": {
-                "estReadMins": 3
+                "estReadMins": 4,
+                "quickFacts": {
+                  "Location": "Sosromenduran, near Malioboro",
+                  "Services": "Executive, Business, YIA Airport Train",
+                  "Architecture": "Dutch Colonial"
+                }
+              },
+              "body": {
+                "en": "## Overview\nTugu Station (Yogyakarta Station) is the city's primary and most historic railway terminus. Located just a short walk from the famous Malioboro Street, it features distinctive Dutch colonial architecture and serves executive and business class trains arriving from across Java.\n\n## Facilities\nThe station is well-equipped with modern amenities. Passengers can enjoy a variety of dining options, comfortable executive lounges, clean restrooms, and convenient charging stations. It also serves as the terminus for the YIA Airport Train, making it a crucial transit hub.\n\n## Practical Tips\nArrive at least 45 minutes before your scheduled departure to allow time for boarding passes and security checks. If you have time to spare, grab a cup of local coffee at one of the station's cafes, or step outside to immediately immerse yourself in the bustling atmosphere of Malioboro.",
+                "id": "## Gambaran Umum\nStasiun Tugu (Stasiun Yogyakarta) adalah ujung perjalanan kereta api utama dan paling bersejarah di kota ini. Terletak hanya berjalan kaki singkat dari Jalan Malioboro yang terkenal, stasiun ini menampilkan arsitektur kolonial Belanda yang khas dan melayani kereta api kelas eksekutif dan bisnis yang tiba dari seluruh Jawa.\n\n## Fasilitas\nStasiun ini dilengkapi dengan fasilitas modern. Penumpang dapat menikmati berbagai pilihan tempat makan, ruang tunggu eksekutif yang nyaman, toilet bersih, dan stasiun pengisian daya yang nyaman. Stasiun ini juga berfungsi sebagai pemberhentian akhir untuk Kereta Bandara YIA, menjadikannya pusat transit yang krusial.\n\n## Tips Praktis\nTiba setidaknya 45 menit sebelum jadwal keberangkatan Anda untuk memberikan waktu bagi pencetakan boarding pass dan pemeriksaan keamanan. Jika Anda memiliki waktu luang, nikmati secangkir kopi lokal di salah satu kafe di stasiun, atau melangkah keluar untuk segera membenamkan diri dalam suasana Malioboro yang ramai."
               }
             },
             {
@@ -200,10 +232,23 @@
                 "id": "Panduan dan informasi lengkap tentang Stasiun Lempuyangan di Yogyakarta."
               },
               "meta": {
-                "estReadMins": 4
+                "estReadMins": 3,
+                "quickFacts": {
+                  "Location": "Bausasran, Danurejan",
+                  "Services": "Economy Class, KRL Commuterline",
+                  "History": "Oldest station in Yogyakarta"
+                }
+              },
+              "body": {
+                "en": "## Overview\nLempuyangan Station is the oldest train station in Yogyakarta and serves as the primary hub for economy class trains. Situated slightly east of the city center, it handles a massive volume of daily passengers traveling across Java at more budget-friendly rates.\n\n## Facilities\nWhile more modest than Tugu Station, Lempuyangan offers all necessary facilities. It features various food stalls selling affordable local snacks, waiting areas, minimarkets, and ATM galleries. The station is also a key stop for the KRL Commuterline connecting Yogyakarta and Solo.\n\n## Practical Tips\nThe station can get incredibly crowded during rush hours and holiday seasons, so keep a close eye on your belongings. Online ride-hailing services have designated pick-up points outside the station complex to help you navigate to your final destination smoothly.",
+                "id": "## Gambaran Umum\nStasiun Lempuyangan adalah stasiun kereta api tertua di Yogyakarta dan berfungsi sebagai pusat utama untuk kereta api kelas ekonomi. Terletak sedikit di timur pusat kota, stasiun ini menangani volume penumpang harian yang sangat besar yang bepergian melintasi Jawa dengan tarif yang lebih ramah kantong.\n\n## Fasilitas\nMeskipun lebih sederhana dari Stasiun Tugu, Lempuyangan menawarkan semua fasilitas yang diperlukan. Terdapat berbagai kedai makanan yang menjual camilan lokal yang terjangkau, area tunggu, minimarket, dan galeri ATM. Stasiun ini juga merupakan pemberhentian utama untuk KRL Commuterline yang menghubungkan Yogyakarta dan Solo.\n\n## Tips Praktis\nStasiun bisa menjadi sangat ramai selama jam sibuk dan musim liburan, jadi perhatikan barang bawaan Anda dengan cermat. Layanan ojek online memiliki titik jemput khusus di luar kompleks stasiun untuk membantu Anda menavigasi ke tujuan akhir Anda dengan lancar."
               }
             }
-          ]
+          ],
+          "body": {
+            "en": "## Overview\nTrain travel is one of the most popular and scenic ways to reach Yogyakarta. The city is well-connected to major hubs like Jakarta, Bandung, and Surabaya via an extensive railway network. Yogyakarta features two main train stations: Tugu Station and Lempuyangan Station.\n\n## Choosing Your Station\nTugu Station primarily serves executive and business class trains, while Lempuyangan Station caters to economy class passengers and local commuter trains. Both stations are centrally located and offer easy access to popular tourist areas like Malioboro Street.\n\n## Practical Tips\nTrain tickets in Indonesia can sell out quickly, especially during national holidays like Eid or the end-of-year season. It's advisable to book your tickets up to 30 days in advance via the official KAI Access app or trusted travel portals.",
+            "id": "## Gambaran Umum\nBepergian dengan kereta api adalah salah satu cara paling populer dan indah untuk mencapai Yogyakarta. Kota ini terhubung dengan baik ke pusat-pusat utama seperti Jakarta, Bandung, dan Surabaya melalui jaringan kereta api yang luas. Yogyakarta memiliki dua stasiun kereta api utama: Stasiun Tugu dan Stasiun Lempuyangan.\n\n## Memilih Stasiun Anda\nStasiun Tugu utamanya melayani kereta api kelas eksekutif dan bisnis, sementara Stasiun Lempuyangan melayani penumpang kelas ekonomi dan kereta komuter lokal. Kedua stasiun berlokasi di pusat kota dan menawarkan akses mudah ke area wisata populer seperti Jalan Malioboro.\n\n## Tips Praktis\nTiket kereta api di Indonesia bisa cepat habis terjual, terutama saat libur nasional seperti Lebaran atau musim akhir tahun. Disarankan untuk memesan tiket Anda hingga 30 hari sebelumnya melalui aplikasi resmi KAI Access atau portal perjalanan terpercaya."
+          }
         },
         {
           "id": "page-bus-terminals",
@@ -220,7 +265,16 @@
             "id": "Panduan dan informasi lengkap tentang Terminal Bus di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "Main Terminals": "Giwangan (South) & Jombor (North)",
+              "Operating Hours": "24 Hours (varies by operator)",
+              "Major Destinations": "Jakarta, Surabaya, Bali, Bandung"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta is well-connected by an extensive bus network. The city has two main bus terminals: Giwangan Terminal in the south and Jombor Terminal in the north. Giwangan is the largest bus station in Indonesia and serves as the main hub for intercity and interprovincial buses heading east, west, and south. Jombor Terminal primarily handles buses heading north towards Magelang, Semarang, and Jakarta.\n\n## Fares & Routes\nBus fares vary significantly depending on the class of service (Economy, Executive, or Super Executive/Sleeper) and the destination. Executive buses to Jakarta typically range from Rp 200,000 to Rp 400,000, while trips to Bali can cost upwards of Rp 350,000. It is highly recommended to book tickets in advance, especially during national holidays like Eid or Christmas, when prices surge and seats sell out quickly.\n\n## Practical Tips\nWhen navigating the terminals, be prepared for 'calo' (ticket touts). It's best to ignore them and head directly to the official ticket booths or book online via apps like Traveloka or redBus. Keep an eye on your belongings, as busy terminals can attract pickpockets. Most major buses offer amenities like air conditioning, toilets, and a complimentary meal on long journeys, but always confirm this before purchasing your ticket.",
+            "id": "## Gambaran Umum\nYogyakarta terhubung dengan baik oleh jaringan bus yang luas. Kota ini memiliki dua terminal bus utama: Terminal Giwangan di selatan dan Terminal Jombor di utara. Giwangan adalah terminal bus terbesar di Indonesia dan berfungsi sebagai pusat utama untuk bus antarkota dan antarprovinsi yang menuju ke timur, barat, dan selatan. Terminal Jombor utamanya melayani bus yang menuju ke utara menuju Magelang, Semarang, dan Jakarta.\n\n## Tarif & Rute\nTarif bus sangat bervariasi tergantung pada kelas layanan (Ekonomi, Eksekutif, atau Super Eksekutif/Sleeper) dan tujuan. Bus eksekutif ke Jakarta biasanya berkisar antara Rp 200.000 hingga Rp 400.000, sementara perjalanan ke Bali bisa memakan biaya lebih dari Rp 350.000. Sangat disarankan untuk memesan tiket jauh hari, terutama selama libur nasional seperti Lebaran atau Natal, ketika harga melonjak dan kursi cepat terjual.\n\n## Tips Praktis\nSaat berada di terminal, bersiaplah menghadapi 'calo' (calo tiket). Sebaiknya abaikan mereka dan langsung menuju ke loket tiket resmi atau pesan secara online melalui aplikasi seperti Traveloka atau redBus. Jaga barang bawaan Anda, karena terminal yang sibuk bisa menarik perhatian pencopet. Sebagian besar bus besar menawarkan fasilitas seperti AC, toilet, dan makanan gratis pada perjalanan panjang, namun selalu pastikan hal ini sebelum membeli tiket Anda."
           }
         },
         {
@@ -238,7 +292,16 @@
             "id": "Panduan dan informasi lengkap tentang Transportasi Antarkota di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 4,
+            "quickFacts": {
+              "Train Stations": "Tugu (Executive) & Lempuyangan (Economy)",
+              "Minivan Services": "Door-to-door 'Travel' available",
+              "Booking": "Online via KAI Access & OTA apps"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta is a major transit hub in Java, accessible by a variety of intercity transportation options including trains, buses, and shared minivans known locally as 'travel'. The city's strategic location makes it incredibly easy to reach from other major cities like Jakarta, Bandung, Surabaya, and Semarang. Trains are widely considered the most comfortable and punctual way to arrive in Jogja.\n\n## Fares & Routes\nTrains connect Yogyakarta to Jakarta in about 6 to 8 hours, with fares ranging from Rp 200,000 for economy to over Rp 600,000 for executive class. There are two main stations: Tugu Station, which serves executive and business class trains right in the heart of the city, and Lempuyangan Station, which caters mostly to economy class trains. For shorter distances like Semarang or Solo, door-to-door minivan 'travel' services are very popular and cost around Rp 70,000 to Rp 150,000.\n\n## Practical Tips\nAlways book your train tickets well in advance, as they can be purchased up to 45 days before departure and often sell out during weekends and holidays. The official KAI Access app is the most reliable way to book trains. If you choose a minivan 'travel' service, be prepared for a longer journey than expected, as the driver will need to pick up and drop off other passengers at various locations.",
+            "id": "## Gambaran Umum\nYogyakarta adalah pusat transit utama di Jawa, yang dapat diakses oleh berbagai pilihan transportasi antarkota termasuk kereta api, bus, dan minibus berbagi yang dikenal sebagai 'travel'. Lokasi strategis kota ini membuatnya sangat mudah dijangkau dari kota-kota besar lainnya seperti Jakarta, Bandung, Surabaya, dan Semarang. Kereta api secara luas dianggap sebagai cara yang paling nyaman dan tepat waktu untuk tiba di Jogja.\n\n## Tarif & Rute\nKereta api menghubungkan Yogyakarta dengan Jakarta dalam waktu sekitar 6 hingga 8 jam, dengan tarif berkisar antara Rp 200.000 untuk kelas ekonomi hingga lebih dari Rp 600.000 untuk kelas eksekutif. Ada dua stasiun utama: Stasiun Tugu, yang melayani kereta kelas eksekutif dan bisnis tepat di jantung kota, dan Stasiun Lempuyangan, yang sebagian besar melayani kereta kelas ekonomi. Untuk jarak yang lebih pendek seperti Semarang atau Solo, layanan antar-jemput pintu ke pintu 'travel' sangat populer dan berbiaya sekitar Rp 70.000 hingga Rp 150.000.\n\n## Tips Praktis\nSelalu pesan tiket kereta api Anda jauh hari sebelumnya, karena dapat dibeli hingga 45 hari sebelum keberangkatan dan sering terjual habis selama akhir pekan dan hari libur. Aplikasi resmi KAI Access adalah cara paling dapat diandalkan untuk memesan kereta api. Jika Anda memilih layanan 'travel' minibus, bersiaplah untuk perjalanan yang lebih lama dari yang diharapkan, karena sopir perlu menjemput dan menurunkan penumpang lain di berbagai lokasi."
           }
         }
       ]
@@ -273,7 +336,16 @@
             "id": "Panduan dan informasi lengkap tentang Taksi di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 3,
+            "quickFacts": {
+              "Base Fare": "Starts at ~Rp 7,500",
+              "Metered": "Yes, always insist on the 'argo'",
+              "Availability": "Airports, stations, and major malls"
+            }
+          },
+          "body": {
+            "en": "## Overview\nConventional taxis remain a reliable and comfortable way to get around Yogyakarta, especially for travelers with heavy luggage or those seeking a guaranteed air-conditioned ride. While ride-hailing apps are extremely popular, traditional taxi operators like Jas Taksi, Rajawali, and Indra Kelana are still widely available and provide excellent service throughout the city and surrounding suburbs.\n\n## Fares & Routes\nTaxis in Yogyakarta use an 'argo' (meter) system. The flag-fall or base fare typically starts around Rp 7,500, with a per-kilometer charge added after that. A typical trip across the city center usually costs between Rp 30,000 to Rp 50,000 depending on traffic conditions. Trips to the airport or further out to attractions like Prambanan will cost more, and toll fees (if applicable) are paid by the passenger.\n\n## Practical Tips\nAlways ensure the driver turns on the meter at the beginning of the trip to avoid being overcharged. If a driver refuses and tries to negotiate a flat rate, it is usually best to decline and find another taxi. Taxis can easily be hailed on the street, found waiting at designated ranks near malls, hotels, and train stations, or booked via a phone call to the dispatcher.",
+            "id": "## Gambaran Umum\nTaksi konvensional tetap menjadi cara yang dapat diandalkan dan nyaman untuk berkeliling Yogyakarta, terutama bagi wisatawan dengan bagasi berat atau mereka yang mencari perjalanan ber-AC yang terjamin. Meskipun aplikasi transportasi online sangat populer, operator taksi tradisional seperti Jas Taksi, Rajawali, dan Indra Kelana masih tersedia luas dan memberikan layanan yang sangat baik di seluruh kota dan pinggiran sekitarnya.\n\n## Tarif & Rute\nTaksi di Yogyakarta menggunakan sistem 'argo' (meteran). Tarif awal biasanya dimulai sekitar Rp 7.500, dengan biaya per kilometer ditambahkan setelah itu. Perjalanan melintasi pusat kota biasanya berbiaya antara Rp 30.000 hingga Rp 50.000 tergantung pada kondisi lalu lintas. Perjalanan ke bandara atau lebih jauh ke tempat wisata seperti Prambanan akan lebih mahal, dan biaya tol (jika ada) dibayar oleh penumpang.\n\n## Tips Praktis\nSelalu pastikan sopir menyalakan argo di awal perjalanan untuk menghindari dikenakan biaya berlebihan. Jika sopir menolak dan mencoba menegosiasikan tarif tetap, biasanya lebih baik menolak dan mencari taksi lain. Taksi dapat dengan mudah dipanggil di jalan, ditemukan menunggu di pangkalan yang ditentukan dekat mal, hotel, dan stasiun kereta api, atau dipesan melalui panggilan telepon ke operator."
           }
         },
         {
@@ -291,7 +363,16 @@
             "id": "Panduan dan informasi lengkap tentang Transportasi Online di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 4,
+            "quickFacts": {
+              "Main Apps": "Gojek, Grab, Maxim",
+              "Vehicle Types": "Motorbikes (Ojek) & Cars",
+              "Availability": "24/7 across the city"
+            }
+          },
+          "body": {
+            "en": "## Overview\nRide-hailing apps have revolutionized transportation in Yogyakarta, providing cheap, fast, and incredibly convenient travel options. Gojek and Grab are the dominant players, offering both car (GoCar/GrabCar) and motorcycle (GoRide/GrabBike) services. For budget-conscious travelers or those looking to beat the heavy city traffic, the motorcycle taxi options are indispensable.\n\n## Fares & Routes\nOne of the biggest advantages of online transportation is that prices are fixed and displayed upfront based on the distance and current demand. Motorbike rides for short distances within the city can start from as low as Rp 10,000, while car rides usually start around Rp 15,000 to Rp 20,000. Prices may surge during rush hours, heavy rain, or late at night, but they remain generally very affordable compared to many other cities.\n\n## Practical Tips\nBe aware of 'red zones' in Jogja—these are specific areas where online drivers are not allowed to pick up passengers due to agreements with local transport operators. This includes areas directly inside the airport, train stations, and some traditional tourist sites. You will usually need to walk a short distance outside these areas to a designated pick-up point. Having an active local SIM card with data is highly recommended to communicate with your driver.",
+            "id": "## Gambaran Umum\nAplikasi transportasi online telah merevolusi transportasi di Yogyakarta, menyediakan pilihan perjalanan yang murah, cepat, dan sangat nyaman. Gojek dan Grab adalah pemain dominan, menawarkan layanan mobil (GoCar/GrabCar) dan sepeda motor (GoRide/GrabBike). Bagi wisatawan dengan anggaran terbatas atau mereka yang ingin menghindari lalu lintas kota yang padat, pilihan ojek sepeda motor sangatlah penting.\n\n## Tarif & Rute\nSalah satu keuntungan terbesar dari transportasi online adalah bahwa harga bersifat tetap dan ditampilkan di awal berdasarkan jarak dan permintaan saat ini. Perjalanan sepeda motor untuk jarak pendek di dalam kota bisa dimulai dari serendah Rp 10.000, sementara perjalanan mobil biasanya dimulai sekitar Rp 15.000 hingga Rp 20.000. Harga mungkin melonjak selama jam sibuk, hujan lebat, atau larut malam, tetapi umumnya tetap sangat terjangkau dibandingkan dengan banyak kota lain.\n\n## Tips Praktis\nWaspadai 'zona merah' di Jogja—ini adalah area spesifik di mana pengemudi online tidak diizinkan untuk mengambil penumpang karena kesepakatan dengan operator transportasi lokal. Ini termasuk area tepat di dalam bandara, stasiun kereta api, dan beberapa situs wisata tradisional. Anda biasanya perlu berjalan kaki agak jauh ke luar area tersebut menuju titik penjemputan yang ditentukan. Memiliki kartu SIM lokal aktif dengan data sangat disarankan untuk berkomunikasi dengan sopir Anda."
           }
         },
         {
@@ -309,7 +390,16 @@
             "id": "Panduan dan informasi lengkap tentang Trans Jogja di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 3,
+            "quickFacts": {
+              "Flat Fare": "Rp 3,600",
+              "Payment": "Cash, E-Money, or QRIS",
+              "Operating Hours": "05:30 - 21:30"
+            }
+          },
+          "body": {
+            "en": "## Overview\nTrans Jogja is the city's Bus Rapid Transit (BRT) system, providing a safe, air-conditioned, and highly affordable way to navigate Yogyakarta. Operating on a network of designated routes, it connects major tourist attractions like Malioboro, Prambanan Temple, and Adisutjipto Airport. It is a fantastic option for travelers who prefer public transit over taxis or motorbikes.\n\n## Fares & Routes\nThe most appealing aspect of Trans Jogja is its pricing: a flat fare of Rp 3,600 per ride, regardless of the distance traveled. Passengers can also transfer between different bus lines at designated transit shelters without having to pay an additional fare. The network is extensive, with buses stopping only at specific elevated shelters spread across the city and its outskirts.\n\n## Practical Tips\nWhile you can pay with cash, using an electronic money card (like BCA Flazz, Mandiri e-Money, or a local transport card) or scanning a QRIS code with a mobile wallet makes boarding much faster. It is highly advisable to download the Trans Jogja route map on your phone or ask the shelter attendants for assistance, as navigating the various overlapping lines can be slightly confusing for first-time users. Be prepared to stand during morning and evening rush hours.",
+            "id": "## Gambaran Umum\nTrans Jogja adalah sistem Bus Rapid Transit (BRT) kota, yang menyediakan cara yang aman, ber-AC, dan sangat terjangkau untuk menavigasi Yogyakarta. Beroperasi pada jaringan rute yang ditentukan, bus ini menghubungkan tempat-tempat wisata utama seperti Malioboro, Candi Prambanan, dan Bandara Adisutjipto. Ini adalah pilihan fantastis bagi wisatawan yang lebih memilih angkutan umum daripada taksi atau sepeda motor.\n\n## Tarif & Rute\nAspek paling menarik dari Trans Jogja adalah harganya: tarif tetap Rp 3.600 per perjalanan, terlepas dari jarak yang ditempuh. Penumpang juga dapat mentransfer antara jalur bus yang berbeda di halte transit yang ditentukan tanpa harus membayar tarif tambahan. Jaringannya luas, dengan bus hanya berhenti di halte khusus yang ditinggikan yang tersebar di seluruh kota dan pinggirannya.\n\n## Tips Praktis\nMeskipun Anda dapat membayar dengan uang tunai, menggunakan kartu uang elektronik (seperti BCA Flazz, Mandiri e-Money, atau kartu transportasi lokal) atau memindai kode QRIS dengan dompet digital membuat proses naik jauh lebih cepat. Sangat disarankan untuk mengunduh peta rute Trans Jogja di ponsel Anda atau meminta bantuan petugas halte, karena menavigasi berbagai jalur yang tumpang tindih bisa sedikit membingungkan bagi pengguna pertama kali. Bersiaplah untuk berdiri selama jam sibuk pagi dan sore hari."
           }
         },
         {
@@ -327,7 +417,16 @@
             "id": "Panduan dan informasi lengkap tentang Sewa Mobil di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 5,
+            "quickFacts": {
+              "Avg. Daily Rate": "Rp 300,000 - Rp 600,000",
+              "Requirements": "International Driving Permit, Passport",
+              "Driver Option": "Highly recommended for tourists"
+            }
+          },
+          "body": {
+            "en": "## Overview\nRenting a car in Yogyakarta is one of the most convenient ways to explore the city and its surrounding attractions, especially if you plan to visit destinations outside the city center like Borobudur or Prambanan. The city offers numerous rental services ranging from budget-friendly options to premium vehicles.\n\n## Rates and Options\nCar rental rates typically range from Rp 300,000 to Rp 600,000 per day, depending on the car model and rental duration. Most rental agencies offer the option to rent a car with or without a driver. Renting a car with a driver (often starting around Rp 450,000 per day including fuel) is highly recommended for international tourists, as navigating local traffic and finding parking can be challenging.\n\n## Practical Tips\nAlways ensure you book from a reputable agency and check the vehicle's condition before taking the keys. If you choose to drive yourself, you must possess a valid International Driving Permit (IDP) along with your home country's driver's license. Keep in mind that traffic can be heavy during peak hours and holidays, so plan your itinerary accordingly.",
+            "id": "## Gambaran Umum\nMenyewa mobil di Yogyakarta adalah salah satu cara paling nyaman untuk menjelajahi kota dan tempat-tempat wisata di sekitarnya, terutama jika Anda berencana mengunjungi destinasi di luar pusat kota seperti Borobudur atau Prambanan. Kota ini menawarkan banyak layanan persewaan mulai dari pilihan ramah anggaran hingga kendaraan premium.\n\n## Tarif dan Pilihan\nTarif sewa mobil biasanya berkisar antara Rp 300.000 hingga Rp 600.000 per hari, tergantung pada model mobil dan durasi sewa. Sebagian besar agen persewaan menawarkan opsi untuk menyewa mobil dengan atau tanpa sopir. Menyewa mobil dengan sopir (seringkali mulai dari sekitar Rp 450.000 per hari termasuk bahan bakar) sangat disarankan bagi wisatawan internasional, karena menavigasi lalu lintas lokal dan mencari tempat parkir bisa menjadi tantangan.\n\n## Tips Praktis\nSelalu pastikan Anda memesan dari agen terpercaya dan memeriksa kondisi kendaraan sebelum mengambil kunci. Jika Anda memilih untuk mengemudi sendiri, Anda harus memiliki Surat Izin Mengemudi Internasional (SIM Internasional) yang sah beserta SIM dari negara asal Anda. Perlu diingat bahwa lalu lintas bisa padat selama jam sibuk dan hari libur, jadi rencanakan jadwal Anda dengan baik."
           }
         },
         {
@@ -345,7 +444,16 @@
             "id": "Panduan dan informasi lengkap tentang Sewa Motor di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "Avg. Daily Rate": "Rp 60,000 - Rp 150,000",
+              "Requirements": "IDP, Passport copy, Hotel Booking",
+              "Helmet": "Mandatory by law"
+            }
+          },
+          "body": {
+            "en": "## Overview\nFor solo travelers or couples, renting a motorcycle is arguably the most efficient and popular way to get around Yogyakarta. It offers flexibility to weave through traffic and discover hidden gems in narrow alleys that cars cannot reach. Automatic scooters are the most common and user-friendly choice.\n\n## Rates and Locations\nYou can find motorcycle rental shops almost everywhere, especially around the Tugu Train Station, Prawirotaman tourist area, and Malioboro. Daily rates are very affordable, typically ranging from Rp 60,000 to Rp 150,000 depending on the scooter's engine capacity and age. Rentals usually include one or two helmets and a raincoat.\n\n## Practical Tips\nSafety should be your top priority. Always wear a helmet, as it is strictly enforced by traffic police. Make sure you have a valid International Driving Permit covering motorcycles. Be cautious of the bustling traffic, especially during rush hours, and always double-check the brakes, lights, and tires before leaving the rental shop.",
+            "id": "## Gambaran Umum\nBagi pelancong solo atau pasangan, menyewa sepeda motor bisa dibilang merupakan cara paling efisien dan populer untuk berkeliling Yogyakarta. Ini menawarkan fleksibilitas untuk melewati kemacetan dan menemukan permata tersembunyi di gang-gang sempit yang tidak dapat dijangkau mobil. Skuter matik adalah pilihan yang paling umum dan mudah digunakan.\n\n## Tarif dan Lokasi\nAnda dapat menemukan tempat persewaan sepeda motor hampir di mana saja, terutama di sekitar Stasiun Tugu, area wisata Prawirotaman, dan Malioboro. Tarif harian sangat terjangkau, biasanya berkisar antara Rp 60.000 hingga Rp 150.000 tergantung pada kapasitas mesin dan usia skuter. Persewaan biasanya sudah termasuk satu atau dua helm dan jas hujan.\n\n## Tips Praktis\nKeselamatan harus menjadi prioritas utama Anda. Selalu kenakan helm, karena sangat ditegakkan oleh polisi lalu lintas. Pastikan Anda memiliki SIM Internasional yang sah untuk sepeda motor. Berhati-hatilah dengan lalu lintas yang padat, terutama pada jam sibuk, dan selalu periksa kembali rem, lampu, dan ban sebelum meninggalkan tempat persewaan."
           }
         },
         {
@@ -363,7 +471,16 @@
             "id": "Panduan dan informasi lengkap tentang Sewa Sepeda di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 3,
+            "quickFacts": {
+              "Avg. Daily Rate": "Rp 25,000 - Rp 50,000",
+              "Best Areas": "Prawirotaman, Kotagede, Kaliurang",
+              "Type": "City bikes, Mountain bikes"
+            }
+          },
+          "body": {
+            "en": "## Overview\nCycling around Yogyakarta offers a slow-paced, eco-friendly way to experience the city's charm. It is particularly enjoyable for exploring historical neighborhoods, traditional markets, and scenic outskirts. Jogja is increasingly becoming bicycle-friendly with dedicated lanes in certain main streets.\n\n## Rates and Locations\nBicycle rentals are easily found around popular tourist hubs like Prawirotaman and Sosrowijayan. You can also find specialized rental shops offering mountain bikes for exploring areas like Kaliurang or the countryside. Prices are very cheap, typically ranging from Rp 25,000 to Rp 50,000 per day. Some hotels and guesthouses even offer free bicycles to their guests.\n\n## Practical Tips\nThe best time for cycling is early morning or late afternoon when the sun is less intense. Always stay on the left side of the road and use hand signals when turning. Bring plenty of water to stay hydrated, and ensure the bicycle has a working lock for when you make stops along your journey.",
+            "id": "## Gambaran Umum\nBersepeda di sekitar Yogyakarta menawarkan cara yang santai dan ramah lingkungan untuk menikmati pesona kota. Ini sangat menyenangkan untuk menjelajahi lingkungan bersejarah, pasar tradisional, dan pinggiran kota yang indah. Jogja semakin ramah sepeda dengan jalur khusus di jalan-jalan utama tertentu.\n\n## Tarif dan Lokasi\nPersewaan sepeda mudah ditemukan di sekitar pusat wisata populer seperti Prawirotaman dan Sosrowijayan. Anda juga dapat menemukan toko persewaan khusus yang menawarkan sepeda gunung untuk menjelajahi area seperti Kaliurang atau pedesaan. Harganya sangat murah, biasanya berkisar antara Rp 25.000 hingga Rp 50.000 per hari. Beberapa hotel dan wisma bahkan menawarkan sepeda gratis kepada tamu mereka.\n\n## Tips Praktis\nWaktu terbaik untuk bersepeda adalah pagi hari atau sore hari saat matahari tidak terlalu terik. Selalu tetap berada di sisi kiri jalan dan gunakan isyarat tangan saat berbelok. Bawalah air yang cukup agar tetap terhidrasi, dan pastikan sepeda memiliki kunci yang berfungsi saat Anda berhenti di sepanjang perjalanan."
           }
         },
         {
@@ -381,7 +498,16 @@
             "id": "Panduan dan informasi lengkap tentang Informasi Parkir di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 3,
+            "quickFacts": {
+              "Motorcycle Fee": "Rp 2,000 - Rp 5,000",
+              "Car Fee": "Rp 5,000 - Rp 10,000",
+              "Payment": "Cash only"
+            }
+          },
+          "body": {
+            "en": "## Overview\nFinding parking in Yogyakarta can be challenging, especially in popular tourist areas like Malioboro and around the Keraton (Sultan's Palace). However, the city has a well-established system of informal parking attendants (tukang parkir) who manage street parking and assist drivers.\n\n## Rates and Locations\nStandard parking rates for motorcycles are usually Rp 2,000 to Rp 3,000, while cars are charged Rp 5,000. In prime tourist spots or during special events, these rates might slightly increase. There are also official multi-story parking facilities, such as the Abu Bakar Ali parking building near Malioboro, which offer secure spaces with fixed rates.\n\n## Practical Tips\nAlways carry small change (Rp 2,000 and Rp 5,000 notes) as parking attendants rarely have change for large bills. Do not leave valuables visible in your vehicle, even in guarded spots. When parking on the street, ensure you follow the attendant's directions so your vehicle doesn't block traffic.",
+            "id": "## Gambaran Umum\nMencari tempat parkir di Yogyakarta bisa menjadi tantangan, terutama di daerah wisata populer seperti Malioboro dan sekitar Keraton. Namun, kota ini memiliki sistem juru parkir (tukang parkir) tidak resmi yang mapan untuk mengelola parkir di jalan dan membantu pengemudi.\n\n## Tarif dan Lokasi\nTarif parkir standar untuk sepeda motor biasanya Rp 2.000 hingga Rp 3.000, sedangkan mobil dikenakan biaya Rp 5.000. Di tempat-tempat wisata utama atau selama acara khusus, tarif ini mungkin sedikit meningkat. Terdapat juga fasilitas parkir bertingkat resmi, seperti gedung parkir Abu Bakar Ali dekat Malioboro, yang menawarkan ruang aman dengan tarif tetap.\n\n## Tips Praktis\nSelalu bawa uang pecahan kecil (uang kertas Rp 2.000 dan Rp 5.000) karena juru parkir jarang memiliki kembalian untuk uang pecahan besar. Jangan tinggalkan barang berharga yang terlihat di dalam kendaraan Anda, bahkan di tempat yang dijaga. Saat parkir di jalan, pastikan Anda mengikuti arahan petugas agar kendaraan Anda tidak menghalangi lalu lintas."
           }
         }
       ]
@@ -416,7 +542,16 @@
             "id": "Panduan dan informasi lengkap tentang Rumah Sakit di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 4,
+            "quickFacts": {
+              "Emergency Number": "119 / 112",
+              "Major Hospital": "RSUP Dr. Sardjito",
+              "Services": "24/7 ER, International Patient Care"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta is home to some of the best medical facilities in the region, ensuring that residents and visitors have access to excellent healthcare. From major public hospitals to modern private clinics, the city is well-equipped to handle medical emergencies and routine healthcare needs.\n\n## Top Medical Facilities\nThe largest and most prominent public hospital is RSUP Dr. Sardjito, offering comprehensive specialized care. For private healthcare, Siloam Hospitals Yogyakarta and RS Panti Rapih are highly recommended due to their modern facilities and availability of English-speaking staff. Most major hospitals feature 24-hour Emergency Rooms (IGD) and pharmacies.\n\n## Practical Tips\nIn case of a medical emergency, you can dial 119 or 112 for ambulance services. It is highly advised for international travelers to have comprehensive travel insurance that covers medical evacuation. Always keep a list of emergency contacts, including your embassy and insurance provider, and bring your passport when visiting a hospital for registration purposes.",
+            "id": "## Gambaran Umum\nYogyakarta adalah rumah bagi beberapa fasilitas medis terbaik di wilayah ini, memastikan bahwa penduduk dan pengunjung memiliki akses ke perawatan kesehatan yang sangat baik. Dari rumah sakit umum utama hingga klinik swasta modern, kota ini dilengkapi dengan baik untuk menangani keadaan darurat medis dan kebutuhan perawatan kesehatan rutin.\n\n## Fasilitas Medis Teratas\nRumah sakit umum terbesar dan paling menonjol adalah RSUP Dr. Sardjito, yang menawarkan perawatan khusus yang komprehensif. Untuk perawatan kesehatan swasta, Siloam Hospitals Yogyakarta dan RS Panti Rapih sangat direkomendasikan karena fasilitas modernnya dan ketersediaan staf yang dapat berbahasa Inggris. Sebagian besar rumah sakit besar memiliki Ruang Gawat Darurat (IGD) dan apotek 24 jam.\n\n## Tips Praktis\nDalam keadaan darurat medis, Anda dapat menghubungi 119 atau 112 untuk layanan ambulans. Sangat disarankan bagi pelancong internasional untuk memiliki asuransi perjalanan komprehensif yang mencakup evakuasi medis. Selalu simpan daftar kontak darurat, termasuk kedutaan besar dan penyedia asuransi Anda, dan bawa paspor Anda saat mengunjungi rumah sakit untuk tujuan pendaftaran."
           }
         },
         {
@@ -434,7 +569,16 @@
             "id": "Panduan dan informasi lengkap tentang Klinik di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 4,
+            "quickFacts": {
+              "Accessibility": "High",
+              "English Speaking Staff": "Available at major clinics",
+              "Cost": "Affordable"
+            }
+          },
+          "body": {
+            "en": "## Overview\nWhen visiting Yogyakarta, accessing medical care for minor ailments or non-emergency situations is relatively straightforward. The city is equipped with numerous clinics (klinik) that cater to both locals and international visitors. These facilities range from standard general practice clinics to more specialized ones. Most clinics operate during standard business hours, but there are several 24-hour clinics available for after-hours needs.\n\n## Key Locations/Contacts\nSome of the reputable clinics in Yogyakarta include Klinik Pramita and Klinik Bethesda. You'll also find various \"Klinik Pratama\" scattered across different neighborhoods. For travelers staying near Malioboro or Prawirotaman, finding a nearby clinic is usually just a short walk or taxi ride away. It's advisable to check with your hotel receptionist, as they often have a list of recommended nearby clinics.\n\n## Practical Tips\nAlways carry a copy of your passport and travel insurance information when visiting a clinic. While major clinics have English-speaking doctors, smaller local clinics might have a language barrier, so using a translation app can be very helpful. Payments are typically made in cash (Rupiah) or credit cards at larger establishments. Keep all receipts if you plan to claim expenses through your travel insurance.",
+            "id": "## Ringkasan\nSaat mengunjungi Yogyakarta, mengakses perawatan medis untuk penyakit ringan atau situasi non-darurat relatif mudah. Kota ini dilengkapi dengan banyak klinik yang melayani warga lokal maupun pengunjung internasional. Fasilitas ini berkisar dari klinik praktik umum standar hingga yang lebih khusus. Sebagian besar klinik beroperasi selama jam kerja standar, tetapi ada beberapa klinik 24 jam yang tersedia untuk kebutuhan di luar jam kerja.\n\n## Lokasi/Kontak Utama\nBeberapa klinik terkemuka di Yogyakarta termasuk Klinik Pramita dan Klinik Bethesda. Anda juga akan menemukan berbagai \"Klinik Pratama\" yang tersebar di berbagai lingkungan. Bagi wisatawan yang menginap di dekat Malioboro atau Prawirotaman, menemukan klinik terdekat biasanya hanya perlu berjalan kaki singkat atau naik taksi. Disarankan untuk bertanya kepada resepsionis hotel Anda, karena mereka sering memiliki daftar klinik terdekat yang direkomendasikan.\n\n## Kiat Praktis\nSelalu bawa salinan paspor dan informasi asuransi perjalanan Anda saat mengunjungi klinik. Meskipun klinik besar memiliki dokter yang bisa berbahasa Inggris, klinik lokal yang lebih kecil mungkin memiliki kendala bahasa, jadi menggunakan aplikasi terjemahan bisa sangat membantu. Pembayaran biasanya dilakukan secara tunai (Rupiah) atau kartu kredit di tempat yang lebih besar. Simpan semua tanda terima jika Anda berencana untuk mengklaim pengeluaran melalui asuransi perjalanan Anda."
           }
         },
         {
@@ -452,7 +596,16 @@
             "id": "Panduan dan informasi lengkap tentang Apotek di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 3,
+            "quickFacts": {
+              "Availability": "Widespread",
+              "24/7 Options": "K-24, Kimia Farma",
+              "Local Term": "Apotek"
+            }
+          },
+          "body": {
+            "en": "## Overview\nPharmacies, known locally as \"Apotek,\" are ubiquitous in Yogyakarta. Finding over-the-counter medication for common travel ailments such as upset stomachs, headaches, or minor cuts is very easy. Indonesian pharmacies are generally well-stocked, and pharmacists can often recommend suitable local alternatives to international brands.\n\n## Key Locations/Contacts\nFor 24-hour service, look for major national chains like Apotek K-24 and Apotek Kimia Farma. These franchises have numerous branches throughout the city, including central tourist areas. You will easily spot their brightly lit signs even late at night. Local independent pharmacies are also abundant but usually close by 9 PM or 10 PM.\n\n## Practical Tips\nIf you require specific prescription medication, it's highly recommended to bring an adequate supply from home, along with the original prescription or a doctor's note. While many basic medicines are available without a prescription, stronger medications will require one from a local doctor. When purchasing medication, check the expiration date and ensure the packaging is intact.",
+            "id": "## Ringkasan\nApotek sangat mudah ditemukan di Yogyakarta. Menemukan obat bebas untuk penyakit perjalanan umum seperti sakit perut, sakit kepala, atau luka ringan sangatlah mudah. Apotek di Indonesia umumnya memiliki persediaan yang baik, dan apoteker sering kali dapat merekomendasikan alternatif lokal yang sesuai untuk merek internasional.\n\n## Lokasi/Kontak Utama\nUntuk layanan 24 jam, carilah jaringan nasional besar seperti Apotek K-24 dan Apotek Kimia Farma. Waralaba ini memiliki banyak cabang di seluruh kota, termasuk di area wisata pusat. Anda akan dengan mudah melihat papan nama mereka yang terang benderang bahkan pada larut malam. Apotek independen lokal juga banyak tetapi biasanya tutup pada jam 9 atau 10 malam.\n\n## Kiat Praktis\nJika Anda memerlukan obat resep tertentu, sangat disarankan untuk membawa persediaan yang cukup dari rumah, bersama dengan resep asli atau surat keterangan dokter. Meskipun banyak obat dasar tersedia tanpa resep, obat yang lebih kuat akan memerlukan resep dari dokter lokal. Saat membeli obat, periksa tanggal kedaluwarsa dan pastikan kemasannya utuh."
           }
         },
         {
@@ -470,7 +623,16 @@
             "id": "Panduan dan informasi lengkap tentang Kantor Polisi di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 3,
+            "quickFacts": {
+              "Tourist Police": "Available in Malioboro",
+              "Emergency Number": "110",
+              "Local Term": "Kantor Polisi"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta is generally a safe city for tourists, but it's always good to know where to go in case you need police assistance. The city is served by the regional police force, known as Polda DIY, and several district stations (Polsek) and city stations (Polresta). A special Tourist Police unit is also deployed in major tourist hubs to assist foreign visitors specifically.\n\n## Key Locations/Contacts\nThe main city police station is Polresta Yogyakarta, located near the city center. For tourists exploring the Malioboro area, there is a dedicated Tourist Police (Polisi Pariwisata) post. These officers often speak some English and are trained to handle common tourist-related issues such as lost items or minor disputes. \n\n## Practical Tips\nIn an emergency, dial 110. If you need to report a crime for insurance purposes (like a stolen camera or passport), you must go to the police station in person to obtain an official police report (Surat Keterangan Lapor Polisi). Always remain polite and patient. Having a local guide or hotel staff member accompany you can help bridge any communication gaps.",
+            "id": "## Ringkasan\nYogyakarta pada umumnya adalah kota yang aman bagi wisatawan, tetapi selalu baik untuk mengetahui ke mana harus pergi jika Anda membutuhkan bantuan polisi. Kota ini dilayani oleh kepolisian daerah, yang dikenal sebagai Polda DIY, dan beberapa stasiun kecamatan (Polsek) dan stasiun kota (Polresta). Unit khusus Polisi Pariwisata juga dikerahkan di pusat-pusat wisata utama untuk membantu pengunjung asing secara khusus.\n\n## Lokasi/Kontak Utama\nKantor polisi kota utama adalah Polresta Yogyakarta, yang terletak di dekat pusat kota. Bagi wisatawan yang menjelajahi area Malioboro, terdapat pos Polisi Pariwisata khusus. Para petugas ini sering berbicara sedikit bahasa Inggris dan dilatih untuk menangani masalah umum terkait wisatawan seperti barang hilang atau perselisihan kecil.\n\n## Kiat Praktis\nDalam keadaan darurat, hubungi 110. Jika Anda perlu melaporkan kejahatan untuk keperluan asuransi (seperti kamera atau paspor yang dicuri), Anda harus pergi ke kantor polisi secara langsung untuk mendapatkan laporan polisi resmi (Surat Keterangan Lapor Polisi). Selalu bersikap sopan dan sabar. Membawa pemandu lokal atau staf hotel menemani Anda dapat membantu menjembatani kendala komunikasi."
           }
         },
         {
@@ -488,7 +650,15 @@
             "id": "Panduan dan informasi lengkap tentang Pemadam Kebakaran di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 2,
+            "quickFacts": {
+              "Emergency Number": "113",
+              "Local Term": "Pemadam Kebakaran (Damkar)"
+            }
+          },
+          "body": {
+            "en": "## Overview\nThe Fire Department in Yogyakarta, known locally as Pemadam Kebakaran or \"Damkar,\" is responsible for handling fire emergencies and conducting rescue operations within the city and surrounding regencies. They operate from several strategically located stations to ensure timely response to incidents.\n\n## Key Locations/Contacts\nThe main headquarters for the Yogyakarta City Fire Department is located centrally to cover urban areas rapidly. In case of a fire or a situation requiring rescue services, you should immediately contact the emergency hotline. \n\n## Practical Tips\nThe national emergency number for the fire department in Indonesia is 113. It is crucial to provide a clear and accurate address or prominent landmarks when reporting an incident. If you are staying in a hotel or guesthouse, familiarize yourself with the building's fire exits and evacuation plans upon arrival.",
+            "id": "## Ringkasan\nPemadam Kebakaran di Yogyakarta, yang dikenal secara lokal sebagai Pemadam Kebakaran atau \"Damkar,\" bertanggung jawab untuk menangani keadaan darurat kebakaran dan melakukan operasi penyelamatan di dalam kota dan kabupaten sekitarnya. Mereka beroperasi dari beberapa stasiun yang berlokasi strategis untuk memastikan respons yang tepat waktu terhadap insiden.\n\n## Lokasi/Kontak Utama\nMarkas utama Pemadam Kebakaran Kota Yogyakarta terletak di pusat untuk mencakup area perkotaan dengan cepat. Jika terjadi kebakaran atau situasi yang memerlukan layanan penyelamatan, Anda harus segera menghubungi hotline darurat.\n\n## Kiat Praktis\nNomor darurat nasional untuk pemadam kebakaran di Indonesia adalah 113. Sangat penting untuk memberikan alamat yang jelas dan akurat atau tengara yang menonjol saat melaporkan suatu insiden. Jika Anda menginap di hotel atau wisma, biasakan diri Anda dengan pintu keluar darurat bangunan dan rencana evakuasi setibanya di sana."
           }
         },
         {
@@ -506,7 +676,16 @@
             "id": "Panduan dan informasi lengkap tentang Nomor Darurat di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 3,
+            "quickFacts": {
+              "National Emergency": "112",
+              "Police": "110",
+              "Ambulance": "118"
+            }
+          },
+          "body": {
+            "en": "## Overview\nBeing prepared is essential for any trip. While Yogyakarta is a welcoming and relatively safe destination, having quick access to emergency contact numbers can provide peace of mind and ensure prompt assistance if the unexpected occurs. Indonesia has specific numbers for different emergency services, alongside a general integrated number.\n\n## Key Locations/Contacts\nHere are the most important emergency numbers to save in your phone:\n- **General Emergency / Integrated Services:** 112\n- **Police:** 110\n- **Fire Department:** 113\n- **Ambulance / Medical Emergency:** 118 or 119\n- **Search and Rescue (BASARNAS):** 115\n\n## Practical Tips\nWhen calling these numbers, speak as clearly as possible. English proficiency among dispatchers can vary, so having a local person or hotel staff assist you with the call is often the most effective approach. For medical emergencies, you can also often call large hospitals directly to request an ambulance. It's highly recommended to write down these numbers or save them in your phone's contacts before you travel.",
+            "id": "## Ringkasan\nBersiap-siap sangat penting untuk setiap perjalanan. Meskipun Yogyakarta adalah tujuan yang ramah dan relatif aman, memiliki akses cepat ke nomor kontak darurat dapat memberikan ketenangan pikiran dan memastikan bantuan segera jika hal yang tidak terduga terjadi. Indonesia memiliki nomor khusus untuk layanan darurat yang berbeda, di samping nomor terpadu umum.\n\n## Lokasi/Kontak Utama\nBerikut adalah nomor darurat terpenting untuk disimpan di ponsel Anda:\n- **Darurat Umum / Layanan Terpadu:** 112\n- **Polisi:** 110\n- **Pemadam Kebakaran:** 113\n- **Ambulans / Darurat Medis:** 118 atau 119\n- **Pencarian dan Penyelamatan (BASARNAS):** 115\n\n## Kiat Praktis\nSaat menelepon nomor-nomor ini, bicaralah sejelas mungkin. Kemahiran berbahasa Inggris di antara petugas operator dapat bervariasi, jadi meminta orang lokal atau staf hotel membantu Anda dengan panggilan tersebut sering kali merupakan pendekatan yang paling efektif. Untuk keadaan darurat medis, Anda juga sering dapat menelepon rumah sakit besar secara langsung untuk meminta ambulans. Sangat disarankan untuk mencatat nomor-nomor ini atau menyimpannya di kontak ponsel Anda sebelum bepergian."
           }
         },
         {
@@ -524,7 +703,16 @@
             "id": "Panduan dan informasi lengkap tentang Bantuan Wisatawan di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "emergency_number": "112 (General Emergency), 110 (Police)",
+              "tourist_police": "Available at Malioboro Street",
+              "hospital": "Dr. Sardjito General Hospital (Pusat)"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta is generally a very safe and welcoming city for tourists. However, it is always reassuring to know where to find help if you need it. Tourist assistance in Jogja is accessible, with dedicated tourist police who speak English and are stationed in popular areas like Malioboro and the Kraton.\n\n## Recommendations\nIf you find yourself in need of directions, lost items, or general assistance, look for the Tourist Police (Polisi Pariwisata). They wear distinctive uniforms, often with a sash or badge, and are known for being very friendly and helpful to international visitors. For medical emergencies, Dr. Sardjito Hospital offers comprehensive care and has English-speaking staff.\n\n## Practical Tips\nKeep emergency numbers saved in your phone: 112 for general emergencies, 110 for police, 118 for ambulance, and 113 for fire. It is also wise to keep a photocopy of your passport and visa separate from your original documents. If you lose your passport, you will need to contact your country's embassy or consulate, most of which are located in Jakarta, though some have honorary consuls in Jogja or nearby cities.",
+            "id": "## Gambaran Umum\nYogyakarta pada umumnya adalah kota yang sangat aman dan ramah bagi wisatawan. Namun, selalu menenangkan untuk mengetahui di mana mencari bantuan jika Anda membutuhkannya. Bantuan wisata di Jogja mudah diakses, dengan polisi pariwisata khusus yang berbahasa Inggris dan berjaga di area populer seperti Malioboro dan Kraton.\n\n## Rekomendasi\nJika Anda membutuhkan petunjuk arah, kehilangan barang, atau bantuan umum, carilah Polisi Pariwisata. Mereka mengenakan seragam khas, sering kali dengan selempang atau lencana, dan dikenal sangat ramah dan membantu pengunjung internasional. Untuk keadaan darurat medis, Rumah Sakit Dr. Sardjito menawarkan perawatan komprehensif dan memiliki staf yang dapat berbahasa Inggris.\n\n## Tips Praktis\nSimpan nomor darurat di telepon Anda: 112 untuk darurat umum, 110 untuk polisi, 118 untuk ambulans, dan 113 untuk pemadam kebakaran. Anda juga disarankan untuk menyimpan fotokopi paspor dan visa Anda terpisah dari dokumen asli. Jika Anda kehilangan paspor, Anda perlu menghubungi kedutaan atau konsulat negara Anda, yang sebagian besar berlokasi di Jakarta, meskipun beberapa memiliki konsul kehormatan di Jogja atau kota terdekat."
           }
         }
       ]
@@ -559,7 +747,16 @@
             "id": "Panduan dan informasi lengkap tentang Penukaran Uang di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 3,
+            "quickFacts": {
+              "best_locations": "Malioboro area, Prawirotaman, Inna Garuda Hotel",
+              "currency_accepted": "USD, EUR, AUD, SGD are widely accepted",
+              "notes_condition": "Must be crisp, clean, and unfolded for best rates"
+            }
+          },
+          "body": {
+            "en": "## Overview\nWhile ATMs are plentiful, carrying some Indonesian Rupiah (IDR) in cash is essential for small purchases, street food, and tipping. Money changers in Yogyakarta offer competitive rates, especially for major currencies. It's important to use authorized money changers to avoid scams.\n\n## Recommendations\nThe most reliable money changers are located along Jalan Malioboro, inside the Inna Garuda Hotel complex, and in the Prawirotaman tourist area. Places like PT. Barumun Abadi and Mulia Money Changer are well-known for offering good rates and secure transactions. Always check the current exchange rate online before making a transaction to ensure you're getting a fair deal.\n\n## Practical Tips\nIndonesian money changers are famously strict about the condition of foreign banknotes. Ensure your bills (especially US Dollars) are crisp, clean, unfolded, and not torn, as damaged or older series bills may be rejected or exchanged at a lower rate. Count your Rupiah carefully before leaving the counter, and keep the receipt.",
+            "id": "## Gambaran Umum\nMeskipun ATM banyak tersedia, membawa uang tunai Rupiah Indonesia (IDR) sangat penting untuk pembelian kecil, makanan kaki lima, dan tip. Penukaran uang (money changer) di Yogyakarta menawarkan nilai tukar yang kompetitif, terutama untuk mata uang utama. Penting untuk menggunakan money changer resmi untuk menghindari penipuan.\n\n## Rekomendasi\nPenukaran uang yang paling andal terletak di sepanjang Jalan Malioboro, di dalam kompleks Hotel Inna Garuda, dan di area wisata Prawirotaman. Tempat-tempat seperti PT. Barumun Abadi dan Mulia Money Changer terkenal menawarkan nilai tukar yang baik dan transaksi yang aman. Selalu periksa nilai tukar saat ini secara online sebelum melakukan transaksi untuk memastikan Anda mendapatkan penawaran yang adil.\n\n## Tips Praktis\nPenukaran uang di Indonesia terkenal ketat mengenai kondisi uang kertas asing. Pastikan uang kertas Anda (terutama Dolar AS) renyah, bersih, tidak terlipat, dan tidak robek, karena uang kertas seri lama atau rusak mungkin ditolak atau ditukar dengan nilai lebih rendah. Hitung uang Rupiah Anda dengan cermat sebelum meninggalkan konter, dan simpan tanda terimanya."
           }
         },
         {
@@ -577,7 +774,16 @@
             "id": "Panduan dan informasi lengkap tentang Bank dan ATM di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "major_banks": "BCA, Mandiri, BNI, BRI",
+              "atm_withdrawal_limit": "Rp 1.250.000 to Rp 2.500.000 per transaction",
+              "card_networks": "Visa and Mastercard are universally accepted"
+            }
+          },
+          "body": {
+            "en": "## Overview\nBanking infrastructure in Yogyakarta is modern and extensive. You will find branches of all major Indonesian banks, as well as international banks, scattered throughout the city. ATMs are ubiquitous, available in shopping malls, convenience stores (Indomaret, Alfamart), and standalone kiosks along main roads.\n\n## Recommendations\nFor international travelers, ATMs from major national banks like BCA (Bank Central Asia), Mandiri, BNI (Bank Negara Indonesia), and BRI (Bank Rakyat Indonesia) are highly recommended as they reliably accept international Visa and Mastercard networks. Cirrus and Plus networks are also widely supported. Look for ATMs with the Visa or Mastercard logo displayed.\n\n## Practical Tips\nMost ATMs dispense either Rp 50.000 or Rp 100.000 notes, clearly marked by a sticker on the machine. Be aware that the maximum withdrawal limit per transaction usually ranges from Rp 1.250.000 to Rp 2.500.000. Inform your home bank of your travel dates to prevent your card from being blocked for suspicious overseas activity. Also, always shield the keypad when entering your PIN.",
+            "id": "## Gambaran Umum\nInfrastruktur perbankan di Yogyakarta modern dan luas. Anda akan menemukan cabang dari semua bank besar Indonesia, serta bank internasional, yang tersebar di seluruh kota. ATM ada di mana-mana, tersedia di pusat perbelanjaan, minimarket (Indomaret, Alfamart), dan kios mandiri di sepanjang jalan utama.\n\n## Rekomendasi\nUntuk pelancong internasional, ATM dari bank nasional besar seperti BCA (Bank Central Asia), Mandiri, BNI (Bank Negara Indonesia), dan BRI (Bank Rakyat Indonesia) sangat direkomendasikan karena mereka dengan andal menerima jaringan Visa dan Mastercard internasional. Jaringan Cirrus dan Plus juga didukung secara luas. Carilah ATM dengan logo Visa atau Mastercard yang ditampilkan.\n\n## Tips Praktis\nSebagian besar ATM mengeluarkan uang kertas Rp 50.000 atau Rp 100.000, yang ditandai dengan jelas oleh stiker di mesin. Sadarilah bahwa batas penarikan maksimum per transaksi biasanya berkisar antara Rp 1.250.000 hingga Rp 2.500.000. Beri tahu bank asal Anda tentang tanggal perjalanan Anda untuk mencegah kartu Anda diblokir karena aktivitas luar negeri yang mencurigakan. Selain itu, selalu tutupi papan tombol saat memasukkan PIN Anda."
           }
         },
         {
@@ -595,7 +801,16 @@
             "id": "Panduan dan informasi lengkap tentang Kartu SIM di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 3,
+            "quickFacts": {
+              "top_providers": "Telkomsel, XL Axiata, Indosat Ooredoo",
+              "registration_req": "Passport and phone IMEI required for foreigners",
+              "where_to_buy": "YIA Airport, official telecom grapari/centers"
+            }
+          },
+          "body": {
+            "en": "## Overview\nStaying connected in Yogyakarta is easy and affordable. Purchasing a local prepaid SIM card provides you with reliable 4G/5G data for navigation, ride-hailing apps (like Gojek or Grab), and social media. The cellular network coverage in Jogja and the surrounding tourist sites is excellent.\n\n## Recommendations\nTelkomsel is widely considered to have the best and most extensive coverage, especially if you plan to travel outside the city center to places like Gunung Kidul beaches or rural temples. XL Axiata and Indosat Ooredoo are also solid choices with competitive data packages suitable for urban areas.\n\n## Practical Tips\nIndonesia has strict regulations for SIM card registration. As a foreign tourist, you must register your SIM card using your passport and the IMEI number of your phone. It is highly recommended to buy your SIM card at the official provider stores (like GraPARI for Telkomsel) or directly upon arrival at Yogyakarta International Airport (YIA), where staff are accustomed to the registration process for foreigners and can activate it for you on the spot.",
+            "id": "## Gambaran Umum\nTetap terhubung di Yogyakarta itu mudah dan terjangkau. Membeli kartu SIM prabayar lokal memberi Anda data 4G/5G yang andal untuk navigasi, aplikasi pemesanan kendaraan (seperti Gojek atau Grab), dan media sosial. Cakupan jaringan seluler di Jogja dan tempat-tempat wisata sekitarnya sangat baik.\n\n## Rekomendasi\nTelkomsel secara luas dianggap memiliki jangkauan terbaik dan paling luas, terutama jika Anda berencana untuk bepergian ke luar pusat kota ke tempat-tempat seperti pantai Gunung Kidul atau candi pedesaan. XL Axiata dan Indosat Ooredoo juga merupakan pilihan yang solid dengan paket data kompetitif yang cocok untuk daerah perkotaan.\n\n## Tips Praktis\nIndonesia memiliki peraturan ketat untuk pendaftaran kartu SIM. Sebagai turis asing, Anda harus mendaftarkan kartu SIM Anda menggunakan paspor dan nomor IMEI ponsel Anda. Sangat disarankan untuk membeli kartu SIM Anda di toko penyedia resmi (seperti GraPARI untuk Telkomsel) atau langsung saat kedatangan di Bandara Internasional Yogyakarta (YIA), di mana staf terbiasa dengan proses pendaftaran untuk orang asing dan dapat mengaktifkannya untuk Anda di tempat."
           }
         },
         {
@@ -613,7 +828,16 @@
             "id": "Panduan dan informasi lengkap tentang Internet dan Wi-Fi di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 2,
+            "quickFacts": {
+              "availability": "Widespread in cafes, hotels, and co-working spaces",
+              "avg_speed": "20 Mbps to 100 Mbps depending on the venue",
+              "free_wifi": "Available in most public parks and modern malls"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta is a vibrant hub for students and digital nomads, resulting in excellent internet infrastructure. Free Wi-Fi is standard across accommodations ranging from budget hostels to luxury hotels. You will rarely find yourself without an internet connection in the city.\n\n## Recommendations\nIf you need to get work done, Jogja has a thriving cafe culture. Hundreds of coffee shops offer free, relatively fast Wi-Fi for customers. Areas like Seturan, Prawirotaman, and Jalan Kaliurang are packed with cafes tailored to students and remote workers. For guaranteed high-speed and stable connections, consider visiting one of the many co-working spaces scattered around the city.\n\n## Practical Tips\nWhile public Wi-Fi is widespread, it may not always be secure. It is advisable to use a Virtual Private Network (VPN) when connecting to open networks in cafes, malls, or airports to protect your personal data. If you rely heavily on internet access, tethering from a local SIM card with a generous data package is a great backup plan.",
+            "id": "## Gambaran Umum\nYogyakarta adalah pusat yang dinamis bagi mahasiswa dan perantau digital, menghasilkan infrastruktur internet yang sangat baik. Wi-Fi gratis adalah standar di seluruh akomodasi mulai dari hostel melati hingga hotel mewah. Anda akan jarang menemukan diri Anda tanpa koneksi internet di kota ini.\n\n## Rekomendasi\nJika Anda perlu menyelesaikan pekerjaan, Jogja memiliki budaya kafe yang berkembang pesat. Ratusan kedai kopi menawarkan Wi-Fi gratis dan relatif cepat untuk pelanggan. Area seperti Seturan, Prawirotaman, dan Jalan Kaliurang dipenuhi dengan kafe yang disesuaikan untuk mahasiswa dan pekerja jarak jauh. Untuk menjamin koneksi berkecepatan tinggi dan stabil, pertimbangkan untuk mengunjungi salah satu dari banyak ruang kerja bersama (co-working space) yang tersebar di sekitar kota.\n\n## Tips Praktis\nMeskipun Wi-Fi publik tersebar luas, mungkin tidak selalu aman. Disarankan untuk menggunakan Virtual Private Network (VPN) saat terhubung ke jaringan terbuka di kafe, mal, atau bandara untuk melindungi data pribadi Anda. Jika Anda sangat bergantung pada akses internet, tethering dari kartu SIM lokal dengan paket data yang besar adalah rencana cadangan yang bagus."
           }
         },
         {
@@ -631,7 +855,17 @@
             "id": "Panduan dan informasi lengkap tentang Kantor Pos di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 4,
+            "quickFacts": {
+              "Main Location": "Kantor Pos Besar Yogyakarta (Km 0)",
+              "Standard Hours": "08:00 AM - 03:00 PM (Mon-Sat)",
+              "Services": "Domestic and international shipping, postcards, money transfers",
+              "Cost Level": "Affordable, varies by destination and weight"
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nStaying connected with loved ones or sending souvenirs back home is a breeze in Yogyakarta. The Indonesian postal service, known as Pos Indonesia, provides reliable and affordable mailing options. Whether you're sending a postcard from your travels or shipping heavier packages, you will find post offices conveniently located throughout the city and surrounding areas.\n\n## The Historic Main Post Office (Kantor Pos Besar)\n\nThe most prominent post office in the city is the *Kantor Pos Besar Yogyakarta*, situated right at the iconic Titik Nol Kilometer (0 Km Point) at the end of Malioboro Street. Housed in a beautiful heritage building from the Dutch colonial era, it is not only a fully functioning post office but also a historical landmark. Sending a postcard from this historic location adds a special touch to your travel memories. \n\n## Practical Tips\n\n- **Packaging:** While post offices sell boxes and envelopes, it is often easier to pack your items securely before arriving. Make sure fragile items (like ceramics or local crafts) are well-padded.\n- **International Shipping:** Pos Indonesia offers EMS (Express Mail Service) for international shipments, which includes tracking and is generally reliable. Always ask for the estimated delivery time and tracking number.\n- **Language:** English proficiency may vary among staff, especially in smaller branches. Using a translation app or knowing basic Indonesian phrases for 'send' (*kirim*) and 'package' (*paket*) can be helpful.",
+            "id": "## Gambaran Umum\n\nTetap terhubung dengan orang terkasih atau mengirim suvenir ke rumah sangatlah mudah di Yogyakarta. Layanan pos Indonesia, yang dikenal sebagai Pos Indonesia, menyediakan pilihan pengiriman surat dan paket yang dapat diandalkan dan terjangkau. Baik Anda mengirim kartu pos atau paket yang lebih berat, Anda akan menemukan kantor pos yang berlokasi strategis di seluruh kota dan sekitarnya.\n\n## Kantor Pos Besar yang Bersejarah\n\nKantor pos paling menonjol di kota ini adalah *Kantor Pos Besar Yogyakarta*, yang terletak tepat di Titik Nol Kilometer di ujung Jalan Malioboro. Bertempat di bangunan warisan yang indah dari era kolonial Belanda, tempat ini bukan hanya kantor pos yang berfungsi penuh tetapi juga tengara bersejarah. Mengirim kartu pos dari lokasi bersejarah ini menambah sentuhan khusus pada kenangan perjalanan Anda.\n\n## Tips Praktis\n\n- **Pengemasan:** Meskipun kantor pos menjual kotak dan amplop, seringkali lebih mudah untuk mengemas barang Anda dengan aman sebelum tiba. Pastikan barang rapuh (seperti keramik atau kerajinan lokal) diberi bantalan yang baik.\n- **Pengiriman Internasional:** Pos Indonesia menawarkan EMS (Express Mail Service) untuk pengiriman internasional, yang mencakup pelacakan dan umumnya dapat diandalkan. Selalu tanyakan perkiraan waktu pengiriman dan nomor pelacakan.\n- **Bahasa:** Kemampuan bahasa Inggris mungkin bervariasi di antara staf, terutama di cabang yang lebih kecil. Menggunakan aplikasi terjemahan atau mengetahui frasa dasar bahasa Indonesia untuk 'kirim' dan 'paket' bisa sangat membantu."
           }
         }
       ]
@@ -666,7 +900,17 @@
             "id": "Panduan dan informasi lengkap tentang Spa di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "Price Range": "Rp 150,000 - Rp 500,000+ per session",
+              "Signature Treatments": "Javanese Lulur, Aromatherapy, Herbal Baths",
+              "Booking": "Highly recommended, especially on weekends",
+              "Duration": "Usually 1 to 3 hours"
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nYogyakarta is a fantastic destination for relaxation and rejuvenation. The city boasts a wide variety of spas offering everything from traditional Javanese royal treatments to modern holistic therapies. After a long day of exploring temples or shopping in Malioboro, a visit to a local spa is the perfect way to unwind and pamper yourself.\n\n## Traditional Javanese Treatments\n\nOne of the must-try experiences in Jogja is the traditional *Lulur* body scrub. Originally a beauty ritual for Javanese princesses before their wedding day, this treatment uses a paste made from turmeric, sandalwood, rice powder, and other fragrant spices to exfoliate and soften the skin. It is usually followed by a relaxing massage and a floral bath. Many upscale spas also offer *Jamu* (traditional herbal medicine) as a complimentary welcome or post-treatment drink.\n\n## Practical Tips\n\n- **Reservations:** Popular spas, especially those inside luxury hotels or well-known stand-alone wellness centers, can get fully booked. It is always best to make a reservation at least a day in advance.\n- **Communication:** Let your therapist know your preferences regarding massage pressure (soft, medium, or hard) and if you have any sensitive areas or injuries.\n- **Etiquette:** Arrive at least 15 minutes before your appointment to fill out any necessary forms and to start your relaxation process with a welcome drink.",
+            "id": "## Gambaran Umum\n\nYogyakarta adalah destinasi yang fantastis untuk relaksasi dan peremajaan. Kota ini menawarkan berbagai macam spa yang menawarkan segalanya mulai dari perawatan kerajaan tradisional Jawa hingga terapi holistik modern. Setelah seharian menjelajahi candi atau berbelanja di Malioboro, kunjungan ke spa lokal adalah cara sempurna untuk bersantai dan memanjakan diri sendiri.\n\n## Perawatan Tradisional Jawa\n\nSalah satu pengalaman yang wajib dicoba di Jogja adalah lulur tubuh tradisional. Awalnya merupakan ritual kecantikan untuk putri Jawa sebelum hari pernikahan mereka, perawatan ini menggunakan pasta yang terbuat dari kunyit, kayu cendana, bubuk beras, dan rempah-rempah harum lainnya untuk mengelupas dan melembutkan kulit. Biasanya diikuti dengan pijat relaksasi dan mandi bunga. Banyak spa kelas atas juga menawarkan *Jamu* (obat herbal tradisional) sebagai minuman selamat datang atau pasca-perawatan gratis.\n\n## Tips Praktis\n\n- **Reservasi:** Spa populer, terutama yang berada di dalam hotel mewah atau pusat kesehatan mandiri yang terkenal, bisa penuh dipesan. Selalu lebih baik untuk melakukan reservasi setidaknya sehari sebelumnya.\n- **Komunikasi:** Beri tahu terapis Anda preferensi Anda mengenai tekanan pijat (lembut, sedang, atau keras) dan jika Anda memiliki area sensitif atau cedera.\n- **Etiket:** Tiba setidaknya 15 menit sebelum janji temu Anda untuk mengisi formulir yang diperlukan dan untuk memulai proses relaksasi Anda dengan minuman selamat datang."
           }
         },
         {
@@ -684,7 +928,17 @@
             "id": "Panduan dan informasi lengkap tentang Pusat Pijat dan Kebugaran di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "Price Range": "Rp 75,000 - Rp 250,000 per hour",
+              "Common Styles": "Javanese traditional massage, Reflexology, Shiatsu",
+              "Walk-ins": "Usually welcome, but expect a wait during peak hours",
+              "Tipping": "Not mandatory, but Rp 20,000 - Rp 50,000 is appreciated"
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nFor a quick and effective way to relieve tired muscles without the full spa experience, Yogyakarta has an abundance of massage and wellness centers. These establishments focus primarily on therapeutic bodywork and reflexology, offering excellent value for money. They are perfect for travelers needing a quick pick-me-up after a lot of walking.\n\n## Types of Massages Available\n\nThe most common offering is the Javanese traditional massage, which utilizes deep thumb pressure and long strokes, often with aromatherapeutic oils, to relieve tension and improve blood circulation. Reflexology (foot massage) centers are also ubiquitous; these focus on applying pressure to specific points on the feet that correspond to different body organs. You might also find places offering Shiatsu or Thai massage variations.\n\n## Practical Tips\n\n- **Choosing a Center:** Look for clean, well-lit establishments with clear pricing menus at the front desk. Many reputable family massage chains operate in Jogja, ensuring a professional and safe environment.\n- **Clothing:** For full-body massages, you will usually be provided with disposable underwear or loose-fitting clothing. For reflexology, you only need to roll up your trousers.\n- **Aftercare:** Drink plenty of water after your session to help flush out toxins released during the massage.",
+            "id": "## Gambaran Umum\n\nUntuk cara cepat dan efektif meredakan otot lelah tanpa pengalaman spa penuh, Yogyakarta memiliki banyak pusat pijat dan kebugaran. Tempat-tempat ini berfokus terutama pada terapi pijat tubuh dan refleksi, menawarkan nilai uang yang sangat baik. Mereka sempurna untuk wisatawan yang membutuhkan pemulihan cepat setelah banyak berjalan.\n\n## Jenis Pijat yang Tersedia\n\nPenawaran yang paling umum adalah pijat tradisional Jawa, yang menggunakan tekanan ibu jari yang dalam dan usapan panjang, seringkali dengan minyak aromaterapi, untuk meredakan ketegangan dan meningkatkan sirkulasi darah. Pusat refleksi (pijat kaki) juga ada di mana-mana; ini berfokus pada penerapan tekanan pada titik-titik tertentu di kaki yang sesuai dengan organ tubuh yang berbeda. Anda mungkin juga menemukan tempat yang menawarkan variasi pijat Shiatsu atau Thailand.\n\n## Tips Praktis\n\n- **Memilih Pusat Pijat:** Carilah tempat yang bersih, terang dengan menu harga yang jelas di meja depan. Banyak jaringan pijat keluarga terkemuka beroperasi di Jogja, memastikan lingkungan yang profesional dan aman.\n- **Pakaian:** Untuk pijat seluruh tubuh, Anda biasanya akan diberikan pakaian dalam sekali pakai atau pakaian longgar. Untuk refleksi, Anda hanya perlu menggulung celana Anda.\n- **Perawatan Setelahnya:** Minum banyak air setelah sesi Anda untuk membantu mengeluarkan racun yang dilepaskan selama pijat."
           }
         },
         {
@@ -702,7 +956,17 @@
             "id": "Panduan dan informasi lengkap tentang Pusat Kebugaran di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 3,
+            "quickFacts": {
+              "Day Pass Cost": "Rp 50,000 - Rp 150,000",
+              "Standard Equipment": "Free weights, treadmills, resistance machines",
+              "Peak Hours": "05:00 PM - 08:00 PM",
+              "Classes": "Zumba, Yoga, Aerobics often available"
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nMaintaining your fitness routine while visiting Yogyakarta is easy, thanks to a growing number of well-equipped gyms across the city. From local neighborhood fitness centers to large national chains, you can find a facility that suits your workout style and budget. Many gyms are highly accommodating to short-term visitors.\n\n## Finding the Right Gym\n\nIf you're staying in a mid-range or luxury hotel, check their facilities first, as many offer complimentary fitness centers for guests. If you need a more extensive range of equipment or prefer a vibrant gym atmosphere, look for commercial gyms in commercial areas like Seturan, Gejayan, or around shopping malls. These larger gyms usually offer cardio zones, extensive free weights, and group exercise studios.\n\n## Practical Tips\n\n- **Day Passes:** Most independent and chain gyms offer daily or weekly passes. Always bring your ID (passport or local ID) when registering for the first time.\n- **What to Bring:** Bring your own towel and water bottle. While upscale gyms provide towels, smaller local gyms might not. Proper athletic shoes are mandatory.\n- **Etiquette:** Standard gym etiquette applies: wipe down machines after use, re-rack your weights, and be mindful of sharing equipment during busy hours.",
+            "id": "## Gambaran Umum\n\nMenjaga rutinitas kebugaran Anda saat mengunjungi Yogyakarta sangatlah mudah, berkat semakin banyaknya gym yang dilengkapi dengan baik di seluruh kota. Dari pusat kebugaran lingkungan lokal hingga jaringan nasional besar, Anda dapat menemukan fasilitas yang sesuai dengan gaya latihan dan anggaran Anda. Banyak gym sangat akomodatif terhadap pengunjung jangka pendek.\n\n## Menemukan Gym yang Tepat\n\nJika Anda menginap di hotel kelas menengah atau mewah, periksa fasilitas mereka terlebih dahulu, karena banyak yang menawarkan pusat kebugaran gratis untuk tamu. Jika Anda membutuhkan peralatan yang lebih lengkap atau lebih menyukai suasana gym yang dinamis, carilah gym komersial di area seperti Seturan, Gejayan, atau di sekitar pusat perbelanjaan. Gym yang lebih besar ini biasanya menawarkan zona kardio, beban bebas yang luas, dan studio latihan kelompok.\n\n## Tips Praktis\n\n- **Tiket Harian:** Sebagian besar gym independen dan jaringan menawarkan tiket harian atau mingguan. Selalu bawa ID Anda (paspor atau KTP) saat mendaftar untuk pertama kalinya.\n- **Apa yang Harus Dibawa:** Bawa handuk dan botol air Anda sendiri. Sementara gym kelas atas menyediakan handuk, gym lokal yang lebih kecil mungkin tidak. Sepatu olahraga yang tepat adalah wajib.\n- **Etiket:** Etiket gym standar berlaku: bersihkan mesin setelah digunakan, kembalikan beban Anda, dan berhati-hatilah untuk berbagi peralatan selama jam sibuk."
           }
         },
         {
@@ -720,7 +984,17 @@
             "id": "Panduan dan informasi lengkap tentang Pusat Olahraga di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 4,
+            "quickFacts": {
+              "Popular Sports": "Badminton, Futsal, Swimming, Tennis",
+              "Booking Required": "Yes, usually at least 1 day in advance",
+              "Equipment Rental": "Often available for a small fee",
+              "Group Sizes": "Ideal for groups of 4-10 people"
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nFor those who prefer active recreation and team sports, Yogyakarta offers numerous sports centers (often called *GOR* - Gelanggang Olahraga). These complexes are popular among locals for after-work activities and weekend matches. Renting a court is a great way to stay active and experience a slice of local everyday life.\n\n## Popular Facilities\n\nBadminton is incredibly popular in Indonesia, and you will find dedicated badminton halls scattered throughout Jogja. Futsal (indoor soccer) is another massive favorite, with many centers offering synthetic grass or vinyl courts. Swimming pools are also common, ranging from Olympic-sized public pools to smaller, family-friendly water parks. Some larger complexes also offer tennis and basketball courts.\n\n## Practical Tips\n\n- **Booking Courts:** Sports courts, especially badminton and futsal, get fully booked quickly in the evenings (6 PM - 10 PM) and on weekends. It is highly recommended to book your slot via phone or WhatsApp a day or two in advance.\n- **Equipment:** While many centers rent out basic equipment like rackets or balls, the quality can vary. If you are particular about your gear, it's best to bring your own.\n- **Hydration:** Playing sports in Jogja's tropical climate will make you sweat profusely. Bring plenty of water, though most sports centers have small kiosks selling cold drinks and snacks.",
+            "id": "## Gambaran Umum\n\nBagi mereka yang lebih menyukai rekreasi aktif dan olahraga tim, Yogyakarta menawarkan banyak pusat olahraga (sering disebut *GOR* - Gelanggang Olahraga). Kompleks ini populer di kalangan penduduk setempat untuk kegiatan sepulang kerja dan pertandingan akhir pekan. Menyewa lapangan adalah cara yang bagus untuk tetap aktif dan merasakan bagian dari kehidupan sehari-hari setempat.\n\n## Fasilitas Populer\n\nBulu tangkis sangat populer di Indonesia, dan Anda akan menemukan gedung bulu tangkis khusus yang tersebar di seluruh Jogja. Futsal (sepak bola dalam ruangan) adalah favorit besar lainnya, dengan banyak pusat yang menawarkan lapangan rumput sintetis atau vinil. Kolam renang juga umum, mulai dari kolam renang umum ukuran Olimpiade hingga taman air ramah keluarga yang lebih kecil. Beberapa kompleks yang lebih besar juga menawarkan lapangan tenis dan bola basket.\n\n## Tips Praktis\n\n- **Pemesanan Lapangan:** Lapangan olahraga, terutama bulu tangkis dan futsal, cepat penuh dipesan di malam hari (18:00 - 22:00) dan di akhir pekan. Sangat disarankan untuk memesan slot Anda melalui telepon atau WhatsApp satu atau dua hari sebelumnya.\n- **Peralatan:** Meskipun banyak pusat menyewakan peralatan dasar seperti raket atau bola, kualitasnya bisa bervariasi. Jika Anda pemilih tentang perlengkapan Anda, sebaiknya bawa sendiri.\n- **Hidrasi:** Bermain olahraga di iklim tropis Jogja akan membuat Anda banyak berkeringat. Bawa banyak air, meskipun sebagian besar pusat olahraga memiliki kios kecil yang menjual minuman dingin dan makanan ringan."
           }
         },
         {
@@ -738,7 +1012,16 @@
             "id": "Panduan dan informasi lengkap tentang Kolam Renang di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 4,
+            "quickFacts": {
+              "Best Time": "Early morning or late afternoon",
+              "Average Cost": "Rp 30.000 - Rp 150.000",
+              "Must Bring": "Swimsuit, towel, sunscreen"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta can get quite warm during the day, making a refreshing dip in a swimming pool an irresistible idea. Whether you are looking for a luxurious hotel pool with a stunning view or a family-friendly water park, Jogja has plenty of options to help you cool off and relax.\n\n## Best Spots\nFor those seeking luxury, the rooftop pools at many of the city's premium hotels offer stunning views of Mount Merapi or the vibrant cityscape. If you prefer a more natural setting, some eco-resorts on the outskirts of the city provide pools surrounded by lush greenery. For families with children, Jogja Bay Waterpark is one of the largest water parks in Southeast Asia, offering numerous slides and wave pools.\n\n## Practical Tips\nAlways bring your own towel as not all public pools provide them, or they might charge an extra fee. Sunscreen is essential, especially if you plan to swim during the peak sun hours of 10 AM to 2 PM. Remember to check the dress code; while hotel pools are usually relaxed, some public pools may require proper swimwear and prohibit cotton t-shirts.",
+            "id": "## Gambaran Umum\nYogyakarta bisa menjadi cukup panas di siang hari, membuat berenang di kolam renang menjadi ide yang sangat menggoda. Apakah Anda mencari kolam renang hotel mewah dengan pemandangan menakjubkan atau taman air yang ramah keluarga, Jogja memiliki banyak pilihan untuk membantu Anda mendinginkan diri dan bersantai.\n\n## Tempat Terbaik\nBagi mereka yang mencari kemewahan, kolam renang di atap di banyak hotel premium di kota ini menawarkan pemandangan Gunung Merapi atau pemandangan kota yang menakjubkan. Jika Anda lebih suka suasana yang lebih alami, beberapa resor ramah lingkungan di pinggiran kota menyediakan kolam renang yang dikelilingi oleh tanaman hijau yang subur. Untuk keluarga dengan anak-anak, Jogja Bay Waterpark adalah salah satu taman air terbesar di Asia Tenggara, menawarkan berbagai seluncuran dan kolam ombak.\n\n## Tips Praktis\nSelalu bawa handuk sendiri karena tidak semua kolam umum menyediakannya, atau mereka mungkin mengenakan biaya tambahan. Tabir surya sangat penting, terutama jika Anda berencana berenang selama jam puncak matahari dari jam 10 pagi hingga 2 siang. Ingatlah untuk memeriksa aturan berpakaian; sementara kolam hotel biasanya santai, beberapa kolam umum mungkin mewajibkan pakaian renang yang pantas dan melarang kaos katun."
           }
         },
         {
@@ -756,7 +1039,16 @@
             "id": "Panduan dan informasi lengkap tentang Yoga dan Meditasi di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 4,
+            "quickFacts": {
+              "Atmosphere": "Serene and spiritual",
+              "Locations": "Bantul, Sleman, City Center",
+              "Suitable For": "Beginners to advanced practitioners"
+            }
+          },
+          "body": {
+            "en": "## Overview\nYogyakarta, with its deep-rooted cultural and spiritual heritage, is an excellent destination for yoga and meditation. The serene environment, especially in the areas outside the bustling city center, provides the perfect backdrop for finding inner peace and rejuvenating your mind and body.\n\n## Best Spots\nMany retreat centers and yoga studios are clustered around the artistic neighborhood of Bantul and the quiet countryside of Sleman. You can find drop-in classes ranging from Hatha and Vinyasa to Yin yoga. For a truly unique experience, consider joining a meditation session at one of the ancient temples or a retreat nestled amidst the rice paddies.\n\n## Practical Tips\nMost studios provide yoga mats, but bringing your own is always a good idea for hygiene purposes. Wear comfortable, breathable clothing suitable for the tropical climate. It's advisable to arrive at least 15 minutes before the class starts to settle in and communicate any injuries or special needs to the instructor.",
+            "id": "## Gambaran Umum\nYogyakarta, dengan warisan budaya dan spiritualnya yang mengakar kuat, adalah tujuan yang sangat baik untuk yoga dan meditasi. Lingkungan yang tenang, terutama di daerah di luar pusat kota yang sibuk, memberikan latar belakang yang sempurna untuk menemukan kedamaian batin dan meremajakan pikiran dan tubuh Anda.\n\n## Tempat Terbaik\nBanyak pusat retret dan studio yoga berkumpul di sekitar lingkungan artistik Bantul dan pedesaan yang tenang di Sleman. Anda dapat menemukan kelas harian mulai dari Hatha dan Vinyasa hingga Yin yoga. Untuk pengalaman yang benar-benar unik, pertimbangkan untuk bergabung dengan sesi meditasi di salah satu candi kuno atau retret yang terletak di tengah sawah.\n\n## Tips Praktis\nSebagian besar studio menyediakan matras yoga, tetapi membawa matras sendiri selalu merupakan ide yang baik untuk tujuan kebersihan. Kenakan pakaian yang nyaman dan menyerap keringat yang cocok untuk iklim tropis. Disarankan untuk tiba setidaknya 15 menit sebelum kelas dimulai untuk bersiap dan mengomunikasikan cedera atau kebutuhan khusus kepada instruktur."
           }
         }
       ]
@@ -791,7 +1083,16 @@
             "id": "Panduan dan informasi lengkap tentang Toilet Umum di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 3,
+            "quickFacts": {
+              "Cost": "Rp 2.000 - Rp 5.000",
+              "Payment": "Cash only",
+              "Availability": "Widespread in tourist areas"
+            }
+          },
+          "body": {
+            "en": "## Overview\nFinding a clean and accessible public toilet is a practical concern for any traveler. In Yogyakarta, public toilets are generally available in most tourist attractions, markets, shopping malls, and gas stations. While facilities have improved significantly over the years, standards can still vary.\n\n## Best Spots\nThe cleanest public toilets are typically found in modern shopping malls such as Pakuwon Mall Jogja or Plaza Ambarrukmo. Major tourist sites like the Kraton, Prambanan, and Borobudur also maintain decent facilities. Gas stations (SPBU) are reliable options when you are on the road, though the cleanliness can depend on the location.\n\n## Practical Tips\nAlways carry small change (Rp 2,000 notes or coins) as most public toilets require a small fee to use, usually paid to an attendant at the entrance. It is highly recommended to bring your own tissue paper and hand sanitizer, as these are not always provided. Be prepared to encounter both Western-style sitting toilets and traditional squat toilets.",
+            "id": "## Gambaran Umum\nMenemukan toilet umum yang bersih dan mudah diakses adalah perhatian praktis bagi setiap wisatawan. Di Yogyakarta, toilet umum umumnya tersedia di sebagian besar tempat wisata, pasar, pusat perbelanjaan, dan pom bensin. Meskipun fasilitas telah meningkat secara signifikan selama bertahun-tahun, standarnya masih bisa bervariasi.\n\n## Tempat Terbaik\nToilet umum terbersih biasanya ditemukan di pusat perbelanjaan modern seperti Pakuwon Mall Jogja atau Plaza Ambarrukmo. Situs wisata utama seperti Kraton, Prambanan, dan Borobudur juga memelihara fasilitas yang layak. Pom bensin (SPBU) adalah pilihan yang dapat diandalkan saat Anda berada di jalan, meskipun kebersihannya dapat bergantung pada lokasi.\n\n## Tips Praktis\nSelalu bawa uang receh (uang kertas atau koin Rp 2.000) karena sebagian besar toilet umum mengenakan biaya kecil untuk digunakan, biasanya dibayarkan kepada petugas di pintu masuk. Sangat disarankan untuk membawa tisu dan pembersih tangan sendiri, karena tidak selalu disediakan. Bersiaplah untuk menemukan toilet duduk bergaya Barat maupun toilet jongkok tradisional."
           }
         },
         {
@@ -809,7 +1110,16 @@
             "id": "Panduan dan informasi lengkap tentang Pusat Informasi di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 2
+            "estReadMins": 3,
+            "quickFacts": {
+              "Locations": "Malioboro, Airport, Train Stations",
+              "Language": "Indonesian, English",
+              "Services": "Maps, brochures, guidance"
+            }
+          },
+          "body": {
+            "en": "## Overview\nTourist Information Centers (TIC) in Yogyakarta are invaluable resources for travelers looking to navigate the city and its surrounding attractions. Staffed by knowledgeable and friendly locals, these centers can help you with directions, transportation schedules, and recommendations for authentic experiences.\n\n## Best Spots\nThe most prominent TIC is located right on the famous Malioboro Street, easily accessible for most visitors. You will also find dedicated information desks at Yogyakarta International Airport (YIA) and major train stations like Tugu and Lempuyangan. Additionally, the Department of Tourism office often provides comprehensive brochures and event calendars.\n\n## Practical Tips\nDon't hesitate to drop by a TIC early in your trip to grab free maps and up-to-date brochures on local events or performances, such as the Ramayana Ballet. While English is widely spoken by the staff, learning a few basic Indonesian greetings can go a long way. The centers can also assist you in verifying the legitimacy of tour operators and guides.",
+            "id": "## Gambaran Umum\nPusat Informasi Turis (TIC) di Yogyakarta adalah sumber daya yang tak ternilai bagi wisatawan yang ingin menavigasi kota dan atraksi sekitarnya. Dikelola oleh penduduk setempat yang berpengetahuan luas dan ramah, pusat-pusat ini dapat membantu Anda dengan petunjuk arah, jadwal transportasi, dan rekomendasi untuk pengalaman otentik.\n\n## Tempat Terbaik\nTIC yang paling menonjol terletak tepat di Jalan Malioboro yang terkenal, mudah diakses oleh sebagian besar pengunjung. Anda juga akan menemukan meja informasi khusus di Bandara Internasional Yogyakarta (YIA) dan stasiun kereta utama seperti Tugu dan Lempuyangan. Selain itu, kantor Dinas Pariwisata sering menyediakan brosur komprehensif dan kalender acara.\n\n## Tips Praktis\nJangan ragu untuk mampir ke TIC di awal perjalanan Anda untuk mengambil peta gratis dan brosur terbaru tentang acara atau pertunjukan lokal, seperti Sendratari Ramayana. Meskipun bahasa Inggris digunakan secara luas oleh staf, mempelajari beberapa salam dasar bahasa Indonesia bisa sangat membantu. Pusat-pusat ini juga dapat membantu Anda memverifikasi keabsahan operator tur dan pemandu."
           }
         },
         {
@@ -827,7 +1137,16 @@
             "id": "Panduan dan informasi lengkap tentang Fasilitas Ibadah di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 4,
+            "quickFacts": {
+              "mostCommon": "Mosques (Masjid) and Prayer Rooms (Mushola) are widely available.",
+              "mallFacilities": "Almost all shopping malls provide clean and comfortable prayer rooms.",
+              "publicSpaces": "Train stations, airports, and major tourist attractions have dedicated prayer areas."
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nYogyakarta is a highly welcoming and accommodating destination for Muslim travelers. Finding a place to pray is incredibly easy, as mosques (masjid) and prayer rooms (mushola) are scattered throughout the city, from bustling commercial areas to quiet residential neighborhoods. The Grand Mosque of Yogyakarta (Masjid Gede Kauman), located near the Kraton, is a historical landmark and a beautiful place for worship.\n\n## Available Facilities\n\n**Malls and Shopping Centers:** Modern shopping centers such as Malioboro Mall, Ambarrukmo Plaza, and Pakuwon Mall Jogja are equipped with clean, air-conditioned musholas, usually located on the upper or lower ground floors. They provide ablution (wudhu) areas and prayer garments (mukena) for women, though bringing your own is recommended for hygiene.\n\n**Public Transport Hubs:** Yogyakarta International Airport (YIA), Adisutjipto Airport, Tugu Railway Station, and Lempuyangan Railway Station all feature spacious and well-maintained prayer rooms. You can easily find them by following the signs or asking the friendly staff.\n\n**Tourist Attractions:** Major sites like Borobudur and Prambanan temples, as well as the Kraton complex, offer prayer facilities near their entrance or visitor centers. Even smaller attractions and local restaurants typically have a designated spot for prayers.\n\n## Practical Tips\n\n- **Prayer Garments:** While many places provide *mukena* (women's prayer garments) and *sarongs*, it is always a good idea to carry a travel-sized prayer mat and garment for your convenience and peace of mind.\n- **Adhan Apps:** Download a reliable prayer time application to keep track of the local prayer schedule, as times can vary slightly depending on the season.\n- **Etiquette:** Remember to dress modestly when entering a mosque or prayer room, and be respectful of others who are praying.",
+            "id": "## Gambaran Umum\n\nYogyakarta adalah destinasi yang sangat ramah dan akomodatif bagi wisatawan Muslim. Menemukan tempat untuk salat sangatlah mudah, karena masjid dan musala tersebar di seluruh penjuru kota, dari area komersial yang sibuk hingga kawasan perumahan yang tenang. Masjid Gede Kauman, yang terletak di dekat Kraton, adalah tengara bersejarah dan tempat ibadah yang indah.\n\n## Fasilitas yang Tersedia\n\n**Mal dan Pusat Perbelanjaan:** Pusat perbelanjaan modern seperti Malioboro Mall, Ambarrukmo Plaza, dan Pakuwon Mall Jogja dilengkapi dengan musala ber-AC yang bersih, biasanya terletak di lantai atas atau lantai dasar (basement). Mereka menyediakan tempat wudu dan mukena untuk wanita, meskipun membawa perlengkapan sendiri disarankan untuk alasan kebersihan.\n\n**Pusat Transportasi Publik:** Bandara Internasional Yogyakarta (YIA), Bandara Adisutjipto, Stasiun Kereta Tugu, dan Stasiun Lempuyangan semuanya memiliki ruang salat yang luas dan terawat. Anda dapat dengan mudah menemukannya dengan mengikuti papan petunjuk atau bertanya kepada staf yang ramah.\n\n**Tempat Wisata:** Situs-situs utama seperti Candi Borobudur dan Prambanan, serta kompleks Kraton, menawarkan fasilitas salat di dekat pintu masuk atau pusat informasi pengunjung. Bahkan tempat wisata yang lebih kecil dan restoran lokal biasanya memiliki tempat khusus untuk beribadah.\n\n## Tips Praktis\n\n- **Perlengkapan Salat:** Meskipun banyak tempat menyediakan mukena dan sarung, selalu merupakan ide yang baik untuk membawa sajadah dan mukena ukuran travel untuk kenyamanan dan ketenangan pikiran Anda.\n- **Aplikasi Azan:** Unduh aplikasi jadwal salat yang andal untuk memantau jadwal salat lokal, karena waktunya dapat sedikit bervariasi tergantung musim.\n- **Etiket:** Ingatlah untuk berpakaian sopan saat memasuki masjid atau musala, dan hormati orang lain yang sedang beribadah."
           }
         },
         {
@@ -845,7 +1164,16 @@
             "id": "Panduan dan informasi lengkap tentang Layanan Aksesibilitas di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 4,
+            "quickFacts": {
+              "publicTransport": "TransJogja buses are generally wheelchair accessible.",
+              "majorAttractions": "Key sites like Prambanan and Borobudur offer ramps and buggy services.",
+              "sidewalks": "Malioboro Street has been revamped to be more pedestrian and wheelchair friendly."
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nYogyakarta is continuously working towards becoming a more inclusive and accessible city for all travelers. While historical infrastructure can sometimes present challenges, significant improvements have been made in recent years. Major tourist areas, modern transportation hubs, and newly built facilities are increasingly prioritizing accessibility for visitors with mobility impairments.\n\n## Available Services and Infrastructure\n\n**Tourist Attractions:** Iconic landmarks like Prambanan and Borobudur have recognized the need for accessibility. They provide ramps in certain areas and offer buggy or shuttle services for visitors who cannot navigate the extensive grounds on foot. The Kraton (Royal Palace) also accommodates wheelchair users, though some traditional thresholds might require assistance.\n\n**Transportation:** The TransJogja bus system is designed to be accessible, with low-floor buses and dedicated seating. The new Yogyakarta International Airport (YIA) boasts state-of-the-art accessibility features, including elevators, ramps, and accessible restrooms. Tugu Train Station has also improved its facilities to better serve passengers with disabilities.\n\n**Malioboro Street:** The famous Malioboro Street has undergone significant renovations, making the pedestrian pathways wider, flatter, and equipped with tactile paving for the visually impaired, greatly enhancing the experience for wheelchair users.\n\n## Practical Tips\n\n- **Call Ahead:** Before visiting smaller museums, local restaurants, or boutique hotels, it is highly recommended to call ahead to inquire about their specific accessibility features, such as ramps or elevators.\n- **Accessible Transport Apps:** Utilize ride-hailing applications like Grab or Gojek, and if needed, add a note requesting a vehicle with extra space for a wheelchair.\n- **Specialized Tours:** Consider booking tours through specialized operators who focus on accessible travel in Indonesia, as they can provide tailored itineraries and necessary support equipment.",
+            "id": "## Gambaran Umum\n\nYogyakarta terus berupaya menjadi kota yang lebih inklusif dan dapat diakses oleh semua wisatawan. Meskipun infrastruktur bersejarah terkadang menghadirkan tantangan, peningkatan signifikan telah dilakukan dalam beberapa tahun terakhir. Area wisata utama, pusat transportasi modern, dan fasilitas yang baru dibangun semakin memprioritaskan aksesibilitas bagi pengunjung dengan keterbatasan mobilitas.\n\n## Layanan dan Infrastruktur yang Tersedia\n\n**Tempat Wisata:** Tengara ikonik seperti Prambanan dan Borobudur telah menyadari kebutuhan akan aksesibilitas. Mereka menyediakan jalur landai (ramp) di area tertentu dan menawarkan layanan mobil buggy atau antar-jemput bagi pengunjung yang tidak dapat menjelajahi lahan luas dengan berjalan kaki. Kraton (Istana Kepresidenan) juga mengakomodasi pengguna kursi roda, meskipun beberapa ambang pintu tradisional mungkin memerlukan bantuan.\n\n**Transportasi:** Sistem bus TransJogja dirancang agar dapat diakses, dengan bus berlantai rendah dan tempat duduk khusus. Bandara Internasional Yogyakarta (YIA) yang baru menawarkan fitur aksesibilitas mutakhir, termasuk lift, ramp, dan toilet difabel. Stasiun Kereta Tugu juga telah meningkatkan fasilitasnya untuk melayani penumpang penyandang disabilitas dengan lebih baik.\n\n**Jalan Malioboro:** Jalan Malioboro yang terkenal telah mengalami renovasi yang signifikan, membuat jalur pejalan kaki lebih lebar, rata, dan dilengkapi dengan ubin pemandu (tactile paving) untuk tunanetra, sehingga sangat meningkatkan pengalaman bagi pengguna kursi roda.\n\n## Tips Praktis\n\n- **Hubungi Terlebih Dahulu:** Sebelum mengunjungi museum kecil, restoran lokal, atau hotel butik, sangat disarankan untuk menelepon terlebih dahulu guna menanyakan tentang fitur aksesibilitas spesifik mereka, seperti ramp atau lift.\n- **Aplikasi Transportasi Aksesibel:** Gunakan aplikasi pemesanan kendaraan seperti Grab atau Gojek, dan jika perlu, tambahkan catatan yang meminta kendaraan dengan ruang ekstra untuk kursi roda.\n- **Tur Khusus:** Pertimbangkan untuk memesan tur melalui operator khusus yang berfokus pada wisata aksesibel di Indonesia, karena mereka dapat menyediakan rencana perjalanan yang disesuaikan dan peralatan dukungan yang diperlukan."
           }
         },
         {
@@ -863,7 +1191,16 @@
             "id": "Panduan dan informasi lengkap tentang Penyimpanan Bagasi di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 4
+            "estReadMins": 3,
+            "quickFacts": {
+              "trainStations": "Tugu and Lempuyangan stations offer secure locker facilities.",
+              "airports": "Luggage storage is available at YIA (Yogyakarta International Airport).",
+              "hotels": "Most hotels offer free luggage holding before check-in or after check-out."
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nNavigating Yogyakarta is much easier when you don't have to drag your heavy bags along. Fortunately, the city offers several reliable luggage storage options, allowing you to maximize your time exploring, whether you've just arrived before check-in time or have a few hours to spare before your departure.\n\n## Available Facilities\n\n**Train Stations:** For travelers arriving by rail, both Tugu Railway Station (the main station for executive classes) and Lempuyangan Station offer automated locker systems or manual luggage deposit counters. These are highly convenient, reasonably priced, and secure, often charging by the hour or per day based on luggage size.\n\n**Airports:** Yogyakarta International Airport (YIA) provides a Left Luggage facility. This is ideal if you have a long layover or want to take a quick trip into the city without your bulky suitcases. The service is professionally managed and highly secure.\n\n**Accommodations:** The most convenient option is often your own hotel or guesthouse. Almost all accommodations in Yogyakarta, from budget hostels to luxury resorts, will happily hold your bags free of charge on the day of your arrival or departure.\n\n## Practical Tips\n\n- **Valuables:** Always keep your valuables—such as passports, electronics, and cash—with you in a small daypack, even when using secure storage facilities.\n- **Locker Sizes:** If using station lockers, be aware that they come in various sizes. Ensure your largest suitcase fits before paying for the rental.\n- **Operating Hours:** Double-check the operating hours of the luggage storage facility, especially if you have an early morning or late-night departure, to ensure you can retrieve your bags in time.",
+            "id": "## Gambaran Umum\n\nMenjelajahi Yogyakarta jauh lebih mudah ketika Anda tidak perlu menyeret tas berat Anda. Untungnya, kota ini menawarkan beberapa pilihan tempat penitipan bagasi yang andal, memungkinkan Anda untuk memaksimalkan waktu menjelajah, baik Anda baru saja tiba sebelum waktu check-in atau memiliki beberapa jam luang sebelum keberangkatan.\n\n## Fasilitas yang Tersedia\n\n**Stasiun Kereta:** Bagi wisatawan yang tiba dengan kereta api, baik Stasiun Kereta Tugu (stasiun utama untuk kelas eksekutif) maupun Stasiun Lempuyangan menawarkan sistem loker otomatis atau loket penitipan bagasi manual. Fasilitas ini sangat nyaman, harganya terjangkau, dan aman, sering kali dikenakan biaya per jam atau per hari berdasarkan ukuran bagasi.\n\n**Bandara:** Bandara Internasional Yogyakarta (YIA) menyediakan fasilitas Penitipan Barang (Left Luggage). Ini ideal jika Anda memiliki waktu transit yang lama atau ingin melakukan perjalanan singkat ke kota tanpa koper besar Anda. Layanan ini dikelola secara profesional dan sangat aman.\n\n**Akomodasi:** Pilihan yang paling nyaman sering kali adalah hotel atau guesthouse Anda sendiri. Hampir semua akomodasi di Yogyakarta, dari hostel murah hingga resor mewah, dengan senang hati akan menyimpan tas Anda secara gratis pada hari kedatangan atau keberangkatan Anda.\n\n## Tips Praktis\n\n- **Barang Berharga:** Selalu simpan barang berharga Anda—seperti paspor, barang elektronik, dan uang tunai—bersama Anda di tas kecil (daypack), bahkan saat menggunakan fasilitas penyimpanan yang aman.\n- **Ukuran Loker:** Jika menggunakan loker stasiun, perhatikan bahwa loker tersebut tersedia dalam berbagai ukuran. Pastikan koper terbesar Anda muat sebelum membayar biaya sewa.\n- **Jam Operasional:** Periksa kembali jam operasional fasilitas penitipan bagasi, terutama jika Anda memiliki jadwal keberangkatan pagi-pagi sekali atau larut malam, untuk memastikan Anda dapat mengambil tas Anda tepat waktu."
           }
         },
         {
@@ -881,7 +1218,16 @@
             "id": "Panduan dan informasi lengkap tentang Laundry di Yogyakarta."
           },
           "meta": {
-            "estReadMins": 3
+            "estReadMins": 3,
+            "quickFacts": {
+              "kiloLaundry": "Laundry by the kilo ('Laundry Kiloan') is the most popular and affordable option.",
+              "expressService": "Many places offer 3-hour or 24-hour express services for a premium.",
+              "coinLaundry": "Self-service coin laundromats are becoming increasingly common in student areas."
+            }
+          },
+          "body": {
+            "en": "## Overview\n\nKeeping your clothes fresh in Yogyakarta's tropical climate is a breeze. The city has a massive laundry industry, heavily driven by the large student population. From affordable drop-off services to modern self-service laundromats, you will find a solution that fits your schedule and budget on almost every corner.\n\n## Available Services\n\n**Laundry Kiloan (By the Kilo):** This is the quintessential Indonesian laundry experience. You simply drop off your dirty clothes, and they are weighed, washed, ironed, and neatly folded or packed in plastic. It is incredibly cheap, typically taking 2-3 days for standard service. You will find these small shops everywhere, especially near universities and residential areas.\n\n**Express and Premium Services:** If you are in a rush, many 'Laundry Kiloan' shops offer express services (kilat), returning your clothes in 24 hours, or even 3 to 6 hours for a higher fee. Premium services are also available for delicate items, suits, or dresses that require dry cleaning.\n\n**Coin Laundromats:** Self-service coin-operated laundromats are becoming popular. They offer modern washing and drying machines, free Wi-Fi, and sometimes a small cafe setup, allowing you to wash your clothes quickly in about an hour while you wait.\n\n## Practical Tips\n\n- **Check Pockets:** Always thoroughly check your pockets for receipts, cash, or tissues before dropping off your clothes, as the staff may not check every item.\n- **Special Instructions:** If you have delicate fabrics or clothes that might bleed color, be sure to point them out and request them to be washed separately (which might incur a small extra charge).\n- **Delivery Services:** Many laundry services offer free pick-up and delivery to your hotel or guesthouse if you reach a minimum weight, saving you a trip in the heat.",
+            "id": "## Gambaran Umum\n\nMenjaga pakaian Anda tetap segar di iklim tropis Yogyakarta sangatlah mudah. Kota ini memiliki industri penatu (laundry) yang masif, sebagian besar didorong oleh populasi mahasiswa yang besar. Dari layanan antar-jemput yang terjangkau hingga penatu swalayan modern, Anda akan menemukan solusi yang sesuai dengan jadwal dan anggaran Anda di hampir setiap sudut jalan.\n\n## Layanan yang Tersedia\n\n**Laundry Kiloan:** Ini adalah pengalaman penatu khas Indonesia. Anda cukup menyerahkan pakaian kotor Anda, lalu pakaian tersebut akan ditimbang, dicuci, disetrika, dan dilipat rapi atau dikemas dalam plastik. Harganya sangat murah, biasanya memakan waktu 2-3 hari untuk layanan standar. Anda akan menemukan toko-toko kecil ini di mana-mana, terutama di dekat universitas dan area perumahan.\n\n**Layanan Kilat dan Premium:** Jika Anda sedang terburu-buru, banyak toko 'Laundry Kiloan' menawarkan layanan kilat, mengembalikan pakaian Anda dalam waktu 24 jam, atau bahkan 3 hingga 6 jam dengan biaya yang lebih tinggi. Layanan premium juga tersedia untuk pakaian halus, jas, atau gaun yang membutuhkan cuci kering (dry cleaning).\n\n**Penatu Koin (Coin Laundry):** Penatu koin swalayan semakin populer. Mereka menawarkan mesin cuci dan pengering modern, Wi-Fi gratis, dan terkadang pengaturan kafe kecil, memungkinkan Anda untuk mencuci pakaian dengan cepat dalam waktu sekitar satu jam sambil menunggu.\n\n## Tips Praktis\n\n- **Periksa Saku:** Selalu periksa saku Anda secara menyeluruh untuk memastikan tidak ada struk, uang tunai, atau tisu sebelum menyerahkan pakaian Anda, karena staf mungkin tidak memeriksa setiap barang.\n- **Instruksi Khusus:** Jika Anda memiliki kain halus atau pakaian yang warnanya mungkin luntur, pastikan untuk menunjukkannya dan minta agar dicuci terpisah (yang mungkin dikenakan sedikit biaya tambahan).\n- **Layanan Antar-Jemput:** Banyak layanan laundry menawarkan penjemputan dan pengantaran gratis ke hotel atau guesthouse Anda jika Anda mencapai berat minimum, sehingga Anda tidak perlu repot keluar di cuaca panas."
           }
         }
       ]
