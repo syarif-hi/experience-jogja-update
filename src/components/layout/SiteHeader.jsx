@@ -118,7 +118,7 @@ export default function SiteHeader() {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 8);
-      
+
       const diff = y - lastYRef.current;
       if (Math.abs(diff) > 5) { // Small threshold to prevent jitter
         // Hide when scrolling down, reveal when scrolling up
@@ -163,7 +163,7 @@ export default function SiteHeader() {
           {t("brand.tagline")}
         </span>
       </div>
-      <img src="/brand-logo-color.png" alt="Experience Jogja" className="max-h-[78px] md:max-h-[88px] w-auto object-contain" />
+      <img src="/brand-logo-color_2.png" alt="Experience Jogja" className="max-h-[78px] md:max-h-[88px] w-auto object-contain" />
     </Link>
   );
 
