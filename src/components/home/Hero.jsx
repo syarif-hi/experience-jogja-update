@@ -35,7 +35,7 @@ export default function Hero() {
   const [swiperInstance, setSwiperInstance] = useState(null);
 
   return (
-    <section className="pb-[var(--spacing-xl)]" style={{ backgroundColor: "#FFFFFF" }}>
+    <section style={{ backgroundColor: "#FFFFFF" }}>
       {/* Fluid image slider — full-bleed, no radius */}
       <div className="relative">
         <div className="relative aspect-[4/3] md:aspect-[21/9] max-h-[calc(100vh-220px)] min-h-[320px] w-full overflow-hidden">
@@ -101,22 +101,12 @@ export default function Hero() {
 
       {/* Heading / subheading / CTA — below the slider, left aligned */}
       <div className="content-wrap mt-12 text-center md:text-left">
-        <img 
-          src="/discover-jogja-artwork.png" 
-          alt="Discover Your Yogyakarta" 
-          className="w-full max-w-[320px] md:max-w-[480px] h-auto mb-6 mx-auto md:mx-0"
+        <img
+          src="/discover-jogja-artwork.png"
+          alt="Discover Your Yogyakarta"
+          className="w-full max-w-[320px] md:max-w-[480px] h-auto mb-6 md:mx-0"
         />
-        <div className="mt-8 flex justify-center md:justify-start">
-          <Link
-            to="/destinations"
-            className="focus-ring inline-flex items-center rounded-lg px-6 py-3 text-[15px] font-semibold transition-colors"
-            style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-primary-hover)")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--color-primary)")}
-          >
-            {t("hero.cta")}
-          </Link>
-        </div>
+
       </div>
     </section>
   );

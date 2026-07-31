@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { findNodeByPath, getBreadcrumbTrail, getLocalizedString } from "@/lib/visitorInfoHelpers";
 import VisitorInfoLayout from "@/components/visitor/VisitorInfoLayout";
+import BreadcrumbTrail from "@/components/visitor/BreadcrumbTrail";
 import VisitorInfoHub from "./VisitorInfoHub";
 import VisitorInfoSection from "./VisitorInfoSection";
 import VisitorInfoPage from "./VisitorInfoPage";
@@ -42,6 +43,11 @@ export default function VisitorInformation() {
     <PageShell hideShell={false}>
       <div className="py-8 md:py-12" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
         <div className="content-wrap">
+          {!isHub && (
+            <div>
+              <BreadcrumbTrail trail={trail} />
+            </div>
+          )}
           <h1 className="font-heading text-3xl md:text-5xl font-bold mb-1" style={{ color: "var(--color-primary)" }}>
             {getLocalizedString(node.title, language)}
           </h1>

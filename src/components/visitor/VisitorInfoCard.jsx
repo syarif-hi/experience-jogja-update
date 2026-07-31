@@ -60,7 +60,7 @@ export default function VisitorInfoCard({ category }) {
       </ul>
       <Link
         to={targetPath}
-        className="mt-3 inline-flex items-center text-[14px] font-semibold transition-colors hover:underline"
+        className="mt-3 inline-flex items-center text-[14px] font-semibold transition-colors"
         style={{ color: "var(--color-primary)" }}
       >
         {language === "id" ? "Baca selengkapnya" : "Read more"}

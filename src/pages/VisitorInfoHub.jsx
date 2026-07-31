@@ -64,7 +64,7 @@ export default function VisitorInfoHub({ node }) {
                     return (
                       <li key={gc.id} className="flex items-start gap-2 text-[14px]">
                         <DynamicIcon name={gc.icon} className="mt-1 h-3.5 w-3.5 shrink-0" style={{ color: "var(--color-primary)" }} />
-                        <Link to={gcPath} className="truncate hover:underline" style={{ color: "var(--text-secondary)" }}>
+                        <Link to={gcPath} className="truncate" style={{ color: "var(--text-secondary)" }}>
                           {gcTitle}
                         </Link>
                       </li>
@@ -75,7 +75,7 @@ export default function VisitorInfoHub({ node }) {
 
               <Link
                 to={path}
-                className="mt-3 inline-flex items-center text-[14px] font-semibold transition-colors hover:underline"
+                className="mt-3 inline-flex items-center text-[14px] font-semibold transition-colors"
                 style={{ color: "var(--color-primary)" }}
               >
                 {language === "id" ? "Baca selengkapnya" : "Read more"}

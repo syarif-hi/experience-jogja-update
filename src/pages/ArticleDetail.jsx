@@ -10,6 +10,7 @@ import SmartImage from "@/components/shared/SmartImage";
 import ShareButtons from "@/components/news/ShareButtons";
 import ArticleEssentials from "@/components/news/ArticleEssentials";
 import RelatedPosts from "@/components/news/RelatedPosts";
+import BreadcrumbTrail from "@/components/visitor/BreadcrumbTrail";
 
 export default function ArticleDetail() {
   const { slug } = useParams();
@@ -26,34 +27,54 @@ export default function ArticleDetail() {
   const body = article && (language === "id" ? article.body_id : article.body_en);
   const dateLabel = article && article.published_date ? format(parseISO(article.published_date), "d MMMM yyyy", { locale }) : "";
 
+  const trail = [
+    { title: language === "id" ? "Beranda" : "Home", path: "/" },
+    { title: t("news.title") || "Jogja News", path: "/news" },
+    { title: title || "...", path: `/news/${slug}` }
+  ];
+
   return (
     <PageShell>
-      <div className="content-wrap py-8">
-        <Link to="/news" className="focus-ring mb-6 inline-flex items-center gap-1.5 rounded text-[14px] font-semibold" style={{ color: "var(--color-primary)" }}>
-          <ArrowLeft className="h-4 w-4" /> {t("back")}
-        </Link>
-
-        {article === undefined ? (
+      {article === undefined ? (
+        <div className="content-wrap py-8">
           <div className="aspect-[16/9] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
-        ) : article === null ? (
+        </div>
+      ) : article === null ? (
+        <div className="content-wrap py-8">
           <p className="text-[15px]" style={{ color: "var(--text-secondary)" }}>{t("notFound")}</p>
-        ) : (
-          <>
+        </div>
+      ) : (
+        <div className="overflow-x-hidden">
+          <div className="py-8 md:py-12" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+            <div className="content-wrap">
+              <div className="mb-4">
+                <BreadcrumbTrail trail={trail} />
+              </div>
+              
+              {article.topic_tag && (
+                <span className="mb-3 inline-flex items-center rounded-full px-3 py-1 text-[12px] font-semibold" style={{ backgroundColor: "var(--tag-culture)", color: "#FFFFFF" }}>
+                  {t(`topic.${article.topic_tag}`)}
+                </span>
+              )}
+              
+              <h1 className="font-heading text-3xl md:text-5xl font-bold mb-1" style={{ color: "var(--color-primary)" }}>
+                {title}
+              </h1>
+              {excerpt && (
+                <p className="text-lg md:text-xl leading-relaxed max-w-3xl mt-4" style={{ color: "var(--text-secondary)" }}>
+                  {excerpt}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="content-wrap py-8">
             <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
               {/* Main article */}
               <article className="min-w-0">
-                {article.topic_tag && (
-                  <span className="inline-flex items-center rounded-full px-3 py-1 text-[12px] font-semibold" style={{ backgroundColor: "var(--tag-culture)", color: "#FFFFFF" }}>
-                    {t(`topic.${article.topic_tag}`)}
-                  </span>
-                )}
-                <h1 className="mt-3 font-heading text-[28px] font-bold leading-tight md:text-[38px]" style={{ color: "var(--color-primary)" }}>{title}</h1>
-                <p className="mt-2 font-mono-num text-[13px]" style={{ color: "var(--text-secondary)" }}>{dateLabel}</p>
-                {excerpt && (
-                  <p className="mt-4 text-[18px] font-medium leading-relaxed" style={{ color: "var(--text-secondary)" }}>{excerpt}</p>
-                )}
+                <p className="mb-6 font-mono-num text-[13px]" style={{ color: "var(--text-secondary)" }}>{dateLabel}</p>
 
-                <div className="mt-6 overflow-hidden rounded-2xl">
+                <div className="overflow-hidden rounded-2xl">
                   <SmartImage src={article.cover_image_url} alt={title} className="w-full object-cover" />
                 </div>
 
@@ -64,10 +85,6 @@ export default function ArticleDetail() {
                     dangerouslySetInnerHTML={{ __html: body }}
                   />
                 )}
-
-                <div className="mt-8 border-t pt-6" style={{ borderColor: "var(--border)" }}>
-                  <ShareButtons title={title} />
-                </div>
               </article>
 
               {/* Sidebar */}
@@ -83,9 +100,9 @@ export default function ArticleDetail() {
             </div>
 
             <RelatedPosts currentSlug={article.slug} topicTag={article.topic_tag} />
-          </>
-        )}
-      </div>
+          </div>
+        </div>
+      )}
     </PageShell>
   );
 }

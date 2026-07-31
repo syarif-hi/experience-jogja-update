@@ -14,7 +14,7 @@ export default function NewsletterCapture() {
   };
 
   return (
-    <section className="section-y" style={{ backgroundColor: "var(--bg-page)" }}>
+    <section className="section-y !pt-6 md:!pt-10" style={{ backgroundColor: "var(--bg-page)" }}>
       <div className="content-wrap">
         <div className="grid grid-cols-1 items-stretch overflow-hidden rounded-3xl md:grid-cols-2" style={{ backgroundColor: "#E8E8E8" }}>
           <div className="p-8 text-left md:p-12">

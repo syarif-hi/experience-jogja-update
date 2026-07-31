@@ -455,7 +455,7 @@ export default function InteractiveMapsSection() {
   };
 
   return (
-    <section className="section-y">
+    <section className="section-y !pt-2 md:!pt-6">
       <div className="content-wrap">
         <SectionHeading title={t("maps.heading") || "Explore the Region"} subtitle={t("maps.subtitle") || "Discover D.I. Yogyakarta by distance, zone, or a ready-made 3-day route."} />
 

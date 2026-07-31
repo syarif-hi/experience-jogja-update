@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
-import ArticleCard from "@/components/shared/ArticleCard";
+import EventCard from "@/components/shared/EventCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export default function RelatedPosts({ currentSlug, topicTag }) {
+export default function RelatedEvents({ currentSlug }) {
   const { t } = useTranslation();
   const [items, setItems] = useState(null);
   const prevRef = useRef(null);
@@ -16,17 +16,15 @@ export default function RelatedPosts({ currentSlug, topicTag }) {
 
   useEffect(() => {
     let active = true;
-    base44.entities.Article.list("-published_date", 12)
+    base44.entities.Event.list("-start_date", 12)
       .then((all) => {
         if (!active) return;
         const others = all.filter((a) => a.slug !== currentSlug);
-        const sameTopic = others.filter((a) => topicTag && a.topic_tag === topicTag);
-        const picked = [...sameTopic, ...others.filter((a) => !sameTopic.includes(a))].slice(0, 8);
-        setItems(picked);
+        setItems(others.slice(0, 8));
       })
       .catch(() => setItems([]));
     return () => { active = false; };
-  }, [currentSlug, topicTag]);
+  }, [currentSlug]);
 
   if (items !== null && items.length === 0) return null;
 
@@ -67,12 +65,12 @@ export default function RelatedPosts({ currentSlug, topicTag }) {
           {items === null
             ? Array.from({ length: 4 }).map((_, i) => (
               <SwiperSlide key={i} className="!h-auto">
-                <div className="aspect-[16/10] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
+                <div className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
               </SwiperSlide>
             ))
             : items.map((a) => (
               <SwiperSlide key={a.id} className="!h-auto h-full">
-                <ArticleCard article={a} />
+                <EventCard event={a} />
               </SwiperSlide>
             ))}
         </Swiper>

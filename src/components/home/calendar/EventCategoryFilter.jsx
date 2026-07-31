@@ -4,9 +4,10 @@ import { EVENT_CATEGORIES } from "@/lib/eventCategories";
 
 // Doubles as the color legend and the category filter: each chip shows the
 // category color (legend) and toggles that category on/off (filter).
-export default function EventCategoryFilter({ active, onToggle, onAll }) {
+export default function EventCategoryFilter({ categories, active, onToggle, onAll }) {
   const { t, language } = useTranslation();
-  const allActive = active.length === EVENT_CATEGORIES.length;
+  const cats = categories || EVENT_CATEGORIES;
+  const allActive = active.length === cats.length;
 
   return (
     <div className="flex flex-wrap items-center gap-1.5">
@@ -27,7 +28,7 @@ export default function EventCategoryFilter({ active, onToggle, onAll }) {
         {t("calendar.all")}
       </button>
 
-      {EVENT_CATEGORIES.map((c) => {
+      {cats.map((c) => {
         const on = active.includes(c.value);
         return (
           <button

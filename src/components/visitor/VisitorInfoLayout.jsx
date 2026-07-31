@@ -9,14 +9,7 @@ export default function VisitorInfoLayout({ slugs, node, trail, children }) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Breadcrumb Trail */}
-      {!isHub && (
-        <div className="w-full" style={{ backgroundColor: "var(--bg-surface)" }}>
-          <div className="content-wrap">
-            <BreadcrumbTrail trail={trail} />
-          </div>
-        </div>
-      )}
+
 
       <div className="content-wrap flex-1 flex py-6 md:py-10">
         {/* Desktop Rail */}

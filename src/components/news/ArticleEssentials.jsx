@@ -24,7 +24,7 @@ export default function ArticleEssentials({ article, body }) {
   ];
 
   return (
-    <div className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-1)" }}>
+    <div className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
       <h3 className="mb-4 text-[15px] font-bold  tracking-wide" style={{ color: "var(--text-primary)" }}>
         {t("essentials.title")}
       </h3>

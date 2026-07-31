@@ -155,7 +155,7 @@ function SiblingCarousel({ siblings, language, parentSlugs }) {
                     />
                   </div>
                   <h3
-                    className="mt-2.5 text-[13px] font-medium leading-snug line-clamp-2 group-hover:underline"
+                    className="mt-2.5 text-[13px] font-medium leading-snug line-clamp-2"
                     style={{ color: "var(--text-primary)" }}
                   >
                     {getLocalizedString(sib.title, language)}
@@ -318,7 +318,7 @@ export default function VisitorInfoPage({ node, slugs }) {
                   </div>
                   <div className="pt-3">
                     <h3
-                      className="line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight group-hover:underline"
+                      className="line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight"
                       style={{ color: "var(--color-primary)" }}
                     >
                       {getLocalizedString(child.title, language)}
@@ -374,7 +374,7 @@ export default function VisitorInfoPage({ node, slugs }) {
                     <SmartImage src={relNode.coverImage} alt="" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                   </div>
                   <div className="flex-1 min-w-0 py-0.5">
-                    <h3 className="font-heading font-bold text-base line-clamp-1 group-hover:underline" style={{ color: "var(--text-primary)" }}>
+                    <h3 className="font-heading font-bold text-base line-clamp-1" style={{ color: "var(--text-primary)" }}>
                       {getLocalizedString(relNode.title, language)}
                     </h3>
                     <p className="text-sm line-clamp-1" style={{ color: "var(--text-secondary)" }}>

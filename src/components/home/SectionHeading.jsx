@@ -24,7 +24,7 @@ export default function SectionHeading({ title, subtitle, center = false, seeMor
   return (
     <div className={`flex items-start justify-between gap-4 ${center ? "text-center" : "text-left"}`}>
       <div>
-        <h2 className="font-display text-[30px] font-normal leading-tight md:text-[40px]" style={{ color: "var(--color-primary)" }}>
+        <h2 className="font-display text-[30px] font-normal leading-[1] md:leading-tight md:text-[40px]" style={{ color: "var(--color-primary)" }}>
           {formatTitle(title)}
         </h2>
         {subtitle && (

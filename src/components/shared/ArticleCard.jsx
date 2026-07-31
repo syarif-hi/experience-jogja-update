@@ -43,7 +43,7 @@ export default function ArticleCard({ article }) {
         <p className="mt-1.5 text-[13px] font-normal leading-snug line-clamp-3" style={{ color: "var(--text-secondary)" }}>
           {excerpt}
         </p>
-        <span className="mt-2 text-[13px] font-semibold group-hover:underline" style={{ color: "var(--color-primary)" }}>
+        <span className="mt-2 text-[13px] font-semibold" style={{ color: "var(--color-primary)" }}>
           {t("readMore")}
         </span>
       </div>

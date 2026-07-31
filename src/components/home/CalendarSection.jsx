@@ -3,6 +3,7 @@ import {
   startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval,
   isSameMonth, isSameDay, addMonths, subMonths, format, parseISO,
 } from "date-fns";
+import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
@@ -78,7 +79,7 @@ export default function CalendarSection() {
   return (
     <section className="section-y" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
       <div className="content-wrap">
-        <SectionHeading title={t("calendar.heading")} subtitle={t("calendar.subtitle")} seeMoreTo="/calendar" />
+        <SectionHeading title={t("calendar.heading")} subtitle={t("calendar.subtitle")} seeMoreTo="/events" />
 
         {/* Legend + category filter */}
         <div className="mt-6">
@@ -192,19 +193,21 @@ export default function CalendarSection() {
                       )}
                     </button>
 
-                    {hoveredKey === key && hasEvent && (
+                    {(hoveredKey === key || isSelected) && hasEvent && (
                       <div
                         className="absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-[240px] -translate-x-1/2 rounded-lg p-3 text-left"
-                        style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-3)" }}
+                        style={{ backgroundColor: "var(--color-primary)", boxShadow: "var(--elevation-3)" }}
                       >
-                        <p className="mb-1.5 text-[11px] font-semibold uppercase" style={{ color: "var(--text-secondary)" }}>
+                        <p className="mb-1.5 text-[11px] font-semibold uppercase opacity-90" style={{ color: "var(--on-primary)" }}>
                           {format(day, "d MMM yyyy")}
                         </p>
                         <ul className="space-y-1.5">
                           {dayEvents.map((ev) => (
-                            <li key={ev.id} className="flex items-center gap-2 text-[12px]" style={{ color: "var(--text-primary)" }}>
-                              <SmartImage src={ev.cover_image_url} alt="" className="h-6 w-6 shrink-0 rounded object-cover" />
-                              <span className="max-w-[160px] truncate">{title(ev)}</span>
+                            <li key={ev.id}>
+                              <Link to={`/events/${ev.slug}`} className="flex items-center gap-2 text-[12px] hover:underline" style={{ color: "var(--on-primary)" }}>
+                                <SmartImage src={ev.cover_image_url} alt="" className="h-6 w-6 shrink-0 rounded object-cover" />
+                                <span className="max-w-[160px] truncate">{title(ev)}</span>
+                              </Link>
                             </li>
                           ))}
                         </ul>

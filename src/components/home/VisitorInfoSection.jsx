@@ -1,47 +1,25 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Plane, Bus, Sun, Banknote, Activity, Heart, Wifi, Phone } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/grid";
-import "swiper/css/navigation";
-import { useLanguage } from "@/lib/LanguageContext";
-import { DUMMY_VISITOR_INFO } from "@/lib/dummyData";
+import { useTranslation } from "@/lib/i18n";
+import { getLocalizedString, buildPath, findNodeByPath } from "@/lib/visitorInfoHelpers";
+import * as Icons from "lucide-react";
+import SmartImage from "@/components/shared/SmartImage";
 import SectionHeading from "@/components/home/SectionHeading";
-import { getVisitorItemIcon } from "@/lib/visitorIcons";
 
-const ICON_MAP = {
-  Passport: Plane, Bus, Sun, Banknote, HeartPulse: Activity, Heart, Wifi, Phone,
-};
-
-const CARD_COLORS = [
-  "var(--color-primary)",
-  "var(--tag-nature)",
-  "var(--color-accent)",
-  "var(--tag-culture)",
-  "var(--tag-heritage)",
-  "var(--tag-lifestyle)",
-  "#3B82F6",
-  "#10B981",
-];
+function DynamicIcon({ name, className, style }) {
+  // Convert kebab-case to PascalCase
+  const pascalName = (name || "compass")
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("");
+  const IconComponent = Icons[pascalName] || Icons.Circle;
+  return <IconComponent className={className} style={style} />;
+}
 
 export default function VisitorInfoSection() {
-  const { language } = useLanguage();
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-
-  const navBtn = (ref, Icon, label, side) => (
-    <button
-      ref={ref}
-      type="button"
-      aria-label={label}
-      className={`focus-ring absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full transition-colors disabled:opacity-0 sm:flex ${side === "left" ? "left-0 -translate-x-1/2" : "right-0 translate-x-1/2"}`}
-      style={{ backgroundColor: "var(--bg-surface)", color: "var(--color-primary)", boxShadow: "var(--elevation-3)" }}
-    >
-      <Icon className="h-5 w-5" />
-    </button>
-  );
+  const { language } = useTranslation();
+  const rootNode = findNodeByPath([]);
+  const items = rootNode?.children || [];
 
   return (
     <section className="section-y" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
@@ -55,100 +33,70 @@ export default function VisitorInfoSection() {
             seeMoreTo="/visitor-information"
           />
 
-          <div className="relative mt-8">
-            {navBtn(prevRef, ChevronLeft, "Previous", "left")}
-            <Swiper
-              modules={[Grid, Navigation]}
-              spaceBetween={16}
-              slidesPerView={2.1}
-              grid={{ rows: 2, fill: "row" }}
-              breakpoints={{
-                640: { slidesPerView: 3, grid: { rows: 2, fill: "row" } },
-                1280: { slidesPerView: 4, grid: { rows: 2, fill: "row" } },
-              }}
-              className="!overflow-visible xl:!overflow-hidden"
-              onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }}
-              navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-            >
-              {DUMMY_VISITOR_INFO.map((item, i) => {
-                const Icon = ICON_MAP[item.icon_name] || Plane;
-                const color = CARD_COLORS[i % CARD_COLORS.length];
-                const title = language === "id" ? item.title_id : item.title_en;
-                const desc = language === "id" ? item.desc_id : item.desc_en;
-                const bullets = item.items || [];
-
-                return (
-                  <SwiperSlide key={item.id} className="!h-auto">
-                    <Link
-                      to={`/visitor-information/${item.slug}`}
-                      className="focus-ring group flex flex-col rounded-2xl p-5 transition-colors h-full"
-                      style={{
-                        backgroundColor: "var(--bg-surface)",
-                        border: "1px solid var(--bg-surface-alt)",
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.borderColor = color)}
-                      onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--bg-surface-alt)")}
-                    >
-                      {/* Icon Mobile */}
-                      <div className="mb-2 flex md:hidden items-center justify-start" style={{ color }}>
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      
-                      {/* Icon Desktop */}
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-10 xl:grid-cols-4">
+            {items.map((child) => {
+              const path = buildPath([child.slug]);
+              return (
+                <div key={child.id} className="flex flex-col">
+                  <Link
+                    to={path}
+                    className="group block overflow-hidden rounded-2xl relative"
+                    style={{ backgroundColor: "var(--bg-surface)" }}
+                  >
+                    <div className="aspect-[4/3] w-full overflow-hidden relative" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+                      {child.coverImage && (
+                        <SmartImage 
+                          src={child.coverImage} 
+                          alt="" 
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      )}
+                      {/* Badge */}
                       <div
-                        className="mb-4 hidden md:flex h-[88px] w-[88px] shrink-0 items-center justify-center rounded-2xl"
-                        style={{ backgroundColor: color + "18", color }}
+                        className="absolute left-3 top-3 flex items-center justify-center rounded-lg p-2 backdrop-blur-md"
+                        style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)", opacity: 0.9 }}
                       >
-                        <Icon className="h-10 w-10" />
+                        <DynamicIcon name={child.icon} className="h-5 w-5" />
                       </div>
+                    </div>
+                  </Link>
+                  
+                  <div className="mt-4">
+                    <h3 className="font-heading text-[15px] md:text-[18px] font-bold" style={{ color: "var(--text-primary)" }}>
+                      {getLocalizedString(child.title, language)}
+                    </h3>
+                  </div>
 
-                      {/* Title */}
-                      <h3
-                        className="text-[16px] font-semibold leading-tight"
-                        style={{ color: "var(--text-primary)" }}
-                      >
-                        {title}
-                      </h3>
+                  {/* Children List */}
+                  {child.children && child.children.length > 0 && (
+                    <ul className="mt-2 space-y-1.5">
+                      {child.children.slice(0, 4).map((gc) => {
+                        const gcTitle = getLocalizedString(gc.title, language);
+                        return (
+                          <li key={gc.id} className="flex items-start gap-2 text-[13px] md:text-[14px]">
+                            <DynamicIcon name={gc.icon} className="mt-1 h-3.5 w-3.5 shrink-0" style={{ color: "var(--color-primary)" }} />
+                            <span className="truncate" style={{ color: "var(--text-secondary)" }}>
+                              {gcTitle}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
 
-                      {/* Short desc */}
-                      <p
-                        className="mt-1.5 mb-3 text-[13px] leading-snug line-clamp-2"
-                        style={{ color: "var(--text-secondary)" }}
-                      >
-                        {desc}
-                      </p>
-
-                      {/* First 2 bullet items */}
-                      <ul className="mt-auto space-y-1">
-                        {bullets.slice(0, 2).map((b, bi) => {
-                          const bulletTitle = language === "id" ? b.title_id : b.title_en;
-                          const BulletIcon = getVisitorItemIcon(b.title_en);
-                          return (
-                            <li
-                              key={bi}
-                              className="flex items-start gap-2 text-[12px]"
-                              style={{ color: "var(--text-secondary)" }}
-                            >
-                              <BulletIcon
-                                className="mt-0.5 h-3.5 w-3.5 shrink-0"
-                                style={{ color: color }}
-                              />
-                              <span className="truncate">{bulletTitle}</span>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </Link>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-            {navBtn(nextRef, ChevronRight, "Next", "right")}
+                  <Link
+                    to={path}
+                    className="mt-3 inline-flex items-center text-[13px] md:text-[14px] font-semibold transition-colors"
+                    style={{ color: "var(--color-primary)" }}
+                  >
+                    {language === "id" ? "Baca selengkapnya" : "Read more"}
+                    <Icons.ChevronRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </section>
+    </section>
   );
 }

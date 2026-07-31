@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
@@ -12,8 +12,7 @@ import { CurrencyProvider } from '@/lib/CurrencyContext';
 import Home from '@/pages/Home';
 import Explore from '@/pages/Explore';
 import Destinations from '@/pages/Destinations';
-import Events from '@/pages/Events';
-import CalendarPage from '@/pages/CalendarPage';
+import EventsPage from '@/pages/EventsPage';
 import TripPlanner from '@/pages/TripPlanner';
 import EventDetail from '@/pages/EventDetail';
 import DestinationDetail from '@/pages/DestinationDetail';
@@ -67,11 +66,11 @@ const AuthenticatedApp = () => {
       <Route path="/explore" element={<Explore />} />
       <Route path="/destinations/:slug" element={<DestinationDetail />} />
       <Route path="/destinations/*" element={<DestinationsLanding />} />
-      <Route path="/events" element={<Events />} />
+      <Route path="/events" element={<EventsPage />} />
       <Route path="/events/:slug" element={<EventDetail />} />
       <Route path="/news" element={<News />} />
       <Route path="/news/:slug" element={<ArticleDetail />} />
-      <Route path="/calendar" element={<CalendarPage />} />
+      <Route path="/calendar" element={<Navigate to="/events" replace />} />
       <Route path="/plan-your-trip/*" element={<PlanYourTripLanding />} />
       <Route path="/book-experience/*" element={<BookExperienceLanding />} />
       <Route path="/things-to-do/*" element={<ThingsToDoLanding />} />

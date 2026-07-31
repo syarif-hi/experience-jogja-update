@@ -87,7 +87,7 @@ export default function VisitorInfoSection({ node, slugs }) {
                   )}
                 </div>
                 <div className="pt-3">
-                  <h3 className="line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight group-hover:underline" style={{ color: "var(--color-primary)" }}>
+                  <h3 className="line-clamp-2 text-[14px] md:text-[15px] font-medium leading-tight" style={{ color: "var(--color-primary)" }}>
                     {getLocalizedString(child.title, language)}
                   </h3>
                   <p className="mt-1 text-[13px] font-medium leading-snug line-clamp-2" style={{ color: "var(--text-secondary)" }}>

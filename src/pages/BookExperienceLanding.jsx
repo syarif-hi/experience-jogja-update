@@ -6,7 +6,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { NAV_GROUPS } from "@/lib/navConfig";
 import Tours from "./Tours";
 import Stays from "./Stays";
-import Events from "./Events";
+import EventsPage from "./EventsPage";
 
 export default function BookExperienceLanding() {
   const { language } = useTranslation();
@@ -64,7 +64,7 @@ export default function BookExperienceLanding() {
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
           <Route path="tours" element={<Tours hideShell />} />
           <Route path="stays" element={<Stays hideShell />} />
-          <Route path="events" element={<Events hideShell />} />
+          <Route path="events" element={<EventsPage hideShell />} />
         </Routes>
       </div>
     </PageShell>

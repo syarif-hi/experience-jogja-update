@@ -59,17 +59,21 @@ export default function BreadcrumbTrail({ trail }) {
                     >
                       {collapsedNodes.map((cNode, cIdx) => {
                         // We need the full path up to this node. Root is idx 0 -> slice(1,1) is []
-                        const cSlugs = trail.slice(1, trail.findIndex(t => t.id === cNode.id) + 1).map(n => n.slug);
-                        const cPath = buildPath(cSlugs);
+                        let cPath = cNode.path;
+                        if (!cPath) {
+                          const cSlugs = trail.slice(1, trail.findIndex(t => t.id === cNode.id) + 1).map(n => n.slug);
+                          cPath = buildPath(cSlugs);
+                        }
+                        const cTitle = cNode.path ? cNode.title : (cNode.id === "page-visitor-information" || trail.findIndex(t => t.id === cNode.id) === 0 ? (language === "id" ? "Informasi Wisatawan" : "Visitor Information") : getLocalizedString(cNode.title, language));
                         return (
                           <Link 
-                            key={cNode.id}
+                            key={cNode.path || cNode.id}
                             to={cPath}
                             onClick={() => setPopoverOpen(false)}
                             className="block px-4 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/5"
                             style={{ color: "var(--text-primary)" }}
                           >
-                            {cNode.id === "page-visitor-information" ? (language === "id" ? "Informasi Wisatawan" : "Visitor Information") : getLocalizedString(cNode.title, language)}
+                            {cTitle}
                           </Link>
                         );
                       })}
@@ -81,14 +85,18 @@ export default function BreadcrumbTrail({ trail }) {
           }
 
           // Normal Node
-          const isHub = trail.findIndex(t => t.id === node.id) === 0;
-          // Compute full path up to this node
-          const nodeIndexInFullTrail = trail.findIndex(t => t.id === node.id);
-          const slugs = isHub ? [] : trail.slice(1, nodeIndexInFullTrail + 1).map(n => n.slug);
-          const path = buildPath(slugs);
+          let path = node.path;
+          let isHub = false;
+          if (!path) {
+            isHub = trail.findIndex(t => t.id === node.id) === 0;
+            const nodeIndexInFullTrail = trail.findIndex(t => t.id === node.id);
+            const slugs = isHub ? [] : trail.slice(1, nodeIndexInFullTrail + 1).map(n => n.slug);
+            path = buildPath(slugs);
+          }
+          const nodeTitle = node.path ? node.title : (isHub ? (language === "id" ? "Informasi Wisatawan" : "Visitor Information") : getLocalizedString(node.title, language));
 
           return (
-            <li key={node.id} className="flex items-center group min-w-0 shrink">
+            <li key={node.path || node.id} className="flex items-center group min-w-0 shrink">
               {idx > 0 && (
                 <div className="w-4 shrink-0 h-px transition-colors duration-200" style={{ backgroundColor: "var(--color-primary)", opacity: isLast ? 1 : 0.4 }}></div>
               )}
@@ -114,7 +122,7 @@ export default function BreadcrumbTrail({ trail }) {
                   ></div>
                 </div>
                 <span className={`text-sm font-medium truncate transition-opacity duration-200 ${isLast ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'}`}>
-                  {isHub ? (language === "id" ? "Informasi Wisatawan" : "Visitor Information") : getLocalizedString(node.title, language)}
+                  {nodeTitle}
                 </span>
               </Link>
             </li>

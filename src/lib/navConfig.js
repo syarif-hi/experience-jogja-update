@@ -17,8 +17,7 @@ export const NAV_GROUPS = [
     items: [
       { label_en: "Tours", label_id: "Tur", to: "/book-experience/tours" },
       { label_en: "Places to Stay", label_id: "Tempat Menginap", to: "/book-experience/stays" },
-      { label_en: "Events", label_id: "Acara", to: "/book-experience/events" },
-      { label_en: "Concert", label_id: "Konser", to: "/book-experience/concert" },
+      { label_en: "Events & Concerts", label_id: "Acara & Konser", to: "/book-experience/events" },
     ],
   },
   {
@@ -72,6 +71,4 @@ export const NAV_GROUPS = [
 ];
 
 // Standalone top-level item (also linked from within Plan Your Trip — intentional).
-export const NAV_STANDALONE = [
-  { label_en: "Events", label_id: "Acara", to: "/events" },
-];
+export const NAV_STANDALONE = [];
