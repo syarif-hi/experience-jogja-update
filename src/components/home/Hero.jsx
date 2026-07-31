@@ -108,9 +108,24 @@ export default function Hero() {
         />
 
         <div className="space-y-4 text-[15px] md:text-[17px] leading-relaxed max-w-4xl mx-auto md:mx-0 text-left md:text-left mb-16" style={{ color: "var(--text-secondary)" }}>
-          <p>{t("hero.welcome1")}</p>
-          <p>{t("hero.welcome2")}</p>
-          <p>{t("hero.welcome3")}</p>
+          <p>
+            {t("hero.welcome1_part1")}
+            <span className="hidden md:inline"><br /></span>
+            <span className="md:hidden"> </span>
+            {t("hero.welcome1_part2")}
+          </p>
+          <p>
+            {t("hero.welcome2_part1")}
+            <span className="hidden md:inline"><br /></span>
+            <span className="md:hidden"> </span>
+            {t("hero.welcome2_part2")}
+          </p>
+          <p>
+            {t("hero.welcome3_part1")}
+            <span className="hidden md:inline"><br /></span>
+            <span className="md:hidden"> </span>
+            {t("hero.welcome3_part2")}
+          </p>
         </div>
 
       </div>
