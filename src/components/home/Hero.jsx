@@ -102,10 +102,15 @@ export default function Hero() {
       {/* Heading / subheading / CTA — below the slider, left aligned */}
       <div className="content-wrap mt-12 text-center md:text-left">
         <img
-          src="/discover-jogja-artwork.png"
+          src="/discover-jogja-artwork_no_tagline.png"
           alt="Discover Your Yogyakarta"
-          className="w-full max-w-[320px] md:max-w-[960px] h-auto mb-6 md:mx-0"
+          className="w-full max-w-full md:max-w-[960px] h-auto mb-0 md:mx-0"
         />
+
+        <p className="text-[19px] md:text-[24px] leading-relaxed max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>
+          Your trusted guide to Yogyakarta's destinations, culture, culinary experiences,
+          events, accommodations, transportation, and local lifestyle.
+        </p>
 
         <div className="space-y-4 text-[15px] md:text-[20px] leading-relaxed max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-16" style={{ color: "var(--text-secondary)" }}>
           <p>{t("hero.welcome1")}</p>

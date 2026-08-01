@@ -153,7 +153,7 @@ export default function SiteHeader() {
   );
 
   const wordmark = (
-    <Link to="/" className="focus-ring flex shrink-0 flex-col gap-1 rounded-md leading-none">
+    <Link to="/" className="focus-ring flex flex-1 md:flex-none md:shrink-0 flex-col gap-1 rounded-md leading-none">
       <div className="hidden">
         <span className="text-[22px] tracking-wide" style={{ color: "var(--text-secondary)" }}>experiencejogja.com</span>
         <span className="font-wordmark text-[29px] font-semibold  tracking-[0.08em] md:text-[34px]" style={{ color: "var(--color-primary)" }}>
@@ -163,7 +163,7 @@ export default function SiteHeader() {
           {t("brand.tagline")}
         </span>
       </div>
-      <img src="/brand-logo-color-9.png" alt="Experience Jogja" className="max-h-[44px] md:max-h-[107px] md:pt-[20px] w-auto object-contain" />
+      <img src="/brand-logo-color-9.png" alt="Experience Jogja" className="w-full h-auto md:w-auto md:max-h-[107px] md:pt-[20px] object-contain object-left" />
     </Link>
   );
 
