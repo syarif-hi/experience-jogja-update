@@ -102,7 +102,7 @@ export default function Hero() {
       {/* Heading / subheading / CTA — below the slider, left aligned */}
       <div className="content-wrap mt-12 text-center md:text-left">
         <img
-          src="/discover-jogja-artwork_no_tagline.png"
+          src="/discover-jogja-artwork_no_tagline_2.png"
           alt="Discover Your Yogyakarta"
           className="w-full max-w-full md:max-w-[960px] h-auto mb-0 md:mx-0"
         />
