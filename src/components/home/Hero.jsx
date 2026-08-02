@@ -104,10 +104,10 @@ export default function Hero() {
         <img
           src="/discover-jogja-artwork_no_tagline_3.png"
           alt="Discover Your Yogyakarta"
-          className="w-full max-w-full md:max-w-[670px] h-auto mb-0 md:mx-0"
+          className="w-full max-w-full md:max-w-[570px] h-auto mb-0 md:mx-0"
         />
 
-        <p className="text-[19px] md:text-[24px] leading-relaxed max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>
+        <p className="text-[19px] md:text-[22px] leading-[1.4] max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>
           Your trusted guide to Yogyakarta's destinations, culture, culinary experiences,
           events, accommodations, transportation, and local lifestyle.
         </p>
