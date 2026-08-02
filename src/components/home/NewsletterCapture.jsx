@@ -54,7 +54,7 @@ export default function NewsletterCapture() {
           </div>
           <div className="relative hidden md:block">
             <SmartImage
-              src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=1000&q=80"
+              src="/traditional_dance_jogja-w1500.jpg"
               alt="Yogyakarta scenery"
               className="absolute inset-0 h-full w-full object-cover"
             />
