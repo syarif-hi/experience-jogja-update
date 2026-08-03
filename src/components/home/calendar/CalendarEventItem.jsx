@@ -17,7 +17,7 @@ export default function CalendarEventItem({ event }) {
   return (
     <li className="h-full">
       <Link
-        to={`/events/${event.slug}`}
+        to={`/event/${event.slug}`}
         className="focus-ring flex h-full items-start gap-3 rounded-lg p-2 transition-colors"
         style={{ backgroundColor: "var(--bg-surface-alt)" }}
       >

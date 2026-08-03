@@ -352,6 +352,42 @@
       "updated_date": "2026-07-16T06:07:51.850000",
       "created_by_id": "service_d48a428f-24f7-4706-801f-e6843624f6e8",
       "is_sample": false
+    },
+    {
+      "id": 21, "slug": "artjog-mmxxvii",
+      "title_en": "ArtJog MMXXVII - Contemporary Art Exhibition",
+      "title_id": "ArtJog MMXXVII - Pameran Seni Kontemporer",
+      "category": "exhibition",
+      "start_date": "2027-06-20", "end_date": "2027-08-20",
+      "venue": "Jogja National Museum",
+      "price_idr": 50000,
+      "is_homepage_highlight": true,
+      "cover_image_url": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
+      "created_date": "2026-01-01", "updated_date": "2026-01-01", "created_by_id": "u1", "is_sample": true
+    },
+    {
+      "id": 22, "slug": "jogja-marathon-2027",
+      "title_en": "Jogja Marathon 2027",
+      "title_id": "Marathon Jogja 2027",
+      "category": "sports",
+      "start_date": "2027-10-15", "end_date": "2027-10-15",
+      "venue": "Tugu Yogyakarta",
+      "price_idr": 250000,
+      "is_homepage_highlight": true,
+      "cover_image_url": "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=600&q=80",
+      "created_date": "2026-01-01", "updated_date": "2026-01-01", "created_by_id": "u1", "is_sample": true
+    },
+    {
+      "id": 23, "slug": "wayang-kulit-sono-budoyo",
+      "title_en": "Wayang Kulit Night at Sono Budoyo",
+      "title_id": "Malam Wayang Kulit di Sono Budoyo",
+      "category": "cultural",
+      "start_date": "2027-08-22", "end_date": "2027-08-22",
+      "venue": "Museum Sono Budoyo",
+      "price_idr": 20000,
+      "is_homepage_highlight": false,
+      "cover_image_url": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
+      "created_date": "2026-01-01", "updated_date": "2026-01-01", "created_by_id": "u1", "is_sample": true
     }
   ],
   "destination": [
@@ -534,22 +570,39 @@
       "is_sample": false
     },
     {
-      "descriptor_en": "The world's largest Buddhist temple, at its most striking at sunrise.",
+      "descriptor_en": "Borobudur Temple is a magnificent 9th-century Mahayana Buddhist temple in Magelang Regency, Central Java, Indonesia — widely regarded as one of the greatest Buddhist monuments ever built. Constructed during the Sailendra dynasty (circa 750–842 AD), this UNESCO World Heritage Site consists of nine stacked platforms topped by a central dome, adorned with 2,672 intricate relief panels and 504 Buddha statues.\n\nThe temple's design represents a Buddhist cosmological model of the universe: the base depicts Kamadhatu (world of desires), the five square terraces portray Rupadhatu (world of forms), and the three circular upper platforms symbolize Arupadhatu (world of formlessness). Visitors ascend through these levels in a meditative clockwise journey spanning roughly 5 kilometres of open-air corridors.\n\nThe sunrise experience at Borobudur is legendary — watching golden light break across the Kedu Plain with Mount Merapi and Mount Merbabu as backdrops, while ancient stupas emerge from the morning mist, is truly unforgettable. The temple complex also includes two smaller temples nearby: Mendut and Pawon, which form a straight-line axis and are believed to be part of the same sacred pilgrimage route.",
       "address": "Borobudur, Magelang (bordering DIY)",
       "is_recommended_today": true,
       "latitude": -7.6079,
       "display_order": 1,
       "regency": "villages-hidden-gems",
       "name_id": "Candi Borobudur",
-      "gallery_image_urls": [],
-      "typical_duration": null,
-      "descriptor_id": "Candi Buddha terbesar di dunia, paling memukau saat matahari terbit.",
+      "gallery_image_urls": [
+        "https://media.base44.com/images/public/6a5745b9539f530d423709d4/d24efd42e_generated_image.png",
+        "https://images.unsplash.com/photo-1596404988775-6f17dc946766?q=80&w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1579803138804-585a2ad07b53?q=80&w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1518774780516-7fdb1a8d054d?q=80&w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582236371720-3023e3871481?q=80&w=800&auto=format&fit=crop"
+      ],
+      "typical_duration": "3–4 hours",
+      "descriptor_id": "Candi Borobudur adalah candi Buddha Mahayana abad ke-9 yang megah di Kabupaten Magelang, Jawa Tengah, Indonesia — secara luas dianggap sebagai salah satu monumen Buddha terbesar yang pernah dibangun. Dibangun pada masa dinasti Sailendra (sekitar 750–842 M), Situs Warisan Dunia UNESCO ini terdiri dari sembilan platform bertingkat yang dimahkotai kubah sentral, dihiasi 2.672 panel relief yang rumit dan 504 patung Buddha.\n\nDesain candi merepresentasikan model kosmologis Buddhis tentang alam semesta: bagian dasar menggambarkan Kamadhatu (dunia hasrat), lima teras persegi menggambarkan Rupadhatu (dunia bentuk), dan tiga platform lingkaran atas melambangkan Arupadhatu (dunia tanpa bentuk). Pengunjung naik melalui tingkatan-tingkatan ini dalam perjalanan meditatif searah jarum jam yang membentang sekitar 5 kilometer koridor terbuka.\n\nPengalaman matahari terbit di Borobudur sangat legendaris — menyaksikan cahaya emas menembus Dataran Kedu dengan latar belakang Gunung Merapi dan Gunung Merbabu, sementara stupa-stupa kuno muncul dari kabut pagi, adalah pengalaman yang benar-benar tak terlupakan. Kompleks candi juga mencakup dua candi kecil di dekatnya: Mendut dan Pawon, yang membentuk sumbu garis lurus dan diyakini sebagai bagian dari rute ziarah suci yang sama.",
       "price_idr": 375000,
       "experience_type": [
         "heritage-culture"
       ],
-      "highlights": [],
-      "opening_hours": null,
+      "highlights": [
+        "UNESCO World Heritage Site",
+        "World's Largest Buddhist Temple",
+        "2,672 Relief Panels",
+        "504 Buddha Statues",
+        "Legendary Sunrise Experience",
+        "9th-Century Sailendra Architecture",
+        "Mount Merapi & Merbabu Views",
+        "Meditative Pilgrimage Walk",
+        "Mendut & Pawon Temples Nearby",
+        "Kedu Plain Panorama"
+      ],
+      "opening_hours": "06:30 – 17:00 (Sunrise tour from 04:30)",
       "hero_image_url": "https://media.base44.com/images/public/6a5745b9539f530d423709d4/d24efd42e_generated_image.png",
       "category": "cultural-heritage-temples",
       "is_featured_top_destination": true,
@@ -1989,6 +2042,26 @@
       "created_by_id": "service_d48a428f-24f7-4706-801f-e6843624f6e8",
       "is_sample": false
     }
+  ],
+  "attraction": [
+    { "id": 1, "slug": "borobudur-sunrise", "name_en": "Borobudur Sunrise Tour", "name_id": "Tur Sunrise Borobudur", "category": "heritage", "regency": "sleman", "price_idr": 450000, "hero_image_url": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80", "descriptor_en": "Experience the magical sunrise over the world's largest Buddhist temple." },
+    { "id": 2, "slug": "timang-beach-gondola", "name_en": "Timang Beach Gondola", "name_id": "Gondola Pantai Timang", "category": "adventure", "regency": "gunungkidul", "price_idr": 100000, "hero_image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80", "descriptor_en": "Ride the thrilling traditional gondola across the ocean waves." },
+    { "id": 3, "slug": "prambanan-temple", "name_en": "Prambanan Temple Complex", "name_id": "Kompleks Candi Prambanan", "category": "heritage", "regency": "sleman", "price_idr": 350000, "hero_image_url": "https://images.unsplash.com/photo-1584810359583-96fc9f6bffb0?w=600&q=80", "descriptor_en": "Explore the largest Hindu temple compound in Indonesia." }
+  ],
+  "activity": [
+    { "id": 1, "slug": "batik-workshop", "name_en": "Batik Making Workshop", "name_id": "Workshop Membatik", "category": "culture", "duration_hours": 3, "price_idr": 200000, "regency": "kota-yogyakarta", "hero_image_url": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80", "descriptor_en": "Learn the ancient art of Javanese batik from master artisans." },
+    { "id": 2, "slug": "cave-tubing-pindul", "name_en": "Cave Tubing at Goa Pindul", "name_id": "Cave Tubing Goa Pindul", "category": "adventure", "duration_hours": 2, "price_idr": 75000, "regency": "gunungkidul", "hero_image_url": "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=600&q=80", "descriptor_en": "Float through an underground river inside a stunning cave." },
+    { "id": 3, "slug": "silver-jewelry-class", "name_en": "Silver Jewelry Making Class", "name_id": "Kelas Membuat Perhiasan Perak", "category": "culture", "duration_hours": 4, "price_idr": 300000, "regency": "bantul", "hero_image_url": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80", "descriptor_en": "Craft your own silver jewelry in the famous Kotagede silver village." }
+  ],
+  "restaurant": [
+    { "id": 1, "slug": "bale-raos", "name_en": "Bale Raos Royal Cuisine", "name_id": "Bale Raos Masakan Keraton", "cuisine": "javanese", "price_range": "$$", "regency": "kota-yogyakarta", "hero_image_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80", "descriptor_en": "Dine on authentic royal Javanese recipes inside the Sultan's Palace." },
+    { "id": 2, "slug": "mediterranea", "name_en": "Mediterranea Restaurant", "name_id": "Restoran Mediterranea", "cuisine": "international", "price_range": "$$$", "regency": "sleman", "hero_image_url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80", "descriptor_en": "Fine dining with Mediterranean flavors in a lush garden setting." },
+    { "id": 3, "slug": "gudeg-yu-djum", "name_en": "Gudeg Yu Djum", "name_id": "Gudeg Yu Djum", "cuisine": "javanese", "price_range": "$", "regency": "kota-yogyakarta", "hero_image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80", "descriptor_en": "The most famous gudeg in Yogyakarta, a must-try local delicacy." }
+  ],
+  "transportation": [
+    { "id": 1, "slug": "airport-shuttle", "name_en": "Airport Shuttle Service", "name_id": "Layanan Shuttle Bandara", "type": "shuttle", "price_idr": 75000, "hero_image_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80", "descriptor_en": "Comfortable shuttle from YIA Airport to city center hotels." },
+    { "id": 2, "slug": "car-rental-daily", "name_en": "Daily Car Rental with Driver", "name_id": "Sewa Mobil Harian dengan Sopir", "type": "rental", "price_idr": 500000, "hero_image_url": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80", "descriptor_en": "Explore Jogja at your own pace with a professional local driver." },
+    { "id": 3, "slug": "motorbike-rental", "name_en": "Motorbike Rental", "name_id": "Sewa Motor", "type": "rental", "price_idr": 80000, "hero_image_url": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80", "descriptor_en": "Freedom to explore narrow streets and hidden spots on two wheels." }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

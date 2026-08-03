@@ -19,7 +19,7 @@ export default function EventCard({ event }) {
 
   return (
     <Link
-      to={`/events/${event.slug}`}
+      to={`/event/${event.slug}`}
       className="group flex w-full flex-col focus-ring rounded-2xl"
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">

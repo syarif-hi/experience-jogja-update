@@ -27,45 +27,31 @@ export default function DetailHeroGallery({ heroImageUrl, gallery = [], alt = ""
   }
 
   const hero = photos[selectedIdx] || photos[0];
-  const thumbs = photos.slice(0, 5); // show first 5 photos as selector
-  const extraCount = photos.length - 5; // photos beyond the 5 shown
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       {/* ── Unified Layout: Hero + row of up to 5 thumbnails ── */}
       <button
         type="button"
         onClick={() => setLightbox(selectedIdx)}
-        className="focus-ring block aspect-[16/9] w-full overflow-hidden rounded-2xl transition-opacity"
+        className="focus-ring block w-full aspect-[16/9] sm:aspect-auto sm:h-[340px] overflow-hidden transition-opacity"
+        style={{ borderRadius: "var(--radius-md)" }}
       >
         <SmartImage src={hero} alt={alt} className="h-full w-full object-cover" />
       </button>
-      {thumbs.length > 1 && (
-        <div className="mt-2 grid grid-cols-5 gap-2">
-          {thumbs.map((url, i) => {
-            const isLastShown = i === thumbs.length - 1;
-            const showOverlay = isLastShown && extraCount > 0;
+      {photos.length > 1 && (
+        <div className="mt-2 flex gap-2 overflow-x-auto snap-x snap-mandatory pb-2" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+          {photos.map((url, i) => {
             const isActive = selectedIdx === i;
             return (
               <button
                 key={i}
                 type="button"
-                onClick={() => {
-                  if (showOverlay) setLightbox(0);
-                  else setSelectedIdx(i);
-                }}
-                className={`focus-ring relative aspect-[4/3] overflow-hidden rounded-md transition-all ${isActive ? "ring-2 ring-[var(--color-primary)] ring-offset-2 opacity-100" : "opacity-60 hover:opacity-100"}`}
-                style={{ borderRadius: "var(--radius-md)" }}
+                onClick={() => setSelectedIdx(i)}
+                className={`focus-ring relative w-24 sm:w-32 shrink-0 snap-start aspect-[4/3] overflow-hidden transition-all ${isActive ? "opacity-100" : "opacity-50 hover:opacity-80"}`}
+                style={{ borderRadius: "var(--radius-sm)" }}
               >
                 <SmartImage src={url} alt={`${alt} ${i + 1}`} className="h-full w-full object-cover" />
-                {showOverlay && (
-                  <span
-                    className="absolute inset-0 flex items-center justify-center text-[12px] sm:text-[16px] font-bold"
-                    style={{ backgroundColor: "rgba(0,0,0,0.55)", color: "#fff" }}
-                  >
-                    +{extraCount}
-                  </span>
-                )}
               </button>
             );
           })}

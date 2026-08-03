@@ -63,6 +63,6 @@ export function getLocalizedString(localizedObj, lang = "en") {
  * Helper to build the full path string for a node given its ancestor slugs
  */
 export function buildPath(slugs) {
-  if (!slugs || slugs.length === 0) return "/visitor-information";
-  return `/visitor-information/${slugs.join("/")}`;
+  if (!slugs || slugs.length === 0) return "/plan-your-trip/visitor-information";
+  return `/plan-your-trip/visitor-information/${slugs.join("/")}`;
 }

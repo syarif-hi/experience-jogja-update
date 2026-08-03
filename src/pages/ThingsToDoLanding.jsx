@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, useNavigate, useLocation, Navigate, useParams } from "react-router-dom";
 import { useTranslation } from "@/lib/i18n";
 import PageShell from "@/components/layout/PageShell";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { NAV_GROUPS } from "@/lib/navConfig";
 import Destinations from "./Destinations";
@@ -20,7 +21,10 @@ export default function ThingsToDoLanding() {
   const navGroup = NAV_GROUPS.find((g) => g.to === "/things-to-do");
   const lbl = (o) => (language === "id" ? o.label_id : o.label_en);
 
-  const currentTabPath = location.pathname.split("/").pop();
+  const basePath = "/things-to-do";
+  const currentTabPath = location.pathname.startsWith(basePath)
+    ? location.pathname.slice(basePath.length).split("/").filter(Boolean)[0]
+    : "";
   const tabValues = navGroup.items.map(item => item.to.split("/").pop());
   const activeTab = tabValues.includes(currentTabPath) ? currentTabPath : tabValues[0];
 
@@ -64,6 +68,10 @@ export default function ThingsToDoLanding() {
       </div>
           
       <div className="content-wrap mt-2 md:mt-6 pb-16">
+        <Breadcrumb items={[
+          { label: lbl(navGroup), to: navGroup.to },
+          ...(activeTab !== tabValues[0] ? [{ label: lbl(navGroup.items.find(i => i.to.endsWith(activeTab)) || navGroup.items[0]) }] : []),
+        ]} />
         <Routes>
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
           <Route path=":type" element={<ThingsToDoContent />} />

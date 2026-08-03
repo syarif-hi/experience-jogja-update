@@ -5,26 +5,18 @@ import PageShell from "@/components/layout/PageShell";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { NAV_GROUPS } from "@/lib/navConfig";
-import Tours from "./Tours";
-import Stays from "./Stays";
 import EventsPage from "./EventsPage";
-import Destinations from "./Destinations";
 import ComingSoon from "./ComingSoon";
-import Attractions from "./Attractions";
-import Activities from "./Activities";
-import Hotels from "./Hotels";
-import Restaurants from "./Restaurants";
-import Transportation from "./Transportation";
 
-export default function BookExperienceLanding() {
+export default function EventsLanding() {
   const { language } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const navGroup = NAV_GROUPS.find((g) => g.to === "/book-experience");
+  const navGroup = NAV_GROUPS.find((g) => g.to === "/events");
   const lbl = (o) => (language === "id" ? o.label_id : o.label_en);
 
-  const basePath = "/book-experience";
+  const basePath = "/events";
   const currentTabPath = location.pathname.startsWith(basePath)
     ? location.pathname.slice(basePath.length).split("/").filter(Boolean)[0]
     : "";
@@ -32,7 +24,7 @@ export default function BookExperienceLanding() {
   const activeTab = tabValues.includes(currentTabPath) ? currentTabPath : tabValues[0];
 
   const handleTabChange = (value) => {
-    navigate(`/book-experience/${value}`);
+    navigate(`/events/${value}`);
   };
 
   return (
@@ -43,7 +35,9 @@ export default function BookExperienceLanding() {
             {lbl(navGroup)}
           </h1>
           <p className="mb-8 max-w-2xl text-[16px]" style={{ color: "var(--text-secondary)" }}>
-            {language === "id" ? "Temukan dan pesan pengalaman, tur, dan akomodasi terbaik." : "Discover and book the best experiences, tours, and accommodations."}
+            {language === "id" 
+              ? "Temukan acara, festival, pertunjukan, dan lainnya di Jogja." 
+              : "Discover upcoming events, festivals, performances, and more in Jogja."}
           </p>
 
           <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
@@ -77,13 +71,12 @@ export default function BookExperienceLanding() {
         ]} />
         <Routes>
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
-          <Route path="attractions" element={<Attractions hideShell />} />
-          <Route path="tours" element={<Tours hideShell />} />
-          <Route path="activities" element={<Activities hideShell />} />
-          <Route path="hotels" element={<Hotels hideShell />} />
-          <Route path="transportation" element={<Transportation hideShell />} />
-          <Route path="restaurants" element={<Restaurants hideShell />} />
-          <Route path="event-tickets" element={<EventsPage hideShell defaultTab="concerts" />} />
+          <Route path="calendar" element={<EventsPage hideShell />} />
+          <Route path="festivals" element={<EventsPage hideShell defaultCategory="festival" />} />
+          <Route path="cultural-performances" element={<EventsPage hideShell defaultCategory="cultural" />} />
+          <Route path="exhibitions" element={<EventsPage hideShell defaultCategory="exhibition" />} />
+          <Route path="sports-events" element={<EventsPage hideShell defaultCategory="sports" />} />
+          <Route path="upcoming-highlights" element={<EventsPage hideShell highlightsOnly />} />
         </Routes>
       </div>
     </PageShell>

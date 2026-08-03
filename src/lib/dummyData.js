@@ -6,10 +6,11 @@ export const DUMMY_STAYS = [
 ];
 
 export const DUMMY_EVENTS = [
-  { id: 'd1', slug: 'prambanan-jazz', name_id: 'Prambanan Jazz Festival', name_en: 'Prambanan Jazz Festival', event_date: '2027-07-10', regency: 'sleman', event_type: 'Music', hero_image_url: 'https://images.unsplash.com/photo-1540039155732-61ee01ba2986?w=600&q=80' },
-  { id: 'd2', slug: 'sekaten', name_id: 'Pasar Malam Sekaten', name_en: 'Sekaten Night Market', event_date: '2027-09-01', regency: 'kota-yogyakarta', event_type: 'Cultural', hero_image_url: 'https://images.unsplash.com/photo-1533174000255-598d38f1a4bb?w=600&q=80' },
-  { id: 'd3', slug: 'ramayana', name_id: 'Sendratari Ramayana', name_en: 'Ramayana Ballet', event_date: '2027-08-15', regency: 'sleman', event_type: 'Performance', hero_image_url: 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80' },
-  { id: 'd4', slug: 'artjog', name_id: 'ArtJog', name_en: 'ArtJog', event_date: '2027-06-20', regency: 'kota-yogyakarta', event_type: 'Art Exhibition', hero_image_url: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80' }
+  { id: 'd1', slug: 'prambanan-jazz', name_id: 'Prambanan Jazz Festival', name_en: 'Prambanan Jazz Festival', event_date: '2027-07-10', regency: 'sleman', event_type: 'Music', hero_image_url: 'https://images.unsplash.com/photo-1540039155732-61ee01ba2986?w=600&q=80', category: 'music' },
+  { id: 'd2', slug: 'sekaten', name_id: 'Pasar Malam Sekaten', name_en: 'Sekaten Night Market', event_date: '2027-09-01', regency: 'kota-yogyakarta', event_type: 'Festival', hero_image_url: 'https://images.unsplash.com/photo-1533174000255-598d38f1a4bb?w=600&q=80', category: 'festival' },
+  { id: 'd3', slug: 'ramayana', name_id: 'Sendratari Ramayana', name_en: 'Ramayana Ballet', event_date: '2027-08-15', regency: 'sleman', event_type: 'Cultural', hero_image_url: 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80', category: 'cultural' },
+  { id: 'd4', slug: 'artjog', name_id: 'ArtJog', name_en: 'ArtJog', event_date: '2027-06-20', regency: 'kota-yogyakarta', event_type: 'Art Exhibition', hero_image_url: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80', category: 'exhibition' },
+  { id: 'd5', slug: 'jogja-marathon', name_id: 'Marathon Jogja', name_en: 'Jogja Marathon', event_date: '2027-10-15', regency: 'kota-yogyakarta', event_type: 'Sports', hero_image_url: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=600&q=80', category: 'sports' }
 ];
 
 export const DUMMY_ITINERARIES = [
@@ -141,3 +142,26 @@ export const DUMMY_VISITOR_INFO = [
   }
 ];
 
+export const DUMMY_ATTRACTIONS = [
+  { id: 'a1', slug: 'borobudur-sunrise', name_en: 'Borobudur Sunrise Tour', name_id: 'Tur Sunrise Borobudur', category: 'heritage', regency: 'sleman', price_idr: 450000, hero_image_url: 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80', descriptor_en: 'Experience the magical sunrise over the world\'s largest Buddhist temple.' },
+  { id: 'a2', slug: 'timang-beach-gondola', name_en: 'Timang Beach Gondola', name_id: 'Gondola Pantai Timang', category: 'adventure', regency: 'gunungkidul', price_idr: 100000, hero_image_url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80', descriptor_en: 'Ride the thrilling traditional gondola across the ocean waves.' },
+  { id: 'a3', slug: 'prambanan-temple', name_en: 'Prambanan Temple Complex', name_id: 'Kompleks Candi Prambanan', category: 'heritage', regency: 'sleman', price_idr: 350000, hero_image_url: 'https://images.unsplash.com/photo-1584810359583-96fc9f6bffb0?w=600&q=80', descriptor_en: 'Explore the largest Hindu temple compound in Indonesia.' },
+];
+
+export const DUMMY_ACTIVITIES = [
+  { id: 'ac1', slug: 'batik-workshop', name_en: 'Batik Making Workshop', name_id: 'Workshop Membatik', category: 'culture', duration_hours: 3, price_idr: 200000, regency: 'kota-yogyakarta', hero_image_url: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80', descriptor_en: 'Learn the ancient art of Javanese batik from master artisans.' },
+  { id: 'ac2', slug: 'cave-tubing-pindul', name_en: 'Cave Tubing at Goa Pindul', name_id: 'Cave Tubing Goa Pindul', category: 'adventure', duration_hours: 2, price_idr: 75000, regency: 'gunungkidul', hero_image_url: 'https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=600&q=80', descriptor_en: 'Float through an underground river inside a stunning cave.' },
+  { id: 'ac3', slug: 'silver-jewelry-class', name_en: 'Silver Jewelry Making Class', name_id: 'Kelas Membuat Perhiasan Perak', category: 'culture', duration_hours: 4, price_idr: 300000, regency: 'bantul', hero_image_url: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80', descriptor_en: 'Craft your own silver jewelry in the famous Kotagede silver village.' },
+];
+
+export const DUMMY_RESTAURANTS = [
+  { id: 'r1', slug: 'bale-raos', name_en: 'Bale Raos Royal Cuisine', name_id: 'Bale Raos Masakan Keraton', cuisine: 'javanese', price_range: '$$', regency: 'kota-yogyakarta', hero_image_url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80', descriptor_en: 'Dine on authentic royal Javanese recipes inside the Sultan\'s Palace.' },
+  { id: 'r2', slug: 'mediterranea', name_en: 'Mediterranea Restaurant', name_id: 'Restoran Mediterranea', cuisine: 'international', price_range: '$$$', regency: 'sleman', hero_image_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80', descriptor_en: 'Fine dining with Mediterranean flavors in a lush garden setting.' },
+  { id: 'r3', slug: 'gudeg-yu-djum', name_en: 'Gudeg Yu Djum', name_id: 'Gudeg Yu Djum', cuisine: 'javanese', price_range: '$', regency: 'kota-yogyakarta', hero_image_url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80', descriptor_en: 'The most famous gudeg in Yogyakarta, a must-try local delicacy.' },
+];
+
+export const DUMMY_TRANSPORTATION = [
+  { id: 't1', slug: 'airport-shuttle', name_en: 'Airport Shuttle Service', name_id: 'Layanan Shuttle Bandara', type: 'shuttle', price_idr: 75000, hero_image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80', descriptor_en: 'Comfortable shuttle from YIA Airport to city center hotels.' },
+  { id: 't2', slug: 'car-rental-daily', name_en: 'Daily Car Rental with Driver', name_id: 'Sewa Mobil Harian dengan Sopir', type: 'rental', price_idr: 500000, hero_image_url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80', descriptor_en: 'Explore Jogja at your own pace with a professional local driver.' },
+  { id: 't3', slug: 'motorbike-rental', name_en: 'Motorbike Rental', name_id: 'Sewa Motor', type: 'rental', price_idr: 80000, hero_image_url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80', descriptor_en: 'Freedom to explore narrow streets and hidden spots on two wheels.' },
+];

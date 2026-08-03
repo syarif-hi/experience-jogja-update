@@ -2,12 +2,17 @@ import React from "react";
 import { Routes, Route, useNavigate, useLocation, Navigate } from "react-router-dom";
 import { useTranslation } from "@/lib/i18n";
 import PageShell from "@/components/layout/PageShell";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { NAV_GROUPS } from "@/lib/navConfig";
 import TripPlanner from "./TripPlanner";
 import Itineraries from "./Itineraries";
 import Stays from "./Stays";
 import VisitorInformation from "./VisitorInformation";
+import ComingSoon from "./ComingSoon";
+import TravelTips from "./TravelTips";
+import GettingToJogja from "./GettingToJogja";
+import GettingAround from "./GettingAround";
 
 export default function PlanYourTripLanding() {
   const { language } = useTranslation();
@@ -19,7 +24,10 @@ export default function PlanYourTripLanding() {
   const lbl = (o) => (language === "id" ? o.label_id : o.label_en);
 
   // Extract the current tab from the URL pathname
-  const currentTabPath = location.pathname.split("/").pop();
+  const basePath = "/plan-your-trip";
+  const currentTabPath = location.pathname.startsWith(basePath)
+    ? location.pathname.slice(basePath.length).split("/").filter(Boolean)[0]
+    : "";
   
   // Create an array of path segments that correspond to the tabs
   const tabValues = navGroup.items.map(item => item.to.split("/").pop());
@@ -67,12 +75,21 @@ export default function PlanYourTripLanding() {
       </div>
           
       <div className="content-wrap mt-2 md:mt-6 pb-16">
+        {activeTab !== "visitor-information" && (
+          <Breadcrumb items={[
+            { label: lbl(navGroup), to: navGroup.to },
+            ...(activeTab !== tabValues[0] ? [{ label: lbl(navGroup.items.find(i => i.to.endsWith(activeTab)) || navGroup.items[0]) }] : []),
+          ]} />
+        )}
         <Routes>
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
           <Route path="trip-planner" element={<TripPlanner hideShell />} />
           <Route path="itineraries" element={<Itineraries hideShell />} />
-          <Route path="stays" element={<Stays hideShell />} />
-          <Route path="visitor-information" element={<VisitorInformation hideShell />} />
+          <Route path="getting-to-jogja" element={<GettingToJogja hideShell />} />
+          <Route path="getting-around" element={<GettingAround hideShell />} />
+          <Route path="where-to-stay" element={<Stays hideShell />} />
+          <Route path="visitor-information/*" element={<VisitorInformation hideShell />} />
+          <Route path="travel-tips" element={<TravelTips hideShell />} />
         </Routes>
       </div>
     </PageShell>

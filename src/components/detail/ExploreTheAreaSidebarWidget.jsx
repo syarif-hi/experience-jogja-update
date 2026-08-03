@@ -1,0 +1,140 @@
+import React, { useState, useEffect } from "react";
+import { MapPin, Plane, Utensils, ChevronRight, X } from "lucide-react";
+import { base44 } from "@/api/base44Client";
+import { useTranslation } from "@/lib/i18n";
+import { nearest, hasCoords, haversineKm, estimateDriveMinutes } from "@/lib/distance";
+import { TRANSIT_POINTS } from "@/lib/transit-reference-points";
+import ExploreTheAreaModal from "./ExploreTheAreaModal";
+
+function StaticMapImage({ latitude, longitude, label }) {
+  // In a real app we might use a static maps API or an actual mini-map.
+  // Here we just render a placeholder that looks like a map.
+  return (
+    <div className="relative h-[200px] w-full overflow-hidden rounded-xl bg-[#e5e3df]">
+      {/* Mock map background */}
+      <div 
+        className="absolute inset-0 opacity-40 mix-blend-multiply" 
+        style={{ 
+          backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2YwZjRmOCIvPgo8cGF0aCBkPSJNMCAwaDEwdjEwSDB6IiBmaWxsPSIjZTllY2Y1Ii8+Cjwvc3ZnPg==')", 
+          backgroundSize: "20px 20px" 
+        }} 
+      />
+      {/* Map lines */}
+      <svg className="absolute inset-0 h-full w-full opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 20 Q 50 10 100 40 M 20 0 Q 30 50 50 100 M 0 80 Q 50 90 100 60" stroke="#000" fill="none" strokeWidth="1" />
+        <path d="M10 0 Q 20 40 10 100 M 80 0 Q 90 60 70 100" stroke="#000" fill="none" strokeWidth="0.5" />
+      </svg>
+      {/* Map markers */}
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[var(--color-primary)] shadow-md">
+          <MapPin className="h-6 w-6" />
+        </div>
+      </div>
+      <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm text-gray-700 hover:bg-gray-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+      </div>
+    </div>
+  );
+}
+
+export default function ExploreTheAreaSidebarWidget({ origin }) {
+  const { t, language } = useTranslation();
+  const [dests, setDests] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [mapOnlyModalOpen, setMapOnlyModalOpen] = useState(false);
+
+  useEffect(() => {
+    base44.entities.Destination.list().then(setDests).catch(() => setDests([]));
+  }, []);
+
+  if (!hasCoords(origin)) return null;
+
+  const nm = (r) => (language === "id" ? r.name_id : r.name_en);
+
+  const attractions = nearest(origin, dests.filter((d) => d.category !== "eat-drink"), { limit: 2, excludeId: origin.id });
+  const transit = TRANSIT_POINTS
+    .map((p) => {
+      const distanceKm = haversineKm(origin.latitude, origin.longitude, p.latitude, p.longitude);
+      return { ...p, distanceKm, driveMin: estimateDriveMinutes(distanceKm) };
+    })
+    .sort((a, b) => a.distanceKm - b.distanceKm)
+    .slice(0, 2);
+
+  // Combine top 2 attractions and top 2 transit for the widget preview
+  const previewItems = [
+    ...attractions.map(d => ({ key: d.id, name: nm(d), distance: `${d.driveMin} min drive`, icon: MapPin })),
+    ...transit.map(p => ({ key: p.id, name: language === "id" ? p.name_id : p.name_en, distance: `${p.driveMin} min drive`, icon: Plane }))
+  ].slice(0, 4);
+
+  return (
+    <>
+      <section className="mt-8 rounded-2xl">
+        <h2 className="mb-4 font-heading text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>
+          {t("explore.title") || "Explore the area"}
+        </h2>
+
+        <button 
+          type="button" 
+          onClick={() => setMapOnlyModalOpen(true)}
+          className="focus-ring mb-6 block w-full rounded-xl transition-transform hover:scale-[1.01]"
+        >
+          <StaticMapImage latitude={origin.latitude} longitude={origin.longitude} label={nm(origin)} />
+        </button>
+
+        <ul className="space-y-4">
+          {previewItems.map(item => (
+            <li key={item.key} className="flex items-center justify-between">
+              <div className="flex items-center gap-4 min-w-0">
+                <item.icon className="h-[22px] w-[22px] shrink-0" style={{ color: "var(--text-secondary)" }} strokeWidth={1.5} />
+                <span className="truncate text-[15px]" style={{ color: "var(--text-primary)" }}>
+                  {item.name}
+                </span>
+              </div>
+              <span className="ml-4 shrink-0 text-[14px]" style={{ color: "var(--text-secondary)" }}>
+                {item.distance}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <button 
+          type="button"
+          onClick={() => setModalOpen(true)}
+          className="focus-ring mt-6 inline-flex items-center gap-1 text-[15px] font-semibold hover:underline"
+          style={{ color: "var(--color-primary)" }}
+        >
+          See all about this area <ChevronRight className="h-4 w-4" />
+        </button>
+      </section>
+
+      {modalOpen && (
+        <ExploreTheAreaModal 
+          origin={origin} 
+          onClose={() => setModalOpen(false)} 
+          dests={dests}
+        />
+      )}
+
+      {mapOnlyModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style={{ backgroundColor: "rgba(0,0,0,0.6)" }} onClick={() => setMapOnlyModalOpen(false)}>
+          <div className="relative flex h-full max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center justify-between px-6 py-4">
+              <h2 className="text-[18px] font-bold" style={{ color: "var(--text-primary)" }}>Location</h2>
+              <button type="button" onClick={() => setMapOnlyModalOpen(false)} className="flex h-8 w-8 items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+                <X className="h-5 w-5" style={{ color: "var(--text-primary)" }} />
+              </button>
+            </div>
+            <div className="flex-1 overflow-hidden relative">
+               <iframe 
+                  title="Map View"
+                  src={`https://maps.google.com/maps?q=${origin.latitude},${origin.longitude}&t=&z=13&ie=UTF8&iwloc=&output=embed`} 
+                  style={{ width: "100%", height: "100%", border: 0 }} 
+                  allowFullScreen
+               />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

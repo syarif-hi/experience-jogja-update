@@ -26,7 +26,7 @@ export default function YouMightAlsoLike({ category, regency, excludeSlug }) {
       <h2 className="mb-4 font-heading text-[24px] font-bold" style={{ color: "var(--color-primary)" }}>
         {t("detail.alsoLike") || "You might also like"}
       </h2>
-      <HScrollStrip>
+      <HScrollStrip rows={2}>
         {items === null
           ? Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="aspect-[4/3] w-[280px] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />

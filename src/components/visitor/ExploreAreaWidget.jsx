@@ -18,101 +18,64 @@ export default function ExploreAreaWidget({ nearbyPlaces, mapImage, compact }) {
   if (!nearbyPlaces || nearbyPlaces.length === 0) return null;
 
   return (
-    <div className={compact ? "" : "mt-14"}>
+    <section className={compact ? "" : "mt-8 rounded-2xl"}>
       {!compact && (
-        <h2
-          className="text-xl font-heading font-bold mb-5"
-          style={{ color: "var(--text-primary)" }}
-        >
+        <h2 className="mb-4 font-heading text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>
           {language === "id" ? "Jelajahi Sekitar" : "Explore the area"}
         </h2>
       )}
+      {compact && (
+        <h3 className="mb-4 font-heading text-[18px] font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+          <MapPin className="w-5 h-5" style={{ color: "var(--color-primary)" }} />
+          {language === "id" ? "Jelajahi Sekitar" : "Explore the area"}
+        </h3>
+      )}
 
-      <div
-        className="rounded-2xl overflow-hidden h-full"
-        style={{ backgroundColor: "var(--bg-surface-alt)" }}
+      {/* Map Image Button / Thumbnail */}
+      {mapImage && (
+        <button 
+          type="button" 
+          className={`focus-ring mb-6 block w-full rounded-xl transition-transform hover:scale-[1.01] overflow-hidden ${compact ? "aspect-[2/1]" : "aspect-[16/9]"}`}
+          style={{ backgroundColor: "var(--bg-surface-alt)" }}
+        >
+          <SmartImage
+            src={mapImage}
+            alt="Area map"
+            className="w-full h-full object-cover"
+          />
+        </button>
+      )}
+
+      {/* Nearby Places List */}
+      <ul className="space-y-4">
+        {nearbyPlaces.map((place, idx) => {
+          const isAirport = place.type === "airport";
+          const IconComponent = isAirport ? Plane : MapPin;
+
+          return (
+            <li key={idx} className="flex items-center justify-between">
+              <div className="flex items-center gap-4 min-w-0">
+                <IconComponent className="h-[22px] w-[22px] shrink-0" style={{ color: "var(--text-secondary)" }} strokeWidth={1.5} />
+                <span className="truncate text-[15px]" style={{ color: "var(--text-primary)" }}>
+                  {place.name}
+                </span>
+              </div>
+              <span className="ml-4 shrink-0 text-[14px]" style={{ color: "var(--text-secondary)" }}>
+                {place.distance}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* Footer Link */}
+      <button
+        type="button"
+        className="focus-ring mt-6 inline-flex items-center gap-1 text-[15px] font-semibold hover:underline"
+        style={{ color: "var(--color-primary)" }}
       >
-        {/* Section title inside the card when compact */}
-        {compact && (
-          <div className="px-5 pt-5 pb-0">
-            <h3
-              className="font-heading text-lg font-bold flex items-center gap-2"
-              style={{ color: "var(--text-primary)" }}
-            >
-              <MapPin className="w-5 h-5" style={{ color: "var(--color-primary)" }} />
-              {language === "id" ? "Jelajahi Sekitar" : "Explore the area"}
-            </h3>
-          </div>
-        )}
-
-        {/* Map Image */}
-        {mapImage && (
-          <div className={`w-full overflow-hidden ${compact ? "aspect-[2/1] mt-4 mx-5 rounded-xl" : "aspect-[16/9]"}`}
-            style={compact ? { width: "calc(100% - 40px)" } : undefined}
-          >
-            <SmartImage
-              src={mapImage}
-              alt="Area map"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
-
-        {/* Nearby Places List */}
-        <div className="px-5 py-4">
-          <div className="flex flex-col gap-0.5">
-            {nearbyPlaces.map((place, idx) => {
-              const isAirport = place.type === "airport";
-              const IconComponent = isAirport ? Plane : MapPin;
-
-              return (
-                <div
-                  key={idx}
-                  className="flex items-center gap-3"
-                >
-                  {/* Icon */}
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-                    style={{
-                      backgroundColor: "var(--bg-surface)",
-                      color: isAirport ? "var(--color-primary)" : "var(--text-secondary)",
-                    }}
-                  >
-                    <IconComponent className="w-4 h-4" />
-                  </div>
-
-                  {/* Name */}
-                  <span
-                    className="flex-1 text-[14px] font-medium"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    {place.name}
-                  </span>
-
-                  {/* Distance */}
-                  <span
-                    className="text-[13px] font-medium shrink-0"
-                    style={{ color: "var(--text-secondary)" }}
-                  >
-                    {place.distance}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Footer Link */}
-          <div className="pt-2 pb-1">
-            <button
-              className="flex items-center gap-1 text-[13px] font-semibold transition-opacity hover:opacity-80"
-              style={{ color: "var(--color-primary)" }}
-            >
-              {language === "id" ? "Lihat semua tentang area ini" : "See all about this area"}
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+        {language === "id" ? "Lihat semua tentang area ini" : "See all about this area"} <ChevronRight className="h-4 w-4" />
+      </button>
+    </section>
   );
 }

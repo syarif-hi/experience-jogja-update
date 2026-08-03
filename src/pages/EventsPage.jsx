@@ -22,8 +22,10 @@ const ALL_CATS = EVENT_CATEGORIES.map((c) => c.value);
  * Props:
  *   hideShell    — when true, omits the PageShell wrapper (for embedding)
  *   defaultTab   — "events" | "concerts" — pre-select a tab
+ *   defaultCategory - pre-filter events to a specific category
+ *   highlightsOnly - filter to events with is_homepage_highlight
  */
-export default function EventsPage({ hideShell, defaultTab }) {
+export default function EventsPage({ hideShell, defaultTab, defaultCategory, highlightsOnly }) {
   const { t, language } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -39,10 +41,11 @@ export default function EventsPage({ hideShell, defaultTab }) {
 
   // Category filter state — initialised to the tab's categories
   const tabCats = useMemo(() => getCategoriesForTab(activeTab).map((c) => c.value), [activeTab]);
-  const [activeCats, setActiveCats] = useState(tabCats);
+  const [activeCats, setActiveCats] = useState(defaultCategory ? [defaultCategory] : tabCats);
 
   // When tab changes, reset category filter to that tab's categories
   useEffect(() => {
+    if (defaultCategory) return;
     setActiveCats(tabCats);
     setSelectedDay(null);
     setQuery("");
@@ -83,7 +86,12 @@ export default function EventsPage({ hideShell, defaultTab }) {
         }
       }
 
-      // 4. Text search
+      // 4. Highlight filter
+      if (highlightsOnly && !ev.is_homepage_highlight) {
+        return false;
+      }
+
+      // 5. Text search
       if (q) {
         return [ev.title_id, ev.title_en, ev.venue].some(
           (s) => (s || "").toLowerCase().includes(q)
@@ -134,28 +142,30 @@ export default function EventsPage({ hideShell, defaultTab }) {
       {/* Top Controls: Tabs and Search */}
       <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-4">
         {/* Tab switcher — Events / Concerts */}
-        <div className="flex w-full md:w-auto md:inline-flex items-center gap-1 rounded-xl p-1 shrink-0" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
-          {TABS.map((tab) => {
-            const active = activeTab === tab.key;
-            const Icon = tab.icon;
-            return (
-              <button
-                key={tab.key}
-                type="button"
-                onClick={() => handleTabChange(tab.key)}
-                className="focus-ring flex flex-1 md:flex-none items-center justify-center gap-2 rounded-lg px-6 py-2.5 text-[14px] font-semibold transition-all"
-                style={{
-                  backgroundColor: active ? "var(--color-primary)" : "transparent",
-                  color: active ? "var(--on-primary)" : "var(--text-secondary)",
-                  boxShadow: active ? "var(--elevation-1)" : "none",
-                }}
-              >
-                <Icon className="h-4 w-4" />
-                {tab.label}
-              </button>
-            );
-          })}
-        </div>
+        {!defaultCategory && (
+          <div className="flex w-full md:w-auto md:inline-flex items-center gap-1 rounded-xl p-1 shrink-0" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+            {TABS.map((tab) => {
+              const active = activeTab === tab.key;
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.key}
+                  type="button"
+                  onClick={() => handleTabChange(tab.key)}
+                  className="focus-ring flex flex-1 md:flex-none items-center justify-center gap-2 rounded-lg px-6 py-2.5 text-[14px] font-semibold transition-all"
+                  style={{
+                    backgroundColor: active ? "var(--color-primary)" : "transparent",
+                    color: active ? "var(--on-primary)" : "var(--text-secondary)",
+                    boxShadow: active ? "var(--elevation-1)" : "none",
+                  }}
+                >
+                  <Icon className="h-4 w-4" />
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Search bar */}
         <div className="relative w-full md:max-w-xs lg:max-w-sm shrink-0">
@@ -179,19 +189,21 @@ export default function EventsPage({ hideShell, defaultTab }) {
       </div>
 
       {/* Calendar strip */}
-      <div className="mt-4">
-        <CalendarStrip
-          events={tabEvents}
-          viewDate={viewDate}
-          onViewDateChange={setViewDate}
-          selectedDay={selectedDay}
-          onSelectDay={setSelectedDay}
-          language={language}
-        />
-      </div>
+      {!defaultCategory && !highlightsOnly && (
+        <div className="mt-4">
+          <CalendarStrip
+            events={tabEvents}
+            viewDate={viewDate}
+            onViewDateChange={setViewDate}
+            selectedDay={selectedDay}
+            onSelectDay={setSelectedDay}
+            language={language}
+          />
+        </div>
+      )}
 
       {/* Category filter chips (only if tab has multiple categories) */}
-      {visibleCategories.length > 1 && (
+      {!defaultCategory && !highlightsOnly && visibleCategories.length > 1 && (
         <div className="mt-4">
           <EventCategoryFilter
             categories={visibleCategories}

@@ -1,8 +1,10 @@
 // Event categories for the calendar legend + filter. Colors map to DESIGN-SYSTEM tag tokens.
 export const EVENT_CATEGORIES = [
   { value: "festival", label_id: "Festival", label_en: "Festival", color: "var(--tag-lifestyle)", tab: "events" },
-  { value: "music", label_id: "Musik", label_en: "Music", color: "var(--tag-culture)", tab: "concerts" },
-  { value: "cultural", label_id: "Budaya", label_en: "Cultural", color: "var(--tag-heritage)", tab: "events" },
+  { value: "cultural", label_id: "Pertunjukan Budaya", label_en: "Cultural Performance", color: "var(--tag-heritage)", tab: "events" },
+  { value: "exhibition", label_id: "Pameran", label_en: "Exhibition", color: "var(--tag-culture)", tab: "events" },
+  { value: "sports", label_id: "Acara Olahraga", label_en: "Sports Event", color: "var(--tag-nature)", tab: "events" },
+  { value: "music", label_id: "Musik & Konser", label_en: "Music & Concert", color: "var(--tag-culture)", tab: "concerts" },
   { value: "outdoor", label_id: "Luar Ruangan", label_en: "Outdoor", color: "var(--tag-nature)", tab: "events" },
 ];
 

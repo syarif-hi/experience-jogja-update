@@ -14,15 +14,17 @@ const pinIcon = (color) =>
   });
 
 // Centered on the listing, with optional extra markers (the "Explore the area" items).
-export default function LocationMap({ latitude, longitude, label, markers = [] }) {
+export default function LocationMap({ latitude, longitude, label, markers = [], hideHeader = false }) {
   const { t } = useTranslation();
   if (typeof latitude !== "number" || typeof longitude !== "number") return null;
 
   return (
-    <section className="mt-10">
-      <h2 className="mb-4 font-heading text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>
-        {t("detail.location") || "Location"}
-      </h2>
+    <section className={hideHeader ? "" : "mt-10"}>
+      {!hideHeader && (
+        <h2 className="mb-4 font-heading text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>
+          {t("detail.location") || "Location"}
+        </h2>
+      )}
       <div className="relative z-0 overflow-hidden rounded-2xl" style={{ height: 340, boxShadow: "var(--elevation-1)" }}>
         <MapContainer center={[latitude, longitude]} zoom={12} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
           <TileLayer

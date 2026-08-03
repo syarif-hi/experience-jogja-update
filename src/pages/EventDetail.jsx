@@ -32,7 +32,7 @@ export default function EventDetail() {
   const trail = [
     { title: language === "id" ? "Beranda" : "Home", path: "/" },
     { title: t("events.title") || "Events & Concerts", path: "/events" },
-    { title: title || "...", path: `/events/${slug}` }
+    { title: title || "...", path: `/event/${slug}` }
   ];
 
   return (

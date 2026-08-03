@@ -163,7 +163,7 @@ export default function SiteHeader() {
           {t("brand.tagline")}
         </span>
       </div>
-      <img src="/brand-logo-color-9.png" alt="Experience Jogja" className="w-full h-auto md:w-auto md:max-h-[107px] md:pt-[20px] object-contain object-left" />
+      <img src="/brand-logo-color-9.png" alt="Experience Jogja" className="w-full h-auto md:w-auto md:max-h-[87px] lg:max-h-[107px] md:pt-[20px] object-contain object-left" />
     </Link>
   );
 

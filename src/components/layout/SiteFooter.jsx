@@ -8,24 +8,23 @@ export default function SiteFooter() {
 
   // Row 1 — mirrors the navbar
   const navLinks = [
-    { label: "DISCOVER", to: "/explore" },
-    { label: "THINGS TO DO", to: "/destinations" },
+    { label: "PLAN YOUR TRIP", to: "/plan-your-trip" },
+    { label: "BOOK & EXPERIENCE", to: "/book-experience" },
+    { label: "THINGS TO DO", to: "/things-to-do" },
+    { label: "DISCOVER", to: "/discover" },
+    { label: "DESTINATIONS", to: "/destinations" },
     { label: "EVENTS", to: "/events" },
-    { label: "PLAN YOUR TRIP", to: "/trip-planner" },
-    { label: "BOOK & EXPERIENCE", to: "/trip-planner" },
-    { label: "VISITOR INFORMATION", to: "/explore" },
-    { label: "CALENDAR", to: "/calendar" },
-    { label: "JOGJA MAP", to: "/#maps" },
+    { label: "NEWS", to: "/news" },
   ];
 
   // Row 2 — mirrors the hero category menu below the slider
   const categoryLinks = [
-    { label: "DESTINATIONS", to: "/destinations" },
-    { label: "CULINARY & LIFESTYLE", to: "/destinations?category=eat-drink" },
-    { label: "HEALTH & WELLNESS", to: "/destinations?category=wellness" },
-    { label: "ENTERTAINMENT & CREATIVE", to: "/destinations?category=entertainment" },
-    { label: "SPORTS & ADVENTURE", to: "/destinations?category=sports" },
-    { label: "MICE & BUSINESS EVENTS", to: "/destinations?category=mice" },
+    { label: "HERITAGE & CULTURE", to: "/things-to-do/heritage-culture" },
+    { label: "ENTERTAINMENT & CREATIVE", to: "/things-to-do/entertainment-creative" },
+    { label: "SPORTS & ADVENTURE", to: "/things-to-do/sports-adventure" },
+    { label: "CULINARY & LIFESTYLE", to: "/things-to-do/culinary-lifestyle" },
+    { label: "HEALTH & WELLNESS", to: "/things-to-do/health-wellness" },
+    { label: "MICE & BUSINESS EVENTS", to: "/things-to-do/mice-business" },
   ];
 
   return (

@@ -3,15 +3,13 @@ import BreadcrumbTrail from "./BreadcrumbTrail";
 import TrailRail from "./TrailRail";
 import BrowseDrawer from "./BrowseDrawer";
 
-export default function VisitorInfoLayout({ slugs, node, trail, children }) {
+export default function VisitorInfoLayout({ slugs, node, trail, children, hideShell }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isHub = slugs.length === 0;
 
   return (
     <div className="flex flex-col min-h-screen">
-
-
-      <div className="content-wrap flex-1 flex py-6 md:py-10">
+      <div className={`${hideShell ? "w-full" : "content-wrap"} flex-1 flex py-2 md:py-4`}>
         {/* Desktop Rail */}
         {!isHub && (
           <aside className="hidden lg:block w-[280px] shrink-0 pr-8">

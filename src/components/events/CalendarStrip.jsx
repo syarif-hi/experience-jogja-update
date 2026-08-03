@@ -174,7 +174,7 @@ export default function CalendarStrip({
                     <ul className="space-y-1.5">
                       {dayEvents.map((ev) => (
                         <li key={ev.id}>
-                          <Link to={`/events/${ev.slug}`} className="flex items-center gap-2 text-[12px] hover:underline" style={{ color: "var(--on-primary)" }}>
+                          <Link to={`/event/${ev.slug}`} className="flex items-center gap-2 text-[12px] hover:underline" style={{ color: "var(--on-primary)" }}>
                             <SmartImage src={ev.cover_image_url} alt="" className="h-6 w-6 shrink-0 rounded object-cover" />
                             <span className="max-w-[160px] truncate">{title(ev)}</span>
                           </Link>

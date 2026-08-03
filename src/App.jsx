@@ -29,7 +29,8 @@ import PlanYourTripLanding from '@/pages/PlanYourTripLanding';
 import BookExperienceLanding from '@/pages/BookExperienceLanding';
 import DiscoverLanding from '@/pages/DiscoverLanding';
 import ThingsToDoLanding from '@/pages/ThingsToDoLanding';
-import DestinationsLanding from '@/pages/DestinationsLanding';
+import EventsLanding from '@/pages/EventsLanding';
+
 import AccountLayout from '@/pages/account/AccountLayout';
 import AccountOverview from '@/pages/account/AccountOverview';
 import NotificationPreferences from '@/pages/account/NotificationPreferences';
@@ -65,9 +66,9 @@ const AuthenticatedApp = () => {
       <Route path="/" element={<Home />} />
       <Route path="/explore" element={<Explore />} />
       <Route path="/destinations/:slug" element={<DestinationDetail />} />
-      <Route path="/destinations/*" element={<DestinationsLanding />} />
-      <Route path="/events" element={<EventsPage />} />
-      <Route path="/events/:slug" element={<EventDetail />} />
+      <Route path="/destinations" element={<Destinations />} />
+      <Route path="/event/:slug" element={<EventDetail />} />
+      <Route path="/events/*" element={<EventsLanding />} />
       <Route path="/news" element={<News />} />
       <Route path="/news/:slug" element={<ArticleDetail />} />
       <Route path="/calendar" element={<Navigate to="/events" replace />} />
@@ -77,7 +78,7 @@ const AuthenticatedApp = () => {
       <Route path="/discover/*" element={<DiscoverLanding />} />
       <Route path="/stays" element={<Stays />} />
       <Route path="/stays/:slug" element={<StayDetail />} />
-      <Route path="/visitor-information/*" element={<VisitorInformation />} />
+      <Route path="/visitor-information/*" element={<Navigate to="/plan-your-trip/visitor-information" replace />} />
       <Route path="/itineraries" element={<Itineraries />} />
       <Route path="/itineraries/:slug" element={<ItineraryDetail />} />
       <Route path="/trip-planner" element={<TripPlanner />} />
