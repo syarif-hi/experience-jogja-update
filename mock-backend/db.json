@@ -354,40 +354,55 @@
       "is_sample": false
     },
     {
-      "id": 21, "slug": "artjog-mmxxvii",
+      "id": 21,
+      "slug": "artjog-mmxxvii",
       "title_en": "ArtJog MMXXVII - Contemporary Art Exhibition",
       "title_id": "ArtJog MMXXVII - Pameran Seni Kontemporer",
       "category": "exhibition",
-      "start_date": "2027-06-20", "end_date": "2027-08-20",
+      "start_date": "2027-06-20",
+      "end_date": "2027-08-20",
       "venue": "Jogja National Museum",
       "price_idr": 50000,
       "is_homepage_highlight": true,
       "cover_image_url": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
-      "created_date": "2026-01-01", "updated_date": "2026-01-01", "created_by_id": "u1", "is_sample": true
+      "created_date": "2026-01-01",
+      "updated_date": "2026-01-01",
+      "created_by_id": "u1",
+      "is_sample": true
     },
     {
-      "id": 22, "slug": "jogja-marathon-2027",
+      "id": 22,
+      "slug": "jogja-marathon-2027",
       "title_en": "Jogja Marathon 2027",
       "title_id": "Marathon Jogja 2027",
       "category": "sports",
-      "start_date": "2027-10-15", "end_date": "2027-10-15",
+      "start_date": "2027-10-15",
+      "end_date": "2027-10-15",
       "venue": "Tugu Yogyakarta",
       "price_idr": 250000,
       "is_homepage_highlight": true,
       "cover_image_url": "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=600&q=80",
-      "created_date": "2026-01-01", "updated_date": "2026-01-01", "created_by_id": "u1", "is_sample": true
+      "created_date": "2026-01-01",
+      "updated_date": "2026-01-01",
+      "created_by_id": "u1",
+      "is_sample": true
     },
     {
-      "id": 23, "slug": "wayang-kulit-sono-budoyo",
+      "id": 23,
+      "slug": "wayang-kulit-sono-budoyo",
       "title_en": "Wayang Kulit Night at Sono Budoyo",
       "title_id": "Malam Wayang Kulit di Sono Budoyo",
       "category": "cultural",
-      "start_date": "2027-08-22", "end_date": "2027-08-22",
+      "start_date": "2027-08-22",
+      "end_date": "2027-08-22",
       "venue": "Museum Sono Budoyo",
       "price_idr": 20000,
       "is_homepage_highlight": false,
       "cover_image_url": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
-      "created_date": "2026-01-01", "updated_date": "2026-01-01", "created_by_id": "u1", "is_sample": true
+      "created_date": "2026-01-01",
+      "updated_date": "2026-01-01",
+      "created_by_id": "u1",
+      "is_sample": true
     }
   ],
   "destination": [
@@ -2044,24 +2059,206 @@
     }
   ],
   "attraction": [
-    { "id": 1, "slug": "borobudur-sunrise", "name_en": "Borobudur Sunrise Tour", "name_id": "Tur Sunrise Borobudur", "category": "heritage", "regency": "sleman", "price_idr": 450000, "hero_image_url": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80", "descriptor_en": "Experience the magical sunrise over the world's largest Buddhist temple." },
-    { "id": 2, "slug": "timang-beach-gondola", "name_en": "Timang Beach Gondola", "name_id": "Gondola Pantai Timang", "category": "adventure", "regency": "gunungkidul", "price_idr": 100000, "hero_image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80", "descriptor_en": "Ride the thrilling traditional gondola across the ocean waves." },
-    { "id": 3, "slug": "prambanan-temple", "name_en": "Prambanan Temple Complex", "name_id": "Kompleks Candi Prambanan", "category": "heritage", "regency": "sleman", "price_idr": 350000, "hero_image_url": "https://images.unsplash.com/photo-1584810359583-96fc9f6bffb0?w=600&q=80", "descriptor_en": "Explore the largest Hindu temple compound in Indonesia." }
+    {
+      "id": 1,
+      "slug": "borobudur-sunrise",
+      "name_en": "Borobudur Sunrise Tour",
+      "name_id": "Tur Sunrise Borobudur",
+      "category": "heritage",
+      "regency": "sleman",
+      "price_idr": 450000,
+      "hero_image_url": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
+      "descriptor_en": "Experience the magical sunrise over the world's largest Buddhist temple."
+    },
+    {
+      "id": 2,
+      "slug": "timang-beach-gondola",
+      "name_en": "Timang Beach Gondola",
+      "name_id": "Gondola Pantai Timang",
+      "category": "adventure",
+      "regency": "gunungkidul",
+      "price_idr": 100000,
+      "hero_image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",
+      "descriptor_en": "Ride the thrilling traditional gondola across the ocean waves."
+    },
+    {
+      "id": 3,
+      "slug": "prambanan-temple",
+      "name_en": "Prambanan Temple Complex",
+      "name_id": "Kompleks Candi Prambanan",
+      "category": "heritage",
+      "regency": "sleman",
+      "price_idr": 350000,
+      "hero_image_url": "https://images.unsplash.com/photo-1584810359583-96fc9f6bffb0?w=600&q=80",
+      "descriptor_en": "Explore the largest Hindu temple compound in Indonesia."
+    }
   ],
   "activity": [
-    { "id": 1, "slug": "batik-workshop", "name_en": "Batik Making Workshop", "name_id": "Workshop Membatik", "category": "culture", "duration_hours": 3, "price_idr": 200000, "regency": "kota-yogyakarta", "hero_image_url": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80", "descriptor_en": "Learn the ancient art of Javanese batik from master artisans." },
-    { "id": 2, "slug": "cave-tubing-pindul", "name_en": "Cave Tubing at Goa Pindul", "name_id": "Cave Tubing Goa Pindul", "category": "adventure", "duration_hours": 2, "price_idr": 75000, "regency": "gunungkidul", "hero_image_url": "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=600&q=80", "descriptor_en": "Float through an underground river inside a stunning cave." },
-    { "id": 3, "slug": "silver-jewelry-class", "name_en": "Silver Jewelry Making Class", "name_id": "Kelas Membuat Perhiasan Perak", "category": "culture", "duration_hours": 4, "price_idr": 300000, "regency": "bantul", "hero_image_url": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80", "descriptor_en": "Craft your own silver jewelry in the famous Kotagede silver village." }
+    {
+      "id": 1,
+      "slug": "batik-workshop",
+      "name_en": "Batik Making Workshop",
+      "name_id": "Workshop Membatik",
+      "category": "culture",
+      "duration_hours": 3,
+      "price_idr": 200000,
+      "regency": "kota-yogyakarta",
+      "hero_image_url": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
+      "descriptor_en": "Learn the ancient art of Javanese batik from master artisans."
+    },
+    {
+      "id": 2,
+      "slug": "cave-tubing-pindul",
+      "name_en": "Cave Tubing at Goa Pindul",
+      "name_id": "Cave Tubing Goa Pindul",
+      "category": "adventure",
+      "duration_hours": 2,
+      "price_idr": 75000,
+      "regency": "gunungkidul",
+      "hero_image_url": "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=600&q=80",
+      "descriptor_en": "Float through an underground river inside a stunning cave."
+    },
+    {
+      "id": 3,
+      "slug": "silver-jewelry-class",
+      "name_en": "Silver Jewelry Making Class",
+      "name_id": "Kelas Membuat Perhiasan Perak",
+      "category": "culture",
+      "duration_hours": 4,
+      "price_idr": 300000,
+      "regency": "bantul",
+      "hero_image_url": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80",
+      "descriptor_en": "Craft your own silver jewelry in the famous Kotagede silver village."
+    }
   ],
   "restaurant": [
-    { "id": 1, "slug": "bale-raos", "name_en": "Bale Raos Royal Cuisine", "name_id": "Bale Raos Masakan Keraton", "cuisine": "javanese", "price_range": "$$", "regency": "kota-yogyakarta", "hero_image_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80", "descriptor_en": "Dine on authentic royal Javanese recipes inside the Sultan's Palace." },
-    { "id": 2, "slug": "mediterranea", "name_en": "Mediterranea Restaurant", "name_id": "Restoran Mediterranea", "cuisine": "international", "price_range": "$$$", "regency": "sleman", "hero_image_url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80", "descriptor_en": "Fine dining with Mediterranean flavors in a lush garden setting." },
-    { "id": 3, "slug": "gudeg-yu-djum", "name_en": "Gudeg Yu Djum", "name_id": "Gudeg Yu Djum", "cuisine": "javanese", "price_range": "$", "regency": "kota-yogyakarta", "hero_image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80", "descriptor_en": "The most famous gudeg in Yogyakarta, a must-try local delicacy." }
+    {
+      "id": 1,
+      "slug": "bale-raos",
+      "name_en": "Bale Raos Royal Cuisine",
+      "name_id": "Bale Raos Masakan Keraton",
+      "cuisine": "javanese",
+      "price_range": "$$",
+      "regency": "kota-yogyakarta",
+      "hero_image_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
+      "descriptor_en": "Dine on authentic royal Javanese recipes inside the Sultan's Palace."
+    },
+    {
+      "id": 2,
+      "slug": "mediterranea",
+      "name_en": "Mediterranea Restaurant",
+      "name_id": "Restoran Mediterranea",
+      "cuisine": "international",
+      "price_range": "$$$",
+      "regency": "sleman",
+      "hero_image_url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+      "descriptor_en": "Fine dining with Mediterranean flavors in a lush garden setting."
+    },
+    {
+      "id": 3,
+      "slug": "gudeg-yu-djum",
+      "name_en": "Gudeg Yu Djum",
+      "name_id": "Gudeg Yu Djum",
+      "cuisine": "javanese",
+      "price_range": "$",
+      "regency": "kota-yogyakarta",
+      "hero_image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+      "descriptor_en": "The most famous gudeg in Yogyakarta, a must-try local delicacy."
+    }
   ],
   "transportation": [
-    { "id": 1, "slug": "airport-shuttle", "name_en": "Airport Shuttle Service", "name_id": "Layanan Shuttle Bandara", "type": "shuttle", "price_idr": 75000, "hero_image_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80", "descriptor_en": "Comfortable shuttle from YIA Airport to city center hotels." },
-    { "id": 2, "slug": "car-rental-daily", "name_en": "Daily Car Rental with Driver", "name_id": "Sewa Mobil Harian dengan Sopir", "type": "rental", "price_idr": 500000, "hero_image_url": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80", "descriptor_en": "Explore Jogja at your own pace with a professional local driver." },
-    { "id": 3, "slug": "motorbike-rental", "name_en": "Motorbike Rental", "name_id": "Sewa Motor", "type": "rental", "price_idr": 80000, "hero_image_url": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80", "descriptor_en": "Freedom to explore narrow streets and hidden spots on two wheels." }
+    {
+      "id": 1,
+      "slug": "airport-shuttle",
+      "name_en": "Airport Shuttle Service",
+      "name_id": "Layanan Shuttle Bandara",
+      "type": "shuttle",
+      "price_idr": 75000,
+      "hero_image_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80",
+      "descriptor_en": "Comfortable shuttle from YIA Airport to city center hotels."
+    },
+    {
+      "id": 2,
+      "slug": "car-rental-daily",
+      "name_en": "Daily Car Rental with Driver",
+      "name_id": "Sewa Mobil Harian dengan Sopir",
+      "type": "rental",
+      "price_idr": 500000,
+      "hero_image_url": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80",
+      "descriptor_en": "Explore Jogja at your own pace with a professional local driver."
+    },
+    {
+      "id": 3,
+      "slug": "motorbike-rental",
+      "name_en": "Motorbike Rental",
+      "name_id": "Sewa Motor",
+      "type": "rental",
+      "price_idr": 80000,
+      "hero_image_url": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80",
+      "descriptor_en": "Freedom to explore narrow streets and hidden spots on two wheels."
+    }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "$schema": "./node_modules/json-server/schema.json",
+  "discoverpage": [
+    {
+      "id": "dp-1",
+      "slug": "about-jogja",
+      "display_order": 1,
+      "title_en": "About Jogja",
+      "title_id": "Tentang Jogja",
+      "hero_image_url": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1400&q=85",
+      "body_en": "<p>Yogyakarta — affectionately called <strong>Jogja</strong> — sits at the foot of Mount Merapi on the island of Java, Indonesia. It is one of the few remaining sultanate cities in the country, and its royal palace, the <em>Kraton</em>, still functions as the cultural heart of the city today.</p>\n<p>With a population of around 3.7 million in the greater urban area, Jogja blends the rhythm of a modern university city with the deep roots of Javanese royal tradition. It is home to two UNESCO World Heritage sites — Borobudur and Prambanan — and is widely regarded as Indonesia's capital of art, education, and culture.</p>\n<h2>A City Like No Other</h2>\n<p>What makes Jogja distinctive is how effortlessly it holds opposites together. Ancient temples stand beside contemporary art galleries. Batik workshops share narrow lanes with specialty coffee roasters. Street food legends compete with award-winning fine-dining restaurants. And through it all, the slow, respectful cadence of Javanese hospitality — <em>keramahan</em> — sets the tone.</p>\n<p>The city's unique administrative status as a Special Region (<em>Daerah Istimewa</em>) reflects its historical role: it was the base of Indonesia's independence struggle and remains a symbol of national identity. Sultan Hamengkubuwono X, the current reigning sultan, also serves as the region's governor — a living example of tradition adapting to modernity.</p>\n<h2>Getting There</h2>\n<p>Yogyakarta International Airport (YIA) connects the city to major Indonesian hubs and several regional international routes. The city centre is also well served by the Tugu train station, making Jogja a natural stop on any Java rail journey.</p>",
+      "body_id": "<p>Yogyakarta — yang akrab disapa <strong>Jogja</strong> — terletak di kaki Gunung Merapi di Pulau Jawa, Indonesia. Kota ini merupakan salah satu dari sedikit kota kesultanan yang masih ada di negeri ini, dan istana keratonnya masih berfungsi sebagai pusat budaya kota hingga hari ini.</p>\n<p>Dengan populasi sekitar 3,7 juta jiwa di kawasan perkotaan yang lebih luas, Jogja memadukan ritme kota universitas modern dengan akar tradisi keraton Jawa yang dalam. Kota ini adalah rumah bagi dua situs Warisan Dunia UNESCO — Borobudur dan Prambanan — dan secara luas diakui sebagai ibu kota seni, pendidikan, dan budaya Indonesia.</p>\n<h2>Kota yang Tak Tertandingi</h2>\n<p>Yang membuat Jogja istimewa adalah bagaimana kota ini menyatukan hal-hal yang bertolak belakang dengan begitu mudah. Candi-candi kuno berdiri berdampingan dengan galeri seni kontemporer. Bengkel batik berbagi gang sempit dengan kedai kopi spesialti. Legenda kuliner kaki lima bersaing dengan restoran fine dining berpenghargaan. Dan di tengah semua itu, irama keramahan Jawa yang lambat dan penuh hormat — <em>keramahan</em> — menjadi nada dasarnya.</p>\n<p>Status administratif kota yang unik sebagai Daerah Istimewa mencerminkan peran historisnya: kota ini adalah basis perjuangan kemerdekaan Indonesia dan tetap menjadi simbol identitas nasional. Sultan Hamengkubuwono X, sultan yang kini memerintah, juga menjabat sebagai gubernur daerah — contoh nyata tradisi yang beradaptasi dengan modernitas.</p>\n<h2>Cara Menuju Jogja</h2>\n<p>Bandara Internasional Yogyakarta (YIA) menghubungkan kota dengan pusat-pusat utama Indonesia dan beberapa rute internasional regional. Pusat kota juga dilayani dengan baik oleh Stasiun Tugu, menjadikan Jogja perhentian alami dalam perjalanan kereta api di Jawa.</p>"
+    },
+    {
+      "id": "dp-2",
+      "slug": "why-visit-jogja",
+      "display_order": 2,
+      "title_en": "Why Visit Jogja",
+      "title_id": "Mengapa Mengunjungi Jogja",
+      "hero_image_url": "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=1400&q=85",
+      "body_en": "<p>There are countless reasons travellers return to Yogyakarta again and again. It is a city that rewards curiosity, slows you down in the best possible way, and leaves you with stories worth telling for years.</p>\n<h2>World-Class Heritage at Your Doorstep</h2>\n<p>Borobudur, the world's largest Buddhist temple, and Prambanan, a towering 9th-century Hindu compound, are both within an hour's drive from the city centre. Few destinations on earth can claim two UNESCO World Heritage Sites within such close range — and both are best experienced at sunrise, when mist still clings to the stone reliefs.</p>\n<h2>A Living Royal Culture</h2>\n<p>Unlike many historical cities where tradition exists only in museums, Jogja's royal Kraton is still inhabited and active. Wayang kulit shadow puppet performances, gamelan rehearsals, and batik-making ceremonies happen on a regular schedule — not as performances for tourists, but as genuine cultural practice that visitors are welcomed to witness.</p>\n<h2>Food That Defines a Region</h2>\n<p>From the iconic sweetness of <em>gudeg</em> — young jackfruit slow-cooked in coconut milk and palm sugar — to the smoky char of <em>ayam bakar</em> on Jalan Malioboro, Jogja's food scene is one of the most distinctive in Indonesia. Budget meals are extraordinary; fine dining is genuinely world-class.</p>\n<h2>Art & Creativity at Every Turn</h2>\n<p>Jogja is Indonesia's most important contemporary art city. Galleries on Jalan Tirtodipuran, the Affandi Museum, and street murals in Kotagede tell the story of a creative scene that has shaped Indonesian art for decades. Shopping for locally made crafts — silver, leather, wayang, batik — is both affordable and meaningful.</p>\n<h2>Accessible, Safe, and Welcoming</h2>\n<p>English is widely spoken in the tourist belt. The city is compact enough to explore by bicycle or becak. It is consistently ranked among Indonesia's safest cities for visitors, and the warmth of its people is not a marketing line — it is something you will feel within hours of arriving.</p>",
+      "body_id": "<p>Ada begitu banyak alasan mengapa para wisatawan selalu kembali ke Yogyakarta. Ini adalah kota yang menghargai rasa ingin tahu, memperlambat langkah Anda dengan cara terbaik, dan meninggalkan cerita yang layak diceritakan selama bertahun-tahun.</p>\n<h2>Warisan Kelas Dunia di Depan Pintu</h2>\n<p>Borobudur, candi Buddha terbesar di dunia, dan Prambanan, kompleks Hindu abad ke-9 yang menjulang tinggi, keduanya berada dalam jarak satu jam berkendara dari pusat kota. Sedikit destinasi di bumi ini yang dapat mengklaim dua Situs Warisan Dunia UNESCO dalam jangkauan sedekat ini — dan keduanya paling baik dinikmati saat matahari terbit, ketika kabut masih menempel pada relief-relief batu.</p>\n<h2>Budaya Kerajaan yang Hidup</h2>\n<p>Tidak seperti banyak kota bersejarah di mana tradisi hanya ada di museum, Kraton kerajaan Jogja masih ditinggali dan aktif. Pertunjukan wayang kulit, latihan gamelan, dan upacara pembuatan batik berlangsung secara rutin — bukan sebagai pertunjukan untuk turis, melainkan sebagai praktik budaya nyata yang dikerjakan dengan tulus dan terbuka bagi pengunjung.</p>\n<h2>Kuliner yang Mendefinisikan Sebuah Daerah</h2>\n<p>Dari keistimewaan rasa manis <em>gudeg</em> — nangka muda yang dimasak perlahan dalam santan dan gula aren — hingga aroma smoky <em>ayam bakar</em> di Jalan Malioboro, kuliner Jogja adalah salah satu yang paling khas di Indonesia. Makan dengan anggaran terbatas pun sangat luar biasa; fine dining-nya sungguh berkelas dunia.</p>\n<h2>Seni & Kreativitas di Setiap Sudut</h2>\n<p>Jogja adalah kota seni kontemporer terpenting di Indonesia. Galeri-galeri di Jalan Tirtodipuran, Museum Affandi, dan mural di Kotagede menceritakan kisah tentang sebuah adegan kreatif yang telah membentuk seni Indonesia selama beberapa dekade. Berbelanja kerajinan lokal — perak, kulit, wayang, batik — sangat terjangkau dan bermakna.</p>\n<h2>Mudah Dijangkau, Aman, dan Ramah</h2>\n<p>Bahasa Inggris banyak digunakan di kawasan wisata. Kota ini cukup kompak untuk dijelajahi dengan sepeda atau becak. Jogja secara konsisten dinilai sebagai salah satu kota paling aman di Indonesia bagi wisatawan, dan kehangatan warganya bukan sekadar slogan pemasaran — ini adalah sesuatu yang akan Anda rasakan dalam beberapa jam setelah tiba.</p>"
+    },
+    {
+      "id": "dp-3",
+      "slug": "living-heritage",
+      "display_order": 3,
+      "title_en": "Living Heritage",
+      "title_id": "Warisan yang Hidup",
+      "hero_image_url": "https://images.unsplash.com/photo-1604922824961-0f2d3f3b6d49?w=1400&q=85",
+      "body_en": "<p>In most cities, heritage is something you visit. In Yogyakarta, heritage is something you <em>live alongside</em>. The traditions, crafts, rituals, and philosophies of Javanese culture are not preserved behind glass — they are practised daily, passed from generation to generation, and openly shared with anyone willing to look and listen.</p>\n<h2>The Kraton: A Palace That Breathes</h2>\n<p>The <em>Kraton Ngayogyakarta Hadiningrat</em> — the royal palace — has been the seat of the Javanese sultanate since 1755. Today it remains the residence of Sultan Hamengkubuwono X and his court. Visitors can walk through its grand pavilions (<em>pendopo</em>), watch traditional dance rehearsals, observe royal regalia, and gain an understanding of the <em>kejawen</em> philosophy that underpins Javanese life — the quiet belief in balance between human beings, nature, and the cosmos.</p>\n<h2>Wayang Kulit: Shadow and Story</h2>\n<p>The Javanese shadow puppet tradition, <em>wayang kulit</em>, is recognised by UNESCO as an Intangible Cultural Heritage of Humanity. A full performance (<em>semalam suntuk</em>) runs through the night from dusk to dawn, with a master puppeteer (<em>dalang</em>) voicing dozens of characters while a gamelan orchestra plays live. The stories — drawn from the Mahabharata and Ramayana — are moral parables as relevant today as they were a thousand years ago.</p>\n<h2>Batik: Cloth as Cultural Text</h2>\n<p>Jogja's batik is immediately recognisable: deep indigo and cream, with geometric <em>parang</em> and <em>kawung</em> motifs that carry specific symbolic meanings tied to social rank and occasion. In workshops across the city — particularly in Kotagede and Imogiri — you can learn the <em>canting</em> wax-resist technique first-hand, and understand how a single cloth can carry centuries of philosophical intent.</p>\n<h2>Gamelan: The Sound of Jogja</h2>\n<p>The bronze percussion ensemble known as gamelan is the sonic heartbeat of Javanese ceremony. Rehearsals at the Kraton and community halls (<em>pendopo kampung</em>) happen weekly and are open to observers. Several music schools welcome visiting students who want to learn to play — the experience of sitting inside the interlocking rhythms of a full gamelan ensemble is genuinely unlike anything else.</p>\n<h2>Prambanan & Borobudur: Stone Libraries</h2>\n<p>The 9th-century Hindu temples of Prambanan and the Buddhist mandala of Borobudur are not ruins — they are texts carved in stone. The bas-relief panels of Borobudur depict the entire path to enlightenment across 2,672 individual panels. At Prambanan, the story of the Ramayana is told across three concentric temple rings. Both sites are best experienced with a local guide who can decode what the carvings are actually saying.</p>",
+      "body_id": "<p>Di kebanyakan kota, warisan adalah sesuatu yang Anda kunjungi. Di Yogyakarta, warisan adalah sesuatu yang Anda <em>hidup berdampingan dengannya</em>. Tradisi, kerajinan, ritual, dan filosofi budaya Jawa tidak dilestarikan di balik kaca — melainkan dipraktikkan setiap hari, diwariskan dari generasi ke generasi, dan dibagikan secara terbuka kepada siapa pun yang mau melihat dan mendengarkan.</p>\n<h2>Kraton: Istana yang Bernapas</h2>\n<p><em>Kraton Ngayogyakarta Hadiningrat</em> — istana kerajaan — telah menjadi pusat kesultanan Jawa sejak 1755. Hari ini, istana ini tetap menjadi kediaman Sultan Hamengkubuwono X dan keluarga keratonnya. Pengunjung dapat berjalan melalui pendopo-pendopo agungnya, menyaksikan latihan tari tradisional, mengamati pusaka kerajaan, dan mendapatkan pemahaman tentang filosofi <em>kejawen</em> yang menopang kehidupan Jawa — keyakinan yang tenang akan keseimbangan antara manusia, alam, dan kosmos.</p>\n<h2>Wayang Kulit: Bayangan dan Cerita</h2>\n<p>Tradisi wayang kulit Jawa diakui oleh UNESCO sebagai Warisan Budaya Takbenda Kemanusiaan. Pertunjukan penuh (<em>semalam suntuk</em>) berlangsung sepanjang malam dari senja hingga fajar, dengan seorang dalang yang menyuarakan puluhan karakter sambil orkestra gamelan dimainkan secara langsung. Kisah-kisahnya — yang diambil dari Mahabharata dan Ramayana — adalah perumpamaan moral yang sama relevannya hari ini seperti seribu tahun lalu.</p>\n<h2>Batik: Kain sebagai Teks Budaya</h2>\n<p>Batik Jogja sangat mudah dikenali: biru indigo tua dan krem, dengan motif <em>parang</em> dan <em>kawung</em> geometris yang membawa makna simbolis khusus terkait pangkat sosial dan kesempatan. Di bengkel-bengkel di seluruh kota — khususnya di Kotagede dan Imogiri — Anda dapat mempelajari teknik <em>canting</em> wax-resist secara langsung, dan memahami bagaimana selembar kain dapat membawa niat filosofis berabad-abad.</p>\n<h2>Gamelan: Suara Jogja</h2>\n<p>Ansambel perkusi perunggu yang dikenal sebagai gamelan adalah detak jantung sonik upacara Jawa. Latihan di Kraton dan pendopo kampung berlangsung mingguan dan terbuka untuk pengamat. Beberapa sekolah musik menyambut siswa yang berkunjung untuk belajar bermain — pengalaman duduk di dalam irama interlocking dari ansambel gamelan penuh sungguh tidak tertandingi.</p>\n<h2>Prambanan & Borobudur: Perpustakaan Batu</h2>\n<p>Candi-candi Hindu abad ke-9 di Prambanan dan mandala Buddha di Borobudur bukanlah reruntuhan — melainkan teks yang diukir dalam batu. Panel-panel relief Borobudur menggambarkan seluruh jalan menuju pencerahan dalam 2.672 panel individual. Di Prambanan, kisah Ramayana diceritakan di tiga cincin candi konsentris. Kedua situs ini paling baik dinikmati bersama pemandu lokal yang dapat menguraikan apa yang sebenarnya dikatakan oleh ukiran-ukiran tersebut.</p>"
+    },
+    {
+      "id": "dp-4",
+      "slug": "creative-culture",
+      "display_order": 4,
+      "title_en": "Creative Culture",
+      "title_id": "Budaya Kreatif",
+      "hero_image_url": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1400&q=85",
+      "body_en": "<p>Yogyakarta is not just Indonesia's cultural capital — it is its creative engine. Decades of art schools, design collectives, underground music scenes, and independent publishing have produced a city where creativity is not a weekend hobby but a way of life shared across generations.</p>\n<h2>The Art Scene: Beyond the Gallery Wall</h2>\n<p>The Jogja art world is decentralised and democratic. Yes, there are prestigious galleries — Sangkring Art Space, Langgeng Art Foundation, and the Affandi Museum among them — but the more interesting work often happens in repurposed rice barns, courtyard studios, and neighbourhood community halls. The Jogja National Museum hosts major contemporary exhibitions; the biennial <em>ArtJog</em> festival draws collectors and curators from across Southeast Asia.</p>\n<p>Street art is equally significant. The murals of Kotagede and the political cartoons that appear overnight on city walls reflect a confident visual culture unafraid to comment, criticise, and celebrate in equal measure.</p>\n<h2>Fashion & Textile Innovation</h2>\n<p>A new generation of Jogja designers is reinterpreting traditional batik and lurik through contemporary silhouettes and sustainable production methods. Labels like <em>Ikat Indonesia</em> and independent ateliers along Prawirotaman have built international followings. The annual <em>Jogja Fashion Week</em> showcases how deeply rooted craft vocabularies can drive modern fashion forward.</p>\n<h2>Independent Publishing & Zine Culture</h2>\n<p>Jogja has one of Indonesia's most vibrant indie publishing ecosystems. Book launches, poetry slams, and zine fairs happen regularly in cafés and community spaces. The <em>Festival Kebudayaan Yogyakarta</em> (Yogyakarta Cultural Festival) each year creates a citywide programme of literature, performance, and debate that is as much for locals as it is for visitors.</p>\n<h2>Music: From Gamelan to Garage</h2>\n<p>The city's music scene spans centuries and genres simultaneously. Traditional gamelan coexists with a thriving indie rock circuit, jazz clubs, and experimental electronic artists who use sampled <em>kendang</em> and <em>saron</em> in their productions. Venues like <em>Taman Budaya Yogyakarta</em> programme everything from classical Javanese dance to international avant-garde performances in the same month.</p>\n<h2>Culinary Creativity</h2>\n<p>Jogja's food culture is itself a creative act. The city's chefs — from market stalls to restaurant kitchens — treat Javanese flavour principles as a living language, not a fixed recipe. New interpretations of <em>opor</em>, <em>soto</em>, and <em>wedang</em> drinks appear constantly, and the speciality coffee scene has produced roasters and baristas with international competition credentials.</p>",
+      "body_id": "<p>Yogyakarta bukan sekadar ibu kota budaya Indonesia — ia adalah mesin kreatifnya. Puluhan tahun sekolah seni, kolektif desain, adegan musik underground, dan penerbitan independen telah menghasilkan sebuah kota di mana kreativitas bukan hobi akhir pekan, melainkan cara hidup yang dibagikan lintas generasi.</p>\n<h2>Adegan Seni: Melampaui Dinding Galeri</h2>\n<p>Dunia seni Jogja terdesentralisasi dan demokratis. Ya, ada galeri-galeri bergengsi — Sangkring Art Space, Langgeng Art Foundation, dan Museum Affandi di antaranya — tetapi karya yang lebih menarik sering terjadi di lumbung padi yang diubah fungsi, studio di halaman, dan balai komunitas kampung. Museum Nasional Jogja menyelenggarakan pameran kontemporer besar; festival biennial <em>ArtJog</em> menarik kolektor dan kurator dari seluruh Asia Tenggara.</p>\n<p>Seni jalanan sama pentingnya. Mural-mural di Kotagede dan kartun politik yang muncul semalaman di tembok-tembok kota mencerminkan budaya visual yang percaya diri dan tidak takut berkomentar, mengkritik, dan merayakan dalam ukuran yang sama.</p>\n<h2>Inovasi Mode & Tekstil</h2>\n<p>Generasi baru desainer Jogja menafsirkan ulang batik dan lurik tradisional melalui siluet kontemporer dan metode produksi yang berkelanjutan. Label-label seperti <em>Ikat Indonesia</em> dan atelier independen di sepanjang Prawirotaman telah membangun pengikut internasional. <em>Jogja Fashion Week</em> tahunan menampilkan bagaimana kosakata kerajinan yang berakar dalam dapat mendorong mode modern ke depan.</p>\n<h2>Penerbitan Independen & Budaya Zine</h2>\n<p>Jogja memiliki salah satu ekosistem penerbitan indie yang paling semarak di Indonesia. Peluncuran buku, slam puisi, dan pameran zine berlangsung secara rutin di kafe-kafe dan ruang komunitas. <em>Festival Kebudayaan Yogyakarta</em> setiap tahun menciptakan program kota-luas sastra, pertunjukan, dan debat yang sama-sama diperuntukkan bagi warga lokal maupun pengunjung.</p>\n<h2>Musik: Dari Gamelan ke Garasi</h2>\n<p>Adegan musik kota ini merentang berabad-abad dan genre secara bersamaan. Gamelan tradisional berdampingan dengan sirkuit indie rock yang berkembang, klub jazz, dan seniman elektronik eksperimental yang menggunakan sampel <em>kendang</em> dan <em>saron</em> dalam produksi mereka. Venue seperti <em>Taman Budaya Yogyakarta</em> memprogram segalanya dari tari Jawa klasik hingga pertunjukan avant-garde internasional dalam bulan yang sama.</p>\n<h2>Kreativitas Kuliner</h2>\n<p>Budaya makanan Jogja sendiri adalah sebuah tindakan kreatif. Chef kota ini — dari lapak pasar hingga dapur restoran — memperlakukan prinsip rasa Jawa sebagai bahasa yang hidup, bukan resep yang baku. Interpretasi baru dari <em>opor</em>, <em>soto</em>, dan minuman <em>wedang</em> terus bermunculan, dan adegan kopi spesialti telah menghasilkan roaster dan barista dengan kredensial kompetisi internasional.</p>"
+    },
+    {
+      "id": "dp-5",
+      "slug": "future-lifestyle",
+      "display_order": 5,
+      "title_en": "Future Lifestyle",
+      "title_id": "Gaya Hidup Masa Depan",
+      "hero_image_url": "https://images.unsplash.com/photo-1518005068251-37900150dfca?w=1400&q=85",
+      "body_en": "<p>Yogyakarta is a city in confident motion. While it honours its past with rare depth, it is equally committed to shaping a future that is liveable, sustainable, and creatively ambitious. From smart urban infrastructure to a booming startup ecosystem, Jogja is demonstrating that a city can be both deeply traditional and resolutely forward-looking.</p>\n<h2>A University City with Startup Energy</h2>\n<p>Home to over 100 universities and colleges, Jogja has one of the highest concentrations of students per capita in Southeast Asia. This creates a perpetually renewable energy — new ideas, new businesses, new social experiments — that keeps the city in a state of productive restlessness. The local startup ecosystem, clustered around coworking spaces in Sleman and the Seturan corridor, has produced companies in edtech, fintech, and creative industries with national and regional reach.</p>\n<h2>Sustainable Living as a Local Value</h2>\n<p>Jogja's environmental consciousness runs deeper than green marketing. The city has a long tradition of <em>gotong royong</em> — collective community action — that naturally extends to neighbourhood composting programmes, community gardens (<em>kebun warga</em>), and zero-waste markets. The weekly <em>Pasar Segoro Amarto</em> and similar community markets operate on strictly no-single-use-plastic principles, setting a standard that commercial brands in the city increasingly follow.</p>\n<h2>Wellness & Mindful Living</h2>\n<p>Javanese philosophy has always placed balance — between effort and rest, between ambition and acceptance — at the centre of a well-lived life. This translates into a wellness culture that feels grounded rather than trend-driven. Wellness retreats in the hills south of the city, traditional <em>jamu</em> herbal medicine practitioners, and yoga studios built around natural courtyard settings offer visitors a genuine alternative to the performance-oriented wellness industry elsewhere.</p>\n<h2>Architecture & Urban Design</h2>\n<p>A new wave of Jogja architects is rethinking what building in a tropical heritage city should look like. Studios like <em>Andyrahman Architect</em> and <em>RAW Architecture</em> have produced homes and public buildings that use bamboo, natural stone, and traditional Javanese spatial logic to create structures that are unmistakably contemporary. The result is an urban landscape where new buildings feel like they belong — not impositions, but conversations with what came before.</p>\n<h2>Mobility & the Liveable City</h2>\n<p>Jogja's compact scale makes it one of Indonesia's most naturally walkable cities. The Trans Jogja bus network connects major corridors; an expanding network of dedicated cycling lanes is making two-wheeled commuting increasingly practical. The city's long-term spatial plan, <em>RTRW DIY</em>, prioritises mixed-use development and green corridors that keep the city human-scaled even as it grows.</p>",
+      "body_id": "<p>Yogyakarta adalah kota yang bergerak dengan percaya diri. Meski menghormati masa lalunya dengan kedalaman yang langka, kota ini sama-sama berkomitmen untuk membentuk masa depan yang layak huni, berkelanjutan, dan ambisius secara kreatif. Dari infrastruktur perkotaan pintar hingga ekosistem startup yang berkembang pesat, Jogja membuktikan bahwa sebuah kota bisa sekaligus sangat tradisional dan teguh berorientasi masa depan.</p>\n<h2>Kota Universitas dengan Energi Startup</h2>\n<p>Dengan lebih dari 100 universitas dan perguruan tinggi, Jogja memiliki salah satu konsentrasi mahasiswa per kapita tertinggi di Asia Tenggara. Ini menciptakan energi yang terus diperbarui — ide-ide baru, bisnis baru, eksperimen sosial baru — yang membuat kota ini dalam keadaan kegelisahan yang produktif. Ekosistem startup lokal, yang berkelompok di sekitar ruang coworking di Sleman dan koridor Seturan, telah menghasilkan perusahaan di bidang edtech, fintech, dan industri kreatif dengan jangkauan nasional dan regional.</p>\n<h2>Hidup Berkelanjutan sebagai Nilai Lokal</h2>\n<p>Kesadaran lingkungan Jogja lebih dalam dari sekadar pemasaran hijau. Kota ini memiliki tradisi panjang <em>gotong royong</em> — aksi komunitas kolektif — yang secara alami meluas ke program pengomposan lingkungan, kebun warga, dan pasar bebas sampah. <em>Pasar Segoro Amarto</em> mingguan dan pasar komunitas serupa beroperasi dengan prinsip ketat tanpa plastik sekali pakai, menetapkan standar yang semakin diikuti oleh merek-merek komersial di kota.</p>\n<h2>Kesehatan & Gaya Hidup Mindful</h2>\n<p>Filosofi Jawa selalu menempatkan keseimbangan — antara usaha dan istirahat, antara ambisi dan penerimaan — di pusat kehidupan yang dijalani dengan baik. Ini diterjemahkan menjadi budaya wellness yang terasa membumi daripada didorong oleh tren. Retreat wellness di perbukitan selatan kota, praktisi <em>jamu</em> herbal tradisional, dan studio yoga yang dibangun di sekitar setting halaman alami menawarkan alternatif nyata bagi pengunjung dari industri wellness yang berorientasi performa di tempat lain.</p>\n<h2>Arsitektur & Desain Perkotaan</h2>\n<p>Gelombang baru arsitek Jogja sedang memikirkan ulang bagaimana membangun di kota warisan tropis seharusnya terlihat. Studio seperti <em>Andyrahman Architect</em> dan <em>RAW Architecture</em> telah menghasilkan rumah dan bangunan publik yang menggunakan bambu, batu alam, dan logika spasial Jawa tradisional untuk menciptakan struktur yang tidak salah lagi kontemporer. Hasilnya adalah lanskap perkotaan di mana bangunan-bangunan baru terasa seperti mereka memang milik sana — bukan pemaksaan, melainkan percakapan dengan apa yang datang sebelumnya.</p>\n<h2>Mobilitas & Kota yang Layak Huni</h2>\n<p>Skala Jogja yang kompak menjadikannya salah satu kota yang paling alami untuk berjalan kaki di Indonesia. Jaringan bus Trans Jogja menghubungkan koridor-koridor utama; jaringan jalur sepeda khusus yang terus berkembang membuat komuter roda dua semakin praktis. Rencana tata ruang jangka panjang kota, <em>RTRW DIY</em>, memprioritaskan pengembangan mixed-use dan koridor hijau yang menjaga kota tetap berskala manusia meski terus berkembang.</p>"
+    },
+    {
+      "id": "dp-6",
+      "slug": "travel-inspiration",
+      "display_order": 6,
+      "title_en": "Travel Inspiration",
+      "title_id": "Inspirasi Perjalanan",
+      "hero_image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85",
+      "body_en": "<p>Every trip to Yogyakarta is different. The city is layered enough that repeat visitors always discover something they missed before — a lane they never turned down, a warungthat opened last year, a festival that only happens every five years. Here are some perspectives and itinerary ideas to spark your own Jogja story.</p>\n<h2>The Classic: 3 Days in Jogja</h2>\n<p><strong>Day 1 — The Spiritual Core.</strong> Start before dawn at Borobudur to catch the mist lifting off the stupa tiers at sunrise. Spend the morning walking the monument's nine levels before the crowds arrive. Afternoon: drive to Prambanan, explore the main compound, and stay for the open-air Ramayana ballet if performed that evening.</p>\n<p><strong>Day 2 — The Royal City.</strong> Morning at the Kraton — join a guided tour to understand the spatial symbolism of the palace complex. Walk north to <em>Alun-alun Lor</em> (the great north square), then follow Jalan Malioboro south for street food, batik shopping, and people-watching. Evening: seek out a wayang kulit performance or a gamelan concert at Taman Budaya.</p>\n<p><strong>Day 3 — The Creative Quarter.</strong> Spend the morning in Kotagede's silver workshops and centuries-old mosque. Afternoon in the Prawirotaman gallery district — browse contemporary Javanese art, stop at a café, and pick up independent design pieces to take home. End the trip with dinner at one of Prawirotaman's courtyard restaurants as the day cools.</p>\n<h2>For the Curious: Off the Main Path</h2>\n<p><strong>Imogiri Royal Tombs</strong> — The hilltop burial complex of the Mataram sultans, 17 km south of the city. Open to respectfully dressed visitors on certain days. The climb rewards you with views over the plains toward the Indian Ocean.</p>\n<p><strong>Kaliurang</strong> — A cool hill retreat on the southern slopes of Merapi, just 25 km north of the city. Lava tour jeeps offer access to the 2010 eruption zone; a birding trail winds through the cloud forest at the edge of the National Park.</p>\n<p><strong>Wukirsari Batik Village</strong> — A living craft community where batik tulis (hand-drawn batik) is still produced using traditional plant-based dyes. The experience of watching a craftsperson map a design freehand with a hot <em>canting</em> is quietly extraordinary.</p>\n<h2>Seasonal Highlights</h2>\n<p><strong>Sekaten</strong> (Maulid season, varies by Islamic calendar) — A royal fair held on the Kraton's north square, culminating in the <em>Grebeg Maulud</em> ceremony when palace guardsmen carry enormous rice-cone offerings (<em>gunungan</em>) through the city streets.</p>\n<p><strong>ArtJog</strong> (June–July) — Indonesia's premier contemporary art fair, held at the Jogja National Museum. Ten days of exhibitions, performances, and public programming.</p>\n<p><strong>Jogja International Street Performance</strong> (August) — Street performers from across Southeast Asia and beyond take over public spaces, kampung lanes, and the palace square for a week of free outdoor performance.</p>\n<h2>Practical Tips</h2>\n<ul>\n<li>The best time to visit is <strong>April–October</strong> (dry season). July–August is peak; April–May and September–October offer cooler temperatures and thinner crowds.</li>\n<li>Hire a local guide for Borobudur and Prambanan — they decode details that you will simply walk past unaided.</li>\n<li>Malioboro is best early morning (before 9 am) or evening (after 6 pm). Midday is crowded and hot.</li>\n<li>Carry small denomination rupiah — warungs and market stalls rarely accept cards or e-wallets.</li>\n<li>Dress modestly when entering the Kraton, mosques, and temple complexes. A sarong is usually available to borrow at the entrance.</li>\n</ul>",
+      "body_id": "<p>Setiap perjalanan ke Yogyakarta selalu berbeda. Kota ini berlapis-lapis sehingga pengunjung yang datang berulang kali selalu menemukan sesuatu yang terlewatkan sebelumnya — gang yang tidak pernah dibelok, warung yang buka tahun lalu, festival yang hanya terjadi setiap lima tahun. Berikut beberapa perspektif dan ide itinerary untuk memicu kisah Jogja Anda sendiri.</p>\n<h2>Klasik: 3 Hari di Jogja</h2>\n<p><strong>Hari 1 — Inti Spiritual.</strong> Mulailah sebelum fajar di Borobudur untuk menyaksikan kabut mengangkat dari tingkatan stupa saat matahari terbit. Habiskan pagi berjalan di sembilan tingkat monumen sebelum keramaian tiba. Sore: berkendara ke Prambanan, jelajahi kompleks utama, dan tetap untuk melihat balet Ramayana di panggung terbuka jika dipertunjukkan malam itu.</p>\n<p><strong>Hari 2 — Kota Kerajaan.</strong> Pagi di Kraton — ikuti tur berpemandu untuk memahami simbolisme spasial kompleks istana. Berjalan ke utara menuju <em>Alun-alun Lor</em>, lalu ikuti Jalan Malioboro ke selatan untuk kuliner kaki lima, belanja batik, dan mengamati lalu-lalang manusia. Malam: cari pertunjukan wayang kulit atau konser gamelan di Taman Budaya.</p>\n<p><strong>Hari 3 — Kawasan Kreatif.</strong> Habiskan pagi di bengkel perak Kotagede dan masjid berusia berabad-abad. Sore di kawasan galeri Prawirotaman — telusuri seni Jawa kontemporer, singgah di kafe, dan temukan produk desain independen untuk dibawa pulang. Akhiri perjalanan dengan makan malam di salah satu restoran halaman Prawirotaman saat hari mendingin.</p>\n<h2>Untuk Si Penasaran: Di Luar Jalur Utama</h2>\n<p><strong>Makam Raja Imogiri</strong> — Kompleks pemakaman di atas bukit para sultan Mataram, 17 km selatan kota. Terbuka untuk pengunjung berpakaian sopan pada hari-hari tertentu. Pendakiannya memberi Anda pemandangan dataran menuju Samudra Hindia.</p>\n<p><strong>Kaliurang</strong> — Tempat peristirahatan perbukitan yang sejuk di lereng selatan Merapi, hanya 25 km utara kota. Jeep tur lava menawarkan akses ke zona erupsi 2010; jalur pengamatan burung berkelok melalui hutan awan di tepi Taman Nasional.</p>\n<p><strong>Desa Batik Wukirsari</strong> — Komunitas kerajinan hidup di mana batik tulis (batik gambar tangan) masih diproduksi menggunakan pewarna alami tradisional. Pengalaman menyaksikan seorang pengrajin menggambar desain dengan tangan bebas menggunakan <em>canting</em> panas sungguh luar biasa.</p>\n<h2>Sorotan Musiman</h2>\n<p><strong>Sekaten</strong> (Musim Maulid, bervariasi menurut kalender Islam) — Pameran kerajaan di alun-alun utara Kraton, diakhiri dengan upacara <em>Grebeg Maulud</em> ketika pengawal istana membawa persembahan kerucut nasi raksasa (<em>gunungan</em>) melalui jalan-jalan kota.</p>\n<p><strong>ArtJog</strong> (Juni–Juli) — Pameran seni kontemporer utama Indonesia, diselenggarakan di Museum Nasional Jogja. Sepuluh hari pameran, pertunjukan, dan program publik.</p>\n<p><strong>Jogja International Street Performance</strong> (Agustus) — Pertunjuk jalanan dari seluruh Asia Tenggara dan sekitarnya mengambil alih ruang publik, gang kampung, dan alun-alun istana selama seminggu pertunjukan luar ruangan gratis.</p>\n<h2>Tips Praktis</h2>\n<ul>\n<li>Waktu terbaik berkunjung adalah <strong>April–Oktober</strong> (musim kemarau). Juli–Agustus adalah puncak musim; April–Mei dan September–Oktober menawarkan suhu lebih sejuk dan keramaian lebih sedikit.</li>\n<li>Sewa pemandu lokal untuk Borobudur dan Prambanan — mereka menguraikan detail yang akan Anda lewati begitu saja tanpa bantuan.</li>\n<li>Malioboro paling baik dikunjungi pagi hari (sebelum jam 9) atau malam hari (setelah jam 6). Siang hari ramai dan panas.</li>\n<li>Bawa rupiah pecahan kecil — warung dan lapak pasar jarang menerima kartu atau e-wallet.</li>\n<li>Berpakaian sopan saat memasuki Kraton, masjid, dan kompleks candi. Kain sarung biasanya tersedia untuk dipinjam di pintu masuk.</li>\n</ul>"
+    }
+  ]
 }
