@@ -51,7 +51,7 @@ export const NAV_GROUPS = [
     ],
   },
   {
-    label_en: "Destinations", label_id: "Destinasi",
+    label_en: "Explore", label_id: "Eksplorasi",
     to: "/destinations",
     items: [
       { label_en: "Yogyakarta City", label_id: "Kota Yogyakarta", to: "/destinations/yogyakarta-city" },
@@ -59,7 +59,7 @@ export const NAV_GROUPS = [
       { label_en: "Bantul", label_id: "Bantul", to: "/destinations/bantul" },
       { label_en: "Kulon Progo", label_id: "Kulon Progo", to: "/destinations/kulon-progo" },
       { label_en: "Gunungkidul", label_id: "Gunungkidul", to: "/destinations/gunungkidul" },
-      { label_en: "Villages & Hidden Gems", label_id: "Desa & Permata Tersembunyi", to: "/destinations/villages-hidden-gems" },
+      { label_en: "Outer Yogyakarta", label_id: "Yogyakarta Luar", to: "/destinations/villages-hidden-gems" },
     ],
   },
   {

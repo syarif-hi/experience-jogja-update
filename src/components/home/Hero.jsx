@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "@/lib/i18n";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import "swiper/css/effect-fade";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
   "https://ik.imagekit.io/ibrproject/tamansari-w2000.jpg",
@@ -40,8 +42,11 @@ export default function Hero() {
       <div className="relative">
         <div className="relative aspect-[4/3] md:aspect-[21/9] max-h-[calc(100vh-220px)] min-h-[320px] w-full overflow-hidden">
           <Swiper
-            modules={[Autoplay]}
+            modules={[Autoplay, Navigation, EffectFade]}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
             autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            navigation={{ prevEl: '.hero-prev', nextEl: '.hero-next' }}
             onSlideChange={(swiper) => setIndex(swiper.realIndex)}
             onSwiper={setSwiperInstance}
             loop={true}
@@ -59,7 +64,6 @@ export default function Hero() {
             ))}
           </Swiper>
 
-          {/* Bullet indicators — bottom left */}
           <div className="absolute bottom-6 left-6 z-10 flex gap-2">
             {SLIDES.map((_, i) => (
               <button
@@ -78,18 +82,36 @@ export default function Hero() {
               />
             ))}
           </div>
+
+          {/* Navigation Arrows */}
+          <button 
+            type="button"
+            onClick={() => swiperInstance?.slidePrev()}
+            className="hero-prev absolute left-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 md:left-8"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button 
+            type="button"
+            onClick={() => swiperInstance?.slideNext()}
+            className="hero-next absolute right-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 md:right-8"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
         </div>
       </div>
 
       {/* Menu row — below the slider */}
-      <div className="py-4" style={{ backgroundColor: "#FFFFFF" }}>
+      <div className="py-4 md:pt-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="content-wrap">
           <div className="flex flex-col md:flex-row md:flex-wrap items-start md:items-center justify-start gap-x-10 gap-y-4 md:gap-y-2">
             {PILLS.map((p) => (
               <Link
                 key={p.label}
                 to={p.to}
-                className="focus-ring block w-full md:w-auto text-[17px] font-normal uppercase tracking-wide transition-opacity hover:opacity-70"
+                className="focus-ring block w-full md:w-auto text-[15px] md:text-[17px] font-normal uppercase tracking-wide transition-opacity hover:opacity-70"
                 style={{ color: "var(--text-primary)" }}
               >
                 {p.label}
@@ -101,13 +123,18 @@ export default function Hero() {
 
       {/* Heading / subheading / CTA — below the slider, left aligned */}
       <div className="content-wrap mt-12 text-center md:text-left">
+
+        <p className="text-[17px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-2" style={{ color: "#000000" }}>
+          One Destination. Endless Experiences.
+        </p>
+
         <img
           src="/discover-jogja-artwork_no_tagline_3.png"
           alt="Discover Your Yogyakarta"
-          className="w-full max-w-full md:max-w-[570px] h-auto mb-0 md:mx-0"
+          className="w-full max-w-full md:max-w-[485px] h-auto mb-0 md:mx-0"
         />
 
-        <p className="text-[19px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>
+        <p className="text-[18px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>
           Your trusted guide to Yogyakarta's destinations, culture, culinary experiences,
           events, accommodations, transportation, and local lifestyle.
         </p>

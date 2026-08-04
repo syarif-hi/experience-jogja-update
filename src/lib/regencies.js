@@ -5,7 +5,7 @@ export const REGENCIES = [
   { value: "bantul", label_id: "Bantul", label_en: "Bantul" },
   { value: "kulon-progo", label_id: "Kulon Progo", label_en: "Kulon Progo" },
   { value: "gunungkidul", label_id: "Gunungkidul", label_en: "Gunungkidul" },
-  { value: "villages-hidden-gems", label_id: "Desa & Permata Tersembunyi", label_en: "Villages & Hidden Gems" },
+  { value: "villages-hidden-gems", label_id: "Yogyakarta Luar", label_en: "Outer Yogyakarta" },
 ];
 
 const MAP = Object.fromEntries(REGENCIES.map((r) => [r.value, r]));

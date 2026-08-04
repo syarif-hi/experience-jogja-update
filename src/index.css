@@ -214,6 +214,23 @@
   .prose-detail a:hover {
     opacity: 0.8;
   }
+  /* Inline images within editorial content */
+  .prose-detail figure.content-image {
+    margin: 2rem 0;
+  }
+  .prose-detail figure.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  .prose-detail figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    text-align: center;
+  }
   @media (min-width: 768px) {
     .prose-detail h2 { font-size: 1.625rem; }   /* 26px */
     .prose-detail h3 { font-size: 1.25rem; }     /* 20px */
