@@ -5,7 +5,6 @@ import { useTranslation } from "@/lib/i18n";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
   "/images/slider/tamansari-w2000.jpg",
@@ -75,18 +74,18 @@ export default function Hero() {
           <button 
             type="button"
             onClick={() => swiperInstance?.slidePrev()}
-            className="hero-prev absolute left-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center text-white drop-shadow-md transition-opacity hover:opacity-70 md:left-8"
+            className="hero-prev absolute left-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center drop-shadow-md opacity-70 transition-opacity hover:opacity-100 md:left-8"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="h-10 w-10 md:h-[68px] md:w-[68px]" />
+            <img src="/images/nav-slider-arrow.svg" alt="Previous" className="h-6 w-6 md:h-10 md:w-10 rotate-180" />
           </button>
           <button 
             type="button"
             onClick={() => swiperInstance?.slideNext()}
-            className="hero-next absolute right-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center text-white drop-shadow-md transition-opacity hover:opacity-70 md:right-8"
+            className="hero-next absolute right-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center drop-shadow-md opacity-70 transition-opacity hover:opacity-100 md:right-8"
             aria-label="Next slide"
           >
-            <ChevronRight className="h-10 w-10 md:h-[68px] md:w-[68px]" />
+            <img src="/images/nav-slider-arrow.svg" alt="Next" className="h-6 w-6 md:h-10 md:w-10" />
           </button>
         </div>
       </div>

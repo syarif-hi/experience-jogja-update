@@ -116,10 +116,10 @@ export const DUMMY_VISITOR_INFO = [
   },
   {
     id: 'v5', slug: 'wellness-fitness', icon_name: 'Activity', display_order: 5,
-    title_en: 'Wellness & Fitness', title_id: 'Kebugaran & Kesehatan',
+    title_en: 'Wellness & Health', title_id: 'Kebugaran & Kesehatan',
     desc_en: 'Facilities and places for wellness, spa, and fitness activities.',
     desc_id: 'Fasilitas dan tempat untuk aktivitas kebugaran, spa, dan kesehatan.',
-    image_url: 'https://images.unsplash.com/photo-sAHn3crnwAU?w=600&q=80',
+    image_url: '/images/visitor-info/wellness-and-health-IMG-00030-w2000.jpg',
     items: [
       { title_en: 'Spas', title_id: 'Spa', desc_en: 'Indulge in traditional Javanese massage and spa treatments.', desc_id: 'Manjakan diri dengan pijat tradisional Jawa dan perawatan spa.', image_url: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80' },
       { title_en: 'Gyms', title_id: 'Gym', desc_en: 'Modern fitness centers are available in major hotels and malls.', desc_id: 'Pusat kebugaran modern tersedia di hotel-hotel besar dan mal.', image_url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80' },
