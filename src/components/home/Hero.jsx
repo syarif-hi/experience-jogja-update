@@ -8,18 +8,25 @@ import "swiper/css/effect-fade";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
-  "https://ik.imagekit.io/ibrproject/tamansari-w2000.jpg",
-  "https://ik.imagekit.io/ibrproject/malioboro_street-w2000.jpg",
-  "https://ik.imagekit.io/ibrproject/tugu_jogja_edit_cropped-w2000.jpeg",
-  "https://ik.imagekit.io/ibrproject/prambanan_3_expand-upscale-2x-w2000.jpeg",
-  "https://ik.imagekit.io/ibrproject/wayang-crop-w2000.jpg",
-  "https://ik.imagekit.io/ibrproject/traditinal_culinary-w2000.jpg",
-  "https://ik.imagekit.io/ibrproject/borobudur_sunset_edit-upscale-2x_cropped-w2000.png",
-  "https://ik.imagekit.io/ibrproject/traditional_dance_expanded-upscale-2x-w2000.jpeg",
-  "https://ik.imagekit.io/ibrproject/prambanan_temple_human_interest-w2000.png",
-  "https://ik.imagekit.io/ibrproject/traditional_event_expand-upscale-2x-w2000.jpeg",
-  "https://ik.imagekit.io/ibrproject/borobudur-w2000.jpg",
-  "https://ik.imagekit.io/ibrproject/prambanan_and_statue-w2000.jpg",
+  "/images/slider/tamansari-w2000.jpg",
+  "/images/slider/malioboro_street-w2000.jpg",
+  "/images/slider/tugu_jogja_edit_cropped-w2000.jpeg",
+  "/images/slider/prambanan_3_expand-upscale-2x-w2000.jpeg",
+  "/images/slider/wayang-crop-w2000.jpg",
+  "/images/slider/traditinal_culinary-w2000.jpg",
+  "/images/slider/borobudur_sunset_edit-upscale-2x_cropped-w2000.png",
+  "/images/slider/prambanan_temple_human_interest-w2000.png",
+  "/images/slider/traditional_event_expand-upscale-2x-w2000.jpeg",
+  "/images/slider/borobudur-w2000.jpg",
+  "/images/slider/prambanan_and_statue-w2000.jpg",
+  "/images/slider/IMG-00017-retoched-w2000.jpeg",
+  "/images/slider/IMG-00018-expanded-w2000.jpeg",
+  "/images/slider/IMG-00019-w2000.jpg",
+  "/images/slider/IMG-00020-expand-w2000.jpeg",
+  "/images/slider/IMG-00024-expanded-w2000.jpeg",
+  "/images/slider/IMG-00026-expanded-w2000.jpeg",
+  "/images/slider/IMG-00027_beach_crop-w2000.jpg",
+  "/images/slider/IMG-00028_beach_crop_expanded-w2000.jpg",
 ];
 
 const PILLS = [
@@ -45,7 +52,7 @@ export default function Hero() {
             modules={[Autoplay, Navigation, EffectFade]}
             effect="fade"
             fadeEffect={{ crossFade: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            autoplay={{ delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             navigation={{ prevEl: '.hero-prev', nextEl: '.hero-next' }}
             onSlideChange={(swiper) => setIndex(swiper.realIndex)}
             onSwiper={setSwiperInstance}
