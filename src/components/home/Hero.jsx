@@ -71,41 +71,22 @@ export default function Hero() {
             ))}
           </Swiper>
 
-          <div className="absolute bottom-6 left-6 z-10 flex gap-2">
-            {SLIDES.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => {
-                  setIndex(i);
-                  if (swiperInstance) swiperInstance.slideToLoop(i);
-                }}
-                aria-label={`Slide ${i + 1}`}
-                className="focus-ring h-2.5 rounded-full transition-all"
-                style={{
-                  width: i === index ? 24 : 10,
-                  backgroundColor: i === index ? "#FFFFFF" : "rgba(255,255,255,0.55)",
-                }}
-              />
-            ))}
-          </div>
-
           {/* Navigation Arrows */}
           <button 
             type="button"
             onClick={() => swiperInstance?.slidePrev()}
-            className="hero-prev absolute left-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 md:left-8"
+            className="hero-prev absolute left-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center text-white drop-shadow-md transition-opacity hover:opacity-70 md:left-8"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="h-6 w-6" />
+            <ChevronLeft className="h-10 w-10 md:h-[68px] md:w-[68px]" />
           </button>
           <button 
             type="button"
             onClick={() => swiperInstance?.slideNext()}
-            className="hero-next absolute right-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-sm transition-colors hover:bg-black/40 md:right-8"
+            className="hero-next absolute right-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center text-white drop-shadow-md transition-opacity hover:opacity-70 md:right-8"
             aria-label="Next slide"
           >
-            <ChevronRight className="h-6 w-6" />
+            <ChevronRight className="h-10 w-10 md:h-[68px] md:w-[68px]" />
           </button>
         </div>
       </div>
