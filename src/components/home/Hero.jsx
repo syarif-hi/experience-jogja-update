@@ -29,16 +29,16 @@ const SLIDES = [
 ];
 
 const PILLS = [
-  { label: "DESTINATIONS", to: "/destinations", icon: "/images/icons/icon_destionation.png" },
-  { label: "CULINARY & LIFESTYLE", to: "/things-to-do/culinary-lifestyle", icon: "/images/icons/icon_culinary_and_lifestyle.png" },
-  { label: "HEALTH & WELLNESS", to: "/things-to-do/health-wellness", icon: "/images/icons/icon_health_and_wellness.png" },
-  { label: "ENTERTAINMENT & CREATIVE", to: "/things-to-do/entertainment-creative", icon: "/images/icons/icon_entertainment_and_creative.png" },
-  { label: "SPORTS & ADVENTURE", to: "/things-to-do/sports-adventure", icon: "/images/icons/icon-sports_and_adventure.png" },
-  { label: "MICE & BUSINESS EVENTS", to: "/things-to-do/mice-business", icon: "/images/icons/icon_mice_and_business_events.png" },
+  { label_en: "DESTINATIONS", label_id: "DESTINASI", to: "/destinations", icon: "/images/icons/icon_destionation.png" },
+  { label_en: "CULINARY & LIFESTYLE", label_id: "KULINER & GAYA HIDUP", to: "/things-to-do/culinary-lifestyle", icon: "/images/icons/icon_culinary_and_lifestyle.png" },
+  { label_en: "HEALTH & WELLNESS", label_id: "KESEHATAN & KEBUGARAN", to: "/things-to-do/health-wellness", icon: "/images/icons/icon_health_and_wellness.png" },
+  { label_en: "ENTERTAINMENT & CREATIVE", label_id: "HIBURAN & KREATIF", to: "/things-to-do/entertainment-creative", icon: "/images/icons/icon_entertainment_and_creative.png" },
+  { label_en: "SPORTS & ADVENTURE", label_id: "OLAHRAGA & PETUALANGAN", to: "/things-to-do/sports-adventure", icon: "/images/icons/icon-sports_and_adventure.png" },
+  { label_en: "MICE & BUSINESS EVENTS", label_id: "MICE & ACARA BISNIS", to: "/things-to-do/mice-business", icon: "/images/icons/icon_mice_and_business_events.png" },
 ];
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [index, setIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState(null);
 
@@ -94,23 +94,25 @@ export default function Hero() {
       <div className="py-6 md:py-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="content-wrap">
           <div className="grid grid-cols-3 md:flex md:flex-wrap md:justify-start md:gap-10 gap-y-6 gap-x-2">
-            {PILLS.map((p) => (
+            {PILLS.map((p) => {
+              const label = language === "id" ? p.label_id : p.label_en;
+              return (
               <Link
-                key={p.label}
+                key={p.to}
                 to={p.to}
                 className="focus-ring flex flex-col items-center justify-start text-center group transition-opacity hover:opacity-70"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center transition-transform group-hover:scale-105">
-                  <img src={p.icon} alt={p.label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                  <img src={p.icon} alt={label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <span
-                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase max-w-[100px] md:max-w-[130px]"
+                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase max-w-[90px] md:max-w-[120px]"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  {p.label}
+                  {label}
                 </span>
               </Link>
-            ))}
+            )})}
           </div>
         </div>
       </div>
