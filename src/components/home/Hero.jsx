@@ -98,22 +98,23 @@ export default function Hero() {
             {PILLS.map((p) => {
               const label = language === "id" ? p.label_id : p.label_en;
               return (
-              <Link
-                key={p.to}
-                to={p.to}
-                className="focus-ring flex flex-col items-center justify-start text-center group transition-opacity hover:opacity-70"
-              >
-                <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center transition-transform group-hover:scale-105">
-                  <img src={p.icon} alt={label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
-                </div>
-                <span
-                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase whitespace-nowrap"
-                  style={{ color: "var(--text-primary)" }}
+                <Link
+                  key={p.to}
+                  to={p.to}
+                  className="focus-ring flex flex-col items-center justify-start text-center group transition-opacity hover:opacity-70"
                 >
-                  {label}
-                </span>
-              </Link>
-            )})}
+                  <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center transition-transform group-hover:scale-105">
+                    <img src={p.icon} alt={label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                  </div>
+                  <span
+                    className="text-[11px] md:text-[15px] font-medium leading-tight px-1 uppercase whitespace-nowrap"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {label}
+                  </span>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>

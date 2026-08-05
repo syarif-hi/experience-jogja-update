@@ -72,7 +72,7 @@ export default function DetailVisitorInfoSection({ origin }) {
 
     return (
       <SwiperSlide key={item.id} className="!w-[160px] md:!w-[200px]">
-        <Link to={link} className="flex flex-col gap-2 rounded-xl transition-transform hover:scale-[1.02] active:scale-95 group focus-ring">
+        <Link to={link} className="flex flex-col gap-2 rounded-xl group focus-ring">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
             <SmartImage src={img} alt={name} className="h-full w-full object-cover transition-opacity group-hover:opacity-90" />
           </div>
