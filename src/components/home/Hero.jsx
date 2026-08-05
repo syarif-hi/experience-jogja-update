@@ -9,7 +9,7 @@ import "swiper/css/effect-fade";
 const SLIDES = [
   "/images/slider/tamansari-w2000.jpg",
   "/images/slider/malioboro_street-w2000.jpg",
-  "/images/slider/tugu_jogja_edit_cropped-w2000.jpeg",
+  "/images/slider/IMG-00033-cropped-w2000.jpg",
   "/images/slider/prambanan_3_expand-upscale-2x-w2000.jpeg",
   "/images/slider/wayang-crop-w2000.jpg",
   "/images/slider/traditinal_culinary-w2000.jpg",
@@ -23,18 +23,18 @@ const SLIDES = [
   "/images/slider/IMG-00019-w2000.jpg",
   "/images/slider/IMG-00020-expand-w2000.jpeg",
   "/images/slider/IMG-00024-expanded-w2000.jpeg",
-  "/images/slider/IMG-00026-expanded-w2000.jpeg",
+  "/images/slider/traditional_dance_jogja.jpeg",
   "/images/slider/IMG-00027_beach_crop-w2000.jpg",
   "/images/slider/IMG-00028_beach_crop_expanded-w2000.jpg",
 ];
 
 const PILLS = [
-  { label: "DESTINATIONS", to: "/destinations" },
-  { label: "CULINARY & LIFESTYLE", to: "/destinations?category=eat-drink" },
-  { label: "HEALTH & WELLNESS", to: "/destinations?category=wellness" },
-  { label: "ENTERTAINMENT & CREATIVE", to: "/destinations?category=entertainment" },
-  { label: "SPORTS & ADVENTURE", to: "/destinations?category=sports" },
-  { label: "MICE & BUSINESS EVENTS", to: "/destinations?category=mice" },
+  { label: "DESTINATIONS", to: "/destinations", icon: "/images/icons/icon_destionation.png" },
+  { label: "CULINARY & LIFESTYLE", to: "/destinations?category=eat-drink", icon: "/images/icons/icon_culinary_and_lifestyle.png" },
+  { label: "HEALTH & WELLNESS", to: "/destinations?category=wellness", icon: "/images/icons/icon_health_and_wellness.png" },
+  { label: "ENTERTAINMENT & CREATIVE", to: "/destinations?category=entertainment", icon: "/images/icons/icon_entertainment_and_creative.png" },
+  { label: "SPORTS & ADVENTURE", to: "/destinations?category=sports", icon: "/images/icons/icon-sports_and_adventure.png" },
+  { label: "MICE & BUSINESS EVENTS", to: "/destinations?category=mice", icon: "/images/icons/icon_mice_and_business_events.png" },
 ];
 
 export default function Hero() {
@@ -71,7 +71,7 @@ export default function Hero() {
           </Swiper>
 
           {/* Navigation Arrows */}
-          <button 
+          <button
             type="button"
             onClick={() => swiperInstance?.slidePrev()}
             className="hero-prev absolute left-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center drop-shadow-md opacity-70 transition-opacity hover:opacity-100 md:left-8"
@@ -79,7 +79,7 @@ export default function Hero() {
           >
             <img src="/images/nav-slider-arrow.svg" alt="Previous" className="h-6 w-6 md:h-10 md:w-10 rotate-180" />
           </button>
-          <button 
+          <button
             type="button"
             onClick={() => swiperInstance?.slideNext()}
             className="hero-next absolute right-4 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center drop-shadow-md opacity-70 transition-opacity hover:opacity-100 md:right-8"
@@ -90,18 +90,25 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Menu row — below the slider */}
-      <div className="py-4 md:pt-8" style={{ backgroundColor: "#FFFFFF" }}>
+      {/* Menu grid — below the slider */}
+      <div className="py-6 md:py-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="content-wrap">
-          <div className="flex flex-col md:flex-row md:flex-wrap items-start md:items-center justify-start gap-x-10 gap-y-4 md:gap-y-2">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-y-6 gap-x-2 md:gap-x-4">
             {PILLS.map((p) => (
               <Link
                 key={p.label}
                 to={p.to}
-                className="focus-ring block w-full md:w-auto text-[15px] md:text-[17px] font-normal uppercase tracking-wide transition-opacity hover:opacity-70"
-                style={{ color: "var(--text-primary)" }}
+                className="focus-ring flex flex-col items-center justify-start text-center group transition-opacity hover:opacity-70"
               >
-                {p.label}
+                <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center transition-transform group-hover:scale-105">
+                  <img src={p.icon} alt={p.label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                </div>
+                <span
+                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {p.label}
+                </span>
               </Link>
             ))}
           </div>
@@ -109,7 +116,7 @@ export default function Hero() {
       </div>
 
       {/* Heading / subheading / CTA — below the slider, left aligned */}
-      <div className="content-wrap mt-12 text-center md:text-left">
+      <div className="content-wrap mt-6 text-center md:text-left">
 
         <p className="text-[17px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-2" style={{ color: "#000000" }}>
           One Destination. Endless Experiences.

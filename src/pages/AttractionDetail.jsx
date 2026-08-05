@@ -20,7 +20,7 @@ import ReviewsWidget from "@/components/detail/ReviewsWidget";
 import YouMightAlsoLike from "@/components/detail/YouMightAlsoLike";
 import DetailVisitorInfoSection from "@/components/detail/DetailVisitorInfoSection";
 
-export default function DestinationDetail() {
+export default function AttractionDetail() {
   const { slug } = useParams();
   const { t, language } = useTranslation();
   const { currency } = useCurrency();
@@ -29,7 +29,7 @@ export default function DestinationDetail() {
 
   useEffect(() => {
     setDest(undefined);
-    base44.entities.Destination.filter({ slug }).then((r) => setDest(r[0] || null)).catch(() => setDest(null));
+    base44.entities.Attraction.filter({ slug }).then((r) => setDest(r[0] || null)).catch(() => setDest(null));
   }, [slug]);
 
   const name = dest && (language === "id" ? dest.name_id : dest.name_en);
@@ -82,8 +82,8 @@ export default function DestinationDetail() {
                 <div>
                   <BreadcrumbTrail trail={[
                     { id: "home", path: "/", title: t("home") || "Home" },
-                    { id: "destinations", path: "/destinations", title: t("dest.title") || "Destinations" },
-                    ...(name ? [{ id: "current", path: `/destinations/${slug}`, title: name }] : [])
+                    { id: "attractions", path: "/attractions", title: language === "id" ? "Objek Wisata" : "Attractions" },
+                    ...(name ? [{ id: "current", path: `/attractions/${slug}`, title: name }] : [])
                   ]} />
                 </div>
                 

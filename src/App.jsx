@@ -16,6 +16,8 @@ import EventsPage from '@/pages/EventsPage';
 import TripPlanner from '@/pages/TripPlanner';
 import EventDetail from '@/pages/EventDetail';
 import DestinationDetail from '@/pages/DestinationDetail';
+import Attractions from '@/pages/Attractions';
+import AttractionDetail from '@/pages/AttractionDetail';
 import News from '@/pages/News';
 import ArticleDetail from '@/pages/ArticleDetail';
 import Stays from '@/pages/Stays';
@@ -67,6 +69,8 @@ const AuthenticatedApp = () => {
       <Route path="/explore" element={<Explore />} />
       <Route path="/destinations/:slug" element={<DestinationDetail />} />
       <Route path="/destinations" element={<Destinations />} />
+      <Route path="/attractions/:slug" element={<AttractionDetail />} />
+      <Route path="/attractions" element={<Attractions />} />
       <Route path="/event/:slug" element={<EventDetail />} />
       <Route path="/events/*" element={<EventsLanding />} />
       <Route path="/news" element={<News />} />

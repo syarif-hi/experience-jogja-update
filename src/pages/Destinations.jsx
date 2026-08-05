@@ -1,37 +1,44 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Search, MapPin, X, Compass } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { Search, X, Compass, ArrowUpDown } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
-import { CATEGORIES, categoryLabel } from "@/lib/categories";
-import { REGENCIES, regencyLabel } from "@/lib/regencies";
+import { CATEGORIES } from "@/lib/categories";
+import { REGENCIES } from "@/lib/regencies";
 import PageShell from "@/components/layout/PageShell";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import DestinationCard from "@/components/shared/DestinationCard";
-import HScrollStrip from "@/components/home/HScrollStrip";
-import SectionHeading from "@/components/home/SectionHeading";
 
 export default function Destinations() {
   const { t, language } = useTranslation();
+  const [searchParams] = useSearchParams();
+  const initialRegion = searchParams.get("region") || "all";
+  const initialCat = searchParams.get("cat") || "all";
+
   const [items, setItems] = useState(null);
   const [query, setQuery] = useState("");
-  const [cat, setCat] = useState("all");
-  const [region, setRegion] = useState("all");
+  const [cat, setCat] = useState(initialCat);
+  const [region, setRegion] = useState(initialRegion);
+  const [sort, setSort] = useState("display_order");
   const gridRef = useRef(null);
 
   useEffect(() => {
     base44.entities.Destination.list("display_order").then(setItems).catch(() => setItems([]));
   }, []);
 
-  // ── Derived data ──
-  const featured = useMemo(() => {
-    if (!items) return [];
-    return items.filter((d) => d.is_featured_top_destination);
-  }, [items]);
+  // Re-sync filter state when URL search params change (e.g. navigating from Explore)
+  useEffect(() => {
+    const r = searchParams.get("region");
+    const c = searchParams.get("cat");
+    if (r) setRegion(r);
+    if (c) setCat(c);
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     if (!items) return null;
     const q = query.trim().toLowerCase();
-    return items.filter((d) => {
+
+    let list = items.filter((d) => {
       if (cat !== "all" && d.category !== cat) return false;
       if (region !== "all" && d.regency !== region) return false;
       if (q) {
@@ -40,28 +47,51 @@ export default function Destinations() {
       }
       return true;
     });
-  }, [items, cat, region, query]);
 
-  const hasActiveFilters = cat !== "all" || region !== "all" || query.trim().length > 0;
+    // Sort
+    list = [...list].sort((a, b) => {
+      const nameA = (language === "id" ? a.name_id : a.name_en) || "";
+      const nameB = (language === "id" ? b.name_id : b.name_en) || "";
 
-  const regionCounts = useMemo(() => {
-    if (!items) return {};
-    const counts = {};
-    items.forEach((d) => {
-      counts[d.regency] = (counts[d.regency] || 0) + 1;
+      switch (sort) {
+        case "az":
+          return nameA.localeCompare(nameB);
+        case "za":
+          return nameB.localeCompare(nameA);
+        case "newest": {
+          const dateA = a.created_date ? new Date(a.created_date).getTime() : 0;
+          const dateB = b.created_date ? new Date(b.created_date).getTime() : 0;
+          return dateB - dateA;
+        }
+        case "price-low": {
+          const pA = a.price_idr != null ? a.price_idr : Infinity;
+          const pB = b.price_idr != null ? b.price_idr : Infinity;
+          return pA - pB;
+        }
+        case "price-high": {
+          const pA = a.price_idr != null ? a.price_idr : -Infinity;
+          const pB = b.price_idr != null ? b.price_idr : -Infinity;
+          return pB - pA;
+        }
+        case "display_order":
+        default: {
+          const oA = a.display_order ?? 9999;
+          const oB = b.display_order ?? 9999;
+          return oA - oB;
+        }
+      }
     });
-    return counts;
-  }, [items]);
+
+    return list;
+  }, [items, cat, region, query, sort, language]);
+
+  const hasActiveFilters = cat !== "all" || region !== "all" || query.trim().length > 0 || sort !== "display_order";
 
   const clearFilters = () => {
     setQuery("");
     setCat("all");
     setRegion("all");
-  };
-
-  const selectRegion = (r) => {
-    setRegion(r);
-    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setSort("display_order");
   };
 
   const lbl = (c) => (language === "id" ? c.label_id : c.label_en);
@@ -73,8 +103,6 @@ export default function Destinations() {
         className="relative overflow-hidden"
         style={{ backgroundColor: "var(--bg-surface-alt)" }}
       >
-
-
         <div className="content-wrap relative py-12 md:py-16">
           <h1
             className="font-heading text-[32px] font-bold md:text-[44px] leading-tight"
@@ -192,47 +220,54 @@ export default function Destinations() {
             ))}
           </div>
 
-          {/* Results count + clear */}
+          {/* Results count + Sort + Clear */}
           {filtered && (
             <div className="mt-2 mb-1 flex items-center justify-between">
-              <span className="text-[13px]" style={{ color: "var(--text-secondary)" }}>
-                {filtered.length} {t("dest.results")}
-              </span>
-              {hasActiveFilters && (
-                <button
-                  type="button"
-                  onClick={clearFilters}
-                  className="focus-ring inline-flex items-center gap-1 rounded-full px-3 py-1 text-[12px] font-semibold transition-colors hover:opacity-80"
-                  style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--color-primary)" }}
+              <div className="flex items-center gap-2">
+                <span className="text-[13px]" style={{ color: "var(--text-secondary)" }}>
+                  {filtered.length} {t("dest.results")}
+                </span>
+                {hasActiveFilters && (
+                  <button
+                    type="button"
+                    onClick={clearFilters}
+                    className="focus-ring inline-flex items-center gap-1 rounded-full px-3 py-1 text-[12px] font-semibold transition-colors hover:opacity-80"
+                    style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--color-primary)" }}
+                  >
+                    <X className="h-3 w-3" />
+                    Clear
+                  </button>
+                )}
+              </div>
+              {/* Sort dropdown */}
+              <div className="relative">
+                <select
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                  className="focus-ring h-9 rounded-lg pl-3 pr-8 text-[13px] font-semibold appearance-none cursor-pointer"
+                  style={{
+                    backgroundColor: "var(--bg-surface-alt)",
+                    color: "var(--text-primary)",
+                    border: "none",
+                  }}
                 >
-                  <X className="h-3 w-3" />
-                  Clear
-                </button>
-              )}
+                  <option value="display_order">{t("dest.sort.default")}</option>
+                  <option value="az">{t("dest.sort.az")}</option>
+                  <option value="za">{t("dest.sort.za")}</option>
+                  <option value="newest">{t("dest.sort.newest")}</option>
+                  <option value="price-low">{t("dest.sort.priceLow")}</option>
+                  <option value="price-high">{t("dest.sort.priceHigh")}</option>
+                </select>
+                <div className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2">
+                  <ArrowUpDown className="h-3.5 w-3.5" style={{ color: "var(--text-secondary)" }} />
+                </div>
+              </div>
             </div>
           )}
         </div>
 
-        {/* ③ Featured Destinations Carousel */}
-        {!hasActiveFilters && featured.length > 0 && (
-          <section className="mt-4 mb-8">
-            <SectionHeading title={t("dest.featured")} />
-            <HScrollStrip>
-              {featured.map((d) => (
-                <DestinationCard key={d.id} destination={d} />
-              ))}
-            </HScrollStrip>
-          </section>
-        )}
-
-        {/* ④ All Destinations Grid */}
+        {/* ③ All Destinations Grid */}
         <section className="mt-2 pb-8">
-          {hasActiveFilters && (
-            <h2 className="mb-4 font-heading text-[20px] font-bold" style={{ color: "var(--text-primary)" }}>
-              {t("dest.title")}
-            </h2>
-          )}
-
           {filtered === null ? (
             <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
               {Array.from({ length: 8 }).map((_, i) => (
@@ -277,48 +312,6 @@ export default function Destinations() {
             </div>
           )}
         </section>
-
-        {/* ⑤ Explore by Region */}
-        {region === "all" && (
-          <section className="pb-12">
-            <h2
-              className="mb-5 font-heading text-[22px] font-bold"
-              style={{ color: "var(--text-primary)" }}
-            >
-              {t("dest.exploreRegion")}
-            </h2>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-              {REGENCIES.map((r) => {
-                const count = regionCounts[r.value] || 0;
-                return (
-                  <button
-                    key={r.value}
-                    type="button"
-                    onClick={() => selectRegion(r.value)}
-                    className="focus-ring group flex flex-col items-center gap-2 rounded-xl px-4 py-5 text-center transition-all hover:shadow-md"
-                    style={{
-                      backgroundColor: "var(--bg-surface)",
-                      boxShadow: "var(--elevation-1)",
-                    }}
-                  >
-                    <span
-                      className="flex h-10 w-10 items-center justify-center rounded-full transition-transform group-hover:scale-110"
-                      style={{ backgroundColor: "var(--bg-surface-alt)" }}
-                    >
-                      <MapPin className="h-5 w-5" style={{ color: "var(--color-primary)" }} />
-                    </span>
-                    <span className="text-[13px] font-semibold leading-tight" style={{ color: "var(--text-primary)" }}>
-                      {lbl(r)}
-                    </span>
-                    <span className="text-[11px]" style={{ color: "var(--text-secondary)" }}>
-                      {count} {count === 1 ? "destination" : "destinations"}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-        )}
       </div>
     </PageShell>
   );

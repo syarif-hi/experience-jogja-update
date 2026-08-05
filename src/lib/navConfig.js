@@ -52,14 +52,15 @@ export const NAV_GROUPS = [
   },
   {
     label_en: "Explore", label_id: "Eksplorasi",
-    to: "/destinations",
+    to: "/explore",
     items: [
-      { label_en: "Yogyakarta City", label_id: "Kota Yogyakarta", to: "/destinations/yogyakarta-city" },
-      { label_en: "Sleman", label_id: "Sleman", to: "/destinations/sleman" },
-      { label_en: "Bantul", label_id: "Bantul", to: "/destinations/bantul" },
-      { label_en: "Kulon Progo", label_id: "Kulon Progo", to: "/destinations/kulon-progo" },
-      { label_en: "Gunungkidul", label_id: "Gunungkidul", to: "/destinations/gunungkidul" },
-      { label_en: "Outer Yogyakarta", label_id: "Yogyakarta Luar", to: "/destinations/villages-hidden-gems" },
+      { label_en: "All Destinations", label_id: "Semua Destinasi", to: "/destinations" },
+      { label_en: "Yogyakarta City", label_id: "Kota Yogyakarta", to: "/destinations?region=yogyakarta-city" },
+      { label_en: "Sleman", label_id: "Sleman", to: "/destinations?region=sleman" },
+      { label_en: "Bantul", label_id: "Bantul", to: "/destinations?region=bantul" },
+      { label_en: "Kulon Progo", label_id: "Kulon Progo", to: "/destinations?region=kulon-progo" },
+      { label_en: "Gunungkidul", label_id: "Gunungkidul", to: "/destinations?region=gunungkidul" },
+      { label_en: "Outer Yogyakarta", label_id: "Yogyakarta Luar", to: "/destinations?region=villages-hidden-gems" },
     ],
   },
   {
