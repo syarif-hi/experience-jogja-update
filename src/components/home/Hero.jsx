@@ -23,7 +23,7 @@ const SLIDES = [
   "/images/slider/IMG-00019-w2000.jpg",
   "/images/slider/IMG-00020-expand-w2000.jpeg",
   "/images/slider/IMG-00024-expanded-w2000.jpeg",
-  "/images/slider/traditional_dance_jogja.jpeg",
+  "/images/slider/IMG-00026-expanded-w2000.jpeg",
   "/images/slider/IMG-00027_beach_crop-w2000.jpg",
   "/images/slider/IMG-00028_beach_crop_expanded-w2000.jpg",
 ];
