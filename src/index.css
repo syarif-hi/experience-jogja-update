@@ -56,7 +56,7 @@
 
     /* Layout rhythm */
     --spacing-xl: 48px;
-    --content-padding: calc(114px / 2); /* 57px */
+    --content-padding: 80px; /* Increased from 57px (approx 40% wider padding) */
     --content-max: 1600px;
 
     --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;

@@ -7,25 +7,26 @@ import { Autoplay, Navigation, EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
 
 const SLIDES = [
-  "/images/slider/tamansari-w2000.jpg",
-  "/images/slider/malioboro_street-w2000.jpg",
   "/images/slider/tugu_jogja_edit_cropped-w2000.jpeg",
-  "/images/slider/prambanan_3_expand-upscale-2x-w2000.jpeg",
-  "/images/slider/wayang-crop-w2000.jpg",
-  "/images/slider/traditinal_culinary-w2000.jpg",
-  "/images/slider/borobudur_sunset_edit-upscale-2x_cropped-w2000.png",
   "/images/slider/prambanan_temple_human_interest-w2000.png",
-  "/images/slider/traditional_event_expand-upscale-2x-w2000.jpeg",
+  "/images/slider/wayang-crop-w2000.jpg",
+  "/images/slider/malioboro_street-w2000.jpg",
   "/images/slider/borobudur-w2000.jpg",
-  "/images/slider/prambanan_and_statue-w2000.jpg",
+  "/images/slider/traditinal_culinary-w2000.jpg",
+  "/images/slider/IMG-00028_beach_crop_expanded-w2000.jpg",
+  "/images/slider/traditional_event_expand-upscale-2x-w2000.jpeg",
+  "/images/slider/borobudur_sunset_edit-upscale-2x_cropped-w2000.png",
   "/images/slider/IMG-00017-retoched-w2000.jpeg",
   "/images/slider/IMG-00018-expanded-w2000.jpeg",
-  "/images/slider/IMG-00019-w2000.jpg",
   "/images/slider/IMG-00020-expand-w2000.jpeg",
   "/images/slider/IMG-00024-expanded-w2000.jpeg",
   "/images/slider/IMG-00026-expanded-w2000.jpeg",
   "/images/slider/IMG-00027_beach_crop-w2000.jpg",
-  "/images/slider/IMG-00028_beach_crop_expanded-w2000.jpg",
+  "/images/slider/prambanan_3_expand-upscale-2x-w2000.jpeg",
+  "/images/slider/tamansari-w2000.jpg",
+  "/images/slider/IMG-00019-w2000.jpg",
+  "/images/slider/IMG-00020-expand-w2000.jpeg",
+  "/images/slider/prambanan_and_statue-w2000.jpg",
 ];
 
 const PILLS = [
@@ -106,7 +107,7 @@ export default function Hero() {
                   <img src={p.icon} alt={label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <span
-                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase max-w-[90px] md:max-w-[120px]"
+                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase whitespace-nowrap"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {label}

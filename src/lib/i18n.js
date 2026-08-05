@@ -117,7 +117,7 @@ export const dictionary = {
     "tripplanner.browseEvents": "Telusuri Acara",
     "calendar.link.current": "Acara terkini",
     "calendar.link.festival": "Events & festivals",
-    "news.title": "Berita Jogja",
+    "news.title": "Berita Jogja — Apa Yang Terjadi Saat Ini",
     "news.subtitle": "Cerita dan kabar terbaru",
 
     "tripband.title": "Rencanakan Perjalanan Jogja-mu",
@@ -188,7 +188,7 @@ export const dictionary = {
     "nav.tripPlanner": "Trip planner",
     "nav.news": "News",
     "nav.currentEvent": "Current event",
-    "nav.jogjaNews": "Jogja news",
+    "nav.jogjaNews": "Jogja News — What’s Happening Now",
     "nav.eventFestival": "Events & festivals",
     "nav.topDestinations": "Top destinations",
     "nav.recommended": "Recommended",
@@ -293,8 +293,8 @@ export const dictionary = {
     "tripplanner.browseEvents": "Browse Events",
     "calendar.link.current": "Current Events",
     "calendar.link.festival": "Events & festivals",
-    "news.title": "Jogja News",
-    "news.subtitle": "The latest stories & updates",
+    "news.title": "Jogja News — What’s Happening Now",
+    "news.subtitle": "Stay up-to-date with the latest events and stories",
 
     "tripband.title": "Plan Your Jogja Journey",
     "tripband.subtitle": "Build a day-by-day itinerary, add destinations & events, & take your plan anywhere.",

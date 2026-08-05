@@ -1,1009 +1,1562 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visitor Information — Adaptive Explorer Prototype</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#241F1C;
-    --paper:#EFE7D8;
-    --surface:#FBF8F1;
-    --indigo:#223A5E;
-    --indigo-soft:#D8E0E9;
-    --clay:#B5502F;
-    --brass:#B8863B;
-    --jade:#4C7A5E;
-    --line:#D9CFBB;
-    --font-display:'Fraunces', serif;
-    --font-body:'Plus Jakarta Sans', sans-serif;
-    --font-mono:'IBM Plex Mono', monospace;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--font-body);
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none;}
-  button{font-family:inherit;cursor:pointer;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Information — Adaptive Explorer Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #241F1C;
+      --paper: #EFE7D8;
+      --surface: #FBF8F1;
+      --indigo: #223A5E;
+      --indigo-soft: #D8E0E9;
+      --clay: #B5502F;
+      --brass: #B8863B;
+      --jade: #4C7A5E;
+      --line: #D9CFBB;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
 
-  /* ---------- prototype note strip ---------- */
-  .proto-strip{
-    background:var(--ink); color:var(--paper);
-    font-family:var(--font-mono); font-size:11.5px; letter-spacing:.02em;
-    padding:6px 16px; text-align:center;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  /* ---------- top bar ---------- */
-  .topbar{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px 20px; background:var(--paper);
-    border-bottom:1px solid var(--line);
-  }
-  .brand{display:flex; align-items:center; gap:10px;}
-  .brand .mark{
-    width:32px;height:32px;border-radius:50%;
-    background:var(--indigo); color:var(--paper);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .brand .name{font-family:var(--font-display); font-weight:600; font-size:17px;}
-  .brand .section-label{font-family:var(--font-mono); font-size:11px; color:#6b6459; text-transform:uppercase; letter-spacing:.06em;}
-  .lang-toggle{
-    display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden;
-    font-family:var(--font-mono); font-size:12px;
-  }
-  .lang-toggle button{
-    background:none; border:none; padding:6px 14px; color:var(--ink); opacity:.55;
-  }
-  .lang-toggle button.active{background:var(--indigo); color:var(--paper); opacity:1;}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-  /* ---------- breadcrumb trail ---------- */
-  .crumbtrail{
-    position:sticky; top:0; z-index:20;
-    background:var(--surface); border-bottom:1px solid var(--line);
-    padding:0 20px; display:flex; align-items:center; gap:10px;
-    height:48px; overflow-x:auto; white-space:nowrap;
-  }
-  .crumb{display:flex; align-items:center; gap:10px;}
-  .crumb-dot{
-    width:8px; height:8px; border-radius:50%; background:var(--line); flex-shrink:0;
-  }
-  .crumb-link{
-    display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink); opacity:.6;
-    background:none; border:none; padding:4px 2px;
-  }
-  .crumb-link:hover{opacity:1; color:var(--indigo);}
-  .crumb-link.current{opacity:1; font-weight:600;}
-  .crumb-link.current .crumb-dot{
-    background:var(--indigo); width:10px; height:10px;
-    box-shadow:0 0 0 3px var(--indigo-soft);
-  }
-  .crumb-sep{width:16px; height:1px; background:var(--line); flex-shrink:0;}
-  .crumb-more{
-    font-family:var(--font-mono); font-size:12px; color:var(--ink); opacity:.6;
-    background:var(--paper); border:1px solid var(--line); border-radius:999px;
-    padding:2px 8px; position:relative;
-  }
-  .crumb-popover{
-    display:none; position:absolute; top:28px; left:0; background:var(--surface);
-    border:1px solid var(--line); border-radius:10px; padding:8px; min-width:180px;
-    box-shadow:0 8px 24px rgba(36,31,28,.12); z-index:30;
-  }
-  .crumb-popover.open{display:block;}
-  .crumb-popover a{display:block; padding:6px 8px; font-size:13px; border-radius:6px;}
-  .crumb-popover a:hover{background:var(--indigo-soft);}
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ---------- layout ---------- */
-  .body-layout{display:flex; align-items:flex-start;}
-  .rail{
-    display:none; flex-direction:column; gap:2px; flex-shrink:0;
-    width:260px; padding:18px 10px; position:sticky; top:48px;
-    height:calc(100vh - 48px); overflow-y:auto;
-    background:repeating-linear-gradient(45deg, rgba(34,58,94,.035) 0 2px, transparent 2px 10px);
-    border-right:1px solid var(--line);
-  }
-  .rail.collapsed{width:64px;}
-  .rail-toggle{
-    align-self:flex-end; background:none; border:1px solid var(--line); border-radius:8px;
-    width:26px; height:26px; display:flex; align-items:center; justify-content:center;
-    margin-bottom:8px; color:var(--ink); opacity:.6;
-  }
-  .rail-root{
-    display:flex; align-items:center; gap:10px; padding:8px 8px; border-radius:8px;
-    font-size:13.5px; font-weight:600; margin-bottom:6px;
-  }
-  .rail-root .rail-icon{color:var(--indigo);}
-  .rail-group{position:relative; padding-left:14px; margin-bottom:2px;}
-  .rail-group::before{
-    content:""; position:absolute; left:5px; top:0; bottom:0; width:1px; background:var(--line);
-  }
-  .rail-row{
-    display:flex; align-items:center; gap:9px; padding:7px 8px; border-radius:8px;
-    font-size:13.5px; width:100%; text-align:left; background:none; border:none; color:var(--ink);
-  }
-  .rail-row:hover{background:var(--indigo-soft);}
-  .rail-row.active{background:var(--indigo-soft); border-left:3px solid var(--indigo); padding-left:5px; font-weight:600;}
-  .rail-row .rail-icon{flex-shrink:0; width:18px; height:18px; color:var(--brass);}
-  .rail-row.active .rail-icon{color:var(--indigo);}
-  .rail-label{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  .rail.collapsed .rail-label,
-  .rail.collapsed .rail-root .rail-label{display:none;}
-  .rail-dot{
-    width:26px; height:26px; border-radius:50%; background:var(--surface); border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center; margin:3px 0 3px 8px; color:var(--ink); opacity:.65;
-  }
-  .rail-dot:hover{opacity:1; border-color:var(--indigo);}
-  .rail-dot svg{width:13px;height:13px;}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  .content{flex:1; min-width:0; padding:26px 24px 60px; max-width:960px; margin:0 auto; width:100%;}
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
 
-  /* ---------- chip scroller ---------- */
-  .chip-scroller{
-    display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:18px;
-    -webkit-overflow-scrolling:touch;
-  }
-  .chip{
-    flex-shrink:0; display:flex; align-items:center; gap:6px;
-    padding:7px 14px; border-radius:999px; border:1px solid var(--line);
-    background:var(--surface); font-size:13px; white-space:nowrap;
-  }
-  .chip.active{background:var(--indigo); color:var(--paper); border-color:var(--indigo);}
-  .chip svg{width:14px;height:14px;}
+    /* ---------- prototype note strip ---------- */
+    .proto-strip {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      letter-spacing: .02em;
+      padding: 6px 16px;
+      text-align: center;
+    }
 
-  /* ---------- hero / hub ---------- */
-  .hub-hero{padding:6px 0 28px;}
-  .hub-hero h1{font-family:var(--font-display); font-size:38px; margin:0 0 10px; font-weight:600;}
-  .hub-hero p{max-width:560px; color:#4b453d; font-size:15.5px;}
+    /* ---------- top bar ---------- */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
 
-  .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:16px;}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  .card-section{
-    position:relative; border-radius:14px; overflow:hidden; aspect-ratio:4/3;
-    display:flex; flex-direction:column; justify-content:flex-end; padding:16px;
-    color:var(--paper); border:1px solid var(--line);
-    transition:transform .2s ease-out;
-  }
-  .card-section:hover{transform:translateY(-3px);}
-  .card-section .badge-count{
-    position:absolute; bottom:14px; right:14px; font-family:var(--font-mono); font-size:11px;
-    background:rgba(239,231,216,.18); border:1px solid rgba(239,231,216,.4); padding:2px 8px; border-radius:999px;
-  }
-  .card-section .cs-icon{
-    position:absolute; top:14px; left:14px; width:34px; height:34px; border-radius:9px;
-    background:rgba(239,231,216,.9); color:var(--indigo); display:flex; align-items:center; justify-content:center;
-  }
-  .card-section .cs-scrim{position:absolute; inset:0; z-index:0;}
-  .card-section h3, .card-section p{position:relative; z-index:1; margin:0;}
-  .card-section h3{font-family:var(--font-display); font-size:19px; font-weight:600; margin-bottom:4px;}
-  .card-section p{font-size:12.5px; opacity:.9;}
+    .brand .mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--indigo);
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .card-page{
-    border:1px solid var(--line); background:var(--surface); border-radius:12px;
-    padding:16px; display:flex; flex-direction:column; gap:8px; transition:border-color .15s;
-  }
-  .card-page:hover{border-color:var(--indigo-soft); }
-  .card-page .cp-icon{color:var(--brass); width:26px; height:26px;}
-  .card-page h3{font-family:var(--font-display); font-size:16.5px; margin:2px 0 0; font-weight:600;}
-  .card-page p{font-size:13px; color:#4b453d; margin:0;}
-  .card-page .cp-meta{font-family:var(--font-mono); font-size:11px; color:#8a8172; margin-top:auto;}
+    .brand .name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 17px;
+    }
 
-  .section-header{margin-bottom:18px;}
-  .section-header h1{font-family:var(--font-display); font-size:28px; margin:0 0 6px; font-weight:600;}
-  .section-header p{color:#4b453d; font-size:14.5px; max-width:600px;}
+    .brand .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #6b6459;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
 
-  /* ---------- page (detail) ---------- */
-  .page-header h1{font-family:var(--font-display); font-size:30px; margin:0 0 8px; font-weight:600;}
-  .meta-strip{font-family:var(--font-mono); font-size:11.5px; color:#8a8172; margin-bottom:20px; display:flex; gap:14px;}
-  .page-body h2{font-family:var(--font-display); font-size:19px; margin:22px 0 8px; font-weight:600;}
-  .page-body p{font-size:15px; color:#3a352f; margin:0 0 10px;}
-  .page-body ul{margin:0 0 10px; padding-left:20px;}
-  .page-body li{font-size:15px; margin-bottom:4px; color:#3a352f;}
+    .lang-toggle {
+      display: flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
 
-  .prevnext{display:flex; justify-content:space-between; gap:12px; margin-top:32px; padding-top:16px; border-top:1px solid var(--line);}
-  .prevnext a{font-size:13px; border:1px solid var(--line); border-radius:10px; padding:10px 14px; flex:1; background:var(--surface);}
-  .prevnext .lbl{display:block; font-family:var(--font-mono); font-size:10.5px; opacity:.6; margin-bottom:3px; text-transform:uppercase;}
+    .lang-toggle button {
+      background: none;
+      border: none;
+      padding: 6px 14px;
+      color: var(--ink);
+      opacity: .55;
+    }
 
-  .related{margin-top:30px;}
-  .related h4{font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.06em; font-size:11.5px; color:#8a8172; margin:0 0 10px;}
-  .related-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px;}
+    .lang-toggle button.active {
+      background: var(--indigo);
+      color: var(--paper);
+      opacity: 1;
+    }
 
-  /* ---------- mobile drawer ---------- */
-  .drawer-trigger{
-    display:none; position:fixed; right:18px; bottom:18px; z-index:40;
-    background:var(--indigo); color:var(--paper); border:none; border-radius:999px;
-    padding:12px 18px; align-items:center; gap:8px; font-size:13.5px; font-weight:600;
-    box-shadow:0 8px 20px rgba(36,31,28,.25);
-  }
-  .drawer-trigger svg{width:16px;height:16px;}
-  .scrim{
-    display:none; position:fixed; inset:0; background:rgba(36,31,28,.35); z-index:45;
-  }
-  .scrim.open{display:block;}
-  .drawer{
-    position:fixed; left:0; right:0; bottom:0; z-index:50; background:var(--surface);
-    border-radius:18px 18px 0 0; max-height:74vh; overflow-y:auto;
-    transform:translateY(100%); transition:transform .25s ease-out;
-    padding:14px 16px 24px;
-  }
-  .drawer.open{transform:translateY(0);}
-  .drawer-handle{width:36px; height:4px; background:var(--line); border-radius:2px; margin:0 auto 14px;}
-  .drawer-level{margin-bottom:16px;}
-  .drawer-level .dl-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:#8a8172; margin-bottom:6px;}
-  .drawer-row{
-    display:flex; align-items:center; gap:10px; padding:11px 10px; border-radius:10px; width:100%;
-    background:none; border:none; font-size:14.5px; text-align:left; color:var(--ink);
-  }
-  .drawer-row.active{background:var(--indigo-soft); font-weight:600;}
-  .drawer-row .di{width:18px;height:18px; color:var(--brass); flex-shrink:0;}
-  .drawer-row.active .di{color:var(--indigo);}
+    /* ---------- breadcrumb trail ---------- */
+    .crumbtrail {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 48px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
 
-  /* ---------- responsive ---------- */
-  @media (min-width:768px){
-    .rail{display:flex;}
-    .drawer-trigger{display:none !important;}
-  }
-  @media (max-width:1023px){
-    .rail{width:64px !important;}
-    .rail .rail-label{display:none;}
-    .rail-toggle{display:none;}
-    .rail-root{justify-content:center;}
-  }
-  @media (min-width:1024px){
-    .chip-scroller.desktop-hide{display:none;}
-  }
-  @media (max-width:767px){
-    .drawer-trigger{display:flex;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{transition:none !important;}
-  }
-</style>
+    .crumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .crumb-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--line);
+      flex-shrink: 0;
+    }
+
+    .crumb-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--ink);
+      opacity: .6;
+      background: none;
+      border: none;
+      padding: 4px 2px;
+    }
+
+    .crumb-link:hover {
+      opacity: 1;
+      color: var(--indigo);
+    }
+
+    .crumb-link.current {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    .crumb-link.current .crumb-dot {
+      background: var(--indigo);
+      width: 10px;
+      height: 10px;
+      box-shadow: 0 0 0 3px var(--indigo-soft);
+    }
+
+    .crumb-sep {
+      width: 16px;
+      height: 1px;
+      background: var(--line);
+      flex-shrink: 0;
+    }
+
+    .crumb-more {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink);
+      opacity: .6;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 8px;
+      position: relative;
+    }
+
+    .crumb-popover {
+      display: none;
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(36, 31, 28, .12);
+      z-index: 30;
+    }
+
+    .crumb-popover.open {
+      display: block;
+    }
+
+    .crumb-popover a {
+      display: block;
+      padding: 6px 8px;
+      font-size: 13px;
+      border-radius: 6px;
+    }
+
+    .crumb-popover a:hover {
+      background: var(--indigo-soft);
+    }
+
+    /* ---------- layout ---------- */
+    .body-layout {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .rail {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      flex-shrink: 0;
+      width: 260px;
+      padding: 18px 10px;
+      position: sticky;
+      top: 48px;
+      height: calc(100vh - 48px);
+      overflow-y: auto;
+      background: repeating-linear-gradient(45deg, rgba(34, 58, 94, .035) 0 2px, transparent 2px 10px);
+      border-right: 1px solid var(--line);
+    }
+
+    .rail.collapsed {
+      width: 64px;
+    }
+
+    .rail-toggle {
+      align-self: flex-end;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      color: var(--ink);
+      opacity: .6;
+    }
+
+    .rail-root {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 8px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .rail-root .rail-icon {
+      color: var(--indigo);
+    }
+
+    .rail-group {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 2px;
+    }
+
+    .rail-group::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .rail-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 8px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      color: var(--ink);
+    }
+
+    .rail-row:hover {
+      background: var(--indigo-soft);
+    }
+
+    .rail-row.active {
+      background: var(--indigo-soft);
+      border-left: 3px solid var(--indigo);
+      padding-left: 5px;
+      font-weight: 600;
+    }
+
+    .rail-row .rail-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--brass);
+    }
+
+    .rail-row.active .rail-icon {
+      color: var(--indigo);
+    }
+
+    .rail-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rail.collapsed .rail-label,
+    .rail.collapsed .rail-root .rail-label {
+      display: none;
+    }
+
+    .rail-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 3px 0 3px 8px;
+      color: var(--ink);
+      opacity: .65;
+    }
+
+    .rail-dot:hover {
+      opacity: 1;
+      border-color: var(--indigo);
+    }
+
+    .rail-dot svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .content {
+      flex: 1;
+      min-width: 0;
+      padding: 26px 24px 60px;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ---------- chip scroller ---------- */
+    .chip-scroller {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .chip {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .chip.active {
+      background: var(--indigo);
+      color: var(--paper);
+      border-color: var(--indigo);
+    }
+
+    .chip svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ---------- hero / hub ---------- */
+    .hub-hero {
+      padding: 6px 0 28px;
+    }
+
+    .hub-hero h1 {
+      font-family: var(--font-display);
+      font-size: 38px;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+
+    .hub-hero p {
+      max-width: 560px;
+      color: #4b453d;
+      font-size: 15.5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card-section {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      color: var(--paper);
+      border: 1px solid var(--line);
+      transition: transform .2s ease-out;
+    }
+
+    .card-section:hover {
+      transform: translateY(-3px);
+    }
+
+    .card-section .badge-count {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: rgba(239, 231, 216, .18);
+      border: 1px solid rgba(239, 231, 216, .4);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .card-section .cs-icon {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: rgba(239, 231, 216, .9);
+      color: var(--indigo);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-section .cs-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .card-section h3,
+    .card-section p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .card-section h3 {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-section p {
+      font-size: 12.5px;
+      opacity: .9;
+    }
+
+    .card-page {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color .15s;
+    }
+
+    .card-page:hover {
+      border-color: var(--indigo-soft);
+    }
+
+    .card-page .cp-icon {
+      color: var(--brass);
+      width: 26px;
+      height: 26px;
+    }
+
+    .card-page h3 {
+      font-family: var(--font-display);
+      font-size: 16.5px;
+      margin: 2px 0 0;
+      font-weight: 600;
+    }
+
+    .card-page p {
+      font-size: 13px;
+      color: #4b453d;
+      margin: 0;
+    }
+
+    .card-page .cp-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #8a8172;
+      margin-top: auto;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-header h1 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      margin: 0 0 6px;
+      font-weight: 600;
+    }
+
+    .section-header p {
+      color: #4b453d;
+      font-size: 14.5px;
+      max-width: 600px;
+    }
+
+    /* ---------- page (detail) ---------- */
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 30px;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .meta-strip {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: #8a8172;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .page-body h2 {
+      font-family: var(--font-display);
+      font-size: 19px;
+      margin: 22px 0 8px;
+      font-weight: 600;
+    }
+
+    .page-body p {
+      font-size: 15px;
+      color: #3a352f;
+      margin: 0 0 10px;
+    }
+
+    .page-body ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+    }
+
+    .page-body li {
+      font-size: 15px;
+      margin-bottom: 4px;
+      color: #3a352f;
+    }
+
+    .prevnext {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .prevnext a {
+      font-size: 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 14px;
+      flex: 1;
+      background: var(--surface);
+    }
+
+    .prevnext .lbl {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      opacity: .6;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    .related {
+      margin-top: 30px;
+    }
+
+    .related h4 {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: 11.5px;
+      color: #8a8172;
+      margin: 0 0 10px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    /* ---------- mobile drawer ---------- */
+    .drawer-trigger {
+      display: none;
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      background: var(--indigo);
+      color: var(--paper);
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(36, 31, 28, .25);
+    }
+
+    .drawer-trigger svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .scrim {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(36, 31, 28, .35);
+      z-index: 45;
+    }
+
+    .scrim.open {
+      display: block;
+    }
+
+    .drawer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-radius: 18px 18px 0 0;
+      max-height: 74vh;
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform .25s ease-out;
+      padding: 14px 16px 24px;
+    }
+
+    .drawer.open {
+      transform: translateY(0);
+    }
+
+    .drawer-handle {
+      width: 36px;
+      height: 4px;
+      background: var(--line);
+      border-radius: 2px;
+      margin: 0 auto 14px;
+    }
+
+    .drawer-level {
+      margin-bottom: 16px;
+    }
+
+    .drawer-level .dl-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #8a8172;
+      margin-bottom: 6px;
+    }
+
+    .drawer-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 10px;
+      border-radius: 10px;
+      width: 100%;
+      background: none;
+      border: none;
+      font-size: 14.5px;
+      text-align: left;
+      color: var(--ink);
+    }
+
+    .drawer-row.active {
+      background: var(--indigo-soft);
+      font-weight: 600;
+    }
+
+    .drawer-row .di {
+      width: 18px;
+      height: 18px;
+      color: var(--brass);
+      flex-shrink: 0;
+    }
+
+    .drawer-row.active .di {
+      color: var(--indigo);
+    }
+
+    /* ---------- responsive ---------- */
+    @media (min-width:768px) {
+      .rail {
+        display: flex;
+      }
+
+      .drawer-trigger {
+        display: none !important;
+      }
+    }
+
+    @media (max-width:1023px) {
+      .rail {
+        width: 64px !important;
+      }
+
+      .rail .rail-label {
+        display: none;
+      }
+
+      .rail-toggle {
+        display: none;
+      }
+
+      .rail-root {
+        justify-content: center;
+      }
+    }
+
+    @media (min-width:1024px) {
+      .chip-scroller.desktop-hide {
+        display: none;
+      }
+    }
+
+    @media (max-width:767px) {
+      .drawer-trigger {
+        display: flex;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="proto-strip">VISITOR INFORMATION — ADAPTIVE EXPLORER PROTOTYPE · demo data from content-tree.json · click around, resize the window to see mobile/tablet behaviour</div>
+  <div class="proto-strip">VISITOR INFORMATION — ADAPTIVE EXPLORER PROTOTYPE · demo data from content-tree.json · click
+    around, resize the window to see mobile/tablet behaviour</div>
 
-<div class="topbar">
-  <div class="brand">
-    <div class="mark" id="brandIcon"></div>
-    <div>
-      <div class="name">Experience Jogja</div>
-      <div class="section-label">Visitor Information</div>
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark" id="brandIcon"></div>
+      <div>
+        <div class="name">Experience Jogja</div>
+        <div class="section-label">Visitor Information</div>
+      </div>
+    </div>
+    <div class="lang-toggle">
+      <button data-lang="en" class="active">EN</button>
+      <button data-lang="id">ID</button>
     </div>
   </div>
-  <div class="lang-toggle">
-    <button data-lang="en" class="active">EN</button>
-    <button data-lang="id">ID</button>
+
+  <div id="crumbtrailWrap"></div>
+
+  <div class="body-layout">
+    <nav class="rail" id="rail"></nav>
+    <main class="content" id="content"></main>
   </div>
-</div>
 
-<div id="crumbtrailWrap"></div>
+  <button class="drawer-trigger" id="drawerTrigger"></button>
+  <div class="scrim" id="scrim"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-handle"></div>
+    <div id="drawerContent"></div>
+  </div>
 
-<div class="body-layout">
-  <nav class="rail" id="rail"></nav>
-  <main class="content" id="content"></main>
-</div>
+  <script>
+    /* ============================================================
+       ICONS — small hand-rolled line-icon set (placeholder iconography
+       for the prototype; swap for the real icon system at build time)
+       ============================================================ */
+    const ICONS = {
+      compass: '<circle cx="12" cy="12" r="9"/><path d="M14.5 9.5 L12 12 L9.5 14.5 L12 12 Z" fill="currentColor" stroke="none"/>',
+      plane: '<path d="M3 12 L21 4 L13 21 L11 13 L3 12 Z" fill="currentColor" stroke="none"/>',
+      train: '<rect x="6" y="4" width="12" height="14" rx="3"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="15" cy="20" r="1.4" fill="currentColor"/><line x1="6" y1="11" x2="18" y2="11"/>',
+      bus: '<rect x="4" y="5" width="16" height="12" rx="2"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="8" cy="19" r="1.4" fill="currentColor"/><circle cx="16" cy="19" r="1.4" fill="currentColor"/>',
+      car: '<path d="M4 16 L5.5 10 Q6 8 8 8 H16 Q18 8 18.5 10 L20 16"/><rect x="3" y="16" width="18" height="4" rx="1.5"/><circle cx="7.5" cy="20" r="1.4" fill="currentColor"/><circle cx="16.5" cy="20" r="1.4" fill="currentColor"/>',
+      bed: '<path d="M3 18 V9 Q3 7 5 7 H11 Q13 7 13 9 V13"/><path d="M13 13 H20 Q21 13 21 14 V18"/><line x1="3" y1="18" x2="21" y2="18"/><circle cx="7" cy="11" r="1.6"/>',
+      pin: '<path d="M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z"/><circle cx="12" cy="9" r="2.3"/>',
+      mountain: '<path d="M3 19 L9 8 L13 14 L16 10 L21 19 Z"/>',
+      wallet: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10 H21"/><circle cx="17" cy="14" r="1.3" fill="currentColor"/>',
+      banknote: '<rect x="2.5" y="7" width="19" height="10" rx="1.5"/><circle cx="12" cy="12" r="2.4"/>',
+      coins: '<circle cx="9" cy="10" r="6"/><circle cx="15" cy="14" r="6"/>',
+      card: '<rect x="2.5" y="5.5" width="19" height="13" rx="2"/><line x1="2.5" y1="10" x2="21.5" y2="10"/>',
+      receipt: '<path d="M6 3 H18 V20 L15.5 18 L13 20 L10.5 18 L8 20 L6 18 Z"/><line x1="8.5" y1="8" x2="15.5" y2="8"/><line x1="8.5" y1="12" x2="15.5" y2="12"/>',
+      shield: '<path d="M12 3 L19 6 V11 C19 16 16 19.5 12 21 C8 19.5 5 16 5 11 V6 Z"/>',
+      cross: '<circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>',
+      phone: '<path d="M5 4 H9 L11 9 L8.5 10.5 C9.5 13 11 14.5 13.5 15.5 L15 13 L20 15 V19 C20 20 19 21 18 21 C10 21 3 14 3 6 C3 5 4 4 5 4 Z"/>',
+      landmark: '<line x1="3" y1="21" x2="21" y2="21"/><line x1="5" y1="21" x2="5" y2="10"/><line x1="19" y1="21" x2="19" y2="10"/><polygon points="12,3 21,9 3,9"/><line x1="9" y1="21" x2="9" y2="10"/><line x1="15" y1="21" x2="15" y2="10"/>',
+      shirt: '<path d="M8 4 L12 6 L16 4 L21 8 L18 11 L16 9.5 V20 H8 V9.5 L6 11 L3 8 Z"/>',
+      chat: '<path d="M4 5 H20 V15 H9 L5 19 V15 H4 Z"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="12" x2="13" y2="12"/>',
+      map: '<path d="M9 4 L3 6 V20 L9 18 L15 20 L21 18 V4 L15 6 L9 4 Z"/><line x1="9" y1="4" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="20"/>'
+    };
+    const ICONMAP = {
+      compass: 'compass', plane: 'plane', 'plane-landing': 'plane', 'train-front': 'train',
+      'bus-front': 'bus', bus: 'bus', 'car-taxi-front': 'car', 'bed-double': 'bed',
+      'map-pinned': 'pin', mountain: 'mountain', wallet: 'wallet', banknote: 'banknote',
+      coins: 'coins', 'credit-card': 'card', receipt: 'receipt', 'shield-plus': 'shield',
+      'shield-check': 'shield', 'phone-call': 'phone', cross: 'cross', landmark: 'landmark',
+      shirt: 'shirt', languages: 'chat', map: 'map'
+    };
+    function icon(key, size) {
+      size = size || 18;
+      const k = ICONMAP[key] || 'pin';
+      return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</svg>`;
+    }
+    document.getElementById('brandIcon').innerHTML = icon('compass', 18);
 
-<button class="drawer-trigger" id="drawerTrigger"></button>
-<div class="scrim" id="scrim"></div>
-<div class="drawer" id="drawer"><div class="drawer-handle"></div><div id="drawerContent"></div></div>
-
-<script>
-/* ============================================================
-   ICONS — small hand-rolled line-icon set (placeholder iconography
-   for the prototype; swap for the real icon system at build time)
-   ============================================================ */
-const ICONS = {
-  compass: '<circle cx="12" cy="12" r="9"/><path d="M14.5 9.5 L12 12 L9.5 14.5 L12 12 Z" fill="currentColor" stroke="none"/>',
-  plane: '<path d="M3 12 L21 4 L13 21 L11 13 L3 12 Z" fill="currentColor" stroke="none"/>',
-  train: '<rect x="6" y="4" width="12" height="14" rx="3"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="15" cy="20" r="1.4" fill="currentColor"/><line x1="6" y1="11" x2="18" y2="11"/>',
-  bus: '<rect x="4" y="5" width="16" height="12" rx="2"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="8" cy="19" r="1.4" fill="currentColor"/><circle cx="16" cy="19" r="1.4" fill="currentColor"/>',
-  car: '<path d="M4 16 L5.5 10 Q6 8 8 8 H16 Q18 8 18.5 10 L20 16"/><rect x="3" y="16" width="18" height="4" rx="1.5"/><circle cx="7.5" cy="20" r="1.4" fill="currentColor"/><circle cx="16.5" cy="20" r="1.4" fill="currentColor"/>',
-  bed: '<path d="M3 18 V9 Q3 7 5 7 H11 Q13 7 13 9 V13"/><path d="M13 13 H20 Q21 13 21 14 V18"/><line x1="3" y1="18" x2="21" y2="18"/><circle cx="7" cy="11" r="1.6"/>',
-  pin: '<path d="M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z"/><circle cx="12" cy="9" r="2.3"/>',
-  mountain: '<path d="M3 19 L9 8 L13 14 L16 10 L21 19 Z"/>',
-  wallet: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10 H21"/><circle cx="17" cy="14" r="1.3" fill="currentColor"/>',
-  banknote: '<rect x="2.5" y="7" width="19" height="10" rx="1.5"/><circle cx="12" cy="12" r="2.4"/>',
-  coins: '<circle cx="9" cy="10" r="6"/><circle cx="15" cy="14" r="6"/>',
-  card: '<rect x="2.5" y="5.5" width="19" height="13" rx="2"/><line x1="2.5" y1="10" x2="21.5" y2="10"/>',
-  receipt: '<path d="M6 3 H18 V20 L15.5 18 L13 20 L10.5 18 L8 20 L6 18 Z"/><line x1="8.5" y1="8" x2="15.5" y2="8"/><line x1="8.5" y1="12" x2="15.5" y2="12"/>',
-  shield: '<path d="M12 3 L19 6 V11 C19 16 16 19.5 12 21 C8 19.5 5 16 5 11 V6 Z"/>',
-  cross: '<circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>',
-  phone: '<path d="M5 4 H9 L11 9 L8.5 10.5 C9.5 13 11 14.5 13.5 15.5 L15 13 L20 15 V19 C20 20 19 21 18 21 C10 21 3 14 3 6 C3 5 4 4 5 4 Z"/>',
-  landmark: '<line x1="3" y1="21" x2="21" y2="21"/><line x1="5" y1="21" x2="5" y2="10"/><line x1="19" y1="21" x2="19" y2="10"/><polygon points="12,3 21,9 3,9"/><line x1="9" y1="21" x2="9" y2="10"/><line x1="15" y1="21" x2="15" y2="10"/>',
-  shirt: '<path d="M8 4 L12 6 L16 4 L21 8 L18 11 L16 9.5 V20 H8 V9.5 L6 11 L3 8 Z"/>',
-  chat: '<path d="M4 5 H20 V15 H9 L5 19 V15 H4 Z"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="12" x2="13" y2="12"/>',
-  map: '<path d="M9 4 L3 6 V20 L9 18 L15 20 L21 18 V4 L15 6 L9 4 Z"/><line x1="9" y1="4" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="20"/>'
-};
-const ICONMAP = {
-  compass:'compass', plane:'plane', 'plane-landing':'plane', 'train-front':'train',
-  'bus-front':'bus', bus:'bus', 'car-taxi-front':'car', 'bed-double':'bed',
-  'map-pinned':'pin', mountain:'mountain', wallet:'wallet', banknote:'banknote',
-  coins:'coins', 'credit-card':'card', receipt:'receipt', 'shield-plus':'shield',
-  'shield-check':'shield', 'phone-call':'phone', cross:'cross', landmark:'landmark',
-  shirt:'shirt', languages:'chat', map:'map'
-};
-function icon(key, size){
-  size = size || 18;
-  const k = ICONMAP[key] || 'pin';
-  return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</svg>`;
-}
-document.getElementById('brandIcon').innerHTML = icon('compass', 18);
-
-/* ============================================================
-   DATA — identical to content-tree.json (the PRD's source of truth)
-   ============================================================ */
-const TREE = {
-  "$schema": "visitor-information-tree.v1",
-  "id": "visitor-information",
-  "slug": "visitor-information",
-  "kind": "hub",
-  "icon": "compass",
-  "title": { "en": "Visitor Information", "id": "Informasi Wisatawan" },
-  "summary": {
-    "en": "Everything you need to plan, arrive, and get around Yogyakarta — organised the way a trip actually unfolds.",
-    "id": "Semua yang perlu Anda ketahui untuk merencanakan, tiba, dan berkeliling Yogyakarta — disusun sesuai alur perjalanan sesungguhnya."
-  },
-  "children": [
-    {
-      "id": "getting-to-jogja",
-      "slug": "getting-to-jogja",
-      "kind": "section",
-      "icon": "plane",
-      "title": { "en": "Getting to Jogja", "id": "Menuju Jogja" },
+    /* ============================================================
+       DATA — identical to content-tree.json (the PRD's source of truth)
+       ============================================================ */
+    const TREE = {
+      "$schema": "visitor-information-tree.v1",
+      "id": "visitor-information",
+      "slug": "visitor-information",
+      "kind": "hub",
+      "icon": "compass",
+      "title": { "en": "Visitor Information", "id": "Informasi Wisatawan" },
       "summary": {
-        "en": "Every way into the city: by air, rail, road, or sea.",
-        "id": "Semua jalur menuju kota: udara, kereta, darat, dan laut."
+        "en": "Everything you need to plan, arrive, and get around Yogyakarta — organised the way a trip actually unfolds.",
+        "id": "Semua yang perlu Anda ketahui untuk merencanakan, tiba, dan berkeliling Yogyakarta — disusun sesuai alur perjalanan sesungguhnya."
       },
-      "coverImage": "/images/visitor-info/getting-to-jogja.jpg",
       "children": [
         {
-          "id": "airports",
-          "slug": "airports",
+          "id": "getting-to-jogja",
+          "slug": "getting-to-jogja",
           "kind": "section",
-          "icon": "plane-landing",
-          "title": { "en": "Airports", "id": "Bandara" },
+          "icon": "plane",
+          "title": { "en": "Getting to Jogja", "id": "Menuju Jogja" },
           "summary": {
-            "en": "Yogyakarta is served by two airports — here's how each one works.",
-            "id": "Yogyakarta dilayani oleh dua bandara — berikut cara kerja masing-masing."
+            "en": "Every way into the city: by air, rail, road, or sea.",
+            "id": "Semua jalur menuju kota: udara, kereta, darat, dan laut."
           },
+          "coverImage": "/images/visitor-info/getting-to-jogja.jpg",
           "children": [
             {
-              "id": "airport-yia",
-              "slug": "yogyakarta-international-airport-yia",
-              "kind": "page",
+              "id": "airports",
+              "slug": "airports",
+              "kind": "section",
               "icon": "plane-landing",
-              "title": { "en": "Yogyakarta International Airport (YIA)", "id": "Bandara Internasional Yogyakarta (YIA)" },
+              "title": { "en": "Airports", "id": "Bandara" },
               "summary": {
-                "en": "The main gateway in Kulon Progo, with direct rail into the city.",
-                "id": "Gerbang utama di Kulon Progo, dengan kereta langsung ke pusat kota."
+                "en": "Yogyakarta is served by two airports — here's how each one works.",
+                "id": "Yogyakarta dilayani oleh dua bandara — berikut cara kerja masing-masing."
               },
-              "body": {
-                "en": "## Overview\nYIA (airport code: YIA) opened in 2019 and now handles almost all commercial flights to Yogyakarta, domestic and international.\n\n## Getting into the city\n- **Airport Rail**: direct service to Tugu Station, ~40 minutes.\n- **DAMRI shuttle bus**: connects to Malioboro and Prambanan.\n- **Ride-hailing**: pickup available from the designated zone on the ground floor.\n\n## Facilities\nPrayer rooms, nursing rooms, lounges, and a batik-themed retail corridor referencing local craft.",
-                "id": "## Ikhtisar\nYIA (kode bandara: YIA) dibuka pada 2019 dan kini melayani hampir seluruh penerbangan komersial ke Yogyakarta, domestik maupun internasional.\n\n## Menuju kota\n- **Kereta Bandara**: layanan langsung ke Stasiun Tugu, ±40 menit.\n- **Bus DAMRI**: terhubung ke Malioboro dan Prambanan.\n- **Ride-hailing**: penjemputan tersedia di zona khusus lantai dasar."
-              },
-              "meta": { "lastUpdated": "2026-06-01", "estReadMins": 4, "tags": ["airport", "transport"], "relatedPageIds": ["airport-jog", "by-train"] }
+              "children": [
+                {
+                  "id": "airport-yia",
+                  "slug": "yogyakarta-international-airport-yia",
+                  "kind": "page",
+                  "icon": "plane-landing",
+                  "title": { "en": "Yogyakarta International Airport (YIA)", "id": "Bandara Internasional Yogyakarta (YIA)" },
+                  "summary": {
+                    "en": "The main gateway in Kulon Progo, with direct rail into the city.",
+                    "id": "Gerbang utama di Kulon Progo, dengan kereta langsung ke pusat kota."
+                  },
+                  "body": {
+                    "en": "## Overview\nYIA (airport code: YIA) opened in 2019 and now handles almost all commercial flights to Yogyakarta, domestic and international.\n\n## Getting into the city\n- **Airport Rail**: direct service to Tugu Station, ~40 minutes.\n- **DAMRI shuttle bus**: connects to Malioboro and Prambanan.\n- **Ride-hailing**: pickup available from the designated zone on the ground floor.\n\n## Facilities\nPrayer rooms, nursing rooms, lounges, and a batik-themed retail corridor referencing local craft.",
+                    "id": "## Ikhtisar\nYIA (kode bandara: YIA) dibuka pada 2019 dan kini melayani hampir seluruh penerbangan komersial ke Yogyakarta, domestik maupun internasional.\n\n## Menuju kota\n- **Kereta Bandara**: layanan langsung ke Stasiun Tugu, ±40 menit.\n- **Bus DAMRI**: terhubung ke Malioboro dan Prambanan.\n- **Ride-hailing**: penjemputan tersedia di zona khusus lantai dasar."
+                  },
+                  "meta": { "lastUpdated": "2026-06-01", "estReadMins": 4, "tags": ["airport", "transport"], "relatedPageIds": ["airport-jog", "by-train"] }
+                },
+                {
+                  "id": "airport-jog",
+                  "slug": "adisutjipto-airport-jog",
+                  "kind": "page",
+                  "icon": "plane-landing",
+                  "title": { "en": "Adisutjipto Airport (JOG)", "id": "Bandara Adisutjipto (JOG)" },
+                  "summary": {
+                    "en": "The older in-city airport, now used for limited domestic routes.",
+                    "id": "Bandara lama di dalam kota, kini hanya melayani rute domestik terbatas."
+                  },
+                  "body": {
+                    "en": "## Overview\nJOG sits inside the city ring road and mainly handles a small number of domestic flights and military/charter traffic since YIA opened.\n\n## Getting into the city\nJust 10–15 minutes by car or ride-hailing to Malioboro.",
+                    "id": "## Ikhtisar\nJOG berada di dalam lingkar kota dan kini hanya melayani sejumlah kecil penerbangan domestik serta lalu lintas militer/charter sejak YIA beroperasi.\n\n## Menuju kota\nHanya 10–15 menit berkendara atau ride-hailing menuju Malioboro."
+                  },
+                  "meta": { "lastUpdated": "2026-05-12", "estReadMins": 3, "tags": ["airport", "transport"], "relatedPageIds": ["airport-yia"] }
+                }
+              ]
             },
             {
-              "id": "airport-jog",
-              "slug": "adisutjipto-airport-jog",
-              "kind": "page",
-              "icon": "plane-landing",
-              "title": { "en": "Adisutjipto Airport (JOG)", "id": "Bandara Adisutjipto (JOG)" },
-              "summary": {
-                "en": "The older in-city airport, now used for limited domestic routes.",
-                "id": "Bandara lama di dalam kota, kini hanya melayani rute domestik terbatas."
-              },
-              "body": {
-                "en": "## Overview\nJOG sits inside the city ring road and mainly handles a small number of domestic flights and military/charter traffic since YIA opened.\n\n## Getting into the city\nJust 10–15 minutes by car or ride-hailing to Malioboro.",
-                "id": "## Ikhtisar\nJOG berada di dalam lingkar kota dan kini hanya melayani sejumlah kecil penerbangan domestik serta lalu lintas militer/charter sejak YIA beroperasi.\n\n## Menuju kota\nHanya 10–15 menit berkendara atau ride-hailing menuju Malioboro."
-              },
-              "meta": { "lastUpdated": "2026-05-12", "estReadMins": 3, "tags": ["airport", "transport"], "relatedPageIds": ["airport-yia"] }
-            }
-          ]
-        },
-        {
-          "id": "by-train",
-          "slug": "by-train",
-          "kind": "page",
-          "icon": "train-front",
-          "title": { "en": "By Train", "id": "Dengan Kereta Api" },
-          "summary": {
-            "en": "Scenic rail routes from Jakarta, Bandung, and Surabaya into Tugu Station.",
-            "id": "Rute kereta yang indah dari Jakarta, Bandung, dan Surabaya menuju Stasiun Tugu."
-          },
-          "body": {
-            "en": "## Main routes\nTugu Station is the primary stop, with services from Jakarta (Gambir), Bandung, and Surabaya on multiple daily schedules.\n\n## Booking\nBook via KAI Access at least a few days ahead during peak holiday seasons.",
-            "id": "## Rute utama\nStasiun Tugu adalah pemberhentian utama, dengan layanan dari Jakarta (Gambir), Bandung, dan Surabaya beberapa kali sehari.\n\n## Pemesanan\nPesan melalui KAI Access, terutama beberapa hari sebelumnya saat musim liburan."
-          },
-          "meta": { "lastUpdated": "2026-04-20", "estReadMins": 3, "tags": ["train", "transport"], "relatedPageIds": ["airport-yia"] }
-        },
-        {
-          "id": "by-bus-car",
-          "slug": "by-bus-and-car",
-          "kind": "page",
-          "icon": "bus-front",
-          "title": { "en": "By Bus & Car", "id": "Dengan Bus & Mobil" },
-          "summary": {
-            "en": "Intercity buses and toll roads connecting Jogja to the rest of Java.",
-            "id": "Bus antarkota dan jalan tol yang menghubungkan Jogja dengan wilayah lain di Jawa."
-          },
-          "body": {
-            "en": "## Intercity buses\nOperators depart from Jakarta, Bandung, and Surabaya bus terminals, typically overnight.\n\n## By car\nThe Trans-Java toll road connects Jogja to Semarang and Solo, cutting travel time significantly versus arterial roads.",
-            "id": "## Bus antarkota\nOperator berangkat dari terminal bus Jakarta, Bandung, dan Surabaya, umumnya perjalanan malam hari.\n\n## Dengan mobil\nJalan tol Trans-Jawa menghubungkan Jogja dengan Semarang dan Solo, memangkas waktu tempuh dibanding jalur arteri."
-          },
-          "meta": { "lastUpdated": "2026-03-02", "estReadMins": 3, "tags": ["bus", "car", "transport"], "relatedPageIds": [] }
-        }
-      ]
-    },
-    {
-      "id": "getting-around",
-      "slug": "getting-around",
-      "kind": "section",
-      "icon": "map",
-      "title": { "en": "Getting Around", "id": "Berkeliling Kota" },
-      "summary": {
-        "en": "Trans Jogja, trains, ride-hailing, and rentals for exploring once you've arrived.",
-        "id": "Trans Jogja, kereta, ride-hailing, dan sewa kendaraan untuk berkeliling setelah tiba."
-      },
-      "coverImage": "/images/visitor-info/getting-around.jpg",
-      "children": [
-        {
-          "id": "public-transport",
-          "slug": "public-transport",
-          "kind": "section",
-          "icon": "bus",
-          "title": { "en": "Public Transport", "id": "Transportasi Umum" },
-          "summary": {
-            "en": "Buses and rail within the city and toward nearby sites.",
-            "id": "Bus dan kereta di dalam kota serta menuju destinasi terdekat."
-          },
-          "children": [
-            {
-              "id": "trans-jogja",
-              "slug": "trans-jogja-bus",
-              "kind": "page",
-              "icon": "bus",
-              "title": { "en": "Trans Jogja Bus", "id": "Bus Trans Jogja" },
-              "summary": { "en": "The city's low-cost bus network, tap-to-pay by card.", "id": "Jaringan bus murah kota, bayar dengan kartu tap." },
-              "body": {
-                "en": "## How it works\nFlat fare, tap-in with a Trans Jogja or compatible e-money card at the shelter, not on board.\n\n## Useful lines\nRoutes reach Malioboro, the Kraton area, and UGM; check the current route map, as lines are periodically renumbered.",
-                "id": "## Cara kerja\nTarif rata, tap masuk menggunakan kartu Trans Jogja atau e-money yang kompatibel di halte, bukan di dalam bus.\n\n## Rute berguna\nRute menjangkau Malioboro, area Kraton, dan UGM; periksa peta rute terkini karena nomor rute berubah secara berkala."
-              },
-              "meta": { "lastUpdated": "2026-02-14", "estReadMins": 3, "tags": ["bus", "public-transport"], "relatedPageIds": [] }
-            },
-            {
-              "id": "krl-train",
-              "slug": "commuter-rail",
+              "id": "by-train",
+              "slug": "by-train",
               "kind": "page",
               "icon": "train-front",
-              "title": { "en": "Commuter Rail", "id": "Kereta Rel Listrik" },
-              "summary": { "en": "Local rail connecting Jogja to Solo and Kutoarjo.", "id": "Kereta lokal yang menghubungkan Jogja dengan Solo dan Kutoarjo." },
-              "body": {
-                "en": "## Route\nCommuter rail runs between Palur (Solo) and Kutoarjo via Yogyakarta, useful for day trips.\n\n## Tickets\nBuy at station kiosks or via the KRL access app.",
-                "id": "## Rute\nKereta komuter beroperasi antara Palur (Solo) dan Kutoarjo melalui Yogyakarta, cocok untuk perjalanan sehari.\n\n## Tiket\nBeli di loket stasiun atau melalui aplikasi KRL access."
+              "title": { "en": "By Train", "id": "Dengan Kereta Api" },
+              "summary": {
+                "en": "Scenic rail routes from Jakarta, Bandung, and Surabaya into Tugu Station.",
+                "id": "Rute kereta yang indah dari Jakarta, Bandung, dan Surabaya menuju Stasiun Tugu."
               },
-              "meta": { "lastUpdated": "2026-01-30", "estReadMins": 2, "tags": ["train", "public-transport"], "relatedPageIds": [] }
+              "body": {
+                "en": "## Main routes\nTugu Station is the primary stop, with services from Jakarta (Gambir), Bandung, and Surabaya on multiple daily schedules.\n\n## Booking\nBook via KAI Access at least a few days ahead during peak holiday seasons.",
+                "id": "## Rute utama\nStasiun Tugu adalah pemberhentian utama, dengan layanan dari Jakarta (Gambir), Bandung, dan Surabaya beberapa kali sehari.\n\n## Pemesanan\nPesan melalui KAI Access, terutama beberapa hari sebelumnya saat musim liburan."
+              },
+              "meta": { "lastUpdated": "2026-04-20", "estReadMins": 3, "tags": ["train", "transport"], "relatedPageIds": ["airport-yia"] }
+            },
+            {
+              "id": "by-bus-car",
+              "slug": "by-bus-and-car",
+              "kind": "page",
+              "icon": "bus-front",
+              "title": { "en": "By Bus & Car", "id": "Dengan Bus & Mobil" },
+              "summary": {
+                "en": "Intercity buses and toll roads connecting Jogja to the rest of Java.",
+                "id": "Bus antarkota dan jalan tol yang menghubungkan Jogja dengan wilayah lain di Jawa."
+              },
+              "body": {
+                "en": "## Intercity buses\nOperators depart from Jakarta, Bandung, and Surabaya bus terminals, typically overnight.\n\n## By car\nThe Trans-Java toll road connects Jogja to Semarang and Solo, cutting travel time significantly versus arterial roads.",
+                "id": "## Bus antarkota\nOperator berangkat dari terminal bus Jakarta, Bandung, dan Surabaya, umumnya perjalanan malam hari.\n\n## Dengan mobil\nJalan tol Trans-Jawa menghubungkan Jogja dengan Semarang dan Solo, memangkas waktu tempuh dibanding jalur arteri."
+              },
+              "meta": { "lastUpdated": "2026-03-02", "estReadMins": 3, "tags": ["bus", "car", "transport"], "relatedPageIds": [] }
             }
           ]
         },
         {
-          "id": "ride-hailing",
-          "slug": "ride-hailing-and-taxis",
-          "kind": "page",
-          "icon": "car-taxi-front",
-          "title": { "en": "Ride-Hailing & Taxis", "id": "Ride-Hailing & Taksi" },
-          "summary": { "en": "App-based rides and metered taxis, and where each is and isn't allowed to stop.", "id": "Ride-hailing berbasis aplikasi dan taksi argo, serta area yang boleh dan tidak boleh untuk berhenti." },
-          "body": {
-            "en": "## Apps\nBoth major ride-hailing apps operate city-wide; fares are metered by the app, not negotiated.\n\n## Pickup zones\nSome tourist areas restrict where app-based rides can stop — look for the marked pickup point rather than the exact pin.",
-            "id": "## Aplikasi\nKedua aplikasi ride-hailing besar beroperasi di seluruh kota; tarif diatur otomatis oleh aplikasi, bukan tawar-menawar.\n\n## Zona penjemputan\nBeberapa kawasan wisata membatasi titik penjemputan ride-hailing — cari titik jemput yang ditandai, bukan pin lokasi persis."
-          },
-          "meta": { "lastUpdated": "2026-05-02", "estReadMins": 2, "tags": ["taxi", "ride-hailing"], "relatedPageIds": [] }
-        }
-      ]
-    },
-    {
-      "id": "where-to-stay",
-      "slug": "where-to-stay",
-      "kind": "section",
-      "icon": "bed-double",
-      "title": { "en": "Where to Stay", "id": "Tempat Menginap" },
-      "summary": { "en": "Neighbourhoods and budget tiers to help you pick a base.", "id": "Kawasan dan tingkatan anggaran untuk membantu memilih tempat menginap." },
-      "coverImage": "/images/visitor-info/where-to-stay.jpg",
-      "children": [
-        {
-          "id": "by-area",
-          "slug": "by-area",
+          "id": "getting-around",
+          "slug": "getting-around",
           "kind": "section",
-          "icon": "map-pinned",
-          "title": { "en": "By Area", "id": "Berdasarkan Kawasan" },
-          "summary": { "en": "Three very different bases for very different trips.", "id": "Tiga kawasan berbeda untuk gaya perjalanan yang berbeda." },
+          "icon": "map",
+          "title": { "en": "Getting Around", "id": "Berkeliling Kota" },
+          "summary": {
+            "en": "Trans Jogja, trains, ride-hailing, and rentals for exploring once you've arrived.",
+            "id": "Trans Jogja, kereta, ride-hailing, dan sewa kendaraan untuk berkeliling setelah tiba."
+          },
+          "coverImage": "/images/visitor-info/getting-around.jpg",
           "children": [
             {
-              "id": "malioboro-area",
-              "slug": "malioboro-and-city-center",
-              "kind": "page",
-              "icon": "map-pinned",
-              "title": { "en": "Malioboro & City Center", "id": "Malioboro & Pusat Kota" },
-              "summary": { "en": "Walkable, central, and close to the Kraton.", "id": "Mudah dijangkau jalan kaki, sentral, dekat Kraton." },
-              "body": { "en": "The classic first-timer base — Malioboro Street, the Kraton, and Taman Sari are all within an easy walk or short becak ride.", "id": "Kawasan klasik untuk pengunjung pertama kali — Jalan Malioboro, Kraton, dan Taman Sari dapat dijangkau dengan berjalan kaki atau becak singkat." },
-              "meta": { "lastUpdated": "2026-04-11", "estReadMins": 2, "tags": ["accommodation"], "relatedPageIds": [] }
+              "id": "public-transport",
+              "slug": "public-transport",
+              "kind": "section",
+              "icon": "bus",
+              "title": { "en": "Public Transport", "id": "Transportasi Umum" },
+              "summary": {
+                "en": "Buses and rail within the city and toward nearby sites.",
+                "id": "Bus dan kereta di dalam kota serta menuju destinasi terdekat."
+              },
+              "children": [
+                {
+                  "id": "trans-jogja",
+                  "slug": "trans-jogja-bus",
+                  "kind": "page",
+                  "icon": "bus",
+                  "title": { "en": "Trans Jogja Bus", "id": "Bus Trans Jogja" },
+                  "summary": { "en": "The city's low-cost bus network, tap-to-pay by card.", "id": "Jaringan bus murah kota, bayar dengan kartu tap." },
+                  "body": {
+                    "en": "## How it works\nFlat fare, tap-in with a Trans Jogja or compatible e-money card at the shelter, not on board.\n\n## Useful lines\nRoutes reach Malioboro, the Kraton area, and UGM; check the current route map, as lines are periodically renumbered.",
+                    "id": "## Cara kerja\nTarif rata, tap masuk menggunakan kartu Trans Jogja atau e-money yang kompatibel di halte, bukan di dalam bus.\n\n## Rute berguna\nRute menjangkau Malioboro, area Kraton, dan UGM; periksa peta rute terkini karena nomor rute berubah secara berkala."
+                  },
+                  "meta": { "lastUpdated": "2026-02-14", "estReadMins": 3, "tags": ["bus", "public-transport"], "relatedPageIds": [] }
+                },
+                {
+                  "id": "krl-train",
+                  "slug": "commuter-rail",
+                  "kind": "page",
+                  "icon": "train-front",
+                  "title": { "en": "Commuter Rail", "id": "Kereta Rel Listrik" },
+                  "summary": { "en": "Local rail connecting Jogja to Solo and Kutoarjo.", "id": "Kereta lokal yang menghubungkan Jogja dengan Solo dan Kutoarjo." },
+                  "body": {
+                    "en": "## Route\nCommuter rail runs between Palur (Solo) and Kutoarjo via Yogyakarta, useful for day trips.\n\n## Tickets\nBuy at station kiosks or via the KRL access app.",
+                    "id": "## Rute\nKereta komuter beroperasi antara Palur (Solo) dan Kutoarjo melalui Yogyakarta, cocok untuk perjalanan sehari.\n\n## Tiket\nBeli di loket stasiun atau melalui aplikasi KRL access."
+                  },
+                  "meta": { "lastUpdated": "2026-01-30", "estReadMins": 2, "tags": ["train", "public-transport"], "relatedPageIds": [] }
+                }
+              ]
             },
             {
-              "id": "prawirotaman-area",
-              "slug": "prawirotaman",
+              "id": "ride-hailing",
+              "slug": "ride-hailing-and-taxis",
               "kind": "page",
-              "icon": "map-pinned",
-              "title": { "en": "Prawirotaman", "id": "Prawirotaman" },
-              "summary": { "en": "A quieter, cafe-dense area popular with longer-stay travellers.", "id": "Kawasan yang lebih tenang, banyak kafe, populer untuk perjalanan lebih lama." },
-              "body": { "en": "South of the Kraton, known for guesthouses, cafes, and a slower pace than Malioboro.", "id": "Di selatan Kraton, dikenal dengan guesthouse, kafe, dan suasana yang lebih santai dibanding Malioboro." },
-              "meta": { "lastUpdated": "2026-03-18", "estReadMins": 2, "tags": ["accommodation"], "relatedPageIds": [] }
-            },
-            {
-              "id": "kaliurang-area",
-              "slug": "kaliurang-and-merapi-slopes",
-              "kind": "page",
-              "icon": "mountain",
-              "title": { "en": "Kaliurang & Slopes of Merapi", "id": "Kaliurang & Lereng Merapi" },
-              "summary": { "en": "Cooler air and mountain views, an hour from the city center.", "id": "Udara lebih sejuk dan pemandangan gunung, sekitar satu jam dari pusat kota." },
-              "body": { "en": "A good base for travellers prioritising nature and Merapi tours over city nightlife.", "id": "Basis yang baik bagi pelancong yang mengutamakan alam dan tur Merapi dibanding kehidupan malam kota." },
-              "meta": { "lastUpdated": "2026-02-25", "estReadMins": 2, "tags": ["accommodation", "nature"], "relatedPageIds": [] }
+              "icon": "car-taxi-front",
+              "title": { "en": "Ride-Hailing & Taxis", "id": "Ride-Hailing & Taksi" },
+              "summary": { "en": "App-based rides and metered taxis, and where each is and isn't allowed to stop.", "id": "Ride-hailing berbasis aplikasi dan taksi argo, serta area yang boleh dan tidak boleh untuk berhenti." },
+              "body": {
+                "en": "## Apps\nBoth major ride-hailing apps operate city-wide; fares are metered by the app, not negotiated.\n\n## Pickup zones\nSome tourist areas restrict where app-based rides can stop — look for the marked pickup point rather than the exact pin.",
+                "id": "## Aplikasi\nKedua aplikasi ride-hailing besar beroperasi di seluruh kota; tarif diatur otomatis oleh aplikasi, bukan tawar-menawar.\n\n## Zona penjemputan\nBeberapa kawasan wisata membatasi titik penjemputan ride-hailing — cari titik jemput yang ditandai, bukan pin lokasi persis."
+              },
+              "meta": { "lastUpdated": "2026-05-02", "estReadMins": 2, "tags": ["taxi", "ride-hailing"], "relatedPageIds": [] }
             }
           ]
         },
         {
-          "id": "by-budget",
-          "slug": "by-budget",
-          "kind": "page",
-          "icon": "wallet",
-          "title": { "en": "By Budget", "id": "Berdasarkan Anggaran" },
-          "summary": { "en": "What to expect at backpacker, mid-range, and luxury price points.", "id": "Gambaran harga untuk backpacker, kelas menengah, dan mewah." },
-          "body": { "en": "Rough nightly ranges from hostel dorms through boutique hotels, with notes on what changes at each tier.", "id": "Kisaran harga per malam mulai dari dorm hostel hingga hotel butik, disertai catatan perbedaan di tiap tingkatan." },
-          "meta": { "lastUpdated": "2026-04-30", "estReadMins": 3, "tags": ["accommodation", "budget"], "relatedPageIds": [] }
-        }
-      ]
-    },
-    {
-      "id": "money-and-costs",
-      "slug": "money-and-costs",
-      "kind": "section",
-      "icon": "banknote",
-      "title": { "en": "Money & Costs", "id": "Uang & Biaya" },
-      "summary": { "en": "Currency, cards, and what a typical day costs.", "id": "Mata uang, kartu, dan perkiraan biaya harian." },
-      "coverImage": "/images/visitor-info/money-and-costs.jpg",
-      "children": [
-        {
-          "id": "currency-exchange",
-          "slug": "currency-and-exchange",
-          "kind": "page",
-          "icon": "coins",
-          "title": { "en": "Currency & Exchange", "id": "Mata Uang & Penukaran" },
-          "summary": { "en": "Indonesian Rupiah basics and where to change money safely.", "id": "Dasar Rupiah Indonesia dan tempat aman menukar uang." },
-          "body": { "en": "Rupiah (IDR) only; use licensed moneychangers (look for the Bank Indonesia authorisation sticker) rather than street rates.", "id": "Hanya Rupiah (IDR); gunakan money changer berizin (cari stiker izin Bank Indonesia), bukan kurs jalanan." },
-          "meta": { "lastUpdated": "2026-05-20", "estReadMins": 2, "tags": ["money"], "relatedPageIds": ["atms-digital-payments"] }
+          "id": "where-to-stay",
+          "slug": "where-to-stay",
+          "kind": "section",
+          "icon": "bed-double",
+          "title": { "en": "Where to Stay", "id": "Tempat Menginap" },
+          "summary": { "en": "Neighbourhoods and budget tiers to help you pick a base.", "id": "Kawasan dan tingkatan anggaran untuk membantu memilih tempat menginap." },
+          "coverImage": "/images/visitor-info/public-facility-IMG-00036-w2000.jpg",
+          "children": [
+            {
+              "id": "by-area",
+              "slug": "by-area",
+              "kind": "section",
+              "icon": "map-pinned",
+              "title": { "en": "By Area", "id": "Berdasarkan Kawasan" },
+              "summary": { "en": "Three very different bases for very different trips.", "id": "Tiga kawasan berbeda untuk gaya perjalanan yang berbeda." },
+              "children": [
+                {
+                  "id": "malioboro-area",
+                  "slug": "malioboro-and-city-center",
+                  "kind": "page",
+                  "icon": "map-pinned",
+                  "title": { "en": "Malioboro & City Center", "id": "Malioboro & Pusat Kota" },
+                  "summary": { "en": "Walkable, central, and close to the Kraton.", "id": "Mudah dijangkau jalan kaki, sentral, dekat Kraton." },
+                  "body": { "en": "The classic first-timer base — Malioboro Street, the Kraton, and Taman Sari are all within an easy walk or short becak ride.", "id": "Kawasan klasik untuk pengunjung pertama kali — Jalan Malioboro, Kraton, dan Taman Sari dapat dijangkau dengan berjalan kaki atau becak singkat." },
+                  "meta": { "lastUpdated": "2026-04-11", "estReadMins": 2, "tags": ["accommodation"], "relatedPageIds": [] }
+                },
+                {
+                  "id": "prawirotaman-area",
+                  "slug": "prawirotaman",
+                  "kind": "page",
+                  "icon": "map-pinned",
+                  "title": { "en": "Prawirotaman", "id": "Prawirotaman" },
+                  "summary": { "en": "A quieter, cafe-dense area popular with longer-stay travellers.", "id": "Kawasan yang lebih tenang, banyak kafe, populer untuk perjalanan lebih lama." },
+                  "body": { "en": "South of the Kraton, known for guesthouses, cafes, and a slower pace than Malioboro.", "id": "Di selatan Kraton, dikenal dengan guesthouse, kafe, dan suasana yang lebih santai dibanding Malioboro." },
+                  "meta": { "lastUpdated": "2026-03-18", "estReadMins": 2, "tags": ["accommodation"], "relatedPageIds": [] }
+                },
+                {
+                  "id": "kaliurang-area",
+                  "slug": "kaliurang-and-merapi-slopes",
+                  "kind": "page",
+                  "icon": "mountain",
+                  "title": { "en": "Kaliurang & Slopes of Merapi", "id": "Kaliurang & Lereng Merapi" },
+                  "summary": { "en": "Cooler air and mountain views, an hour from the city center.", "id": "Udara lebih sejuk dan pemandangan gunung, sekitar satu jam dari pusat kota." },
+                  "body": { "en": "A good base for travellers prioritising nature and Merapi tours over city nightlife.", "id": "Basis yang baik bagi pelancong yang mengutamakan alam dan tur Merapi dibanding kehidupan malam kota." },
+                  "meta": { "lastUpdated": "2026-02-25", "estReadMins": 2, "tags": ["accommodation", "nature"], "relatedPageIds": [] }
+                }
+              ]
+            },
+            {
+              "id": "by-budget",
+              "slug": "by-budget",
+              "kind": "page",
+              "icon": "wallet",
+              "title": { "en": "By Budget", "id": "Berdasarkan Anggaran" },
+              "summary": { "en": "What to expect at backpacker, mid-range, and luxury price points.", "id": "Gambaran harga untuk backpacker, kelas menengah, dan mewah." },
+              "body": { "en": "Rough nightly ranges from hostel dorms through boutique hotels, with notes on what changes at each tier.", "id": "Kisaran harga per malam mulai dari dorm hostel hingga hotel butik, disertai catatan perbedaan di tiap tingkatan." },
+              "meta": { "lastUpdated": "2026-04-30", "estReadMins": 3, "tags": ["accommodation", "budget"], "relatedPageIds": [] }
+            }
+          ]
         },
         {
-          "id": "atms-digital-payments",
-          "slug": "atms-and-digital-payments",
-          "kind": "page",
-          "icon": "credit-card",
-          "title": { "en": "ATMs & Digital Payments", "id": "ATM & Pembayaran Digital" },
-          "summary": { "en": "Card acceptance, ATM withdrawal limits, and QRIS.", "id": "Penerimaan kartu, batas tarik tunai ATM, dan QRIS." },
-          "body": { "en": "QRIS is widely accepted even at small vendors; carry some cash for markets and becak/andong rides.", "id": "QRIS diterima luas bahkan di pedagang kecil; tetap bawa uang tunai untuk pasar dan naik becak/andong." },
-          "meta": { "lastUpdated": "2026-05-20", "estReadMins": 2, "tags": ["money", "digital-payments"], "relatedPageIds": ["currency-exchange"] }
+          "id": "money-and-costs",
+          "slug": "money-and-costs",
+          "kind": "section",
+          "icon": "banknote",
+          "title": { "en": "Money & Costs", "id": "Uang & Biaya" },
+          "summary": { "en": "Currency, cards, and what a typical day costs.", "id": "Mata uang, kartu, dan perkiraan biaya harian." },
+          "coverImage": "/images/visitor-info/money-and-costs.jpg",
+          "children": [
+            {
+              "id": "currency-exchange",
+              "slug": "currency-and-exchange",
+              "kind": "page",
+              "icon": "coins",
+              "title": { "en": "Currency & Exchange", "id": "Mata Uang & Penukaran" },
+              "summary": { "en": "Indonesian Rupiah basics and where to change money safely.", "id": "Dasar Rupiah Indonesia dan tempat aman menukar uang." },
+              "body": { "en": "Rupiah (IDR) only; use licensed moneychangers (look for the Bank Indonesia authorisation sticker) rather than street rates.", "id": "Hanya Rupiah (IDR); gunakan money changer berizin (cari stiker izin Bank Indonesia), bukan kurs jalanan." },
+              "meta": { "lastUpdated": "2026-05-20", "estReadMins": 2, "tags": ["money"], "relatedPageIds": ["atms-digital-payments"] }
+            },
+            {
+              "id": "atms-digital-payments",
+              "slug": "atms-and-digital-payments",
+              "kind": "page",
+              "icon": "credit-card",
+              "title": { "en": "ATMs & Digital Payments", "id": "ATM & Pembayaran Digital" },
+              "summary": { "en": "Card acceptance, ATM withdrawal limits, and QRIS.", "id": "Penerimaan kartu, batas tarik tunai ATM, dan QRIS." },
+              "body": { "en": "QRIS is widely accepted even at small vendors; carry some cash for markets and becak/andong rides.", "id": "QRIS diterima luas bahkan di pedagang kecil; tetap bawa uang tunai untuk pasar dan naik becak/andong." },
+              "meta": { "lastUpdated": "2026-05-20", "estReadMins": 2, "tags": ["money", "digital-payments"], "relatedPageIds": ["currency-exchange"] }
+            },
+            {
+              "id": "daily-budget",
+              "slug": "typical-daily-budget",
+              "kind": "page",
+              "icon": "receipt",
+              "title": { "en": "Typical Daily Budget", "id": "Perkiraan Anggaran Harian" },
+              "summary": { "en": "Rough daily spend across backpacker, mid-range, and comfortable trips.", "id": "Perkiraan pengeluaran harian untuk gaya backpacker, menengah, dan nyaman." },
+              "body": { "en": "A range covering food, local transport, and one paid attraction per day at each tier.", "id": "Kisaran mencakup makan, transportasi lokal, dan satu tempat wisata berbayar per hari di tiap tingkatan." },
+              "meta": { "lastUpdated": "2026-04-05", "estReadMins": 2, "tags": ["money", "budget"], "relatedPageIds": [] }
+            }
+          ]
         },
         {
-          "id": "daily-budget",
-          "slug": "typical-daily-budget",
-          "kind": "page",
-          "icon": "receipt",
-          "title": { "en": "Typical Daily Budget", "id": "Perkiraan Anggaran Harian" },
-          "summary": { "en": "Rough daily spend across backpacker, mid-range, and comfortable trips.", "id": "Perkiraan pengeluaran harian untuk gaya backpacker, menengah, dan nyaman." },
-          "body": { "en": "A range covering food, local transport, and one paid attraction per day at each tier.", "id": "Kisaran mencakup makan, transportasi lokal, dan satu tempat wisata berbayar per hari di tiap tingkatan." },
-          "meta": { "lastUpdated": "2026-04-05", "estReadMins": 2, "tags": ["money", "budget"], "relatedPageIds": [] }
-        }
-      ]
-    },
-    {
-      "id": "health-and-safety",
-      "slug": "health-and-safety",
-      "kind": "section",
-      "icon": "shield-plus",
-      "title": { "en": "Health & Safety", "id": "Kesehatan & Keamanan" },
-      "summary": { "en": "Emergency numbers, clinics, and practical safety notes.", "id": "Nomor darurat, klinik, dan catatan keamanan praktis." },
-      "coverImage": "/images/visitor-info/health-and-safety.jpg",
-      "children": [
-        {
-          "id": "emergency-numbers",
-          "slug": "emergency-numbers",
-          "kind": "page",
-          "icon": "phone-call",
-          "title": { "en": "Emergency Numbers", "id": "Nomor Darurat" },
-          "summary": { "en": "Who to call for police, ambulance, and tourist assistance.", "id": "Nomor yang dihubungi untuk polisi, ambulans, dan bantuan wisatawan." },
-          "body": { "en": "National emergency line 112 covers police, fire, and ambulance dispatch; the regional tourism office also runs a visitor hotline.", "id": "Saluran darurat nasional 112 mencakup polisi, pemadam kebakaran, dan ambulans; dinas pariwisata daerah juga memiliki hotline wisatawan." },
-          "meta": { "lastUpdated": "2026-06-10", "estReadMins": 1, "tags": ["safety", "emergency"], "relatedPageIds": [] }
+          "id": "health-and-safety",
+          "slug": "health-and-safety",
+          "kind": "section",
+          "icon": "shield-plus",
+          "title": { "en": "Health & Safety", "id": "Kesehatan & Keamanan" },
+          "summary": { "en": "Emergency numbers, clinics, and practical safety notes.", "id": "Nomor darurat, klinik, dan catatan keamanan praktis." },
+          "coverImage": "/images/visitor-info/health-and-safety.jpg",
+          "children": [
+            {
+              "id": "emergency-numbers",
+              "slug": "emergency-numbers",
+              "kind": "page",
+              "icon": "phone-call",
+              "title": { "en": "Emergency Numbers", "id": "Nomor Darurat" },
+              "summary": { "en": "Who to call for police, ambulance, and tourist assistance.", "id": "Nomor yang dihubungi untuk polisi, ambulans, dan bantuan wisatawan." },
+              "body": { "en": "National emergency line 112 covers police, fire, and ambulance dispatch; the regional tourism office also runs a visitor hotline.", "id": "Saluran darurat nasional 112 mencakup polisi, pemadam kebakaran, dan ambulans; dinas pariwisata daerah juga memiliki hotline wisatawan." },
+              "meta": { "lastUpdated": "2026-06-10", "estReadMins": 1, "tags": ["safety", "emergency"], "relatedPageIds": [] }
+            },
+            {
+              "id": "health-facilities",
+              "slug": "health-facilities-and-pharmacies",
+              "kind": "page",
+              "icon": "cross",
+              "title": { "en": "Health Facilities & Pharmacies", "id": "Fasilitas Kesehatan & Apotek" },
+              "summary": { "en": "Hospitals with international-standard care and 24-hour pharmacies.", "id": "Rumah sakit dengan layanan standar internasional dan apotek 24 jam." },
+              "body": { "en": "Several private hospitals in the city center offer English-speaking staff; note which take international insurance directly.", "id": "Beberapa rumah sakit swasta di pusat kota memiliki staf berbahasa Inggris; perhatikan mana yang menerima asuransi internasional langsung." },
+              "meta": { "lastUpdated": "2026-03-28", "estReadMins": 2, "tags": ["health"], "relatedPageIds": [] }
+            },
+            {
+              "id": "travel-insurance",
+              "slug": "travel-insurance-tips",
+              "kind": "page",
+              "icon": "shield-check",
+              "title": { "en": "Travel Insurance Tips", "id": "Tips Asuransi Perjalanan" },
+              "summary": { "en": "What to check before you land, especially for Merapi treks and diving.", "id": "Yang perlu diperiksa sebelum tiba, terutama untuk trekking Merapi dan menyelam." },
+              "body": { "en": "Confirm your policy covers volcano trekking and adventure activities, which standard plans sometimes exclude.", "id": "Pastikan polis Anda mencakup trekking gunung berapi dan aktivitas petualangan, yang terkadang dikecualikan pada paket standar." },
+              "meta": { "lastUpdated": "2026-02-02", "estReadMins": 2, "tags": ["safety", "insurance"], "relatedPageIds": [] }
+            }
+          ]
         },
         {
-          "id": "health-facilities",
-          "slug": "health-facilities-and-pharmacies",
-          "kind": "page",
-          "icon": "cross",
-          "title": { "en": "Health Facilities & Pharmacies", "id": "Fasilitas Kesehatan & Apotek" },
-          "summary": { "en": "Hospitals with international-standard care and 24-hour pharmacies.", "id": "Rumah sakit dengan layanan standar internasional dan apotek 24 jam." },
-          "body": { "en": "Several private hospitals in the city center offer English-speaking staff; note which take international insurance directly.", "id": "Beberapa rumah sakit swasta di pusat kota memiliki staf berbahasa Inggris; perhatikan mana yang menerima asuransi internasional langsung." },
-          "meta": { "lastUpdated": "2026-03-28", "estReadMins": 2, "tags": ["health"], "relatedPageIds": [] }
-        },
-        {
-          "id": "travel-insurance",
-          "slug": "travel-insurance-tips",
-          "kind": "page",
-          "icon": "shield-check",
-          "title": { "en": "Travel Insurance Tips", "id": "Tips Asuransi Perjalanan" },
-          "summary": { "en": "What to check before you land, especially for Merapi treks and diving.", "id": "Yang perlu diperiksa sebelum tiba, terutama untuk trekking Merapi dan menyelam." },
-          "body": { "en": "Confirm your policy covers volcano trekking and adventure activities, which standard plans sometimes exclude.", "id": "Pastikan polis Anda mencakup trekking gunung berapi dan aktivitas petualangan, yang terkadang dikecualikan pada paket standar." },
-          "meta": { "lastUpdated": "2026-02-02", "estReadMins": 2, "tags": ["safety", "insurance"], "relatedPageIds": [] }
-        }
-      ]
-    },
-    {
-      "id": "culture-and-etiquette",
-      "slug": "culture-and-etiquette",
-      "kind": "section",
-      "icon": "landmark",
-      "title": { "en": "Culture & Etiquette", "id": "Budaya & Etika" },
-      "summary": { "en": "Local customs, dress code, and a handful of useful phrases.", "id": "Adat lokal, kode berpakaian, dan beberapa frasa yang berguna." },
-      "coverImage": "/images/visitor-info/culture-and-etiquette.jpg",
-      "children": [
-        {
-          "id": "local-customs",
-          "slug": "local-customs-and-dress-code",
-          "kind": "page",
-          "icon": "shirt",
-          "title": { "en": "Local Customs & Dress Code", "id": "Adat Lokal & Kode Berpakaian" },
-          "summary": { "en": "What's expected at the Kraton, mosques, and everyday interactions.", "id": "Yang diharapkan saat mengunjungi Kraton, masjid, dan interaksi sehari-hari." },
-          "body": { "en": "Modest dress is expected inside the Kraton and religious sites; sarongs are often available to borrow at the entrance.", "id": "Berpakaian sopan diharapkan di dalam Kraton dan tempat ibadah; sarung biasanya tersedia untuk dipinjam di pintu masuk." },
-          "meta": { "lastUpdated": "2026-01-15", "estReadMins": 2, "tags": ["culture"], "relatedPageIds": ["visiting-temples-palaces"] }
-        },
-        {
-          "id": "visiting-temples-palaces",
-          "slug": "visiting-temples-and-palaces",
-          "kind": "page",
+          "id": "culture-and-etiquette",
+          "slug": "culture-and-etiquette",
+          "kind": "section",
           "icon": "landmark",
-          "title": { "en": "Visiting Temples & Palaces", "id": "Mengunjungi Candi & Keraton" },
-          "summary": { "en": "Etiquette and timing tips for Borobudur, Prambanan, and the Kraton.", "id": "Etika dan waktu terbaik mengunjungi Borobudur, Prambanan, dan Kraton." },
-          "body": { "en": "Arrive early to avoid both crowds and midday heat; some inner courtyards close during prayer times.", "id": "Datang lebih pagi untuk menghindari keramaian dan panas siang hari; beberapa halaman dalam ditutup saat waktu salat." },
-          "meta": { "lastUpdated": "2026-01-15", "estReadMins": 3, "tags": ["culture", "attractions"], "relatedPageIds": ["local-customs"] }
-        },
-        {
-          "id": "basic-phrases",
-          "slug": "language-and-basic-phrases",
-          "kind": "page",
-          "icon": "languages",
-          "title": { "en": "Language & Basic Phrases", "id": "Bahasa & Frasa Dasar" },
-          "summary": { "en": "A handful of Indonesian and Javanese phrases that go a long way.", "id": "Beberapa frasa Bahasa Indonesia dan Jawa yang sangat membantu." },
-          "body": { "en": "Bahasa Indonesia is the common language; a few Javanese greetings are appreciated but not expected.", "id": "Bahasa Indonesia adalah bahasa yang umum digunakan; beberapa sapaan Bahasa Jawa akan dihargai meski tidak wajib." },
-          "meta": { "lastUpdated": "2025-12-20", "estReadMins": 2, "tags": ["culture", "language"], "relatedPageIds": [] }
+          "title": { "en": "Culture & Etiquette", "id": "Budaya & Etika" },
+          "summary": { "en": "Local customs, dress code, and a handful of useful phrases.", "id": "Adat lokal, kode berpakaian, dan beberapa frasa yang berguna." },
+          "coverImage": "/images/visitor-info/culture-and-etiquette.jpg",
+          "children": [
+            {
+              "id": "local-customs",
+              "slug": "local-customs-and-dress-code",
+              "kind": "page",
+              "icon": "shirt",
+              "title": { "en": "Local Customs & Dress Code", "id": "Adat Lokal & Kode Berpakaian" },
+              "summary": { "en": "What's expected at the Kraton, mosques, and everyday interactions.", "id": "Yang diharapkan saat mengunjungi Kraton, masjid, dan interaksi sehari-hari." },
+              "body": { "en": "Modest dress is expected inside the Kraton and religious sites; sarongs are often available to borrow at the entrance.", "id": "Berpakaian sopan diharapkan di dalam Kraton dan tempat ibadah; sarung biasanya tersedia untuk dipinjam di pintu masuk." },
+              "meta": { "lastUpdated": "2026-01-15", "estReadMins": 2, "tags": ["culture"], "relatedPageIds": ["visiting-temples-palaces"] }
+            },
+            {
+              "id": "visiting-temples-palaces",
+              "slug": "visiting-temples-and-palaces",
+              "kind": "page",
+              "icon": "landmark",
+              "title": { "en": "Visiting Temples & Palaces", "id": "Mengunjungi Candi & Keraton" },
+              "summary": { "en": "Etiquette and timing tips for Borobudur, Prambanan, and the Kraton.", "id": "Etika dan waktu terbaik mengunjungi Borobudur, Prambanan, dan Kraton." },
+              "body": { "en": "Arrive early to avoid both crowds and midday heat; some inner courtyards close during prayer times.", "id": "Datang lebih pagi untuk menghindari keramaian dan panas siang hari; beberapa halaman dalam ditutup saat waktu salat." },
+              "meta": { "lastUpdated": "2026-01-15", "estReadMins": 3, "tags": ["culture", "attractions"], "relatedPageIds": ["local-customs"] }
+            },
+            {
+              "id": "basic-phrases",
+              "slug": "language-and-basic-phrases",
+              "kind": "page",
+              "icon": "languages",
+              "title": { "en": "Language & Basic Phrases", "id": "Bahasa & Frasa Dasar" },
+              "summary": { "en": "A handful of Indonesian and Javanese phrases that go a long way.", "id": "Beberapa frasa Bahasa Indonesia dan Jawa yang sangat membantu." },
+              "body": { "en": "Bahasa Indonesia is the common language; a few Javanese greetings are appreciated but not expected.", "id": "Bahasa Indonesia adalah bahasa yang umum digunakan; beberapa sapaan Bahasa Jawa akan dihargai meski tidak wajib." },
+              "meta": { "lastUpdated": "2025-12-20", "estReadMins": 2, "tags": ["culture", "language"], "relatedPageIds": [] }
+            }
+          ]
         }
       ]
     }
-  ]
-}
-;
+      ;
 
-/* ============================================================
-   INDEX + helpers
-   ============================================================ */
-let INDEX = {}; // id -> { node, path: [ids without hub], parentPath: [ids] }
-(function buildIndex(node, path){
-  INDEX[node.id] = { node, path };
-  (node.children || []).forEach(child => buildIndex(child, path.concat(child.id)));
-})(TREE, []);
+    /* ============================================================
+       INDEX + helpers
+       ============================================================ */
+    let INDEX = {}; // id -> { node, path: [ids without hub], parentPath: [ids] }
+    (function buildIndex(node, path) {
+      INDEX[node.id] = { node, path };
+      (node.children || []).forEach(child => buildIndex(child, path.concat(child.id)));
+    })(TREE, []);
 
-function getNodeAtPath(pathArr){
-  let node = TREE;
-  for (const id of pathArr){
-    node = (node.children || []).find(c => c.id === id);
-    if (!node) return null;
-  }
-  return node;
-}
-function title(node){ return node.title[state.lang]; }
-function summary(node){ return node.summary[state.lang]; }
+    function getNodeAtPath(pathArr) {
+      let node = TREE;
+      for (const id of pathArr) {
+        node = (node.children || []).find(c => c.id === id);
+        if (!node) return null;
+      }
+      return node;
+    }
+    function title(node) { return node.title[state.lang]; }
+    function summary(node) { return node.summary[state.lang]; }
 
-/* ============================================================
-   STATE
-   ============================================================ */
-const state = { path: [], lang: 'en', railCollapsed: false, drawerOpen: false };
+    /* ============================================================
+       STATE
+       ============================================================ */
+    const state = { path: [], lang: 'en', railCollapsed: false, drawerOpen: false };
 
-function parseHash(){
-  const raw = location.hash.replace('#','');
-  if (!raw) { state.path = []; return; }
-  const ids = raw.split('/').filter(Boolean);
-  // validate the path actually resolves; fall back to hub if not
-  state.path = getNodeAtPath(ids) ? ids : [];
-}
-function navigate(pathArr){
-  state.path = pathArr;
-  location.hash = pathArr.join('/');
-  state.drawerOpen = false;
-  render();
-  window.scrollTo({top:0, behavior:'instant'});
-}
-window.addEventListener('hashchange', () => { parseHash(); render(); });
+    function parseHash() {
+      const raw = location.hash.replace('#', '');
+      if (!raw) { state.path = []; return; }
+      const ids = raw.split('/').filter(Boolean);
+      // validate the path actually resolves; fall back to hub if not
+      state.path = getNodeAtPath(ids) ? ids : [];
+    }
+    function navigate(pathArr) {
+      state.path = pathArr;
+      location.hash = pathArr.join('/');
+      state.drawerOpen = false;
+      render();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+    window.addEventListener('hashchange', () => { parseHash(); render(); });
 
-/* ============================================================
-   BREADCRUMB TRAIL
-   ============================================================ */
-function renderCrumb(){
-  const ancestors = [{node:TREE, path:[]}];
-  let acc = [];
-  for (const id of state.path){
-    acc = acc.concat(id);
-    ancestors.push({ node: getNodeAtPath(acc), path: acc.slice() });
-  }
-  let html = '<div class="crumbtrail">';
-  const collapse = ancestors.length > 4;
-  const visible = collapse ? [ancestors[0], {more:true, items: ancestors.slice(1, ancestors.length-2)}, ancestors[ancestors.length-2], ancestors[ancestors.length-1]] : ancestors;
+    /* ============================================================
+       BREADCRUMB TRAIL
+       ============================================================ */
+    function renderCrumb() {
+      const ancestors = [{ node: TREE, path: [] }];
+      let acc = [];
+      for (const id of state.path) {
+        acc = acc.concat(id);
+        ancestors.push({ node: getNodeAtPath(acc), path: acc.slice() });
+      }
+      let html = '<div class="crumbtrail">';
+      const collapse = ancestors.length > 4;
+      const visible = collapse ? [ancestors[0], { more: true, items: ancestors.slice(1, ancestors.length - 2) }, ancestors[ancestors.length - 2], ancestors[ancestors.length - 1]] : ancestors;
 
-  visible.forEach((item, i) => {
-    if (i > 0) html += '<div class="crumb-sep"></div>';
-    if (item.more){
-      html += `<div class="crumb-more" onclick="togglePopover(event)">…
+      visible.forEach((item, i) => {
+        if (i > 0) html += '<div class="crumb-sep"></div>';
+        if (item.more) {
+          html += `<div class="crumb-more" onclick="togglePopover(event)">…
         <div class="crumb-popover" id="crumbPop">${item.items.map(a =>
-          `<a href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(a.path)})">${title(a.node)}</a>`).join('')}</div>
+            `<a href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(a.path)})">${title(a.node)}</a>`).join('')}</div>
       </div>`;
-    } else {
-      const isCurrent = item.path.length === state.path.length;
-      html += `<button class="crumb-link ${isCurrent ? 'current' : ''}" onclick="navigate(${JSON.stringify(item.path)})">
+        } else {
+          const isCurrent = item.path.length === state.path.length;
+          html += `<button class="crumb-link ${isCurrent ? 'current' : ''}" onclick="navigate(${JSON.stringify(item.path)})">
         <span class="crumb-dot"></span>${title(item.node)}
       </button>`;
+        }
+      });
+      html += '</div>';
+      document.getElementById('crumbtrailWrap').innerHTML = html;
     }
-  });
-  html += '</div>';
-  document.getElementById('crumbtrailWrap').innerHTML = html;
-}
-function togglePopover(e){
-  e.stopPropagation();
-  document.getElementById('crumbPop').classList.toggle('open');
-}
-document.addEventListener('click', () => {
-  const pop = document.getElementById('crumbPop');
-  if (pop) pop.classList.remove('open');
-});
+    function togglePopover(e) {
+      e.stopPropagation();
+      document.getElementById('crumbPop').classList.toggle('open');
+    }
+    document.addEventListener('click', () => {
+      const pop = document.getElementById('crumbPop');
+      if (pop) pop.classList.remove('open');
+    });
 
-/* ============================================================
-   TRAIL RAIL (desktop/tablet)
-   ============================================================ */
-function renderRail(){
-  const rail = document.getElementById('rail');
-  if (state.path.length === 0){ rail.innerHTML=''; return; } // no rail on hub page
+    /* ============================================================
+       TRAIL RAIL (desktop/tablet)
+       ============================================================ */
+    function renderRail() {
+      const rail = document.getElementById('rail');
+      if (state.path.length === 0) { rail.innerHTML = ''; return; } // no rail on hub page
 
-  let html = `<button class="rail-toggle" onclick="toggleRail()">${state.railCollapsed ? '»' : '«'}</button>`;
-  html += `<a class="rail-root" href="#" onclick="event.preventDefault(); navigate([])">
-    <span class="rail-icon">${icon('compass',18)}</span><span class="rail-label">Visitor Information</span>
+      let html = `<button class="rail-toggle" onclick="toggleRail()">${state.railCollapsed ? '»' : '«'}</button>`;
+      html += `<a class="rail-root" href="#" onclick="event.preventDefault(); navigate([])">
+    <span class="rail-icon">${icon('compass', 18)}</span><span class="rail-label">Visitor Information</span>
   </a>`;
 
-  function renderLevel(nodes, activeId, ancestorPath, depth){
-    let out = `<div class="rail-group">`;
-    nodes.forEach(n => {
-      const isActive = n.id === activeId;
-      const nodePath = ancestorPath.concat(n.id);
-      if (isActive){
-        out += `<button class="rail-row active" onclick="navigate(${JSON.stringify(nodePath)})">
-          <span class="rail-icon">${icon(n.icon,17)}</span><span class="rail-label">${title(n)}</span>
+      function renderLevel(nodes, activeId, ancestorPath, depth) {
+        let out = `<div class="rail-group">`;
+        nodes.forEach(n => {
+          const isActive = n.id === activeId;
+          const nodePath = ancestorPath.concat(n.id);
+          if (isActive) {
+            out += `<button class="rail-row active" onclick="navigate(${JSON.stringify(nodePath)})">
+          <span class="rail-icon">${icon(n.icon, 17)}</span><span class="rail-label">${title(n)}</span>
         </button>`;
-        if (n.children && n.children.length){
-          const nextActiveId = state.path[depth+1] || null;
-          out += renderLevel(n.children, nextActiveId, nodePath, depth+1);
-        }
-      } else {
-        out += `<button class="rail-dot" title="${title(n)}" onclick="navigate(${JSON.stringify(nodePath)})">
-          ${icon(n.icon,13)}
+            if (n.children && n.children.length) {
+              const nextActiveId = state.path[depth + 1] || null;
+              out += renderLevel(n.children, nextActiveId, nodePath, depth + 1);
+            }
+          } else {
+            out += `<button class="rail-dot" title="${title(n)}" onclick="navigate(${JSON.stringify(nodePath)})">
+          ${icon(n.icon, 13)}
         </button>`;
+          }
+        });
+        out += `</div>`;
+        return out;
       }
-    });
-    out += `</div>`;
-    return out;
-  }
-  html += renderLevel(TREE.children, state.path[0], [], 0);
-  rail.className = 'rail' + (state.railCollapsed ? ' collapsed' : '');
-  rail.innerHTML = html;
-}
-function toggleRail(){ state.railCollapsed = !state.railCollapsed; renderRail(); }
+      html += renderLevel(TREE.children, state.path[0], [], 0);
+      rail.className = 'rail' + (state.railCollapsed ? ' collapsed' : '');
+      rail.innerHTML = html;
+    }
+    function toggleRail() { state.railCollapsed = !state.railCollapsed; renderRail(); }
 
-/* ============================================================
-   CHIP SCROLLER (siblings at current level)
-   ============================================================ */
-function renderChips(){
-  if (state.path.length === 0) return '';
-  const parentPath = state.path.slice(0, -1);
-  const parent = getNodeAtPath(parentPath);
-  const siblings = parent.children;
-  const currentId = state.path[state.path.length-1];
-  let html = '<div class="chip-scroller desktop-hide">';
-  siblings.forEach(s => {
-    const isActive = s.id === currentId;
-    const p = parentPath.concat(s.id);
-    html += `<button class="chip ${isActive?'active':''}" onclick="navigate(${JSON.stringify(p)})">
-      ${icon(s.icon,14)}${title(s)}
+    /* ============================================================
+       CHIP SCROLLER (siblings at current level)
+       ============================================================ */
+    function renderChips() {
+      if (state.path.length === 0) return '';
+      const parentPath = state.path.slice(0, -1);
+      const parent = getNodeAtPath(parentPath);
+      const siblings = parent.children;
+      const currentId = state.path[state.path.length - 1];
+      let html = '<div class="chip-scroller desktop-hide">';
+      siblings.forEach(s => {
+        const isActive = s.id === currentId;
+        const p = parentPath.concat(s.id);
+        html += `<button class="chip ${isActive ? 'active' : ''}" onclick="navigate(${JSON.stringify(p)})">
+      ${icon(s.icon, 14)}${title(s)}
     </button>`;
-  });
-  html += '</div>';
-  return html;
-}
+      });
+      html += '</div>';
+      return html;
+    }
 
-/* ============================================================
-   MOBILE DRAWER
-   ============================================================ */
-function renderDrawer(){
-  let html = '';
-  let levelNodes = TREE.children;
-  let ancestorPath = [];
-  for (let depth = 0; depth <= state.path.length; depth++){
-    const activeId = state.path[depth];
-    const levelLabel = depth === 0 ? 'Category' : (depth === 1 ? 'Subcategory' : 'Page');
-    html += `<div class="drawer-level"><div class="dl-label">${levelLabel}</div>`;
-    levelNodes.forEach(n => {
-      const isActive = n.id === activeId;
-      const nodePath = ancestorPath.concat(n.id);
-      html += `<button class="drawer-row ${isActive?'active':''}" onclick="navigate(${JSON.stringify(nodePath)})">
-        <span class="di">${icon(n.icon,17)}</span>${title(n)}
+    /* ============================================================
+       MOBILE DRAWER
+       ============================================================ */
+    function renderDrawer() {
+      let html = '';
+      let levelNodes = TREE.children;
+      let ancestorPath = [];
+      for (let depth = 0; depth <= state.path.length; depth++) {
+        const activeId = state.path[depth];
+        const levelLabel = depth === 0 ? 'Category' : (depth === 1 ? 'Subcategory' : 'Page');
+        html += `<div class="drawer-level"><div class="dl-label">${levelLabel}</div>`;
+        levelNodes.forEach(n => {
+          const isActive = n.id === activeId;
+          const nodePath = ancestorPath.concat(n.id);
+          html += `<button class="drawer-row ${isActive ? 'active' : ''}" onclick="navigate(${JSON.stringify(nodePath)})">
+        <span class="di">${icon(n.icon, 17)}</span>${title(n)}
       </button>`;
+        });
+        html += '</div>';
+        if (!activeId) break;
+        const activeNode = levelNodes.find(n => n.id === activeId);
+        ancestorPath = ancestorPath.concat(activeId);
+        if (!activeNode.children) break;
+        levelNodes = activeNode.children;
+      }
+      document.getElementById('drawerContent').innerHTML = html;
+    }
+    document.getElementById('drawerTrigger').addEventListener('click', () => {
+      state.drawerOpen = true; syncDrawer();
     });
-    html += '</div>';
-    if (!activeId) break;
-    const activeNode = levelNodes.find(n => n.id === activeId);
-    ancestorPath = ancestorPath.concat(activeId);
-    if (!activeNode.children) break;
-    levelNodes = activeNode.children;
-  }
-  document.getElementById('drawerContent').innerHTML = html;
-}
-document.getElementById('drawerTrigger').addEventListener('click', () => {
-  state.drawerOpen = true; syncDrawer();
-});
-document.getElementById('scrim').addEventListener('click', () => {
-  state.drawerOpen = false; syncDrawer();
-});
-function syncDrawer(){
-  document.getElementById('drawer').classList.toggle('open', state.drawerOpen);
-  document.getElementById('scrim').classList.toggle('open', state.drawerOpen);
-}
+    document.getElementById('scrim').addEventListener('click', () => {
+      state.drawerOpen = false; syncDrawer();
+    });
+    function syncDrawer() {
+      document.getElementById('drawer').classList.toggle('open', state.drawerOpen);
+      document.getElementById('scrim').classList.toggle('open', state.drawerOpen);
+    }
 
-/* ============================================================
-   CARDS
-   ============================================================ */
-const SCRIM_COLORS = ['#223A5E','#4C7A5E','#B5502F','#8a6b3a','#5c4a63','#2f5c66'];
-function sectionCard(node, path, colorSeed){
-  const bg = SCRIM_COLORS[colorSeed % SCRIM_COLORS.length];
-  const count = node.children ? node.children.length : 0;
-  return `<a class="card-section" style="background:linear-gradient(160deg, ${bg} 0%, ${bg}cc 55%, ${bg}55 100%)" href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(path)})">
-    <div class="cs-icon">${icon(node.icon,18)}</div>
+    /* ============================================================
+       CARDS
+       ============================================================ */
+    const SCRIM_COLORS = ['#223A5E', '#4C7A5E', '#B5502F', '#8a6b3a', '#5c4a63', '#2f5c66'];
+    function sectionCard(node, path, colorSeed) {
+      const bg = SCRIM_COLORS[colorSeed % SCRIM_COLORS.length];
+      const count = node.children ? node.children.length : 0;
+      return `<a class="card-section" style="background:linear-gradient(160deg, ${bg} 0%, ${bg}cc 55%, ${bg}55 100%)" href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(path)})">
+    <div class="cs-icon">${icon(node.icon, 18)}</div>
     <h3>${title(node)}</h3>
     <p>${summary(node)}</p>
     ${count ? `<div class="badge-count">${count} inside</div>` : ''}
   </a>`;
-}
-function pageCard(node, path){
-  return `<a class="card-page" href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(path)})">
-    <div class="cp-icon">${icon(node.icon,24)}</div>
+    }
+    function pageCard(node, path) {
+      return `<a class="card-page" href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(path)})">
+    <div class="cp-icon">${icon(node.icon, 24)}</div>
     <h3>${title(node)}</h3>
     <p>${summary(node)}</p>
     ${node.meta ? `<div class="cp-meta">${node.meta.estReadMins} min read · ${node.meta.lastUpdated}</div>` : ''}
   </a>`;
-}
-function childCard(node, path, i){
-  return node.kind === 'page' ? pageCard(node, path) : sectionCard(node, path, i);
-}
-
-/* ============================================================
-   TINY MARKDOWN RENDERER (## headings, - lists, **bold**, paragraphs)
-   ============================================================ */
-function mdToHtml(md){
-  const lines = md.split('\n');
-  let html = ''; let inList = false;
-  lines.forEach(line => {
-    line = line.trim();
-    if (line.startsWith('## ')){
-      if (inList){ html += '</ul>'; inList=false; }
-      html += `<h2>${line.slice(3)}</h2>`;
-    } else if (line.startsWith('- ')){
-      if (!inList){ html += '<ul>'; inList = true; }
-      html += `<li>${inlineMd(line.slice(2))}</li>`;
-    } else if (line === ''){
-      if (inList){ html += '</ul>'; inList = false; }
-    } else {
-      if (inList){ html += '</ul>'; inList = false; }
-      html += `<p>${inlineMd(line)}</p>`;
     }
-  });
-  if (inList) html += '</ul>';
-  return html;
-}
-function inlineMd(s){ return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>'); }
+    function childCard(node, path, i) {
+      return node.kind === 'page' ? pageCard(node, path) : sectionCard(node, path, i);
+    }
 
-/* ============================================================
-   PAGE TEMPLATES
-   ============================================================ */
-function renderHub(){
-  let html = `<div class="hub-hero">
+    /* ============================================================
+       TINY MARKDOWN RENDERER (## headings, - lists, **bold**, paragraphs)
+       ============================================================ */
+    function mdToHtml(md) {
+      const lines = md.split('\n');
+      let html = ''; let inList = false;
+      lines.forEach(line => {
+        line = line.trim();
+        if (line.startsWith('## ')) {
+          if (inList) { html += '</ul>'; inList = false; }
+          html += `<h2>${line.slice(3)}</h2>`;
+        } else if (line.startsWith('- ')) {
+          if (!inList) { html += '<ul>'; inList = true; }
+          html += `<li>${inlineMd(line.slice(2))}</li>`;
+        } else if (line === '') {
+          if (inList) { html += '</ul>'; inList = false; }
+        } else {
+          if (inList) { html += '</ul>'; inList = false; }
+          html += `<p>${inlineMd(line)}</p>`;
+        }
+      });
+      if (inList) html += '</ul>';
+      return html;
+    }
+    function inlineMd(s) { return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>'); }
+
+    /* ============================================================
+       PAGE TEMPLATES
+       ============================================================ */
+    function renderHub() {
+      let html = `<div class="hub-hero">
     <h1>${title(TREE)}</h1>
     <p>${summary(TREE)}</p>
   </div>
   <div class="grid">`;
-  TREE.children.forEach((n,i) => { html += sectionCard(n, [n.id], i); });
-  html += '</div>';
-  return html;
-}
-function renderSection(node, path){
-  let html = `<div class="section-header"><h1>${title(node)}</h1><p>${summary(node)}</p></div>`;
-  html += renderChips();
-  html += '<div class="grid">';
-  node.children.forEach((n,i) => { html += childCard(n, path.concat(n.id), i); });
-  html += '</div>';
-  return html;
-}
-function renderPage(node, path){
-  const parentPath = path.slice(0,-1);
-  const siblings = getNodeAtPath(parentPath).children;
-  const idx = siblings.findIndex(s => s.id === node.id);
-  const prev = siblings[idx-1], next = siblings[idx+1];
+      TREE.children.forEach((n, i) => { html += sectionCard(n, [n.id], i); });
+      html += '</div>';
+      return html;
+    }
+    function renderSection(node, path) {
+      let html = `<div class="section-header"><h1>${title(node)}</h1><p>${summary(node)}</p></div>`;
+      html += renderChips();
+      html += '<div class="grid">';
+      node.children.forEach((n, i) => { html += childCard(n, path.concat(n.id), i); });
+      html += '</div>';
+      return html;
+    }
+    function renderPage(node, path) {
+      const parentPath = path.slice(0, -1);
+      const siblings = getNodeAtPath(parentPath).children;
+      const idx = siblings.findIndex(s => s.id === node.id);
+      const prev = siblings[idx - 1], next = siblings[idx + 1];
 
-  let html = renderChips();
-  html += `<div class="page-header"><h1>${title(node)}</h1></div>`;
-  if (node.meta){
-    html += `<div class="meta-strip"><span>${node.meta.estReadMins} min read</span><span>Updated ${node.meta.lastUpdated}</span></div>`;
-  }
-  html += `<div class="page-body">${mdToHtml(node.body ? node.body[state.lang] : '')}</div>`;
+      let html = renderChips();
+      html += `<div class="page-header"><h1>${title(node)}</h1></div>`;
+      if (node.meta) {
+        html += `<div class="meta-strip"><span>${node.meta.estReadMins} min read</span><span>Updated ${node.meta.lastUpdated}</span></div>`;
+      }
+      html += `<div class="page-body">${mdToHtml(node.body ? node.body[state.lang] : '')}</div>`;
 
-  html += `<div class="prevnext">
+      html += `<div class="prevnext">
     ${prev ? `<a href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(parentPath.concat(prev.id))})"><span class="lbl">← Previous</span>${title(prev)}</a>` : '<div></div>'}
     ${next ? `<a href="#" onclick="event.preventDefault(); navigate(${JSON.stringify(parentPath.concat(next.id))})" style="text-align:right"><span class="lbl">Next →</span>${title(next)}</a>` : '<div></div>'}
   </div>`;
 
-  const relatedIds = (node.meta && node.meta.relatedPageIds) || [];
-  const related = relatedIds.map(id => INDEX[id]).filter(Boolean);
-  if (related.length){
-    html += `<div class="related"><h4>Related</h4><div class="related-grid">`;
-    related.forEach(r => { html += pageCard(r.node, r.path); });
-    html += `</div></div>`;
-  }
-  return html;
-}
+      const relatedIds = (node.meta && node.meta.relatedPageIds) || [];
+      const related = relatedIds.map(id => INDEX[id]).filter(Boolean);
+      if (related.length) {
+        html += `<div class="related"><h4>Related</h4><div class="related-grid">`;
+        related.forEach(r => { html += pageCard(r.node, r.path); });
+        html += `</div></div>`;
+      }
+      return html;
+    }
 
-/* ============================================================
-   MAIN RENDER
-   ============================================================ */
-function render(){
-  const node = getNodeAtPath(state.path);
-  document.getElementById('content').innerHTML =
-    state.path.length === 0 ? renderHub() :
-    node.kind === 'section' ? renderSection(node, state.path) :
-    renderPage(node, state.path);
+    /* ============================================================
+       MAIN RENDER
+       ============================================================ */
+    function render() {
+      const node = getNodeAtPath(state.path);
+      document.getElementById('content').innerHTML =
+        state.path.length === 0 ? renderHub() :
+          node.kind === 'section' ? renderSection(node, state.path) :
+            renderPage(node, state.path);
 
-  renderCrumb();
-  renderRail();
-  renderDrawer();
-  syncDrawer();
+      renderCrumb();
+      renderRail();
+      renderDrawer();
+      syncDrawer();
 
-  document.getElementById('drawerTrigger').innerHTML =
-    icon('compass',16) + 'Browse';
-  document.querySelectorAll('.lang-toggle button').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === state.lang);
-  });
-}
-document.querySelectorAll('.lang-toggle button').forEach(b => {
-  b.addEventListener('click', () => { state.lang = b.dataset.lang; render(); });
-});
+      document.getElementById('drawerTrigger').innerHTML =
+        icon('compass', 16) + 'Browse';
+      document.querySelectorAll('.lang-toggle button').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === state.lang);
+      });
+    }
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.addEventListener('click', () => { state.lang = b.dataset.lang; render(); });
+    });
 
-parseHash();
-render();
-</script>
+    parseHash();
+    render();
+  </script>
 </body>
+
 </html>
