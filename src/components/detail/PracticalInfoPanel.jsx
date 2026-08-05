@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function PracticalInfoPanel({ title, rows = [], cta, priceLine }) {
   const visible = rows.filter((r) => r && r.value);
   return (
-    <div className="rounded-2xl p-5" style={{ backgroundColor: "lightgrey" }}>
+    <div className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
       {title && (
         <h3 className="mb-3 text-[15px] font-bold  tracking-wide" style={{ color: "var(--text-primary)" }}>{title}</h3>
       )}
