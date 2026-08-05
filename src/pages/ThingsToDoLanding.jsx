@@ -79,11 +79,13 @@ export default function ThingsToDoLanding() {
         </div>
       </div>
           
-      <div className="content-wrap mt-2 md:mt-6 pb-16">
+      <div className="content-wrap mt-2 md:mt-6">
         <Breadcrumb items={[
           { label: lbl(navGroup), to: navGroup.to },
           ...(activeTab !== tabValues[0] ? [{ label: lbl(navGroup.items.find(i => i.to.endsWith(activeTab)) || navGroup.items[0]) }] : []),
         ]} />
+      </div>
+      <div className="pb-16">
         <Routes>
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
           <Route path=":type" element={<ThingsToDoContent />} />

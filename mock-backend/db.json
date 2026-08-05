@@ -834,6 +834,70 @@
       "updated_date": "2026-07-24T02:40:15.993000",
       "created_by_id": "service_d48a428f-24f7-4706-801f-e6843624f6e8",
       "is_sample": false
+    },
+    {
+      "id": 7,
+      "slug": "affandi-museum-dummy",
+      "name_en": "Affandi Museum (Dummy)",
+      "name_id": "Museum Affandi (Dummy)",
+      "category": "art-museums",
+      "regency": "sleman",
+      "price_idr": 50000,
+      "hero_image_url": "https://images.unsplash.com/photo-1544414571-70eecc968945?w=600&q=80",
+      "descriptor_en": "Explore the life and works of Affandi, Indonesia's maestro of painting.",
+      "descriptor_id": "Jelajahi kehidupan dan karya Affandi, maestro seni lukis Indonesia.",
+      "display_order": 99,
+      "gallery_image_urls": [],
+      "highlights": [],
+      "experience_type": [
+        "entertainment-creative"
+      ],
+      "address": "Jl. Laksda Adisucipto No.167, Sleman",
+      "latitude": -7.7828,
+      "longitude": 110.3957
+    },
+    {
+      "id": 8,
+      "slug": "gudeg-yu-djum-dummy",
+      "name_en": "Gudeg Yu Djum (Dummy)",
+      "name_id": "Gudeg Yu Djum (Dummy)",
+      "category": "eat-drink",
+      "regency": "yogyakarta-city",
+      "price_idr": 35000,
+      "hero_image_url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80",
+      "descriptor_en": "Taste the authentic sweet jackfruit stew, a culinary icon of Yogyakarta.",
+      "descriptor_id": "Cicipi gudeg asli, ikon kuliner Yogyakarta.",
+      "display_order": 100,
+      "gallery_image_urls": [],
+      "highlights": [],
+      "experience_type": [
+        "culinary-lifestyle"
+      ],
+      "address": "Wijilan, Yogyakarta",
+      "latitude": -7.8052,
+      "longitude": 110.3643
+    },
+    {
+      "id": 9,
+      "slug": "prambanan-jazz-dummy",
+      "name_en": "Prambanan Jazz Festival (Dummy)",
+      "name_id": "Prambanan Jazz Festival (Dummy)",
+      "category": "events-festivals",
+      "regency": "sleman",
+      "price_idr": 250000,
+      "hero_image_url": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&q=80",
+      "descriptor_en": "Annual international music festival held at the magnificent Prambanan Temple.",
+      "descriptor_id": "Festival musik internasional tahunan di Candi Prambanan yang megah.",
+      "display_order": 101,
+      "gallery_image_urls": [],
+      "highlights": [],
+      "experience_type": [
+        "mice-business",
+        "entertainment-creative"
+      ],
+      "address": "Prambanan Temple, Sleman",
+      "latitude": -7.752,
+      "longitude": 110.4915
     }
   ],
   "mapplace": [
