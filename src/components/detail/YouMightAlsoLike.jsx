@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
-import HScrollStrip from "@/components/home/HScrollStrip";
-import DestinationCard from "@/components/shared/DestinationCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import SmartImage from "@/components/shared/SmartImage";
 
-// Reuses the existing DestinationCard, filtered to the same category or regency.
 export default function YouMightAlsoLike({ category, regency, excludeSlug }) {
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
   const [items, setItems] = useState(null);
 
   useEffect(() => {
@@ -26,13 +27,32 @@ export default function YouMightAlsoLike({ category, regency, excludeSlug }) {
       <h2 className="mb-4 font-heading text-[24px] font-bold" style={{ color: "var(--color-primary)" }}>
         {t("detail.alsoLike") || "You might also like"}
       </h2>
-      <HScrollStrip rows={2}>
-        {items === null
-          ? Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="aspect-[4/3] w-[280px] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
-            ))
-          : items.map((d) => <DestinationCard key={d.id} destination={d} />)}
-      </HScrollStrip>
+      <div className="-mx-5 px-5 md:mx-0 md:px-0">
+        <Swiper slidesPerView="auto" spaceBetween={16} className="!pb-4">
+          {items === null
+            ? Array.from({ length: 4 }).map((_, i) => (
+                <SwiperSlide key={i} className="!w-[160px] md:!w-[200px]">
+                  <div className="aspect-[4/3] w-full animate-pulse rounded-xl bg-slate-100" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
+                </SwiperSlide>
+              ))
+            : items.map((item) => {
+                const name = language === "id" ? item.name_id : item.name_en;
+                return (
+                  <SwiperSlide key={item.id} className="!w-[160px] md:!w-[200px]">
+                    <Link to={`/destinations/${item.slug}`} className="flex flex-col gap-2 rounded-xl transition-transform hover:scale-[1.02] active:scale-95 group focus-ring">
+                      <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                        <SmartImage src={item.hero_image_url} alt={name} className="h-full w-full object-cover transition-opacity group-hover:opacity-90" />
+                      </div>
+                      <div>
+                        <h4 className="truncate text-[14px] font-bold" style={{ color: "var(--text-primary)" }}>{name}</h4>
+                        <p className="text-[12px] truncate" style={{ color: "var(--text-secondary)" }}>{item.category}</p>
+                      </div>
+                    </Link>
+                  </SwiperSlide>
+                );
+              })}
+        </Swiper>
+      </div>
     </section>
   );
 }

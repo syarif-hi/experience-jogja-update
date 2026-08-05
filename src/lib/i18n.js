@@ -332,7 +332,7 @@ export const dictionary = {
     "detail.location": "Location",
     "detail.openingHours": "Opening Hours",
     "detail.overview": "Overview",
-    "detail.planTrip": "Plan Trip",
+    "detail.planTrip": "Plan Your Trip",
     "explore.attractions": "Attractions",
     "explore.eat": "Eat & Drink",
     "explore.gettingThere": "Getting There",
