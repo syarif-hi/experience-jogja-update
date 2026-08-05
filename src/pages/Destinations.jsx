@@ -9,11 +9,11 @@ import PageShell from "@/components/layout/PageShell";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import DestinationCard from "@/components/shared/DestinationCard";
 
-export default function Destinations() {
+export default function Destinations({ hideShell, forcedType, forcedRegency }) {
   const { t, language } = useTranslation();
   const [searchParams] = useSearchParams();
-  const initialRegion = searchParams.get("region") || "all";
-  const initialCat = searchParams.get("cat") || "all";
+  const initialRegion = forcedRegency || searchParams.get("region") || "all";
+  const initialCat = forcedType || searchParams.get("cat") || "all";
 
   const [items, setItems] = useState(null);
   const [query, setQuery] = useState("");
@@ -97,33 +97,37 @@ export default function Destinations() {
   const lbl = (c) => (language === "id" ? c.label_id : c.label_en);
 
   return (
-    <PageShell>
+    <PageShell hideShell={hideShell}>
       {/* ① Hero Section */}
-      <section
-        className="relative overflow-hidden"
-        style={{ backgroundColor: "var(--bg-surface-alt)" }}
-      >
-        <div className="content-wrap relative py-12 md:py-16">
-          <h1
-            className="font-heading text-[32px] font-bold md:text-[44px] leading-tight"
-            style={{ color: "var(--color-primary)" }}
-          >
-            {t("dest.title")}
-          </h1>
-          <p
-            className="mt-3 max-w-xl text-[16px] md:text-[17px] leading-relaxed"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            {t("dest.subtitle")}
-          </p>
-        </div>
-      </section>
+      {!hideShell && (
+        <section
+          className="relative overflow-hidden"
+          style={{ backgroundColor: "var(--bg-surface-alt)" }}
+        >
+          <div className="content-wrap relative py-12 md:py-16">
+            <h1
+              className="font-heading text-[32px] font-bold md:text-[44px] leading-tight"
+              style={{ color: "var(--color-primary)" }}
+            >
+              {t("dest.title")}
+            </h1>
+            <p
+              className="mt-3 max-w-xl text-[16px] md:text-[17px] leading-relaxed"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              {t("dest.subtitle")}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* ② Search & Filter Bar */}
       <div className="content-wrap" ref={gridRef} style={{ scrollMarginTop: "80px" }}>
-        <div className="mt-2 md:mt-6 pb-2">
-          <Breadcrumb items={[{ label: t("dest.title") }]} />
-        </div>
+        {!hideShell && (
+          <div className="mt-2 md:mt-6 pb-2">
+            <Breadcrumb items={[{ label: t("dest.title") }]} />
+          </div>
+        )}
         <div className="sticky top-0 z-20 -mx-5 px-5 sm:-mx-0 sm:px-0 pb-2 pt-2" style={{ backgroundColor: "var(--bg-page)" }}>
           {/* Search input */}
           <div className="relative mb-4">
@@ -156,69 +160,73 @@ export default function Destinations() {
           </div>
 
           {/* Category pills */}
-          <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
-            <button
-              type="button"
-              onClick={() => setCat("all")}
-              className="focus-ring shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-colors"
-              style={
-                cat === "all"
-                  ? { backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }
-                  : { backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }
-              }
-            >
-              {t("filter.all")}
-            </button>
-            {CATEGORIES.map((c) => (
+          {!forcedType && (
+            <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
               <button
-                key={c.value}
                 type="button"
-                onClick={() => setCat(cat === c.value ? "all" : c.value)}
+                onClick={() => setCat("all")}
                 className="focus-ring shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-colors"
                 style={
-                  cat === c.value
+                  cat === "all"
                     ? { backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }
                     : { backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }
                 }
               >
-                {lbl(c)}
+                {t("filter.all")}
               </button>
-            ))}
-          </div>
+              {CATEGORIES.map((c) => (
+                <button
+                  key={c.value}
+                  type="button"
+                  onClick={() => setCat(cat === c.value ? "all" : c.value)}
+                  className="focus-ring shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-colors"
+                  style={
+                    cat === c.value
+                      ? { backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }
+                      : { backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }
+                  }
+                >
+                  {lbl(c)}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Region pills */}
-          <div className="flex gap-2 overflow-x-auto pb-2 mt-1" style={{ scrollbarWidth: "none" }}>
-            <span className="shrink-0 self-center text-[12px] font-semibold mr-1" style={{ color: "var(--text-secondary)" }}>
-              {t("dest.filter.region")}
-            </span>
-            <button
-              type="button"
-              onClick={() => setRegion("all")}
-              className="focus-ring shrink-0 rounded-full px-3 py-1.5 text-[12px] font-semibold transition-colors"
-              style={
-                region === "all"
-                  ? { backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }
-                  : { backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }
-              }
-            >
-              {t("filter.all")}
-            </button>
-            {REGENCIES.map((r) => (
+          {!forcedRegency && (
+            <div className="flex gap-2 overflow-x-auto pb-2 mt-1" style={{ scrollbarWidth: "none" }}>
+              <span className="shrink-0 self-center text-[12px] font-semibold mr-1" style={{ color: "var(--text-secondary)" }}>
+                {t("dest.filter.region")}
+              </span>
               <button
-                key={r.value}
                 type="button"
-                onClick={() => setRegion(region === r.value ? "all" : r.value)}
+                onClick={() => setRegion("all")}
                 className="focus-ring shrink-0 rounded-full px-3 py-1.5 text-[12px] font-semibold transition-colors"
                 style={
-                  region === r.value
+                  region === "all"
                     ? { backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }
                     : { backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }
                 }
               >
-                {lbl(r)}
+                {t("filter.all")}
               </button>
-            ))}
-          </div>
+              {REGENCIES.map((r) => (
+                <button
+                  key={r.value}
+                  type="button"
+                  onClick={() => setRegion(region === r.value ? "all" : r.value)}
+                  className="focus-ring shrink-0 rounded-full px-3 py-1.5 text-[12px] font-semibold transition-colors"
+                  style={
+                    region === r.value
+                      ? { backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }
+                      : { backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }
+                  }
+                >
+                  {lbl(r)}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Results count + Sort + Clear */}
           {filtered && (

@@ -10,7 +10,19 @@ import Destinations from "./Destinations";
 // Wrapper to extract type and pass it to Destinations component
 function ThingsToDoContent() {
   const { type } = useParams();
-  return <Destinations hideShell forcedType={type} />;
+  
+  const categoryMap = {
+    'heritage-culture': 'cultural-heritage-temples',
+    'entertainment-creative': 'art-museums',
+    'sports-adventure': 'nature-outdoor',
+    'culinary-lifestyle': 'eat-drink',
+    'health-wellness': 'nature-outdoor',
+    'mice-business': 'events-festivals',
+  };
+  
+  const mappedType = categoryMap[type] || type;
+  
+  return <Destinations hideShell forcedType={mappedType} />;
 }
 
 export default function ThingsToDoLanding() {

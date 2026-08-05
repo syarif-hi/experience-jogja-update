@@ -30,11 +30,11 @@ const SLIDES = [
 
 const PILLS = [
   { label: "DESTINATIONS", to: "/destinations", icon: "/images/icons/icon_destionation.png" },
-  { label: "CULINARY & LIFESTYLE", to: "/destinations?category=eat-drink", icon: "/images/icons/icon_culinary_and_lifestyle.png" },
-  { label: "HEALTH & WELLNESS", to: "/destinations?category=wellness", icon: "/images/icons/icon_health_and_wellness.png" },
-  { label: "ENTERTAINMENT & CREATIVE", to: "/destinations?category=entertainment", icon: "/images/icons/icon_entertainment_and_creative.png" },
-  { label: "SPORTS & ADVENTURE", to: "/destinations?category=sports", icon: "/images/icons/icon-sports_and_adventure.png" },
-  { label: "MICE & BUSINESS EVENTS", to: "/destinations?category=mice", icon: "/images/icons/icon_mice_and_business_events.png" },
+  { label: "CULINARY & LIFESTYLE", to: "/things-to-do/culinary-lifestyle", icon: "/images/icons/icon_culinary_and_lifestyle.png" },
+  { label: "HEALTH & WELLNESS", to: "/things-to-do/health-wellness", icon: "/images/icons/icon_health_and_wellness.png" },
+  { label: "ENTERTAINMENT & CREATIVE", to: "/things-to-do/entertainment-creative", icon: "/images/icons/icon_entertainment_and_creative.png" },
+  { label: "SPORTS & ADVENTURE", to: "/things-to-do/sports-adventure", icon: "/images/icons/icon-sports_and_adventure.png" },
+  { label: "MICE & BUSINESS EVENTS", to: "/things-to-do/mice-business", icon: "/images/icons/icon_mice_and_business_events.png" },
 ];
 
 export default function Hero() {
