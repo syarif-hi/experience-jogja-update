@@ -98,13 +98,13 @@ export default function Hero() {
               <Link
                 key={p.label}
                 to={p.to}
-                className="focus-ring flex flex-col items-center md:items-start justify-start text-center md:text-left group transition-opacity hover:opacity-70"
+                className="focus-ring flex flex-col items-center justify-start text-center group transition-opacity hover:opacity-70"
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center md:justify-start transition-transform group-hover:scale-105">
+                <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center transition-transform group-hover:scale-105">
                   <img src={p.icon} alt={p.label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <span
-                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 md:px-0 uppercase max-w-[90px] md:max-w-none"
+                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase max-w-[90px] md:max-w-[120px]"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {p.label}
