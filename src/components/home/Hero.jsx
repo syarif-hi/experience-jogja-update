@@ -9,7 +9,7 @@ import "swiper/css/effect-fade";
 const SLIDES = [
   "/images/slider/tamansari-w2000.jpg",
   "/images/slider/malioboro_street-w2000.jpg",
-  "/images/slider/IMG-00033-cropped-w2000.jpg",
+  "/images/slider/tugu_jogja_edit_cropped-w2000.jpeg",
   "/images/slider/prambanan_3_expand-upscale-2x-w2000.jpeg",
   "/images/slider/wayang-crop-w2000.jpg",
   "/images/slider/traditinal_culinary-w2000.jpg",
