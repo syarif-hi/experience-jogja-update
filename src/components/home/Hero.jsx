@@ -104,7 +104,7 @@ export default function Hero() {
                   <img src={p.icon} alt={p.label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <span
-                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase max-w-[90px] md:max-w-[120px]"
+                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase max-w-[100px] md:max-w-[130px]"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {p.label}
