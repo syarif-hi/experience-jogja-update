@@ -93,18 +93,18 @@ export default function Hero() {
       {/* Menu grid — below the slider */}
       <div className="py-6 md:py-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="content-wrap">
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-y-6 gap-x-2 md:gap-x-4">
+          <div className="grid grid-cols-3 md:flex md:flex-wrap md:justify-start md:gap-10 gap-y-6 gap-x-2">
             {PILLS.map((p) => (
               <Link
                 key={p.label}
                 to={p.to}
-                className="focus-ring flex flex-col items-center justify-start text-center group transition-opacity hover:opacity-70"
+                className="focus-ring flex flex-col items-center md:items-start justify-start text-center md:text-left group transition-opacity hover:opacity-70"
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center transition-transform group-hover:scale-105">
+                <div className="w-12 h-12 md:w-14 md:h-14 mb-2 flex items-center justify-center md:justify-start transition-transform group-hover:scale-105">
                   <img src={p.icon} alt={p.label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <span
-                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 uppercase"
+                  className="text-[11px] md:text-[13px] font-medium leading-tight px-1 md:px-0 uppercase max-w-[90px] md:max-w-none"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {p.label}
