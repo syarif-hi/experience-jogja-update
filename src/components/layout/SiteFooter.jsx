@@ -79,7 +79,7 @@ export default function SiteFooter() {
           {/* RIGHT column — contact + follow us */}
           <div className="flex flex-col gap-8 md:items-end md:text-right">
             <div>
-              <h4 className="text-[13px] font-bold uppercase tracking-wide" style={{ color: "#FFFFFF" }}>{t("footer.contact")}</h4>
+              <h4 className="text-[15px] font-bold uppercase tracking-wide" style={{ color: "#FFFFFF" }}>{t("footer.contact")}</h4>
               <ul className="mt-3 space-y-2 text-[14px]" style={{ color: "#FFFFFF" }}>
                 <li className="flex items-center gap-2 md:justify-end"><MapPin className="h-4 w-4" /> Yogyakarta, Indonesia</li>
                 <li className="flex items-center gap-2 md:justify-end"><Mail className="h-4 w-4" /> hello@experiencejogja.com</li>
@@ -87,7 +87,7 @@ export default function SiteFooter() {
             </div>
 
             <div>
-              <h4 className="text-[13px] font-bold uppercase tracking-wide" style={{ color: "#FFFFFF" }}>{t("footer.follow")}</h4>
+              <h4 className="text-[15px] font-bold uppercase tracking-wide" style={{ color: "#FFFFFF" }}>{t("footer.follow")}</h4>
               <div className="mt-3 flex gap-2 md:justify-end">
                 {[Instagram, Facebook, Youtube, TikTokIcon, XIcon].map((Icon, i) => (
                   <a
