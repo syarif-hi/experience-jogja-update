@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Landmark, Trees, Waves, Building2, Loader2, Trash2 } from "lucide-react";
+import { Landmark, Trees, Waves, Building2, Plane, Loader2, Trash2 } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,6 +11,7 @@ export const KIND_OPTIONS = [
   { key: "nature", label: "Nature", color: "#4E8A3E", Icon: Trees },
   { key: "beach", label: "Beach", color: "#2E6FB0", Icon: Waves },
   { key: "city", label: "City", color: "#7C5AAF", Icon: Building2 },
+  { key: "flight", label: "Flight", color: "#0099CC", Icon: Plane },
 ];
 
 const slugify = (s) =>

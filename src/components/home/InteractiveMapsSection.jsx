@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import { Clock, ExternalLink, X, ArrowRight, Landmark, Trees, Waves, Building2, Move, Save, Loader2, Plus, Pencil, ZoomIn, ZoomOut, Maximize } from "lucide-react";
+import { Clock, ExternalLink, X, ArrowRight, Landmark, Trees, Waves, Building2, Plane, Move, Save, Loader2, Plus, Pencil, ZoomIn, ZoomOut, Maximize } from "lucide-react";
 import SectionHeading from "@/components/home/SectionHeading";
 import SmartImage from "@/components/shared/SmartImage";
 import { useTranslation } from "@/lib/i18n";
@@ -18,25 +18,26 @@ const MAP_BG = "https://ik.imagekit.io/ibrproject/jogja_maps_bg_compressed_2.jpg
 
 // ── Real place photos for the hover popover, keyed by slug ──
 const PHOTOS = {
-  malioboro: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
-  kraton: "https://images.unsplash.com/photo-1584810359583-96fc9f6bffb0?w=600&q=80",
+  "malioboro-street": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
+  "kraton-yogyakarta": "https://images.unsplash.com/photo-1584810359583-96fc9f6bffb0?w=600&q=80",
   "taman-sari": "https://images.unsplash.com/photo-1577720643272-265f09367456?w=600&q=80",
-  "tugu-yogyakarta": "https://images.unsplash.com/photo-1626018944638-6bebc0e0f8a5?w=600&q=80",
+  "tugu-jogja": "https://images.unsplash.com/photo-1626018944638-6bebc0e0f8a5?w=600&q=80",
   "kota-gede": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=600&q=80",
-  prambanan: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
-  borobudur: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80",
-  mendut: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80",
-  pawon: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80",
-  parangtritis: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
-  indrayanti: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+  "prambanan-temple": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
+  "borobudur-temple": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80",
+  "mendut": "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80",
+  "pawon": "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80",
+  "pantai-parangtritis": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+  "indrayanti-beach": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
   "kukup-beach": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80",
   "timang-beach": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80",
   "jomblang-cave": "https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=600&q=80",
   "goa-pindul": "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=600&q=80",
-  nglanggeran: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80",
-  kalibiru: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
-  kaliurang: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80",
-  merapi: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80",
+  "desa-wisata-nglanggeran": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80",
+  "kalibiru": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+  "kaliurang-park": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80",
+  "mount-merapi": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80",
+  "yia-airport": "https://images.unsplash.com/photo-1436491865332-7a615069f4f2?w=600&q=80",
 };
 const photoFor = (pin) => pin.photo_url || PHOTOS[pin.slug] || "";
 
@@ -46,15 +47,16 @@ const KINDS = {
   nature: { color: "#4E8A3E", Icon: Trees },
   beach: { color: "#2E6FB0", Icon: Waves },
   city: { color: "#7C5AAF", Icon: Building2 },
+  flight: { color: "#0099CC", Icon: Plane },
 };
 // map each landmark slug to its category kind
 const KIND_BY_SLUG = {
-  borobudur: "culture", prambanan: "culture", mendut: "culture", pawon: "culture",
-  kraton: "culture", "taman-sari": "culture", "kota-gede": "culture",
-  kalibiru: "nature", kaliurang: "nature", merapi: "nature", nglanggeran: "nature",
+  "borobudur-temple": "culture", "prambanan-temple": "culture", mendut: "culture", pawon: "culture",
+  "kraton-yogyakarta": "culture", "taman-sari": "culture", "kota-gede": "culture",
+  kalibiru: "nature", "kaliurang-park": "nature", "mount-merapi": "nature", "desa-wisata-nglanggeran": "nature",
   "jomblang-cave": "nature", "goa-pindul": "nature",
-  parangtritis: "beach", indrayanti: "beach", "kukup-beach": "beach", "timang-beach": "beach", kulonprogo: "nature",
-  malioboro: "city", "tugu-yogyakarta": "city", airport: "city",
+  "pantai-parangtritis": "beach", "indrayanti-beach": "beach", "kukup-beach": "beach", "timang-beach": "beach", kulonprogo: "nature",
+  "malioboro-street": "city", "tugu-jogja": "city", "yia-airport": "flight",
 };
 // Dynamic places carry their own `kind`; hardcoded pins map by slug.
 const kindOf = (pin) => KINDS[pin.kind || KIND_BY_SLUG[pin.slug]] || KINDS.culture;
@@ -83,6 +85,12 @@ function pinColor(mode, pin) {
   if (mode === "zones") return ZONES[pin.zone]?.color || "var(--color-primary)";
   if (mode === "itinerary") return DAYS[pin.day]?.color || "var(--color-primary)";
   return "var(--color-primary)";
+}
+
+function getDestinationSlug(pin) {
+  if (pin.slug === 'mount-merapi') return 'kaliurang-merapi';
+  if (pin.slug === 'kaliurang-park') return 'kaliurang-merapi';
+  return pin.slug;
 }
 
 function PinPopover({ pin, color, t }) {
@@ -195,7 +203,7 @@ function MobilePinModal({ openPin, setOpenPin, pins, t }) {
             <p className="text-[12px] leading-snug mt-1.5 line-clamp-3" style={{ color: "var(--text-secondary)" }}>{pin.shortDesc}</p>
             
             <div className="mt-auto pt-3 flex gap-2">
-              <Link to={`/destinations/${pin.slug}`} className="focus-ring flex-1 flex items-center justify-center rounded-lg py-2 text-[12px] font-bold text-white shadow-md" style={{ backgroundColor: "var(--color-primary)" }}>
+              <Link to={`/destinations/${getDestinationSlug(pin)}`} className="focus-ring flex-1 flex items-center justify-center rounded-lg py-2 text-[12px] font-bold text-white shadow-md" style={{ backgroundColor: "var(--color-primary)" }}>
                 {t("viewDetails") || "Details"}
               </Link>
               <a href={pin.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="focus-ring flex items-center justify-center rounded-lg px-3 py-2 shadow-sm border transition-colors" style={{ backgroundColor: "var(--bg-surface-alt)", borderColor: "var(--border)", color: "var(--text-secondary)" }}>
@@ -404,10 +412,10 @@ export default function InteractiveMapsSection() {
       }).filter(Boolean)
     : [];
 
-  const kratonPin = mode === "distance" ? pins.find((p) => p.slug === "kraton") : null;
+  const kratonPin = mode === "distance" ? pins.find((p) => p.slug === "kraton-yogyakarta") : null;
   const kratonCoord = kratonPin ? coordOf(kratonPin) : null;
   const distanceLines = mode === "distance" && kratonCoord
-    ? pins.filter((p) => p.slug !== "kraton" && p.distanceKm > 0).map((p) => {
+    ? pins.filter((p) => p.slug !== "kraton-yogyakarta" && p.distanceKm > 0).map((p) => {
         const { x, y } = coordOf(p);
         return { pin: p, x, y, mx: (kratonCoord.x + x) / 2, my: (kratonCoord.y + y) / 2 };
       })

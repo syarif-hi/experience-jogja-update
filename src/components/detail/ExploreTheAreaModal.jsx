@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { X, MapPin, Navigation, Car, Train, Utensils, Plane } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { nearest, haversineKm, estimateDriveMinutes } from "@/lib/distance";
@@ -9,13 +10,17 @@ import LocationMap from "./LocationMap";
 export default function ExploreTheAreaModal({ origin, onClose, dests }) {
   const { t, language } = useTranslation();
 
-  // Handle escape key
+  // Handle escape key and body scroll lock
   useEffect(() => {
+    document.body.style.overflow = "hidden";
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
   }, [onClose]);
 
   const nm = (r) => (language === "id" ? r.name_id : r.name_en);
@@ -31,8 +36,8 @@ export default function ExploreTheAreaModal({ origin, onClose, dests }) {
 
   const previewImages = [...attractions, ...eats].slice(0, 4);
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style={{ backgroundColor: "rgba(0,0,0,0.6)" }} onClick={onClose}>
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6" style={{ backgroundColor: "rgba(0,0,0,0.6)" }} onClick={onClose}>
       <div 
         className="relative flex h-full max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl" 
         onClick={e => e.stopPropagation()}
@@ -140,6 +145,7 @@ export default function ExploreTheAreaModal({ origin, onClose, dests }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
