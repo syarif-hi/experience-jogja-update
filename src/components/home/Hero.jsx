@@ -107,7 +107,7 @@ export default function Hero() {
                     <img src={p.icon} alt={label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                   </div>
                   <span
-                    className="text-[11px] md:text-[15px] font-medium leading-tight px-1 uppercase whitespace-nowrap"
+                    className="text-[11px] md:text-[15px] font-medium leading-tight px-1 uppercase md:whitespace-nowrap"
                     style={{ color: "var(--text-primary)" }}
                   >
                     {label}
@@ -129,7 +129,7 @@ export default function Hero() {
         <img
           src="/discover-jogja-artwork_no_tagline_3.png"
           alt="Discover Your Yogyakarta"
-          className="w-full max-w-full md:max-w-[485px] h-auto mb-0 md:mx-0"
+          className="block w-[70%] max-w-[70%] mr-auto md:w-full md:max-w-[485px] h-auto mb-0 md:mx-0"
         />
 
         <p className="text-[18px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>

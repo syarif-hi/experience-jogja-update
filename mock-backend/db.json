@@ -354,7 +354,7 @@
       "is_sample": false
     },
     {
-      "id": 21,
+      "id": "21",
       "slug": "artjog-mmxxvii",
       "title_en": "ArtJog MMXXVII - Contemporary Art Exhibition",
       "title_id": "ArtJog MMXXVII - Pameran Seni Kontemporer",
@@ -371,7 +371,7 @@
       "is_sample": true
     },
     {
-      "id": 22,
+      "id": "22",
       "slug": "jogja-marathon-2027",
       "title_en": "Jogja Marathon 2027",
       "title_id": "Marathon Jogja 2027",
@@ -388,7 +388,7 @@
       "is_sample": true
     },
     {
-      "id": 23,
+      "id": "23",
       "slug": "wayang-kulit-sono-budoyo",
       "title_en": "Wayang Kulit Night at Sono Budoyo",
       "title_id": "Malam Wayang Kulit di Sono Budoyo",
@@ -836,7 +836,7 @@
       "is_sample": false
     },
     {
-      "id": 7,
+      "id": "7",
       "slug": "affandi-museum-dummy",
       "name_en": "Affandi Museum (Dummy)",
       "name_id": "Museum Affandi (Dummy)",
@@ -857,7 +857,7 @@
       "longitude": 110.3957
     },
     {
-      "id": 8,
+      "id": "8",
       "slug": "gudeg-yu-djum-dummy",
       "name_en": "Gudeg Yu Djum (Dummy)",
       "name_id": "Gudeg Yu Djum (Dummy)",
@@ -878,7 +878,7 @@
       "longitude": 110.3643
     },
     {
-      "id": 9,
+      "id": "9",
       "slug": "prambanan-jazz-dummy",
       "name_en": "Prambanan Jazz Festival (Dummy)",
       "name_id": "Prambanan Jazz Festival (Dummy)",
@@ -908,8 +908,8 @@
       "kind": "culture",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kraton%20Yogyakarta",
       "photo_url": "",
-      "x": 50,
-      "y": 52,
+      "x": 54.73762444690266,
+      "y": 57.57282448377581,
       "zone": "city",
       "day": 1,
       "day_order": 1,
@@ -925,8 +925,8 @@
       "kind": "culture",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Taman%20Sari%20Yogyakarta",
       "photo_url": "",
-      "x": 44,
-      "y": 56,
+      "x": 48.72153853244838,
+      "y": 62.51843657817109,
       "zone": "city",
       "day": 1,
       "day_order": 2,
@@ -942,8 +942,8 @@
       "kind": "city",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Malioboro%20Yogyakarta",
       "photo_url": "",
-      "x": 52,
-      "y": 47,
+      "x": 54.641696626106196,
+      "y": 50.016132005899706,
       "zone": "city",
       "day": 1,
       "day_order": 3,
@@ -960,8 +960,8 @@
       "duration_min": 12,
       "zone": "city",
       "show_in_distance": true,
-      "x": 51,
-      "y": 40,
+      "x": 58.34312776548673,
+      "y": 44.306323746312685,
       "short_desc": "The historic monument marking the city's 0 KM axis.",
       "photo_url": null,
       "day": null,
@@ -981,8 +981,8 @@
       "duration_min": 75,
       "zone": "city",
       "show_in_distance": true,
-      "x": 20,
-      "y": 58,
+      "x": 24.451223727876105,
+      "y": 59.08554572271386,
       "short_desc": "YIA — the region's main gateway in Kulon Progo.",
       "photo_url": null,
       "day": null,
@@ -1002,8 +1002,8 @@
       "duration_min": 90,
       "zone": "north",
       "show_in_distance": true,
-      "x": 33,
-      "y": 27,
+      "x": 37.77107531342183,
+      "y": 34.51419616519174,
       "short_desc": "The world's largest Buddhist temple.",
       "photo_url": null,
       "day": 2,
@@ -1023,8 +1023,8 @@
       "duration_min": 45,
       "zone": "north",
       "show_in_distance": true,
-      "x": 79,
-      "y": 33,
+      "x": 75.17082641961652,
+      "y": 39.25377949852507,
       "short_desc": "Majestic 9th-century Hindu temple compound.",
       "photo_url": null,
       "day": 2,
@@ -1044,8 +1044,8 @@
       "duration_min": 60,
       "zone": "north",
       "show_in_distance": true,
-      "x": 63,
-      "y": 12,
+      "x": 62.54983637536873,
+      "y": 21.64408185840708,
       "short_desc": "Active volcano with jeep tours and sunrise views.",
       "photo_url": null,
       "day": 2,
@@ -1065,8 +1065,8 @@
       "duration_min": 55,
       "zone": "north",
       "show_in_distance": true,
-      "x": 58,
-      "y": 22,
+      "x": 64.13134909660766,
+      "y": 31.682337758112094,
       "short_desc": "Cool highland retreat on Merapi's southern slope.",
       "photo_url": null,
       "day": null,
@@ -1086,8 +1086,8 @@
       "duration_min": 90,
       "zone": "south",
       "show_in_distance": true,
-      "x": 60,
-      "y": 82,
+      "x": 84.0376682337758,
+      "y": 79.08001474926255,
       "short_desc": "Vertical cave with a famous 'light from heaven'.",
       "photo_url": null,
       "day": 3,
@@ -1107,8 +1107,8 @@
       "duration_min": 80,
       "zone": "south",
       "show_in_distance": true,
-      "x": 82,
-      "y": 62,
+      "x": 81.88318123156341,
+      "y": 66.62979351032449,
       "short_desc": "Cave tubing along an underground river.",
       "photo_url": null,
       "day": 3,
@@ -1128,8 +1128,8 @@
       "duration_min": 60,
       "zone": "south",
       "show_in_distance": true,
-      "x": 74,
-      "y": 70,
+      "x": 71.80643897492625,
+      "y": 71.19791666666667,
       "short_desc": "Ancient volcano with sunrise viewpoints.",
       "photo_url": null,
       "day": 3,
@@ -1149,8 +1149,8 @@
       "duration_min": 55,
       "zone": "south",
       "show_in_distance": true,
-      "x": 44,
-      "y": 90,
+      "x": 48.21309227507375,
+      "y": 86.49797197640117,
       "short_desc": "Dramatic black-sand beach on the southern coast.",
       "photo_url": null,
       "day": null,
@@ -1961,10 +1961,576 @@
       "id": "1b_Qgcqgur4"
     },
     {
-      "slug": "taman-sari",
-      "x": 50.93060661764706,
-      "y": 62.07898481973435,
+      "x": 69.88296074478178,
+      "y": 68.93500948766604,
       "id": "O1IY-YOoJnY"
+    },
+    {
+      "x": 56.967836850649356,
+      "y": 48.88972634508349,
+      "id": "Hn1LYM6K7rc"
+    },
+    {
+      "x": 59.34637349257885,
+      "y": 55.10725881261595,
+      "id": "vO2NbVPWmt8"
+    },
+    {
+      "x": 69.88296074478178,
+      "y": 68.93500948766604,
+      "id": "I5H3XeZXc6U"
+    },
+    {
+      "x": 54.150481215213354,
+      "y": 60.49107142857143,
+      "id": "M13wO0Z_dPE"
+    },
+    {
+      "x": 73.41612070964749,
+      "y": 39.69619666048237,
+      "id": "3REJgphTbxA"
+    },
+    {
+      "x": 61.64555310760667,
+      "y": 30.471938775510203,
+      "id": "aTNf16mG3f4"
+    },
+    {
+      "x": 59.455806470315395,
+      "y": 22.048353432282003,
+      "id": "fm6jQc3njJc"
+    },
+    {
+      "x": 35.94583429962894,
+      "y": 35.38265306122449,
+      "id": "SjGEPuKEou8"
+    },
+    {
+      "x": 56.967836850649356,
+      "y": 48.88972634508349,
+      "id": "Kii3xc9Daug"
+    },
+    {
+      "x": 59.34637349257885,
+      "y": 55.10725881261595,
+      "id": "rAGpg1S5Yik"
+    },
+    {
+      "x": 58.81189123376623,
+      "y": 44.082212430426715,
+      "id": "sXzxF5KxE64"
+    },
+    {
+      "x": 45.130594851576994,
+      "y": 85.8743042671614,
+      "id": "YWnQW0qPyGY"
+    },
+    {
+      "x": 80.1139987244898,
+      "y": 78.98886827458256,
+      "id": "IzKZb3pzPAk"
+    },
+    {
+      "x": 35.94583429962894,
+      "y": 35.38265306122449,
+      "id": "DtDCGt9-e5Q"
+    },
+    {
+      "x": 71.12817428107606,
+      "y": 38.76855287569573,
+      "id": "jO7lz2WGEmk"
+    },
+    {
+      "x": 35.94583429962894,
+      "y": 35.38265306122449,
+      "id": "56mYGCQoyZ4"
+    },
+    {
+      "x": 56.967836850649356,
+      "y": 48.88972634508349,
+      "id": "KiEd2JlFvgo"
+    },
+    {
+      "x": 59.34637349257885,
+      "y": 55.10725881261595,
+      "id": "_0JbORc95Ag"
+    },
+    {
+      "x": 58.81189123376623,
+      "y": 44.082212430426715,
+      "id": "dyrV6rqR5_c"
+    },
+    {
+      "x": 45.130594851576994,
+      "y": 85.8743042671614,
+      "id": "PRth1AdKjEc"
+    },
+    {
+      "x": 80.1139987244898,
+      "y": 78.98886827458256,
+      "id": "EX2NxXaogVo"
+    },
+    {
+      "x": 68.64745187847866,
+      "y": 71.03954081632654,
+      "id": "poet_EYNmkQ"
+    },
+    {
+      "x": 80.57383464749536,
+      "y": 67.5208719851577,
+      "id": "ok0QwZfs4Bc"
+    },
+    {
+      "x": 71.81049976808906,
+      "y": 39.139030612244895,
+      "id": "rBG4jlIZPgs"
+    },
+    {
+      "x": 53.631580473098325,
+      "y": 61.208835807050086,
+      "id": "KLZUijsDm9M"
+    },
+    {
+      "x": 35.11530322356215,
+      "y": 34.30194805194805,
+      "id": "BmNnKYoLMKU"
+    },
+    {
+      "x": 80.57383464749536,
+      "y": 67.5208719851577,
+      "id": "bfR4T0AbRUI"
+    },
+    {
+      "x": 80.57383464749536,
+      "y": 67.5208719851577,
+      "id": "V0St8e8ujQc"
+    },
+    {
+      "x": 71.81049976808906,
+      "y": 39.139030612244895,
+      "id": "vv97rzTsYq8"
+    },
+    {
+      "x": 48.41684543135436,
+      "y": 63.26646567717996,
+      "id": "3RjVN4EIjfw"
+    },
+    {
+      "x": 35.11530322356215,
+      "y": 34.30194805194805,
+      "id": "W0Vh2MWXYfs"
+    },
+    {
+      "x": 59.834111201298704,
+      "y": 21.36247680890538,
+      "id": "klapbaCeaGs"
+    },
+    {
+      "x": 80.57383464749536,
+      "y": 67.5208719851577,
+      "id": "H--08nf0Epw"
+    },
+    {
+      "x": 59.29673005565863,
+      "y": 55.81284786641929,
+      "id": "EJQHc3ZqYyE"
+    },
+    {
+      "x": 84.8667236781076,
+      "y": 78.77377087198516,
+      "id": "t5iwkS9-INU"
+    },
+    {
+      "x": 69.08264726345084,
+      "y": 71.47553339517626,
+      "id": "d0-wWRz-R64"
+    },
+    {
+      "x": 71.81049976808906,
+      "y": 39.139030612244895,
+      "id": "0wciIyg0EA0"
+    },
+    {
+      "x": 48.41684543135436,
+      "y": 63.26646567717996,
+      "id": "P8FM8UQ_ZZM"
+    },
+    {
+      "x": 35.11530322356215,
+      "y": 34.30194805194805,
+      "id": "Ov2NqFh6MqM"
+    },
+    {
+      "x": 59.834111201298704,
+      "y": 21.36247680890538,
+      "id": "1KZMIkG8Hhk"
+    },
+    {
+      "x": 55.527452458256036,
+      "y": 47.690746753246756,
+      "id": "Omob080ZdTQ"
+    },
+    {
+      "x": 69.08264726345084,
+      "y": 71.47553339517626,
+      "id": "ChMRuHhokCI"
+    },
+    {
+      "x": 69.08264726345084,
+      "y": 71.47553339517626,
+      "id": "UabdRvkApuQ"
+    },
+    {
+      "x": 71.81049976808906,
+      "y": 39.139030612244895,
+      "id": "H8vb3Sq8sHg"
+    },
+    {
+      "x": 48.41684543135436,
+      "y": 63.26646567717996,
+      "id": "vstmUpnf868"
+    },
+    {
+      "x": 35.11530322356215,
+      "y": 34.30194805194805,
+      "id": "h84bUU31G8s"
+    },
+    {
+      "x": 59.834111201298704,
+      "y": 21.36247680890538,
+      "id": "lfPL6u-ATO0"
+    },
+    {
+      "x": 55.932934253246756,
+      "y": 50.73689703153988,
+      "id": "M-FohZ3RzEM"
+    },
+    {
+      "x": 80.44700834879406,
+      "y": 66.15897495361781,
+      "id": "c5vTRFxzbpE"
+    },
+    {
+      "x": 59.28187326066791,
+      "y": 56.234925788497215,
+      "id": "wPtdkz2OPuA"
+    },
+    {
+      "x": 69.08264726345084,
+      "y": 71.47553339517626,
+      "id": "Fx3PDhWodGM"
+    },
+    {
+      "x": 66.99907235621522,
+      "y": 28.249652133580703,
+      "id": "m-Onznh0PEI"
+    },
+    {
+      "x": 69.08264726345084,
+      "y": 71.47553339517626,
+      "id": "C5w0OsBy8sM"
+    },
+    {
+      "x": 71.81049976808906,
+      "y": 39.139030612244895,
+      "id": "y9UEBG_BMuc"
+    },
+    {
+      "x": 48.41684543135436,
+      "y": 63.26646567717996,
+      "id": "oS-Qf3FeJC4"
+    },
+    {
+      "x": 35.11530322356215,
+      "y": 34.30194805194805,
+      "id": "AuxjM1J3HSg"
+    },
+    {
+      "x": 59.834111201298704,
+      "y": 21.36247680890538,
+      "id": "BIwqZJmZeIY"
+    },
+    {
+      "x": 49.30644132653062,
+      "y": 52.03965677179963,
+      "id": "_f2EHDaV8eE"
+    },
+    {
+      "x": 80.44700834879406,
+      "y": 66.15897495361781,
+      "id": "CtE8CGjMbEY"
+    },
+    {
+      "x": 59.00176832096476,
+      "y": 58.21834415584416,
+      "id": "uqp7-XioXf8"
+    },
+    {
+      "x": 59.213387059369204,
+      "y": 43.847982374768094,
+      "id": "5QItiEH30bs"
+    },
+    {
+      "x": 48.04470083487941,
+      "y": 87.21938775510203,
+      "id": "KF87VxQvy0I"
+    },
+    {
+      "x": 75.4848388218924,
+      "y": 92.24605751391466,
+      "id": "QeAiFQw_sd4"
+    },
+    {
+      "x": 66.99907235621522,
+      "y": 28.249652133580703,
+      "id": "ZaXiPFURLLw"
+    },
+    {
+      "x": 82.55413671150278,
+      "y": 79.77678571428571,
+      "id": "SO_zhPsIG0o"
+    },
+    {
+      "x": 59.774748594290664,
+      "y": 11.306228373702423,
+      "id": "jL9z40x0Npw"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "NRzgtDtmE58"
+    },
+    {
+      "x": 47.05037575692042,
+      "y": 86.42192906574394,
+      "id": "rVpB0CKlQZo"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "PKwWUf5CU1g"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "8WYNdsm9LMs"
+    },
+    {
+      "x": 47.05037575692042,
+      "y": 86.42192906574394,
+      "id": "soG_RNR2wtI"
+    },
+    {
+      "x": 79.89497729238755,
+      "y": 79.10413062283736,
+      "id": "C95vOEa5Znk"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "W4u7hTG2Ceo"
+    },
+    {
+      "x": 48.13992210545723,
+      "y": 62.30272861356932,
+      "id": "NBO-ABs0vRg"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "RGx-nkVuWK8"
+    },
+    {
+      "x": 47.05037575692042,
+      "y": 86.42192906574394,
+      "id": "PPfOwoIlS3Q"
+    },
+    {
+      "x": 79.89497729238755,
+      "y": 79.10413062283736,
+      "id": "sjjLeDJdM7c"
+    },
+    {
+      "x": 53.33385186209439,
+      "y": 57.869192477876105,
+      "id": "S8aEIO3mUXk"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "SxoBLlUwOzs"
+    },
+    {
+      "x": 48.13992210545723,
+      "y": 62.30272861356932,
+      "id": "b6FfWY1fSBM"
+    },
+    {
+      "x": 54.70881729351033,
+      "y": 50.358130530973455,
+      "id": "xkwQsHiJKL4"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "HDZZaYZMUtA"
+    },
+    {
+      "x": 47.05037575692042,
+      "y": 86.42192906574394,
+      "id": "chziHmME_74"
+    },
+    {
+      "x": 79.89497729238755,
+      "y": 79.10413062283736,
+      "id": "AGpB05X4D2E"
+    },
+    {
+      "x": 53.33385186209439,
+      "y": 57.869192477876105,
+      "id": "Rmm3nj4VA-4"
+    },
+    {
+      "x": 58.339094764011804,
+      "y": 43.854166666666664,
+      "id": "2fw5pgp35iU"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "8TE8mugB2Xo"
+    },
+    {
+      "x": 48.13992210545723,
+      "y": 62.30272861356932,
+      "id": "dlsBYYih8cg"
+    },
+    {
+      "x": 54.70881729351033,
+      "y": 50.358130530973455,
+      "id": "ZP7KmXcEY8M"
+    },
+    {
+      "x": 74.99452664085545,
+      "y": 39.348266961651916,
+      "id": "xTsSbMJ-YPY"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "oJLf5AUc_Yk"
+    },
+    {
+      "x": 47.05037575692042,
+      "y": 86.42192906574394,
+      "id": "IKBBE6Vlj5s"
+    },
+    {
+      "x": 79.89497729238755,
+      "y": 79.10413062283736,
+      "id": "GKQSAA8yF_Q"
+    },
+    {
+      "x": 54.98133296460177,
+      "y": 57.78945427728613,
+      "id": "IB3tZAI880s"
+    },
+    {
+      "x": 58.339094764011804,
+      "y": 43.854166666666664,
+      "id": "m5ZYZIHiUCM"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "Q9eD9XwbIvk"
+    },
+    {
+      "x": 48.13992210545723,
+      "y": 62.30272861356932,
+      "id": "QFee193nlWs"
+    },
+    {
+      "x": 54.70881729351033,
+      "y": 50.358130530973455,
+      "id": "BczWXBg-Nlk"
+    },
+    {
+      "x": 74.99452664085545,
+      "y": 39.348266961651916,
+      "id": "G2QETl_NFDY"
+    },
+    {
+      "x": 72.38693501297578,
+      "y": 39.34688581314879,
+      "id": "Q_qC4rwlB7I"
+    },
+    {
+      "x": 47.05037575692042,
+      "y": 86.42192906574394,
+      "id": "RsRaYpp77jk"
+    },
+    {
+      "x": 79.89497729238755,
+      "y": 79.10413062283736,
+      "id": "5ar8wQeBjhk"
+    },
+    {
+      "x": 54.98133296460177,
+      "y": 57.78945427728613,
+      "id": "Oqc6-C1_otg"
+    },
+    {
+      "x": 58.339094764011804,
+      "y": 43.854166666666664,
+      "id": "ijEQVCRGbFQ"
+    },
+    {
+      "x": 63.49067800516224,
+      "y": 31.192385693215343,
+      "id": "YTzLMM56GNc"
+    },
+    {
+      "x": 24.226239859882007,
+      "y": 58.65966076696165,
+      "id": "cVut4kzX0rw"
+    },
+    {
+      "x": 48.13992210545723,
+      "y": 62.30272861356932,
+      "id": "7py5oCUUQvM"
+    },
+    {
+      "x": 54.70881729351033,
+      "y": 50.358130530973455,
+      "id": "I2ZzqvVzEJQ"
+    },
+    {
+      "x": 74.99452664085545,
+      "y": 39.348266961651916,
+      "id": "MPuIuTZiy6g"
+    },
+    {
+      "x": 62.42164454277286,
+      "y": 21.245390855457227,
+      "id": "DUEi9jQSGg0"
+    },
+    {
+      "x": 37.86181784660767,
+      "y": 34.689804572271385,
+      "id": "MyMC-upT1eI"
+    },
+    {
+      "slug": "kaliurang-park",
+      "x": 63.0427267699115,
+      "y": 31.100202802359885,
+      "id": "CZE6QgFx-RI"
+    },
+    {
+      "slug": "jomblang-cave",
+      "x": 84.52422105457227,
+      "y": 79.0846238938053,
+      "id": "688t3fNG6dM"
     }
   ],
   "article": [
@@ -2124,7 +2690,7 @@
   ],
   "attraction": [
     {
-      "id": 1,
+      "id": "1",
       "slug": "borobudur-sunrise",
       "name_en": "Borobudur Sunrise Tour",
       "name_id": "Tur Sunrise Borobudur",
@@ -2135,7 +2701,7 @@
       "descriptor_en": "Experience the magical sunrise over the world's largest Buddhist temple."
     },
     {
-      "id": 2,
+      "id": "2",
       "slug": "timang-beach-gondola",
       "name_en": "Timang Beach Gondola",
       "name_id": "Gondola Pantai Timang",
@@ -2146,7 +2712,7 @@
       "descriptor_en": "Ride the thrilling traditional gondola across the ocean waves."
     },
     {
-      "id": 3,
+      "id": "3",
       "slug": "prambanan-temple",
       "name_en": "Prambanan Temple Complex",
       "name_id": "Kompleks Candi Prambanan",
@@ -2159,7 +2725,7 @@
   ],
   "activity": [
     {
-      "id": 1,
+      "id": "1",
       "slug": "batik-workshop",
       "name_en": "Batik Making Workshop",
       "name_id": "Workshop Membatik",
@@ -2171,7 +2737,7 @@
       "descriptor_en": "Learn the ancient art of Javanese batik from master artisans."
     },
     {
-      "id": 2,
+      "id": "2",
       "slug": "cave-tubing-pindul",
       "name_en": "Cave Tubing at Goa Pindul",
       "name_id": "Cave Tubing Goa Pindul",
@@ -2183,7 +2749,7 @@
       "descriptor_en": "Float through an underground river inside a stunning cave."
     },
     {
-      "id": 3,
+      "id": "3",
       "slug": "silver-jewelry-class",
       "name_en": "Silver Jewelry Making Class",
       "name_id": "Kelas Membuat Perhiasan Perak",
@@ -2197,7 +2763,7 @@
   ],
   "restaurant": [
     {
-      "id": 1,
+      "id": "1",
       "slug": "bale-raos",
       "name_en": "Bale Raos Royal Cuisine",
       "name_id": "Bale Raos Masakan Keraton",
@@ -2208,7 +2774,7 @@
       "descriptor_en": "Dine on authentic royal Javanese recipes inside the Sultan's Palace."
     },
     {
-      "id": 2,
+      "id": "2",
       "slug": "mediterranea",
       "name_en": "Mediterranea Restaurant",
       "name_id": "Restoran Mediterranea",
@@ -2219,7 +2785,7 @@
       "descriptor_en": "Fine dining with Mediterranean flavors in a lush garden setting."
     },
     {
-      "id": 3,
+      "id": "3",
       "slug": "gudeg-yu-djum",
       "name_en": "Gudeg Yu Djum",
       "name_id": "Gudeg Yu Djum",
@@ -2232,7 +2798,7 @@
   ],
   "transportation": [
     {
-      "id": 1,
+      "id": "1",
       "slug": "airport-shuttle",
       "name_en": "Airport Shuttle Service",
       "name_id": "Layanan Shuttle Bandara",
@@ -2242,7 +2808,7 @@
       "descriptor_en": "Comfortable shuttle from YIA Airport to city center hotels."
     },
     {
-      "id": 2,
+      "id": "2",
       "slug": "car-rental-daily",
       "name_en": "Daily Car Rental with Driver",
       "name_id": "Sewa Mobil Harian dengan Sopir",
@@ -2252,7 +2818,7 @@
       "descriptor_en": "Explore Jogja at your own pace with a professional local driver."
     },
     {
-      "id": 3,
+      "id": "3",
       "slug": "motorbike-rental",
       "name_en": "Motorbike Rental",
       "name_id": "Sewa Motor",
@@ -2262,7 +2828,6 @@
       "descriptor_en": "Freedom to explore narrow streets and hidden spots on two wheels."
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json",
   "discoverpage": [
     {
       "id": "dp-1",
@@ -2324,5 +2889,6 @@
       "body_en": "<p>Every trip to Yogyakarta is different. The city is layered enough that repeat visitors always discover something they missed before — a lane they never turned down, a warungthat opened last year, a festival that only happens every five years. Here are some perspectives and itinerary ideas to spark your own Jogja story.</p>\n<h2>The Classic: 3 Days in Jogja</h2>\n<p><strong>Day 1 — The Spiritual Core.</strong> Start before dawn at Borobudur to catch the mist lifting off the stupa tiers at sunrise. Spend the morning walking the monument's nine levels before the crowds arrive. Afternoon: drive to Prambanan, explore the main compound, and stay for the open-air Ramayana ballet if performed that evening.</p>\n<p><strong>Day 2 — The Royal City.</strong> Morning at the Kraton — join a guided tour to understand the spatial symbolism of the palace complex. Walk north to <em>Alun-alun Lor</em> (the great north square), then follow Jalan Malioboro south for street food, batik shopping, and people-watching. Evening: seek out a wayang kulit performance or a gamelan concert at Taman Budaya.</p>\n<p><strong>Day 3 — The Creative Quarter.</strong> Spend the morning in Kotagede's silver workshops and centuries-old mosque. Afternoon in the Prawirotaman gallery district — browse contemporary Javanese art, stop at a café, and pick up independent design pieces to take home. End the trip with dinner at one of Prawirotaman's courtyard restaurants as the day cools.</p>\n<h2>For the Curious: Off the Main Path</h2>\n<p><strong>Imogiri Royal Tombs</strong> — The hilltop burial complex of the Mataram sultans, 17 km south of the city. Open to respectfully dressed visitors on certain days. The climb rewards you with views over the plains toward the Indian Ocean.</p>\n<p><strong>Kaliurang</strong> — A cool hill retreat on the southern slopes of Merapi, just 25 km north of the city. Lava tour jeeps offer access to the 2010 eruption zone; a birding trail winds through the cloud forest at the edge of the National Park.</p>\n<p><strong>Wukirsari Batik Village</strong> — A living craft community where batik tulis (hand-drawn batik) is still produced using traditional plant-based dyes. The experience of watching a craftsperson map a design freehand with a hot <em>canting</em> is quietly extraordinary.</p>\n<h2>Seasonal Highlights</h2>\n<p><strong>Sekaten</strong> (Maulid season, varies by Islamic calendar) — A royal fair held on the Kraton's north square, culminating in the <em>Grebeg Maulud</em> ceremony when palace guardsmen carry enormous rice-cone offerings (<em>gunungan</em>) through the city streets.</p>\n<p><strong>ArtJog</strong> (June–July) — Indonesia's premier contemporary art fair, held at the Jogja National Museum. Ten days of exhibitions, performances, and public programming.</p>\n<p><strong>Jogja International Street Performance</strong> (August) — Street performers from across Southeast Asia and beyond take over public spaces, kampung lanes, and the palace square for a week of free outdoor performance.</p>\n<h2>Practical Tips</h2>\n<ul>\n<li>The best time to visit is <strong>April–October</strong> (dry season). July–August is peak; April–May and September–October offer cooler temperatures and thinner crowds.</li>\n<li>Hire a local guide for Borobudur and Prambanan — they decode details that you will simply walk past unaided.</li>\n<li>Malioboro is best early morning (before 9 am) or evening (after 6 pm). Midday is crowded and hot.</li>\n<li>Carry small denomination rupiah — warungs and market stalls rarely accept cards or e-wallets.</li>\n<li>Dress modestly when entering the Kraton, mosques, and temple complexes. A sarong is usually available to borrow at the entrance.</li>\n</ul>",
       "body_id": "<p>Setiap perjalanan ke Yogyakarta selalu berbeda. Kota ini berlapis-lapis sehingga pengunjung yang datang berulang kali selalu menemukan sesuatu yang terlewatkan sebelumnya — gang yang tidak pernah dibelok, warung yang buka tahun lalu, festival yang hanya terjadi setiap lima tahun. Berikut beberapa perspektif dan ide itinerary untuk memicu kisah Jogja Anda sendiri.</p>\n<h2>Klasik: 3 Hari di Jogja</h2>\n<p><strong>Hari 1 — Inti Spiritual.</strong> Mulailah sebelum fajar di Borobudur untuk menyaksikan kabut mengangkat dari tingkatan stupa saat matahari terbit. Habiskan pagi berjalan di sembilan tingkat monumen sebelum keramaian tiba. Sore: berkendara ke Prambanan, jelajahi kompleks utama, dan tetap untuk melihat balet Ramayana di panggung terbuka jika dipertunjukkan malam itu.</p>\n<p><strong>Hari 2 — Kota Kerajaan.</strong> Pagi di Kraton — ikuti tur berpemandu untuk memahami simbolisme spasial kompleks istana. Berjalan ke utara menuju <em>Alun-alun Lor</em>, lalu ikuti Jalan Malioboro ke selatan untuk kuliner kaki lima, belanja batik, dan mengamati lalu-lalang manusia. Malam: cari pertunjukan wayang kulit atau konser gamelan di Taman Budaya.</p>\n<p><strong>Hari 3 — Kawasan Kreatif.</strong> Habiskan pagi di bengkel perak Kotagede dan masjid berusia berabad-abad. Sore di kawasan galeri Prawirotaman — telusuri seni Jawa kontemporer, singgah di kafe, dan temukan produk desain independen untuk dibawa pulang. Akhiri perjalanan dengan makan malam di salah satu restoran halaman Prawirotaman saat hari mendingin.</p>\n<h2>Untuk Si Penasaran: Di Luar Jalur Utama</h2>\n<p><strong>Makam Raja Imogiri</strong> — Kompleks pemakaman di atas bukit para sultan Mataram, 17 km selatan kota. Terbuka untuk pengunjung berpakaian sopan pada hari-hari tertentu. Pendakiannya memberi Anda pemandangan dataran menuju Samudra Hindia.</p>\n<p><strong>Kaliurang</strong> — Tempat peristirahatan perbukitan yang sejuk di lereng selatan Merapi, hanya 25 km utara kota. Jeep tur lava menawarkan akses ke zona erupsi 2010; jalur pengamatan burung berkelok melalui hutan awan di tepi Taman Nasional.</p>\n<p><strong>Desa Batik Wukirsari</strong> — Komunitas kerajinan hidup di mana batik tulis (batik gambar tangan) masih diproduksi menggunakan pewarna alami tradisional. Pengalaman menyaksikan seorang pengrajin menggambar desain dengan tangan bebas menggunakan <em>canting</em> panas sungguh luar biasa.</p>\n<h2>Sorotan Musiman</h2>\n<p><strong>Sekaten</strong> (Musim Maulid, bervariasi menurut kalender Islam) — Pameran kerajaan di alun-alun utara Kraton, diakhiri dengan upacara <em>Grebeg Maulud</em> ketika pengawal istana membawa persembahan kerucut nasi raksasa (<em>gunungan</em>) melalui jalan-jalan kota.</p>\n<p><strong>ArtJog</strong> (Juni–Juli) — Pameran seni kontemporer utama Indonesia, diselenggarakan di Museum Nasional Jogja. Sepuluh hari pameran, pertunjukan, dan program publik.</p>\n<p><strong>Jogja International Street Performance</strong> (Agustus) — Pertunjuk jalanan dari seluruh Asia Tenggara dan sekitarnya mengambil alih ruang publik, gang kampung, dan alun-alun istana selama seminggu pertunjukan luar ruangan gratis.</p>\n<h2>Tips Praktis</h2>\n<ul>\n<li>Waktu terbaik berkunjung adalah <strong>April–Oktober</strong> (musim kemarau). Juli–Agustus adalah puncak musim; April–Mei dan September–Oktober menawarkan suhu lebih sejuk dan keramaian lebih sedikit.</li>\n<li>Sewa pemandu lokal untuk Borobudur dan Prambanan — mereka menguraikan detail yang akan Anda lewati begitu saja tanpa bantuan.</li>\n<li>Malioboro paling baik dikunjungi pagi hari (sebelum jam 9) atau malam hari (setelah jam 6). Siang hari ramai dan panas.</li>\n<li>Bawa rupiah pecahan kecil — warung dan lapak pasar jarang menerima kartu atau e-wallet.</li>\n<li>Berpakaian sopan saat memasuki Kraton, masjid, dan kompleks candi. Kain sarung biasanya tersedia untuk dipinjam di pintu masuk.</li>\n</ul>"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

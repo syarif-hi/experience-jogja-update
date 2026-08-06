@@ -105,7 +105,7 @@ export const base44 = {
           return res.data;
         },
         update: async (id, data) => {
-          const res = await api.put(`${route}/${id}`, data);
+          const res = await api.patch(`${route}/${id}`, data);
           return res.data;
         },
         delete: async (id) => {

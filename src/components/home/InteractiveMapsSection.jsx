@@ -3,13 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import { ExternalLink, X, ArrowRight, Landmark, Trees, Waves, Building2, Move, Save, Loader2, Plus, Pencil, ZoomIn, ZoomOut, Maximize } from "lucide-react";
+import { Clock, ExternalLink, X, ArrowRight, Landmark, Trees, Waves, Building2, Move, Save, Loader2, Plus, Pencil, ZoomIn, ZoomOut, Maximize } from "lucide-react";
 import SectionHeading from "@/components/home/SectionHeading";
 import SmartImage from "@/components/shared/SmartImage";
 import { useTranslation } from "@/lib/i18n";
 import { base44 } from "@/api/base44Client";
 import MapPlaceEditor from "@/components/home/MapPlaceEditor";
 import useMapZoom from "@/components/home/useMapZoom";
+import { convexHull, expandHull, hullToSmoothPath } from "@/lib/convexHull";
 
 // ── Illustrated graphic map background ──
 // Cache-buster appended so the refreshed asset (same filename) reloads instead of serving a stale cached copy.
@@ -332,13 +333,6 @@ export default function InteractiveMapsSection() {
     let alive = true;
     (async () => {
       try {
-        const saved = await base44.entities.MapPinPosition.list();
-        if (!alive) return;
-        const map = {};
-        saved.forEach((p) => { map[p.slug] = { x: p.x, y: p.y }; });
-        setPositions(map);
-      } catch { /* ignore */ }
-      try {
         const recs = await base44.entities.MapPlace.list();
         if (alive) setPlaces(recs);
       } catch { /* ignore */ }
@@ -396,6 +390,38 @@ export default function InteractiveMapsSection() {
     }))
     : [];
 
+  // ── Computed overlay data for each mode ──
+  const zoneHulls = mode === "zones"
+    ? Object.entries(ZONES).map(([key, z]) => {
+        const zonePins = pins.filter((p) => p.zone === key).map((p) => ({ ...p, ...coordOf(p) }));
+        if (zonePins.length === 0) return null;
+        const hull = convexHull(zonePins);
+        const expanded = expandHull(hull, 6);
+        const pathD = hullToSmoothPath(expanded, 4);
+        const cx = zonePins.reduce((s, p) => s + p.x, 0) / zonePins.length;
+        const cy = zonePins.reduce((s, p) => s + p.y, 0) / zonePins.length;
+        return { key, zone: z, pathD, cx, cy };
+      }).filter(Boolean)
+    : [];
+
+  const kratonPin = mode === "distance" ? pins.find((p) => p.slug === "kraton") : null;
+  const kratonCoord = kratonPin ? coordOf(kratonPin) : null;
+  const distanceLines = mode === "distance" && kratonCoord
+    ? pins.filter((p) => p.slug !== "kraton" && p.distanceKm > 0).map((p) => {
+        const { x, y } = coordOf(p);
+        return { pin: p, x, y, mx: (kratonCoord.x + x) / 2, my: (kratonCoord.y + y) / 2 };
+      })
+    : [];
+
+  const itineraryStopInfo = {};
+  if (mode === "itinerary") {
+    itineraryPaths.forEach((path) => {
+      path.points.forEach((p, i) => {
+        itineraryStopInfo[p.id] = { index: i + 1, color: path.color, day: path.day };
+      });
+    });
+  }
+
   // ── Drag handling (edit mode only) ──
   const onPointerDownPin = (pin) => (e) => {
     if (!editMode) return;
@@ -437,14 +463,13 @@ export default function InteractiveMapsSection() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      const existing = await base44.entities.MapPinPosition.list();
+      const existing = await base44.entities.MapPlace.list();
       const bySlug = {};
       existing.forEach((r) => { bySlug[r.slug] = r; });
+      
       for (const [slug, { x, y }] of Object.entries(positions)) {
         if (bySlug[slug]) {
-          await base44.entities.MapPinPosition.update(bySlug[slug].id, { x, y });
-        } else {
-          await base44.entities.MapPinPosition.create({ slug, x, y });
+          await base44.entities.MapPlace.update(bySlug[slug].id, { x, y });
         }
       }
       setDirty(false);
@@ -490,7 +515,7 @@ export default function InteractiveMapsSection() {
         {/* Map */}
           <div
             ref={mapRef}
-            className="relative mx-auto w-full overflow-hidden rounded-2xl aspect-[4/5] md:aspect-[16/10]"
+            className="relative mx-auto w-full overflow-hidden rounded-2xl aspect-square md:aspect-[16/10]"
             style={{ touchAction: zoomEnabled ? "none" : undefined }}
           onClick={() => setOpenPin(null)}
         >
@@ -523,35 +548,139 @@ export default function InteractiveMapsSection() {
             }}
           >
             <SmartImage
-              src={MAP_BG}
+              src={mode === "zones" || mode === "itinerary" ? "/images/maps/jogja_maps_bg_bw.jpg" : "/images/maps/jogja_maps_bg.jpg"}
               alt="Map of D.I. Yogyakarta"
               className="absolute inset-0 h-full w-full object-contain transition-opacity"
-              style={{ opacity: mode === "zones" || mode === "itinerary" ? 0.6 : 1 }}
             />
 
-            {/* SVG overlay: zone blobs (mode 2) + route lines (mode 3) */}
+            {/* SVG overlay: zone shapes, route lines, distance connectors */}
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              {mode === "zones" && Object.entries(ZONES).map(([key, z]) => {
-                const zonePins = pins.filter((p) => p.zone === key).map((p) => ({ ...p, ...coordOf(p) }));
-                if (zonePins.length === 0) return null;
-                const cx = zonePins.reduce((s, p) => s + p.x, 0) / zonePins.length;
-                const cy = zonePins.reduce((s, p) => s + p.y, 0) / zonePins.length;
-                const rx = Math.max(...zonePins.map((p) => Math.abs(p.x - cx))) + 8;
-                const ry = Math.max(...zonePins.map((p) => Math.abs(p.y - cy))) + 8;
-                return <ellipse key={key} cx={cx} cy={cy} rx={rx} ry={ry} fill={z.color} opacity="0.16" />;
-              })}
+              {/* Zone convex hull shapes */}
+              {mode === "zones" && zoneHulls.map((zh) => (
+                <path
+                  key={zh.key}
+                  d={zh.pathD}
+                  fill={zh.zone.color}
+                  fillOpacity="0.12"
+                  stroke={zh.zone.color}
+                  strokeOpacity="0.35"
+                  strokeWidth="1.5"
+                  strokeDasharray="5 5"
+                  vectorEffect="non-scaling-stroke"
+                />
+              ))}
+              {/* Itinerary route polylines */}
               {itineraryPaths.map((path) => (
                 <polyline
                   key={path.day}
                   points={path.points.map((p) => `${p.x},${p.y}`).join(" ")}
                   fill="none"
                   stroke={path.color}
-                  strokeWidth="0.6"
-                  strokeDasharray="2 1.5"
+                  strokeWidth="2.5"
+                  strokeDasharray="6 4"
                   strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+              ))}
+              {/* Distance radial lines from Kraton */}
+              {mode === "distance" && kratonCoord && distanceLines.map((dl) => (
+                <line
+                  key={`dist-line-${dl.pin.id}`}
+                  x1={kratonCoord.x} y1={kratonCoord.y}
+                  x2={dl.x} y2={dl.y}
+                  stroke="var(--color-primary)"
+                  strokeWidth="1.5"
+                  strokeDasharray="4 4"
+                  opacity={openPin === dl.pin.id ? 0.6 : 0}
+                  style={{ transition: "opacity 0.2s ease" }}
+                  className="hidden md:block"
+                  vectorEffect="non-scaling-stroke"
                 />
               ))}
             </svg>
+
+            {/* Zone name labels */}
+            {mode === "zones" && zoneHulls.map((zh) => {
+              // Add offsets to prevent labels overlapping with place pins in the centroid
+              const yOffset = zh.key === "north" ? -8 : zh.key === "south" ? 8 : 0;
+              const xOffset = zh.key === "city" ? 12 : 0;
+              
+              return (
+              <div
+                key={`zone-label-${zh.key}`}
+                className="absolute pointer-events-none"
+                style={{
+                  left: `${zh.cx + xOffset}%`,
+                  top: `${zh.cy + yOffset}%`,
+                  transform: `translate(-50%, -50%) scale(${1 / (transform.scale || 1)})`,
+                  zIndex: 10,
+                }}
+              >
+                <span
+                  className="inline-block rounded-lg px-2 py-1 text-[11px] font-bold whitespace-nowrap shadow-sm"
+                  style={{ backgroundColor: zh.zone.color, color: "#fff", opacity: 0.85 }}
+                >
+                  {zh.zone.label}
+                </span>
+              </div>
+            )})}
+
+            {/* Itinerary day badges at first stop of each day */}
+            {mode === "itinerary" && itineraryPaths.map((path) => {
+              const first = path.points[0];
+              if (!first) return null;
+              return (
+                <div
+                  key={`day-badge-${path.day}`}
+                  className="absolute pointer-events-none"
+                  style={{
+                    left: `${first.x}%`,
+                    top: `${first.y}%`,
+                    transform: `translate(-50%, calc(-100% - 28px)) scale(${1 / (transform.scale || 1)})`,
+                    transformOrigin: "center bottom",
+                    zIndex: 15,
+                  }}
+                >
+                  <span
+                    className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold text-white shadow-md whitespace-nowrap"
+                    style={{ backgroundColor: path.color }}
+                  >
+                    Day {path.day}
+                  </span>
+                </div>
+              );
+            })}
+
+            {/* Distance midpoint labels */}
+            {mode === "distance" && distanceLines.map((dl) => {
+              const isHighlighted = openPin === dl.pin.id;
+              return (
+                <div
+                  key={`dist-label-${dl.pin.id}`}
+                  className="absolute pointer-events-none hidden md:block"
+                  style={{
+                    left: `${dl.mx}%`,
+                    top: `${dl.my}%`,
+                    transform: `translate(-50%, -50%) scale(${1 / (transform.scale || 1)})`,
+                    opacity: isHighlighted ? 1 : 0,
+                    zIndex: isHighlighted ? 50 : 5,
+                    transition: "opacity 0.2s ease",
+                  }}
+                >
+                  <span
+                    className={`inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 whitespace-nowrap shadow-sm ${isHighlighted ? "text-[10px] font-bold" : "text-[8px] font-semibold"}`}
+                    style={{
+                      backgroundColor: isHighlighted ? "var(--color-primary)" : "rgba(255,255,255,0.88)",
+                      color: isHighlighted ? "#fff" : "var(--text-secondary)",
+                      transition: "all 0.2s ease",
+                    }}
+                  >
+                    <Clock className="h-2 w-2" />
+                    {dl.pin.distanceKm}km · ~{dl.pin.durationMin}m
+                  </span>
+                </div>
+              );
+            })}
 
             {/* Pins */}
             {pins.map((pin) => {
@@ -559,6 +688,7 @@ export default function InteractiveMapsSection() {
               const isOpen = openPin === pin.id;
               const { x, y } = coordOf(pin);
               const { color: kc, Icon } = kindOf(pin);
+              const stopInfo = itineraryStopInfo[pin.id];
               return (
                 <div
                   key={pin.id}
@@ -588,8 +718,12 @@ export default function InteractiveMapsSection() {
                         boxShadow: "0 1px 3px rgba(0,0,0,0.25)" 
                       }}
                     >
-                      <span className="flex h-4 w-4 items-center justify-center rounded-full ring-1 ring-white" style={{ backgroundColor: kc }}>
-                        <Icon className="h-2.5 w-2.5" style={{ color: "#FFFFFF" }} />
+                      <span className="flex h-4 w-4 items-center justify-center rounded-full ring-1 ring-white" style={{ backgroundColor: stopInfo ? stopInfo.color : kc }}>
+                        {stopInfo ? (
+                          <span className="text-[9px] font-bold leading-none text-white">{stopInfo.index}</span>
+                        ) : (
+                          <Icon className="h-2.5 w-2.5" style={{ color: "#FFFFFF" }} />
+                        )}
                       </span>
                       <span className="text-[11px] font-semibold leading-none transition-colors" style={{ color: isOpen ? "#FFFFFF" : "#3a2c1a" }}>
                         {pin.shortLabel}
@@ -685,6 +819,52 @@ export default function InteractiveMapsSection() {
           <div className="flex flex-col gap-2 overflow-y-auto pr-1 flex-1 min-h-0 max-h-[400px] lg:max-h-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {pins.length === 0 ? (
               <p className="text-[13px] text-center mt-4" style={{ color: "var(--text-secondary)" }}>No places in this view.</p>
+            ) : mode === "itinerary" ? (
+              [1, 2, 3].map((day) => {
+                const dayPins = pins.filter((p) => p.day === day).sort((a, b) => a.dayOrder - b.dayOrder);
+                if (dayPins.length === 0) return null;
+                return (
+                  <div key={day} className="flex flex-col gap-1.5">
+                    <div className="flex items-center gap-2 pt-2 pb-1 px-1">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold text-white shrink-0" style={{ backgroundColor: DAYS[day].color }}>
+                        {day}
+                      </span>
+                      <span className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>
+                        {DAYS[day].label}
+                      </span>
+                    </div>
+                    {dayPins.map((pin, i) => {
+                      const isActive = openPin === pin.id;
+                      return (
+                        <Link
+                          key={pin.id}
+                          to={`/destinations/${pin.slug}`}
+                          onMouseEnter={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin(pin.id); }}
+                          onMouseLeave={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
+                          onClick={(e) => { if (editMode) e.preventDefault(); }}
+                          className={`group flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition-colors ${isActive ? "bg-black/5" : ""}`}
+                          style={{
+                            backgroundColor: isActive ? "var(--bg-surface-alt)" : "var(--bg-surface)",
+                            borderColor: isActive ? DAYS[day].color : "transparent",
+                          }}
+                        >
+                          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white text-[12px] font-bold" style={{ backgroundColor: DAYS[day].color }}>
+                            {i + 1}
+                          </div>
+                          <div className="flex flex-col min-w-0">
+                            <span className="text-[14px] font-semibold leading-tight truncate" style={{ color: "var(--text-primary)" }}>
+                              {pin.label}
+                            </span>
+                            <span className="mt-0.5 text-[12px] leading-snug line-clamp-1" style={{ color: "var(--text-secondary)" }}>
+                              {pin.shortDesc}
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                );
+              })
             ) : (
               pins.map((pin) => {
                 const { color: kc, Icon } = kindOf(pin);
@@ -695,15 +875,11 @@ export default function InteractiveMapsSection() {
                     to={`/destinations/${pin.slug}`}
                     onMouseEnter={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin(pin.id); }}
                     onMouseLeave={() => { if (!editMode && window.innerWidth >= 1024) setOpenPin((cur) => (cur === pin.id ? null : cur)); }}
-                    onClick={(e) => {
-                      if (editMode) {
-                        e.preventDefault();
-                      }
-                    }}
-                    className={`group flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition-colors ${isActive ? 'bg-black/5' : ''}`}
-                    style={{ 
+                    onClick={(e) => { if (editMode) e.preventDefault(); }}
+                    className={`group flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition-colors ${isActive ? "bg-black/5" : ""}`}
+                    style={{
                       backgroundColor: isActive ? "var(--bg-surface-alt)" : "var(--bg-surface)",
-                      borderColor: isActive ? "var(--color-primary)" : "transparent"
+                      borderColor: isActive ? "var(--color-primary)" : "transparent",
                     }}
                   >
                     <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white" style={{ backgroundColor: kc }}>
@@ -713,6 +889,12 @@ export default function InteractiveMapsSection() {
                       <span className="text-[14px] font-semibold leading-tight truncate" style={{ color: "var(--text-primary)" }}>
                         {pin.label}
                       </span>
+                      {mode === "distance" && pin.distanceKm != null && (
+                        <span className="mt-0.5 inline-flex items-center gap-1 text-[11px] font-semibold" style={{ color: "var(--color-primary)" }}>
+                          <Clock className="h-3 w-3" />
+                          {pin.distanceKm === 0 ? "0 KM — anchor" : `${pin.distanceKm} KM · ~${pin.durationMin} min`}
+                        </span>
+                      )}
                       <span className="mt-1 text-[12px] leading-snug line-clamp-2" style={{ color: "var(--text-secondary)" }}>
                         {pin.shortDesc}
                       </span>

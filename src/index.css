@@ -57,7 +57,7 @@
     /* Layout rhythm */
     --spacing-xl: 48px;
     --content-padding: 50px;
-    --content-max: 1600px;
+    --content-max: 1920px;
 
     --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
     --font-body: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
