@@ -4,11 +4,12 @@ import { base44 } from "@/api/base44Client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { UserPlus, Mail, Lock, Loader2 } from "lucide-react";
+import { UserPlus, Mail, Lock, Loader2, Sparkles } from "lucide-react";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import AuthLayout from "@/components/AuthLayout";
 import GoogleIcon from "@/components/GoogleIcon";
 import { toast } from "@/components/ui/use-toast";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -138,6 +139,17 @@ export default function Register() {
         </>
       }
     >
+      <div className="mb-6">
+        <Alert className="bg-primary/10 text-primary border-primary/20">
+          <Sparkles className="h-4 w-4 text-primary" />
+          <AlertTitle className="font-bold">Demo Mode Active</AlertTitle>
+          <AlertDescription className="text-xs mt-1 opacity-90">
+            The authentication system is currently taking a coffee break! ☕<br/>
+            Feel free to look around, but login and registration are disabled for this preview.
+          </AlertDescription>
+        </Alert>
+      </div>
+
       <Button
         variant="outline"
         className="w-full h-12 text-sm font-medium mb-6"

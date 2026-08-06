@@ -4,10 +4,11 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, Lock, Loader2 } from "lucide-react";
+import { Mail, Lock, Loader2, Sparkles } from "lucide-react";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import GoogleIcon from "@/components/GoogleIcon";
 import SmartImage from "@/components/shared/SmartImage";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const COVER =
   "https://media.base44.com/images/public/6a5745b9539f530d423709d4/e71523aa5_generated_image.png";
@@ -159,6 +160,17 @@ export default function AuthModal({ open, onOpenChange }) {
               </div>
             ) : (
               <>
+                <div className="mb-6">
+                  <Alert className="bg-primary/10 text-primary border-primary/20">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                    <AlertTitle className="font-bold">Demo Mode Active</AlertTitle>
+                    <AlertDescription className="text-xs mt-1 opacity-90">
+                      The authentication system is currently taking a coffee break! ☕<br/>
+                      Feel free to look around, but login and registration are disabled for this preview.
+                    </AlertDescription>
+                  </Alert>
+                </div>
+
                 <Button variant="outline" className="mb-5 h-12 w-full text-sm font-medium" onClick={handleGoogle}>
                   <GoogleIcon className="mr-2 h-5 w-5" />
                   Continue with Google
