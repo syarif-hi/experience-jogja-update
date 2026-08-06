@@ -569,7 +569,7 @@ export default function InteractiveMapsSection() {
                   key={zh.key}
                   d={zh.pathD}
                   fill={zh.zone.color}
-                  fillOpacity="0.12"
+                  fillOpacity="0.5"
                   stroke={zh.zone.color}
                   strokeOpacity="0.35"
                   strokeWidth="1.5"
