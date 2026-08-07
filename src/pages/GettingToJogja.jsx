@@ -58,8 +58,8 @@ export default function GettingToJogja({ hideShell = false }) {
           {options.map((option) => (
             <div key={option.id} className="p-6 rounded-2xl flex flex-col sm:flex-row gap-5" style={{ backgroundColor: "var(--bg-surface)" }}>
               <div className="shrink-0">
-                <div className="p-4 rounded-xl flex items-center justify-center" style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--color-primary)" }}>
-                  <option.icon className="w-8 h-8" />
+                <div className="p-3 rounded-lg" style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}>
+                  <option.icon className="w-6 h-6" />
                 </div>
               </div>
               <div>
