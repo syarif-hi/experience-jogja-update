@@ -161,7 +161,7 @@ export default function SiteHeader() {
 
   return (
     <header
-      className="sticky top-0 z-40 transition-transform duration-300 will-change-transform"
+      className="relative z-40 transition-transform duration-300 will-change-transform"
       style={{
         backgroundColor: "var(--bg-surface)",
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
