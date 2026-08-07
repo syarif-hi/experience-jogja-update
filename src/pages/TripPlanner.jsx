@@ -23,8 +23,8 @@ export default function TripPlanner({ hideShell }) {
             <Link
               key={to}
               to={to}
-              className="focus-ring flex items-center gap-4 rounded-2xl p-6 transition-shadow"
-              style={{ backgroundColor: "var(--bg-surface)", boxShadow: "var(--elevation-1)" }}
+              className="focus-ring flex items-center gap-4 rounded-2xl p-6 transition-colors hover:bg-gray-200"
+              style={{ backgroundColor: "#F5F5F5" }}
             >
               <span
                 className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
