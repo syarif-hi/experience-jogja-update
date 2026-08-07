@@ -16,7 +16,7 @@ export default function NewsletterCapture() {
   return (
     <section className="section-y !pt-0 md:!pt-0" style={{ backgroundColor: "var(--bg-page)" }}>
       <div className="content-wrap">
-        <div className="grid grid-cols-1 items-stretch overflow-hidden rounded-3xl md:grid-cols-2" style={{ backgroundColor: "#E8E8E8" }}>
+        <div className="grid grid-cols-1 items-stretch overflow-hidden rounded-3xl lg:grid-cols-2" style={{ backgroundColor: "#E8E8E8" }}>
           <div className="p-8 text-left md:p-12">
             <h2 className="font-display text-[26px] font-normal md:text-[34px]" style={{ color: "var(--color-primary)" }}>
               {t("newsletter.title")}
@@ -52,7 +52,7 @@ export default function NewsletterCapture() {
               </form>
             )}
           </div>
-          <div className="relative hidden md:block">
+          <div className="relative hidden md:block h-[320px] lg:h-auto">
             <SmartImage
               src="/images/slider/IMG-00033-cropped-w2000.jpg"
               alt="Yogyakarta scenery"
