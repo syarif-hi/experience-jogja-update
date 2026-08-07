@@ -118,14 +118,6 @@ export default function SiteHeader() {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 8);
-
-      const diff = y - lastYRef.current;
-      if (Math.abs(diff) > 5) { // Small threshold to prevent jitter
-        // Hide when scrolling down, reveal when scrolling up
-        if (diff > 0 && y > 120) setHidden(true);
-        else if (diff < 0) setHidden(false);
-        lastYRef.current = y;
-      }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

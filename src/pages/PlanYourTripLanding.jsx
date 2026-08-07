@@ -14,6 +14,9 @@ import TravelTips from "./TravelTips";
 import GettingToJogja from "./GettingToJogja";
 import GettingAround from "./GettingAround";
 import GuideArticleDetail from "./GuideArticleDetail";
+import GettingToJogjaArticle from "./GettingToJogjaArticle";
+import GettingAroundArticle from "./GettingAroundArticle";
+import TravelTipsArticle from "./TravelTipsArticle";
 
 export default function PlanYourTripLanding() {
   const { language } = useTranslation();
@@ -29,6 +32,10 @@ export default function PlanYourTripLanding() {
   const currentTabPath = location.pathname.startsWith(basePath)
     ? location.pathname.slice(basePath.length).split("/").filter(Boolean)[0]
     : "";
+  
+  // Check if we're on a detail page (has more than 2 path segments)
+  const pathSegments = location.pathname.split("/").filter(Boolean);
+  const isDetailPage = pathSegments.length > 2;
   
   // Create an array of path segments that correspond to the tabs
   const tabValues = navGroup.items.map(item => item.to.split("/").pop());
@@ -76,7 +83,7 @@ export default function PlanYourTripLanding() {
       </div>
           
       <div className="content-wrap mt-2 md:mt-6 pb-16">
-        {activeTab !== "visitor-information" && (
+        {activeTab !== "visitor-information" && !isDetailPage && (
           <Breadcrumb items={[
             { label: lbl(navGroup), to: navGroup.to },
             ...(activeTab !== tabValues[0] ? [{ label: lbl(navGroup.items.find(i => i.to.endsWith(activeTab)) || navGroup.items[0]) }] : []),
@@ -87,13 +94,13 @@ export default function PlanYourTripLanding() {
           <Route path="trip-planner" element={<TripPlanner hideShell />} />
           <Route path="itineraries" element={<Itineraries hideShell />} />
           <Route path="getting-to-jogja" element={<GettingToJogja hideShell />} />
-          <Route path="getting-to-jogja/:slug" element={<GuideArticleDetail />} />
+          <Route path="getting-to-jogja/:slug" element={<GettingToJogjaArticle />} />
           <Route path="getting-around" element={<GettingAround hideShell />} />
-          <Route path="getting-around/:slug" element={<GuideArticleDetail />} />
+          <Route path="getting-around/:slug" element={<GettingAroundArticle />} />
           <Route path="where-to-stay" element={<Stays hideShell />} />
           <Route path="visitor-information/*" element={<VisitorInformation hideShell />} />
           <Route path="travel-tips" element={<TravelTips hideShell />} />
-          <Route path="travel-tips/:slug" element={<GuideArticleDetail />} />
+          <Route path="travel-tips/:slug" element={<TravelTipsArticle />} />
         </Routes>
       </div>
     </PageShell>

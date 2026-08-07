@@ -6,6 +6,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopFab from './components/shared/ScrollToTopFab';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { CurrencyProvider } from '@/lib/CurrencyContext';
@@ -110,6 +111,7 @@ function App() {
             <CurrencyProvider>
               <Router>
                 <ScrollToTop />
+                <ScrollToTopFab />
                 <AuthenticatedApp />
               </Router>
               <Toaster />
