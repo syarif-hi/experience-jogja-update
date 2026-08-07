@@ -13,7 +13,7 @@ export default function VisitorInfoLayout({ slugs, node, trail, children, hideSh
         {/* Desktop Rail */}
         {!isHub && (
           <aside className="hidden lg:block w-[280px] shrink-0 pr-8">
-            <div className="sticky top-[190px] max-h-[calc(100vh-160px)] overflow-y-auto no-scrollbar p-4 rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+            <div className="sticky top-6 max-h-[calc(100vh-160px)] overflow-y-auto no-scrollbar p-4 rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
               <TrailRail trail={trail} currentSlugs={slugs} />
             </div>
           </aside>

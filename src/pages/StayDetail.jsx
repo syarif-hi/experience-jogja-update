@@ -98,7 +98,7 @@ export default function StayDetail() {
               </article>
 
               {/* Practical info sidebar */}
-              <aside className="lg:sticky lg:top-24 lg:self-start">
+              <aside className="lg:sticky lg:top-6 lg:self-start">
                 <PracticalInfoPanel
                   title={t("stay.booking") || "Booking"}
                   priceLine={priceLine}

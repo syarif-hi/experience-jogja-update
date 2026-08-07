@@ -71,7 +71,7 @@ export default function TravelTipsArticle() {
       <div className="flex flex-col lg:flex-row gap-8 mt-6">
         {/* Sidebar */}
         <aside className="lg:w-64 shrink-0">
-          <div className="sticky top-28 rounded-2xl p-4" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+          <div className="sticky top-6 rounded-2xl p-4" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
             <h3 className="font-heading text-[14px] font-bold mb-4 px-3" style={{ color: "var(--text-secondary)" }}>
               {language === "id" ? "Semua Topik" : "All Topics"}
             </h3>

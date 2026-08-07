@@ -88,7 +88,7 @@ export default function ArticleDetail() {
               </article>
 
               {/* Sidebar */}
-              <aside className="lg:sticky lg:top-24 lg:self-start">
+              <aside className="lg:sticky lg:top-6 lg:self-start">
                 <ArticleEssentials article={article} body={body} />
                 <div className="mt-4 rounded-2xl p-5" style={{ backgroundColor: "var(--color-primary)" }}>
                   <p className="text-[15px] font-bold" style={{ color: "var(--on-primary)" }}>{t("share.label")}</p>

@@ -149,7 +149,7 @@ export default function DestinationDetail() {
               </article>
 
               {/* Practical info sidebar */}
-              <aside className="lg:sticky lg:top-24 lg:self-start flex flex-col gap-6">
+              <aside className="lg:sticky lg:top-6 lg:self-start flex flex-col gap-6">
                 <ExploreTheAreaSidebarWidget origin={dest} />
 
                 <PracticalInfoPanel

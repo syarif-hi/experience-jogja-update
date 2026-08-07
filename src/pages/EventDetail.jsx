@@ -88,7 +88,7 @@ export default function EventDetail() {
                 </p>
               </article>
 
-              <aside className="lg:sticky lg:top-24 lg:self-start">
+              <aside className="lg:sticky lg:top-6 lg:self-start">
                 <DetailEssentials
                   rows={[
                     {
