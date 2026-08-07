@@ -13,6 +13,7 @@ import ComingSoon from "./ComingSoon";
 import TravelTips from "./TravelTips";
 import GettingToJogja from "./GettingToJogja";
 import GettingAround from "./GettingAround";
+import GuideArticleDetail from "./GuideArticleDetail";
 
 export default function PlanYourTripLanding() {
   const { language } = useTranslation();
@@ -86,10 +87,13 @@ export default function PlanYourTripLanding() {
           <Route path="trip-planner" element={<TripPlanner hideShell />} />
           <Route path="itineraries" element={<Itineraries hideShell />} />
           <Route path="getting-to-jogja" element={<GettingToJogja hideShell />} />
+          <Route path="getting-to-jogja/:slug" element={<GuideArticleDetail />} />
           <Route path="getting-around" element={<GettingAround hideShell />} />
+          <Route path="getting-around/:slug" element={<GuideArticleDetail />} />
           <Route path="where-to-stay" element={<Stays hideShell />} />
           <Route path="visitor-information/*" element={<VisitorInformation hideShell />} />
           <Route path="travel-tips" element={<TravelTips hideShell />} />
+          <Route path="travel-tips/:slug" element={<GuideArticleDetail />} />
         </Routes>
       </div>
     </PageShell>

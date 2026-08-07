@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "@/lib/i18n";
+import { Link } from "react-router-dom";
 import PageShell from "@/components/layout/PageShell";
 import { Calendar, Backpack, Heart, Shield, Wallet, Languages } from "lucide-react";
 
@@ -75,13 +76,21 @@ export default function TravelTips({ hideShell = false }) {
               <div className="p-3 rounded-lg" style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}>
                 <tip.icon className="w-6 h-6" />
               </div>
-              <div>
+              <div className="flex flex-col flex-grow">
                 <h3 className="font-heading text-[18px] font-bold mb-2" style={{ color: "var(--text-primary)" }}>
                   {language === "id" ? tip.title_id : tip.title_en}
                 </h3>
-                <p className="text-[15px] leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                <p className="text-[15px] leading-relaxed mb-4 flex-grow" style={{ color: "var(--text-secondary)" }}>
                   {language === "id" ? tip.desc_id : tip.desc_en}
                 </p>
+                <Link
+                  to={`/plan-your-trip/travel-tips/${tip.id}`}
+                  className="inline-flex items-center gap-1.5 text-[14px] font-semibold transition-opacity hover:opacity-80 mt-auto"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  {language === "id" ? "Pelajari Lebih Lanjut" : "Learn More"}
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
               </div>
             </div>
           ))}

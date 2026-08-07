@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "@/lib/i18n";
+import { Link } from "react-router-dom";
 import PageShell from "@/components/layout/PageShell";
 import { Plane, Train, Bus, Car } from "lucide-react";
 
@@ -65,9 +66,17 @@ export default function GettingToJogja({ hideShell = false }) {
                 <h3 className="font-heading text-[20px] font-bold mb-2" style={{ color: "var(--text-primary)" }}>
                   {language === "id" ? option.title_id : option.title_en}
                 </h3>
-                <p className="text-[15px] leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                <p className="text-[15px] leading-relaxed mb-4" style={{ color: "var(--text-secondary)" }}>
                   {language === "id" ? option.desc_id : option.desc_en}
                 </p>
+                <Link
+                  to={`/plan-your-trip/getting-to-jogja/${option.id}`}
+                  className="inline-flex items-center gap-1.5 text-[14px] font-semibold transition-opacity hover:opacity-80"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  {language === "id" ? "Pelajari Lebih Lanjut" : "Learn More"}
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
               </div>
             </div>
           ))}
