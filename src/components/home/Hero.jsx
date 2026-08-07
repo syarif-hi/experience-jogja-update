@@ -51,17 +51,17 @@ export default function Hero() {
           <Swiper
             modules={[Autoplay, Navigation, EffectFade]}
             effect="fade"
-            fadeEffect={{ crossFade: true }}
+            fadeEffect={{ crossFade: false }}
             autoplay={{ delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             navigation={{ prevEl: '.hero-prev', nextEl: '.hero-next' }}
             onSlideChange={(swiper) => setIndex(swiper.realIndex)}
             onSwiper={setSwiperInstance}
             loop={true}
             speed={1}
-            className="h-full w-full"
+            className="h-full w-full bg-black"
           >
             {SLIDES.map((src, i) => (
-              <SwiperSlide key={src} className="h-full w-full">
+              <SwiperSlide key={src} className="h-full w-full transform-gpu">
                 <img
                   src={src}
                   alt="Yogyakarta"
