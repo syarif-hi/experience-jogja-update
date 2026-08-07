@@ -16,7 +16,7 @@ export default function GuideArticleDetail() {
   useEffect(() => {
     setLoading(true);
     // Fetch article by slug
-    base44.entities.GuideArticle.filter({ slug, _limit: 1 })
+    base44.entities.guide_article.filter({ slug, _limit: 1 })
       .then((res) => {
         if (res && res.length > 0) setArticle(res[0]);
         else setArticle(null);
