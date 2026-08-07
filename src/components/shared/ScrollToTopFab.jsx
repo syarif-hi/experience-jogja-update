@@ -37,7 +37,7 @@ export default function ScrollToTopFab() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed ${bottomPosition} right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110`}
+      className={`fixed ${bottomPosition} right-6 z-[9999] flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110`}
       style={{ backgroundColor: "var(--color-primary)", color: "var(--on-primary)" }}
       aria-label="Scroll to top"
     >
