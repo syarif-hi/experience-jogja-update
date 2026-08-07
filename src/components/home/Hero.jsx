@@ -94,7 +94,7 @@ export default function Hero() {
       {/* Menu grid — below the slider */}
       <div className="py-6 md:py-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="content-wrap">
-          <div className="grid grid-cols-3 md:flex md:flex-wrap md:justify-start md:gap-10 gap-y-6 gap-x-2">
+          <div className="grid grid-cols-3 md:grid-cols-6 lg:flex lg:flex-wrap lg:justify-start lg:gap-10 gap-y-6 gap-x-2">
             {PILLS.map((p) => {
               const label = language === "id" ? p.label_id : p.label_en;
               return (
@@ -107,7 +107,7 @@ export default function Hero() {
                     <img src={p.icon} alt={label} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                   </div>
                   <span
-                    className="text-[11px] md:text-[15px] font-medium leading-tight px-1 uppercase md:whitespace-nowrap"
+                    className="text-[11px] md:text-[14px] font-medium leading-tight px-1 uppercase lg:whitespace-nowrap md:max-w-[120px] lg:max-w-none"
                     style={{ color: "var(--text-primary)" }}
                   >
                     {label}
