@@ -53,26 +53,28 @@ export default function SiteFooter() {
             {/* Explore menu */}
             <div className="mt-8">
               <h4 className="text-[15px] font-bold uppercase tracking-wide" style={{ color: "#FFFFFF" }}>{t("footer.explore")}</h4>
-              {/* Row 1 — navbar menu */}
-              <ul className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-                {navLinks.map((l, i) => (
-                  <li key={l.label} className="flex items-center gap-4">
-                    <Link to={l.to} className="focus-ring rounded text-[14px] uppercase hover:underline" style={{ color: "#FFFFFF" }}>
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              {/* Row 2 — category menu */}
-              <ul className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-                {categoryLinks.map((l, i) => (
-                  <li key={l.label} className="flex items-center gap-4">
-                    <Link to={l.to} className="focus-ring rounded text-[14px] uppercase hover:underline" style={{ color: "#FFFFFF" }}>
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-3 grid grid-cols-2 gap-4 sm:gap-8">
+                {/* Column 1 — navbar menu */}
+                <ul className="flex flex-col gap-y-2">
+                  {navLinks.map((l, i) => (
+                    <li key={l.label}>
+                      <Link to={l.to} className="focus-ring rounded text-[14px] uppercase hover:underline" style={{ color: "#FFFFFF" }}>
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {/* Column 2 — category menu */}
+                <ul className="flex flex-col gap-y-2">
+                  {categoryLinks.map((l, i) => (
+                    <li key={l.label}>
+                      <Link to={l.to} className="focus-ring rounded text-[14px] uppercase hover:underline" style={{ color: "#FFFFFF" }}>
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
