@@ -79,7 +79,7 @@ export default function SiteFooter() {
           </div>
 
           {/* RIGHT column — contact + follow us */}
-          <div className="flex flex-col gap-8 md:items-end md:text-right">
+          <div className="flex flex-col justify-end gap-8 md:items-end md:text-right">
             <div>
               <h4 className="text-[15px] font-bold uppercase tracking-wide" style={{ color: "#FFFFFF" }}>{t("footer.contact")}</h4>
               <ul className="mt-3 space-y-2 text-[14px]" style={{ color: "#FFFFFF" }}>
