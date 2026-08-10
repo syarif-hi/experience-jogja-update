@@ -53,9 +53,9 @@ export default function SiteFooter() {
             {/* Explore menu */}
             <div className="mt-8">
               <h4 className="text-[15px] font-bold uppercase tracking-wide" style={{ color: "#FFFFFF" }}>{t("footer.explore")}</h4>
-              <div className="mt-3 grid grid-cols-2 gap-4 sm:gap-8">
+              <div className="mt-3 flex gap-6 sm:gap-16">
                 {/* Column 1 — navbar menu */}
-                <ul className="flex flex-col gap-y-2">
+                <ul className="flex flex-col gap-y-2 min-w-max">
                   {navLinks.map((l, i) => (
                     <li key={l.label}>
                       <Link to={l.to} className="focus-ring rounded text-[14px] uppercase hover:underline" style={{ color: "#FFFFFF" }}>
