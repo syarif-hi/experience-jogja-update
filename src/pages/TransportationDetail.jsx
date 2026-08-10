@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Car, Wallet } from "lucide-react";
+import { Car, MapPin, Wallet, Tag } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
 import { useCurrency } from "@/lib/CurrencyContext";
@@ -10,7 +10,7 @@ import { DUMMY_TRANSPORTATION } from "@/lib/dummyData";
 
 export default function TransportationDetail() {
   const { slug } = useParams();
-  const { language } = useTranslation();
+  const { t, language } = useTranslation();
   const { currency } = useCurrency();
   const [item, setItem] = useState(undefined);
 
@@ -28,28 +28,44 @@ export default function TransportationDetail() {
 
   const name = item && (language === "id" ? item.name_id : item.name_en);
   const description = item && (language === "id" ? (item.description_id || item.descriptor_id) : (item.description_en || item.descriptor_en));
-  const priceLine = item && typeof item.price_idr === "number" ? formatPrice(item.price_idr, currency) : null;
+  const pickup = item && (language === "id" ? item.pickup_id : item.pickup_en);
+  const priceLine = item && typeof item.price_idr === "number" ? `${t("from") || "From"} ${formatPrice(item.price_idr, currency)}` : null;
+  const typeLabel = item && item.type && (item.type.charAt(0).toUpperCase() + item.type.slice(1));
 
   const status = item === undefined ? "loading" : item === null ? "notFound" : "ok";
 
   return (
     <BookingDetailShell
       status={status}
-      breadcrumb={[
-        { label: language === "id" ? "Pesan Pengalaman" : "Book Experience", to: "/book-experience" },
-        { label: language === "id" ? "Transportasi" : "Transportation", to: "/book-experience/transportation" },
-        ...(name ? [{ label: name }] : []),
+      trail={[
+        { id: "home", path: "/", title: t("home") || "Home" },
+        { id: "book", path: "/book-experience", title: language === "id" ? "Pesan Pengalaman" : "Book Experience" },
+        { id: "transport", path: "/book-experience/transportation", title: language === "id" ? "Transportasi" : "Transportation" },
+        ...(name ? [{ id: "current", path: `/transportation/${slug}`, title: name }] : []),
       ]}
-      backTo="/book-experience/transportation"
       title={name}
-      subtitleNode={null}
+      badges={[
+        typeLabel && { key: "type", icon: Car, label: typeLabel },
+        priceLine && { key: "price", icon: Tag, label: priceLine },
+      ].filter(Boolean)}
+      subtitleLine={pickup}
+      heroImageUrl={item && item.hero_image_url}
+      gallery={item && item.gallery_image_urls}
       facts={[
-        item && item.type && { icon: Car, label: item.type.charAt(0).toUpperCase() + item.type.slice(1) },
+        typeLabel && { icon: Car, label: typeLabel },
         priceLine && { icon: Wallet, label: priceLine },
       ]}
       description={description}
       highlights={item && item.highlights}
-      hero={item && item.hero_image_url}
+      practicalTitle={language === "id" ? "Informasi Booking" : "Booking Information"}
+      practicalRows={item ? [
+        typeLabel && { icon: Car, label: language === "id" ? "Jenis" : "Type", value: typeLabel },
+        priceLine && { icon: Wallet, label: t("detail.price") || "Price", value: priceLine },
+        pickup && { icon: MapPin, label: language === "id" ? "Titik Jemput" : "Pick-up", value: pickup },
+      ].filter(Boolean) : []}
+      practicalCta={{ label: language === "id" ? "Pesan Sekarang" : "Book Now", to: "#" }}
+      relatedRegency={null}
+      reviewsKey={slug}
       fallbackCopy={language === "id" ? "Rincian transportasi akan segera hadir." : "Full transportation details coming soon."}
     />
   );

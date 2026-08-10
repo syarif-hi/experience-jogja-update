@@ -8,10 +8,23 @@ import { formatPrice } from "@/lib/currency";
 import { regencyLabel } from "@/lib/regencies";
 import PageShell from "@/components/layout/PageShell";
 import SmartImage from "@/components/shared/SmartImage";
+import CatalogFilters from "@/components/shared/CatalogFilters";
 import { DUMMY_ACTIVITIES } from "@/lib/dummyData";
 
+const ACTIVITY_CATEGORY_FILTER = {
+  key: "category",
+  label_en: "Category:",
+  label_id: "Kategori:",
+  values: [
+    { value: "culture", label_en: "Culture", label_id: "Budaya" },
+    { value: "adventure", label_en: "Adventure", label_id: "Petualangan" },
+    { value: "wellness", label_en: "Wellness", label_id: "Kesejahteraan" },
+    { value: "food", label_en: "Food & Drink", label_id: "Kuliner" },
+  ],
+};
+
 export default function Activities({ hideShell }) {
-  const { t, language } = useTranslation();
+  const { language } = useTranslation();
   const { currency } = useCurrency();
   const [items, setItems] = useState(null);
 
@@ -23,47 +36,51 @@ export default function Activities({ hideShell }) {
     }
   }, []);
 
-  const displayItems = items?.length === 0 ? DUMMY_ACTIVITIES : items;
+  const displayItems = items === null ? null : (items.length === 0 ? DUMMY_ACTIVITIES : items);
 
   return (
     <PageShell
-      title={language === 'id' ? 'Aktivitas & Workshop' : 'Activities & Workshops'}
-      subtitle={language === 'id' ? 'Ikuti berbagai aktivitas menarik.' : 'Join various interesting activities.'}
+      title={language === "id" ? "Aktivitas & Workshop" : "Activities & Workshops"}
+      subtitle={language === "id" ? "Ikuti berbagai aktivitas menarik." : "Join various interesting activities."}
       hideShell={hideShell}
     >
       <div className={hideShell ? "pt-2" : "content-wrap"}>
-        <div className="mt-8 grid grid-cols-2 gap-4 pb-16 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
-          {displayItems === null ? (
-            Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="aspect-[4/3] animate-pulse rounded-2xl" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
-            ))
-          ) : displayItems.length === 0 ? (
-            <p className="text-[14px]" style={{ color: "var(--text-secondary)" }}>{t("empty.none") || "No items found."}</p>
-          ) : (
-            displayItems.map((s) => {
-              const name = language === "id" ? s.name_id : s.name_en;
-              return (
-                <Link key={s.id} to={`/activities/${s.slug}`} className="group focus-ring block rounded-2xl">
-                  <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                    <SmartImage src={s.hero_image_url} alt={name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  </div>
-                  <div className="pt-3">
-                    <h3 className="mt-1 truncate text-[15px] font-bold" style={{ color: "var(--color-primary)" }}>{name}</h3>
-                    <p className="flex items-center gap-1 text-[13px] mt-0.5" style={{ color: "var(--text-secondary)" }}>
-                      {regencyLabel(s.regency, language)}
-                      {s.duration_hours && <span className="inline-flex items-center ml-1"><Clock className="h-3 w-3 mr-1"/> {s.duration_hours}h</span>}
-                    </p>
-                    {typeof s.price_idr === "number" && (
-                      <p className="mt-1 text-[13px] font-semibold" style={{ color: "var(--color-primary)" }}>
-                        {formatPrice(s.price_idr, currency)}
+        <CatalogFilters
+          items={displayItems}
+          priceKey="price_idr"
+          extraFilter={ACTIVITY_CATEGORY_FILTER}
+          searchPlaceholder={{
+            en: "Search workshops, activities, classes...",
+            id: "Cari workshop, aktivitas, kelas...",
+          }}
+        >
+          {(list) => (
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+              {list.map((s) => {
+                const name = language === "id" ? s.name_id : s.name_en;
+                return (
+                  <Link key={s.id} to={`/activities/${s.slug}`} className="group focus-ring block rounded-2xl">
+                    <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+                      <SmartImage src={s.hero_image_url} alt={name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="pt-3">
+                      <h3 className="mt-1 truncate text-[15px] font-bold" style={{ color: "var(--color-primary)" }}>{name}</h3>
+                      <p className="flex items-center gap-1 text-[13px] mt-0.5" style={{ color: "var(--text-secondary)" }}>
+                        {regencyLabel(s.regency, language)}
+                        {s.duration_hours && <span className="inline-flex items-center ml-1"><Clock className="h-3 w-3 mr-1"/> {s.duration_hours}h</span>}
                       </p>
-                    )}
-                  </div>
-                </Link>
-              );
-            })
+                      {typeof s.price_idr === "number" && (
+                        <p className="mt-1 text-[13px] font-semibold" style={{ color: "var(--color-primary)" }}>
+                          {formatPrice(s.price_idr, currency)}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           )}
-        </div>
+        </CatalogFilters>
       </div>
     </PageShell>
   );
