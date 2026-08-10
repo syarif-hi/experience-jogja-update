@@ -31,7 +31,7 @@
             "id": "Bandara"
           },
           "icon": "plane",
-          "coverImage": "https://picsum.photos/seed/Airports/800/600",
+          "coverImage": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
           "summary": {
             "en": "Comprehensive guide and information about Airports in Yogyakarta.",
             "id": "Panduan dan informasi lengkap tentang Bandara di Yogyakarta."
@@ -54,7 +54,7 @@
                 "id": "YIA (Bandara Internasional Yogyakarta)"
               },
               "icon": "plane",
-              "coverImage": "https://picsum.photos/seed/YIA%20Airport%20Terminal/800/600",
+              "coverImage": "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=800&q=80",
               "summary": {
                 "en": "Your complete guide to Yogyakarta International Airport (YIA) — Indonesia's newest and most modern airport serving the Yogyakarta region.",
                 "id": "Panduan lengkap Bandara Internasional Yogyakarta (YIA) — bandara terbaru dan termodern di Indonesia yang melayani wilayah Yogyakarta."
@@ -79,21 +79,21 @@
                 },
                 "images": [
                   {
-                    "url": "https://picsum.photos/seed/YIA-terminal-interior/900/500",
+                    "url": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?w=900&q=80",
                     "caption": {
                       "en": "YIA's modern terminal building with its distinctive Javanese-inspired roof design",
                       "id": "Terminal modern YIA dengan desain atap khas Jawa"
                     }
                   },
                   {
-                    "url": "https://picsum.photos/seed/YIA-departure-hall/900/500",
+                    "url": "https://images.unsplash.com/photo-1600320254374-ce2d293c324e?w=900&q=80",
                     "caption": {
                       "en": "Spacious departure hall with check-in counters and digital displays",
                       "id": "Ruang keberangkatan yang luas dengan konter check-in dan layar digital"
                     }
                   },
                   {
-                    "url": "https://picsum.photos/seed/YIA-runway-aerial/900/500",
+                    "url": "https://images.unsplash.com/photo-1495435229349-e86db7bfa013?w=900&q=80",
                     "caption": {
                       "en": "Aerial view of YIA's 3,250-meter runway along the southern coast",
                       "id": "Pemandangan udara landasan pacu YIA sepanjang 3.250 meter di pesisir selatan"
@@ -143,7 +143,7 @@
                 "id": "JOG (Bandara Internasional Adisutjipto)"
               },
               "icon": "plane",
-              "coverImage": "https://picsum.photos/seed/JOG%20(Adisutjipto%20International%20Airport)/800/600",
+              "coverImage": "https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=800&q=80",
               "summary": {
                 "en": "Comprehensive guide and information about JOG (Adisutjipto International Airport) in Yogyakarta.",
                 "id": "Panduan dan informasi lengkap tentang JOG (Bandara Internasional Adisutjipto) di Yogyakarta."
@@ -176,7 +176,7 @@
             "id": "Stasiun Kereta"
           },
           "icon": "train",
-          "coverImage": "https://picsum.photos/seed/Train%20Stations/800/600",
+          "coverImage": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80",
           "summary": {
             "en": "Comprehensive guide and information about Train Stations in Yogyakarta.",
             "id": "Panduan dan informasi lengkap tentang Stasiun Kereta di Yogyakarta."
@@ -199,7 +199,7 @@
                 "id": "Stasiun Tugu"
               },
               "icon": "train",
-              "coverImage": "https://picsum.photos/seed/Tugu%20Station/800/600",
+              "coverImage": "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80",
               "summary": {
                 "en": "Comprehensive guide and information about Tugu Station in Yogyakarta.",
                 "id": "Panduan dan informasi lengkap tentang Stasiun Tugu di Yogyakarta."
@@ -226,7 +226,7 @@
                 "id": "Stasiun Lempuyangan"
               },
               "icon": "train",
-              "coverImage": "https://picsum.photos/seed/Lempuyangan%20Station/800/600",
+              "coverImage": "https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=800&q=80",
               "summary": {
                 "en": "Comprehensive guide and information about Lempuyangan Station in Yogyakarta.",
                 "id": "Panduan dan informasi lengkap tentang Stasiun Lempuyangan di Yogyakarta."
@@ -259,7 +259,7 @@
             "id": "Terminal Bus"
           },
           "icon": "bus",
-          "coverImage": "https://picsum.photos/seed/Bus%20Terminals/800/600",
+          "coverImage": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
           "summary": {
             "en": "Comprehensive guide and information about Bus Terminals in Yogyakarta.",
             "id": "Panduan dan informasi lengkap tentang Terminal Bus di Yogyakarta."
@@ -286,7 +286,7 @@
             "id": "Transportasi Antarkota"
           },
           "icon": "car",
-          "coverImage": "https://picsum.photos/seed/Intercity%20Transportation/800/600",
+          "coverImage": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
           "summary": {
             "en": "Comprehensive guide and information about Intercity Transportation in Yogyakarta.",
             "id": "Panduan dan informasi lengkap tentang Transportasi Antarkota di Yogyakarta."

@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
@@ -23,6 +23,10 @@ import News from '@/pages/News';
 import ArticleDetail from '@/pages/ArticleDetail';
 import Stays from '@/pages/Stays';
 import StayDetail from '@/pages/StayDetail';
+import TourDetail from '@/pages/TourDetail';
+import ActivityDetail from '@/pages/ActivityDetail';
+import RestaurantDetail from '@/pages/RestaurantDetail';
+import TransportationDetail from '@/pages/TransportationDetail';
 import VisitorInformation from '@/pages/VisitorInformation';
 import DiscoverPageTemplate from '@/pages/DiscoverPageTemplate';
 import Itineraries from '@/pages/Itineraries';
@@ -39,6 +43,16 @@ import AccountOverview from '@/pages/account/AccountOverview';
 import NotificationPreferences from '@/pages/account/NotificationPreferences';
 import ProfileSettings from '@/pages/account/ProfileSettings';
 // Add page imports here
+
+const NavigateToPlanYourTrip = () => {
+  const location = useLocation();
+  return <Navigate to={`/plan-your-trip${location.pathname}`} replace />;
+};
+
+const HotelRedirect = () => {
+  const location = useLocation();
+  return <Navigate to={location.pathname.replace(/^\/hotels\//, "/stays/")} replace />;
+};
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -83,9 +97,17 @@ const AuthenticatedApp = () => {
       <Route path="/discover/*" element={<DiscoverLanding />} />
       <Route path="/stays" element={<Stays />} />
       <Route path="/stays/:slug" element={<StayDetail />} />
+      <Route path="/tours/:slug" element={<TourDetail />} />
+      <Route path="/activities/:slug" element={<ActivityDetail />} />
+      <Route path="/restaurants/:slug" element={<RestaurantDetail />} />
+      <Route path="/transportation/:slug" element={<TransportationDetail />} />
+      <Route path="/hotels/:slug" element={<HotelRedirect />} />
       <Route path="/visitor-information/*" element={<Navigate to="/plan-your-trip/visitor-information" replace />} />
-      <Route path="/itineraries" element={<Itineraries />} />
-      <Route path="/itineraries/:slug" element={<ItineraryDetail />} />
+      <Route path="/itineraries/*" element={
+        <Routes>
+          <Route path="*" element={<NavigateToPlanYourTrip />} />
+        </Routes>
+      } />
       <Route path="/trip-planner" element={<TripPlanner />} />
       <Route path="/coming-soon" element={<ComingSoon />} />
       {/* Account panel (protected) */}

@@ -106,7 +106,7 @@ export default function GettingAroundArticle() {
                 className="rounded-2xl overflow-hidden mb-4 md:mb-8"
                 style={{ backgroundColor: "var(--bg-surface-alt)" }}
               >
-                <div className="w-full aspect-[16/9] overflow-hidden">
+                <div className="w-full aspect-[16/9] md:aspect-[32/9] overflow-hidden">
                   <SmartImage
                     src={article.cover_image_url}
                     alt={title}

@@ -15,6 +15,7 @@ import LocationMap from "@/components/detail/LocationMap";
 import PracticalInfoPanel from "@/components/detail/PracticalInfoPanel";
 import ReviewsPlaceholder from "@/components/detail/ReviewsPlaceholder";
 import YouMightAlsoLike from "@/components/detail/YouMightAlsoLike";
+import { DUMMY_STAYS } from "@/lib/dummyData";
 
 export default function StayDetail() {
   const { slug } = useParams();
@@ -24,7 +25,10 @@ export default function StayDetail() {
 
   useEffect(() => {
     setStay(undefined);
-    base44.entities.Stay.filter({ slug }).then((r) => setStay(r[0] || null)).catch(() => setStay(null));
+    const fromDummy = DUMMY_STAYS.find((x) => x.slug === slug);
+    base44.entities.Stay.filter({ slug })
+      .then((r) => setStay(r[0] || fromDummy || null))
+      .catch(() => setStay(fromDummy || null));
   }, [slug]);
 
   const name = stay && (language === "id" ? stay.name_id : stay.name_en);

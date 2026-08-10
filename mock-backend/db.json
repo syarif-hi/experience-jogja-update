@@ -1,4 +1,142 @@
 {
+  "itinerary": [
+    {
+      "id": "itin-3-days-heritage",
+      "slug": "3-days-heritage",
+      "duration_days": 3,
+      "title_id": "3 Hari Menyusuri Warisan Jogja",
+      "title_en": "3 Days Jogja Heritage Trail",
+      "summary_id": "Tiga hari penuh menelusuri jantung budaya Yogyakarta: dari keraton dan lorong kota tua, candi-candi megah warisan dunia, hingga tebing purba dan gunung api tua di ufuk timur.",
+      "summary_en": "Three immersive days through the cultural heart of Yogyakarta: from the Sultan's palace and old-town lanes to world-heritage temples, and finally the ancient cliffs and volcano on the eastern horizon.",
+      "cover_image_url": "https://images.unsplash.com/photo-1584810359583-96fc9f6bffb0?w=1200&q=80",
+      "intro_id": "Perjalanan ini dirancang untuk kamu yang ingin memahami Jogja bukan sekadar sebagai tujuan wisata, tetapi sebagai kota yang masih hidup dalam ritme tradisinya. Dalam tiga hari, kamu akan berpindah dari lorong-lorong keraton yang penuh cerita, ke candi-candi berusia ribuan tahun, lalu menutupnya di lanskap purba yang membentuk wajah Yogyakarta hingga hari ini. Siapkan sepatu yang nyaman, sedikit rasa penasaran, dan waktu untuk singgah sejenak di setiap tempat.",
+      "intro_en": "This journey is crafted for travellers who want to understand Jogja not just as a destination, but as a city that still breathes its traditions. Over three days, you'll move from the palace lanes filled with centuries of stories, to temples that predate most of what we call history, and close it out among the ancient cliffs and volcano that shaped the landscape you see today. Bring comfortable shoes, a little curiosity, and time to linger at every stop.",
+      "day_plan": [
+        {
+          "day_number": 1,
+          "title_id": "Jantung Kota & Warisan Keraton",
+          "title_en": "City Heart & Palace Heritage",
+          "intro_id": "Hari pertama adalah tentang perlahan-lahan masuk ke dalam denyut kota. Alih-alih terburu-buru menyeberangi peta, kamu akan menghabiskan waktu di jantung Yogyakarta — di mana Sultan masih tinggal, di mana lorong-lorong tua menyembunyikan warung legendaris, dan di mana batik masih dilukis dengan tangan. Anggap ini sebagai pengantar: hari untuk membaca kota sebelum memahami sejarahnya.",
+          "intro_en": "Day one is about easing into the pulse of the city. Rather than rushing across the map, you'll spend the day in the heart of Yogyakarta — where the Sultan still lives, where old lanes hide legendary warungs, and where batik is still drawn by hand. Think of it as a prologue: a day for reading the city before you begin to understand its history.",
+          "destination_ids": [
+            "6a5746d0b720d3baffe8d469",
+            "6a5746d0b720d3baffe8d468",
+            "6a59e07d26e99170ad2c5a2d",
+            "6a5746d0b720d3baffe8d466"
+          ]
+        },
+        {
+          "day_number": 2,
+          "title_id": "Candi Agung Warisan Dunia",
+          "title_en": "Grand World-Heritage Temples",
+          "intro_id": "Hari kedua membawa kamu keluar kota, menuju dua situs yang membuat Yogyakarta dikenal seluruh dunia. Berangkatlah sebelum matahari terbit — cahaya pagi di antara stupa dan menara candi adalah pengalaman yang sulit dijelaskan dan mustahil dilupakan. Antara Borobudur dan Prambanan, kamu akan menempuh lebih dari seribu tahun sejarah, dua agama besar, dan lanskap pedesaan Jawa yang tenang di antaranya.",
+          "intro_en": "Day two takes you outside the city, to the two sites that put Yogyakarta on the world map. Set out before sunrise — the early light between the stupas and temple spires is something words can't quite capture and you'll never forget. Between Borobudur and Prambanan, you'll travel through more than a thousand years of history, two great religions, and the quiet Javanese countryside that stretches between them.",
+          "destination_ids": [
+            "6a5746d0b720d3baffe8d464",
+            "6a5746d0b720d3baffe8d465",
+            "6a59e07d26e99170ad2c5a2e"
+          ]
+        },
+        {
+          "day_number": 3,
+          "title_id": "Tebing Purba & Gunung Api Tua",
+          "title_en": "Ancient Cliffs & Old Volcano",
+          "intro_id": "Hari terakhir menuntun kamu ke arah timur, ke lanskap yang jauh lebih tua dari candi mana pun — tebing kapur, formasi batuan purba, dan sisa-sisa gunung api yang membentuk pulau Jawa. Ini hari yang lebih lambat, lebih hening, dan cocok untuk merefleksikan semua yang sudah kamu lihat. Bawa kamera, air minum yang cukup, dan bersiap untuk pemandangan yang membuatmu diam sejenak.",
+          "intro_en": "The final day pulls you eastward, into a landscape far older than any temple — limestone cliffs, ancient rock formations, and the remnants of the volcano that shaped Java itself. It's a slower, quieter day, and a fitting one to reflect on everything you've seen. Bring a camera, plenty of water, and be ready for views that will stop you mid-sentence.",
+          "destination_ids": [
+            "6a59e07d26e99170ad2c5a2c",
+            "6a59e07d26e99170ad2c5a2f"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "itin-5-days-nature",
+      "slug": "5-days-nature",
+      "duration_days": 5,
+      "title_id": "5 Hari Petualangan Alam",
+      "title_en": "5 Days Nature Adventure",
+      "summary_id": "Dari kaki Gunung Merapi di utara hingga deburan ombak pantai selatan, sungai bawah tanah, dan hutan pinus. Petualangan lengkap menyusuri lanskap Yogyakarta yang beragam.",
+      "summary_en": "From the slopes of Mount Merapi in the north to the crashing waves of the southern coast, underground rivers, and pine forests. A complete adventure across Yogyakarta's diverse landscapes.",
+      "cover_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "day_plan": [
+        {
+          "day_number": 1,
+          "title_id": "Lereng Merapi di Utara",
+          "title_en": "Merapi Slopes in the North",
+          "destination_ids": [
+            "6a5746d0b720d3baffe8d46b"
+          ]
+        },
+        {
+          "day_number": 2,
+          "title_id": "Ombak Pantai Selatan",
+          "title_en": "Southern Coast Waves",
+          "destination_ids": [
+            "6a59e07d26e99170ad2c5a2a"
+          ]
+        },
+        {
+          "day_number": 3,
+          "title_id": "Susur Gua & Sungai Bawah Tanah",
+          "title_en": "Caves & Underground Rivers",
+          "destination_ids": [
+            "6a5746d0b720d3baffe8d46a",
+            "V2YrCP8G47E"
+          ]
+        },
+        {
+          "day_number": 4,
+          "title_id": "Gunung Api Purba & Pantai Tersembunyi",
+          "title_en": "Ancient Volcano & Hidden Beach",
+          "destination_ids": [
+            "6a59e07d26e99170ad2c5a2f",
+            "parabop1JB8"
+          ]
+        },
+        {
+          "day_number": 5,
+          "title_id": "Hutan Pinus & Tebing Breksi",
+          "title_en": "Pine Forest & Breksi Cliff",
+          "destination_ids": [
+            "6a59e07d26e99170ad2c5a2b",
+            "6a59e07d26e99170ad2c5a2c"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "itin-weekend-getaway",
+      "slug": "weekend-getaway",
+      "duration_days": 2,
+      "title_id": "Liburan Akhir Pekan",
+      "title_en": "Weekend Getaway",
+      "summary_id": "Dua hari santai menikmati denyut kota Jogja: belanja di Malioboro dan Beringharjo, foto di Tugu, lalu menyelami sejarah di Keraton dan Taman Sari.",
+      "summary_en": "Two relaxed days soaking up the pulse of the city: shopping along Malioboro and Beringharjo, photos at Tugu, then a dive into history at the Kraton and Taman Sari.",
+      "cover_image_url": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=1200&q=80",
+      "day_plan": [
+        {
+          "day_number": 1,
+          "title_id": "Denyut Kota & Belanja",
+          "title_en": "City Pulse & Shopping",
+          "destination_ids": [
+            "6a5746d0b720d3baffe8d466",
+            "6a59e07d26e99170ad2c5a2d",
+            "6a5746d0b720d3baffe8d467"
+          ]
+        },
+        {
+          "day_number": 2,
+          "title_id": "Sejarah Keraton",
+          "title_en": "Palace History",
+          "destination_ids": [
+            "6a5746d0b720d3baffe8d469",
+            "6a5746d0b720d3baffe8d468"
+          ]
+        }
+      ]
+    }
+  ],
   "auth_me": {
     "id": 1,
     "email": "demo@example.com",

@@ -92,7 +92,7 @@ function ArticleImages({ images, language }) {
     <div className="my-8 flex flex-col gap-5">
       {images.map((img, idx) => (
         <figure key={idx} className="rounded-2xl overflow-hidden" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
-          <div className="w-full aspect-[16/9] overflow-hidden">
+          <div className="w-full aspect-[16/9] md:aspect-[32/9] overflow-hidden">
             <SmartImage
               src={img.url}
               alt={getLocalizedString(img.caption, language) || ""}
@@ -238,7 +238,7 @@ export default function VisitorInfoPage({ node, slugs }) {
           className="rounded-2xl overflow-hidden mb-4 md:mb-8"
           style={{ backgroundColor: "var(--bg-surface-alt)" }}
         >
-          <div className="w-full aspect-[16/9] overflow-hidden">
+          <div className="w-full aspect-[16/9] md:aspect-[32/9] overflow-hidden">
             <SmartImage
               src={node.meta.images[0].url}
               alt={getLocalizedString(node.meta.images[0].caption, language) || ""}

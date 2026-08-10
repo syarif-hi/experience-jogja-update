@@ -7,6 +7,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { NAV_GROUPS } from "@/lib/navConfig";
 import TripPlanner from "./TripPlanner";
 import Itineraries from "./Itineraries";
+import ItineraryDetail from "./ItineraryDetail";
 import Stays from "./Stays";
 import VisitorInformation from "./VisitorInformation";
 import ComingSoon from "./ComingSoon";
@@ -93,6 +94,7 @@ export default function PlanYourTripLanding() {
           <Route path="/" element={<Navigate to={tabValues[0]} replace />} />
           <Route path="trip-planner" element={<TripPlanner hideShell />} />
           <Route path="itineraries" element={<Itineraries hideShell />} />
+          <Route path="itineraries/:slug" element={<ItineraryDetail hideShell />} />
           <Route path="getting-to-jogja" element={<GettingToJogja hideShell />} />
           <Route path="getting-to-jogja/:slug" element={<GettingToJogjaArticle />} />
           <Route path="getting-around" element={<GettingAround hideShell />} />

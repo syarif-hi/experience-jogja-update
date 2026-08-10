@@ -5,6 +5,7 @@ import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
 import PageShell from "@/components/layout/PageShell";
 import SmartImage from "@/components/shared/SmartImage";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 import { DUMMY_ITINERARIES } from "@/lib/dummyData";
 
 export default function Itineraries({ hideShell }) {
@@ -17,13 +18,24 @@ export default function Itineraries({ hideShell }) {
 
   const displayItems = items?.length === 0 ? DUMMY_ITINERARIES : items;
 
+  const pageTitle = t("itineraries.title") || "Sample Itineraries";
+  const pageSubtitle = t("itineraries.subtitle") || "Ready-made trip plans to inspire your journey through Jogja.";
+
   return (
-    <PageShell
-      title={t("itineraries.title") || "Sample Itineraries"}
-      subtitle={t("itineraries.subtitle") || "Ready-made trip plans to inspire your journey through Jogja."}
-      hideShell={hideShell}
-    >
-      <div className={hideShell ? "pt-2" : "content-wrap"}>
+    <PageShell hideShell={hideShell}>
+      <div className={hideShell ? "pt-2" : "content-wrap pt-8"}>
+        {!hideShell && (
+          <div className="mb-8">
+            <Breadcrumb items={[
+              { label: language === "id" ? "Rencanakan Perjalanan" : "Plan Your Trip", to: "/plan-your-trip" },
+              { label: pageTitle },
+            ]} />
+            <h1 className="mt-2 font-heading text-[28px] font-bold md:text-[36px]" style={{ color: "var(--color-primary)" }}>
+              {pageTitle}
+            </h1>
+            <p className="mt-2 text-[15px]" style={{ color: "var(--text-secondary)" }}>{pageSubtitle}</p>
+          </div>
+        )}
         <div className="mt-8 grid grid-cols-2 gap-4 pb-16 sm:gap-6 lg:grid-cols-4">
           {displayItems === null ? (
             Array.from({ length: 3 }).map((_, i) => (
@@ -36,7 +48,7 @@ export default function Itineraries({ hideShell }) {
               const title = language === "id" ? it.title_id : it.title_en;
               const summary = language === "id" ? it.summary_id : it.summary_en;
               return (
-                <Link key={it.id} to={`/itineraries/${it.slug}`} className="group focus-ring block rounded-2xl">
+                <Link key={it.id} to={`/plan-your-trip/itineraries/${it.slug}`} className="group focus-ring block rounded-2xl">
                   <div className="aspect-[4/3] overflow-hidden rounded-2xl">
                     <SmartImage src={it.cover_image_url} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>

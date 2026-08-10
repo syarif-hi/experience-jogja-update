@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, MapPin, Share2, Clock, Wallet, Tag } from "lucide-react";
+import { MapPin, Share2, Clock, Wallet, Tag, Landmark } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
 import { useCurrency } from "@/lib/CurrencyContext";
@@ -25,12 +25,19 @@ export default function AttractionDetail() {
   const { t, language } = useTranslation();
   const { currency } = useCurrency();
   const [dest, setDest] = useState(undefined);
+  const [allAttractions, setAllAttractions] = useState([]);
   const [showCopied, setShowCopied] = useState(false);
 
   useEffect(() => {
     setDest(undefined);
     base44.entities.Attraction.filter({ slug }).then((r) => setDest(r[0] || null)).catch(() => setDest(null));
   }, [slug]);
+
+  useEffect(() => {
+    if (base44.entities.Attraction) {
+      base44.entities.Attraction.list().then((r) => setAllAttractions(r || [])).catch(() => setAllAttractions([]));
+    }
+  }, []);
 
   const name = dest && (language === "id" ? dest.name_id : dest.name_en);
   const descriptor = dest && (language === "id" ? dest.descriptor_id : dest.descriptor_en);
@@ -107,6 +114,38 @@ export default function AttractionDetail() {
             </div>
 
             <div className="content-wrap py-8">
+              <div className="flex flex-col lg:flex-row gap-8">
+                {/* Left sidebar — sibling attractions */}
+                <aside className="lg:w-64 shrink-0">
+                  <div className="sticky top-6 rounded-2xl p-4" style={{ backgroundColor: "var(--bg-surface-alt)" }}>
+                    <h3 className="font-heading text-[14px] font-bold mb-4 px-3" style={{ color: "var(--text-secondary)" }}>
+                      {language === "id" ? "Semua Objek Wisata" : "All Attractions"}
+                    </h3>
+                    <nav className="space-y-1 max-h-[70vh] overflow-y-auto">
+                      {allAttractions.map((item) => {
+                        const isActive = item.slug === slug;
+                        const itemName = language === "id" ? item.name_id : item.name_en;
+                        return (
+                          <Link
+                            key={item.slug || item.id}
+                            to={`/attractions/${item.slug}`}
+                            className="flex items-center gap-3 py-2 px-3 rounded-xl transition-colors duration-200 group"
+                            style={{
+                              backgroundColor: isActive ? "var(--bg-surface)" : "transparent",
+                              color: isActive ? "var(--color-primary)" : "var(--text-secondary)"
+                            }}
+                          >
+                            <Landmark className="w-5 h-5 shrink-0" />
+                            <span className="font-medium text-[14px] truncate">{itemName}</span>
+                          </Link>
+                        );
+                      })}
+                    </nav>
+                  </div>
+                </aside>
+
+                {/* Main content */}
+                <div className="flex-1 min-w-0">
               <DetailHeroGallery heroImageUrl={dest.hero_image_url} gallery={dest.gallery_image_urls} alt={name} />
 
               <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_340px]">
@@ -165,6 +204,8 @@ export default function AttractionDetail() {
             </div>
 
             <YouMightAlsoLike category={dest.category} excludeSlug={dest.slug} />
+                </div>
+              </div>
             </div>
           </>
         )}
