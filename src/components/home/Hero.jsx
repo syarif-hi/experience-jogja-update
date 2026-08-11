@@ -122,7 +122,7 @@ export default function Hero() {
       {/* Heading / subheading / CTA — below the slider, left aligned */}
       <div className="content-wrap mt-6 text-center md:text-left">
 
-        <p className="text-[17px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-2" style={{ color: "#000000" }}>
+        <p className="text-[15px] min-[400px]:text-[17px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-2 whitespace-nowrap md:whitespace-normal truncate md:overflow-visible" style={{ color: "#000000" }}>
           One Destination. Endless Experiences.
         </p>
 

@@ -6,26 +6,11 @@ import { useTranslation } from "@/lib/i18n";
 export default function SectionHeading({ title, subtitle, center = false, seeMoreTo, right }) {
   const { t } = useTranslation();
 
-  const formatTitle = (txt) => {
-    if (typeof txt !== "string") return txt;
-    const parts = txt.trim().split(" ");
-    if (parts.length <= 1) return txt;
-    const mid = Math.ceil(parts.length / 2);
-    return (
-      <>
-        {parts.slice(0, mid).join(" ")}
-        <br className="md:hidden" />
-        <span className="hidden md:inline"> </span>
-        {parts.slice(mid).join(" ")}
-      </>
-    );
-  };
-
   return (
     <div className={`flex items-start justify-between gap-4 ${center ? "text-center" : "text-left"}`}>
       <div>
-        <h2 className="font-display text-[24px] font-normal leading-[1] md:leading-tight md:text-[36px]" style={{ color: "var(--color-primary)" }}>
-          {formatTitle(title)}
+        <h2 className="font-display text-[20px] font-normal leading-[1] md:leading-tight md:text-[36px]" style={{ color: "var(--color-primary)" }}>
+          {title}
         </h2>
         {subtitle && (
           <p className="mt-1 text-[15px] font-normal md:text-[16px]" style={{ color: "var(--text-secondary)" }}>
