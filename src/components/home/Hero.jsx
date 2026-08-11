@@ -122,7 +122,7 @@ export default function Hero() {
       {/* Heading / subheading / CTA — below the slider, left aligned */}
       <div className="content-wrap mt-6 text-center md:text-left">
 
-        <p className="text-[15px] min-[400px]:text-[17px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-2 whitespace-nowrap md:whitespace-normal truncate md:overflow-visible" style={{ color: "#000000" }}>
+        <p className="text-[16px] min-[400px]:text-[17px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-2 whitespace-nowrap md:whitespace-normal truncate md:overflow-visible" style={{ color: "#000000" }}>
           One Destination. Endless Experiences.
         </p>
 
@@ -132,7 +132,7 @@ export default function Hero() {
           className="block w-[70%] max-w-[70%] mr-auto md:w-full md:max-w-[485px] h-auto mb-0 md:mx-0"
         />
 
-        <p className="text-[18px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>
+        <p className="text-[16px] md:text-[22px] leading-[1.2] pt-2 max-w-[1090px] mx-auto md:mx-0 text-left md:text-left mb-6" style={{ color: "#000000" }}>
           Your trusted guide to Yogyakarta's destinations, culture, culinary experiences,
           events, accommodations, transportation, and local lifestyle.
         </p>

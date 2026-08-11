@@ -18,7 +18,7 @@ export default function NewsletterCapture() {
       <div className="content-wrap">
         <div className="grid grid-cols-1 items-stretch overflow-hidden rounded-3xl lg:grid-cols-2" style={{ backgroundColor: "#E8E8E8" }}>
           <div className="p-8 text-left md:p-12">
-            <h2 className="font-display text-[26px] font-normal md:text-[34px]" style={{ color: "var(--color-primary)" }}>
+            <h2 className="font-display text-[20px] font-normal md:text-[34px] whitespace-nowrap overflow-hidden text-ellipsis" style={{ color: "var(--color-primary)" }}>
               {t("newsletter.title")}
             </h2>
             <p className="mt-2 max-w-[48ch] text-[15px] font-normal md:text-[16px]" style={{ color: "var(--text-secondary)" }}>

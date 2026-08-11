@@ -15,7 +15,7 @@ export default function TripPlannerBand() {
           <div className="max-w-[52ch]">
             <div className="flex items-center gap-3">
               <Map className="h-6 w-6 text-white" />
-              <h2 className="font-display text-[26px] font-normal leading-tight text-white md:text-[34px] md:whitespace-nowrap">
+              <h2 className="font-display text-[20px] font-normal leading-tight text-white md:text-[34px] whitespace-nowrap">
                 {t("tripband.title")}
               </h2>
             </div>
