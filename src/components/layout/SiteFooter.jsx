@@ -16,7 +16,17 @@ const TikTokIcon = (props) => (
 );
 
 export default function SiteFooter() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+
+  const legalLinks = language === "id"
+    ? [
+        { label: "Kebijakan Privasi", to: "/privacy-policy" },
+        { label: "Syarat & Ketentuan", to: "/terms-conditions" },
+      ]
+    : [
+        { label: "Privacy Policy", to: "/privacy-policy" },
+        { label: "Terms & Conditions", to: "/terms-conditions" },
+      ];
 
   // Row 1 — mirrors the navbar
   const navLinks = [
@@ -106,8 +116,17 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <p className="text-[12px]" style={{ color: "#FFFFFF" }}>{t("footer.legal")}</p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            {legalLinks.map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="focus-ring rounded text-[12px] hover:underline" style={{ color: "#FFFFFF" }}>
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

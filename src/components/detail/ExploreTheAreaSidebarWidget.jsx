@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { MapPin, Plane, Utensils, ChevronRight, X } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
@@ -46,6 +47,20 @@ export default function ExploreTheAreaSidebarWidget({ origin }) {
   useEffect(() => {
     base44.entities.Destination.list().then(setDests).catch(() => setDests([]));
   }, []);
+
+  useEffect(() => {
+    if (mapOnlyModalOpen) {
+      document.body.style.overflow = "hidden";
+      const onKey = (e) => {
+        if (e.key === "Escape") setMapOnlyModalOpen(false);
+      };
+      window.addEventListener("keydown", onKey);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", onKey);
+      };
+    }
+  }, [mapOnlyModalOpen]);
 
   if (!hasCoords(origin)) return null;
 
@@ -115,8 +130,8 @@ export default function ExploreTheAreaSidebarWidget({ origin }) {
         />
       )}
 
-      {mapOnlyModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style={{ backgroundColor: "rgba(0,0,0,0.6)" }} onClick={() => setMapOnlyModalOpen(false)}>
+      {mapOnlyModalOpen && createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6" style={{ backgroundColor: "rgba(0,0,0,0.6)" }} onClick={() => setMapOnlyModalOpen(false)}>
           <div className="relative flex h-full max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between px-6 py-4">
               <h2 className="text-[18px] font-bold" style={{ color: "var(--text-primary)" }}>Location</h2>
@@ -133,7 +148,8 @@ export default function ExploreTheAreaSidebarWidget({ origin }) {
                />
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

@@ -37,6 +37,8 @@ import BookExperienceLanding from '@/pages/BookExperienceLanding';
 import DiscoverLanding from '@/pages/DiscoverLanding';
 import ThingsToDoLanding from '@/pages/ThingsToDoLanding';
 import EventsLanding from '@/pages/EventsLanding';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsConditions from '@/pages/TermsConditions';
 
 import AccountLayout from '@/pages/account/AccountLayout';
 import AccountOverview from '@/pages/account/AccountOverview';
@@ -110,6 +112,8 @@ const AuthenticatedApp = () => {
       } />
       <Route path="/trip-planner" element={<TripPlanner />} />
       <Route path="/coming-soon" element={<ComingSoon />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-conditions" element={<TermsConditions />} />
       {/* Account panel (protected) */}
       <Route path="/account" element={<AccountLayout />}>
         <Route index element={<AccountOverview />} />
