@@ -24,10 +24,10 @@ export default function NewsSection() {
           title={
             <>
               <span className="block md:hidden">
-                What’s Happening Now<br />Jogja News
+                What’s Happening<br />Now — Jogja News
               </span>
               <span className="hidden md:inline">
-                What’s Happening Now — Jogja News
+                Jogja News — What’s Happening Now
               </span>
             </>
           }

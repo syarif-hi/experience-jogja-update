@@ -12,17 +12,17 @@ function ThingsToDoContent() {
   const { type } = useParams();
   
   const categoryMap = {
-    'heritage-culture': 'cultural-heritage-temples',
-    'entertainment-creative': 'art-museums',
-    'sports-adventure': 'nature-outdoor',
-    'culinary-lifestyle': 'eat-drink',
-    'health-wellness': 'nature-outdoor',
-    'mice-business': 'events-festivals',
+    'heritage-culture': ['cultural-heritage-temples', 'culture-heritage', 'art-museums', 'villages-local-life', 'landmarks'],
+    'entertainment-creative': ['art-museums', 'events-festivals', 'shopping'],
+    'sports-adventure': ['nature-outdoor'],
+    'culinary-lifestyle': ['eat-drink', 'shopping'],
+    'health-wellness': ['nature-outdoor', 'villages-local-life'],
+    'mice-business': ['events-festivals'],
   };
-  
-  const mappedType = categoryMap[type] || type;
-  
-  return <Destinations hideShell forcedType={mappedType} />;
+
+  const mappedTypes = categoryMap[type] || (type ? [type] : null);
+
+  return <Destinations hideShell forcedTypes={mappedTypes} />;
 }
 
 export default function ThingsToDoLanding() {

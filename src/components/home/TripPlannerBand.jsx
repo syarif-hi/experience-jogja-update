@@ -13,9 +13,9 @@ export default function TripPlannerBand() {
           style={{ backgroundColor: "var(--color-primary)" }}
         >
           <div className="max-w-[52ch]">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col items-start gap-2 min-[400px]:flex-row min-[400px]:items-center min-[400px]:gap-3">
               <Map className="h-6 w-6 text-white" />
-              <h2 className="font-display text-[20px] font-normal leading-tight text-white md:text-[34px] whitespace-nowrap">
+              <h2 className="font-display text-[18px] min-[400px]:text-[20px] font-normal leading-tight text-white md:text-[34px] whitespace-nowrap">
                 {t("tripband.title")}
               </h2>
             </div>

@@ -9,11 +9,12 @@ import PageShell from "@/components/layout/PageShell";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import DestinationCard from "@/components/shared/DestinationCard";
 
-export default function Destinations({ hideShell, forcedType, forcedRegency }) {
+export default function Destinations({ hideShell, forcedType, forcedTypes, forcedRegency }) {
   const { t, language } = useTranslation();
   const [searchParams] = useSearchParams();
   const initialRegion = forcedRegency || searchParams.get("region") || "all";
   const initialCat = forcedType || searchParams.get("cat") || "all";
+  const forcedTypeSet = forcedTypes && forcedTypes.length ? new Set(forcedTypes) : null;
 
   const [items, setItems] = useState(null);
   const [query, setQuery] = useState("");
@@ -39,6 +40,7 @@ export default function Destinations({ hideShell, forcedType, forcedRegency }) {
     const q = query.trim().toLowerCase();
 
     let list = items.filter((d) => {
+      if (forcedTypeSet && !forcedTypeSet.has(d.category)) return false;
       if (cat !== "all" && d.category !== cat) return false;
       if (region !== "all" && d.regency !== region) return false;
       if (q) {
@@ -83,7 +85,7 @@ export default function Destinations({ hideShell, forcedType, forcedRegency }) {
     });
 
     return list;
-  }, [items, cat, region, query, sort, language]);
+  }, [items, cat, region, query, sort, language, forcedTypes]);
 
   const hasActiveFilters = cat !== "all" || region !== "all" || query.trim().length > 0 || sort !== "display_order";
 
@@ -160,7 +162,7 @@ export default function Destinations({ hideShell, forcedType, forcedRegency }) {
           </div>
 
           {/* Category pills */}
-          {!forcedType && (
+          {!forcedType && !forcedTypeSet && (
             <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
               <button
                 type="button"
