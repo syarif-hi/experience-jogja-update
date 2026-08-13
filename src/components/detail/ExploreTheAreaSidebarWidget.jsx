@@ -1,37 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { MapPin, Plane, Utensils, ChevronRight, X } from "lucide-react";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import L from "leaflet";
 import { base44 } from "@/api/base44Client";
 import { useTranslation } from "@/lib/i18n";
 import { nearest, hasCoords, haversineKm, estimateDriveMinutes } from "@/lib/distance";
 import { TRANSIT_POINTS } from "@/lib/transit-reference-points";
 import ExploreTheAreaModal from "./ExploreTheAreaModal";
 
-function StaticMapImage({ latitude, longitude, label }) {
-  // In a real app we might use a static maps API or an actual mini-map.
-  // Here we just render a placeholder that looks like a map.
+const pinIcon = L.divIcon({
+  className: "",
+  html: `<span style="display:block;width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#C1272D;box-shadow:0 1px 4px rgba(0,0,0,0.4);"></span>`,
+  iconSize: [18, 18],
+  iconAnchor: [9, 18],
+});
+
+function StaticMapImage({ latitude, longitude }) {
   return (
-    <div className="relative h-[200px] w-full overflow-hidden rounded-xl bg-[#e5e3df]">
-      {/* Mock map background */}
-      <div 
-        className="absolute inset-0 opacity-40 mix-blend-multiply" 
-        style={{ 
-          backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2YwZjRmOCIvPgo8cGF0aCBkPSJNMCAwaDEwdjEwSDB6IiBmaWxsPSIjZTllY2Y1Ii8+Cjwvc3ZnPg==')", 
-          backgroundSize: "20px 20px" 
-        }} 
-      />
-      {/* Map lines */}
-      <svg className="absolute inset-0 h-full w-full opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path d="M0 20 Q 50 10 100 40 M 20 0 Q 30 50 50 100 M 0 80 Q 50 90 100 60" stroke="#000" fill="none" strokeWidth="1" />
-        <path d="M10 0 Q 20 40 10 100 M 80 0 Q 90 60 70 100" stroke="#000" fill="none" strokeWidth="0.5" />
-      </svg>
-      {/* Map markers */}
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[var(--color-primary)] shadow-md">
-          <MapPin className="h-6 w-6" />
-        </div>
-      </div>
-      <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm text-gray-700 hover:bg-gray-50">
+    <div className="relative h-[200px] w-full overflow-hidden rounded-xl">
+      <MapContainer
+        center={[latitude, longitude]}
+        zoom={14}
+        zoomControl={false}
+        dragging={false}
+        scrollWheelZoom={false}
+        doubleClickZoom={false}
+        touchZoom={false}
+        boxZoom={false}
+        keyboard={false}
+        attributionControl={false}
+        style={{ height: "100%", width: "100%" }}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <Marker position={[latitude, longitude]} icon={pinIcon} />
+      </MapContainer>
+      <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm text-gray-700 pointer-events-none">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
       </div>
     </div>

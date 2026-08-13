@@ -48,8 +48,10 @@ export default function LocationMap({
   numbered = false,
   height = 340,
   fitToMarkers = false,
+  selectedId = null,
+  onMarkerClick = null,
 }) {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   const hasCenter = typeof latitude === "number" && typeof longitude === "number";
   const validMarkers = markers.filter(
@@ -81,15 +83,21 @@ export default function LocationMap({
               <Popup>{label}</Popup>
             </Marker>
           )}
-          {validMarkers.map((m, i) => (
-            <Marker
-              key={m.id}
-              position={[m.latitude, m.longitude]}
-              icon={numbered ? numberedIcon("#C1272D", i + 1) : pinIcon("#5B534C")}
-            >
-              <Popup>{m.name}</Popup>
-            </Marker>
-          ))}
+          {validMarkers.map((m, i) => {
+            const isSelected = selectedId != null && m.id === selectedId;
+            const color = isSelected ? "#C1272D" : "#5B534C";
+            return (
+              <Marker
+                key={m.id}
+                position={[m.latitude, m.longitude]}
+                icon={numbered ? numberedIcon("#C1272D", i + 1) : pinIcon(color)}
+                eventHandlers={onMarkerClick ? { click: () => onMarkerClick(m.id) } : undefined}
+                zIndexOffset={isSelected ? 1000 : 0}
+              >
+                <Popup>{language === "id" ? m.name_id || m.name : m.name_en || m.name}</Popup>
+              </Marker>
+            );
+          })}
           {(fitToMarkers || boundsPoints.length > 1) && <FitBounds points={boundsPoints} />}
         </MapContainer>
       </div>
