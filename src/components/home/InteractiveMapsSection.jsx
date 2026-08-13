@@ -794,7 +794,7 @@ export default function InteractiveMapsSection({ disableWrap = false }) {
                   type="button"
                   onClick={() => { setEditingPlace(null); setEditorOpen(true); }}
                   className="focus-ring inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors"
-                  style={{ backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }}
+                  style={{ display: "none", backgroundColor: "var(--bg-surface-alt)", color: "var(--text-secondary)" }}
                 >
                   <Plus className="h-3.5 w-3.5" /> Add place
                 </button>
@@ -803,6 +803,7 @@ export default function InteractiveMapsSection({ disableWrap = false }) {
                   onClick={() => setEditMode((v) => !v)}
                   className="focus-ring inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors"
                   style={{
+                    display: "none",
                     backgroundColor: editMode ? "var(--color-accent)" : "var(--bg-surface-alt)",
                     color: editMode ? "var(--on-accent)" : "var(--text-secondary)",
                   }}
