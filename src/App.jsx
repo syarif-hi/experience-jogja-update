@@ -37,7 +37,7 @@ import BookExperienceLanding from '@/pages/BookExperienceLanding';
 import DiscoverLanding from '@/pages/DiscoverLanding';
 import ThingsToDoLanding from '@/pages/ThingsToDoLanding';
 import EventsLanding from '@/pages/EventsLanding';
-import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import PrivacyPolicy from '@/pages/Privacy';
 import TermsConditions from '@/pages/TermsConditions';
 
 import AccountLayout from '@/pages/account/AccountLayout';
