@@ -33,15 +33,15 @@ export default function DiscoverPageTemplate({ hideShell = false }) {
           <p className="text-[15px]" style={{ color: "var(--text-secondary)" }}>{t("notFound")}</p>
         </div>
       ) : (
-        <>
+        <div className={hideShell ? "" : "content-wrap"}>
           {page.hero_image_url && (
-            <div className="mt-4 md:mt-8 px-4 md:px-0">
+            <div className="mt-4 md:mt-8">
               <div className="relative aspect-[21/9] max-h-[420px] w-full overflow-hidden rounded-2xl md:rounded-3xl">
                 <SmartImage src={page.hero_image_url} alt={title} className="h-full w-full object-cover" />
               </div>
             </div>
           )}
-          <div className="section-y px-4 md:px-0">
+          <div className="section-y">
             <div>
               <h1 className="font-display text-[34px] font-medium md:text-[44px]" style={{ color: "var(--color-primary)" }}>{title}</h1>
               {body && (
@@ -53,7 +53,7 @@ export default function DiscoverPageTemplate({ hideShell = false }) {
               )}
             </div>
           </div>
-        </>
+        </div>
       )}
     </Wrapper>
   );

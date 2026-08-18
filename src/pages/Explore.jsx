@@ -67,12 +67,19 @@ function StorySection({ sectionKey, icon: Icon, iconBg, items, t, categorySlug }
         </p>
       </div>
 
-      {/* Horizontal scroll strip of cards */}
-      <HScrollStrip>
+      {/* Horizontal scroll strip of cards (desktop) / 2-col grid (mobile) */}
+      <div className="grid grid-cols-2 gap-4 sm:hidden">
         {items.map((d) => (
           <DestinationCard key={d.id} destination={d} />
         ))}
-      </HScrollStrip>
+      </div>
+      <div className="hidden sm:block">
+        <HScrollStrip>
+          {items.map((d) => (
+            <DestinationCard key={d.id} destination={d} />
+          ))}
+        </HScrollStrip>
+      </div>
 
       {/* "See All" link to directory page pre-filtered */}
       {categorySlug && (
@@ -166,15 +173,26 @@ export default function Explore() {
               <div className="h-7 w-48 animate-pulse rounded-lg mb-2" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
               <div className="h-4 w-96 max-w-full animate-pulse rounded-lg" style={{ backgroundColor: "var(--bg-surface-alt)" }} />
             </div>
-            <HScrollStrip>
+            <div className="grid grid-cols-2 gap-4 sm:hidden">
               {Array.from({ length: 4 }).map((_, i) => (
                 <div
                   key={i}
-                  className="aspect-[4/3] w-[260px] shrink-0 animate-pulse rounded-2xl"
+                  className="aspect-[4/3] w-full animate-pulse rounded-2xl"
                   style={{ backgroundColor: "var(--bg-surface-alt)" }}
                 />
               ))}
-            </HScrollStrip>
+            </div>
+            <div className="hidden sm:block">
+              <HScrollStrip>
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="aspect-[4/3] w-[260px] shrink-0 animate-pulse rounded-2xl"
+                    style={{ backgroundColor: "var(--bg-surface-alt)" }}
+                  />
+                ))}
+              </HScrollStrip>
+            </div>
           </section>
         )}
 
