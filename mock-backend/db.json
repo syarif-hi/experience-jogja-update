@@ -156,7 +156,7 @@
       "venue": "Sonobudoyo Museum",
       "price_idr": 0,
       "is_homepage_highlight": true,
-      "cover_image_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80",
+      "cover_image_url": "https://images.unsplash.com/photo-1609619385076-36a873425636?w=1200&q=80",
       "title_id": "Malam Wayang Kulit",
       "title_en": "Wayang Kulit Night",
       "category": "cultural",
@@ -166,7 +166,9 @@
       "created_date": "2026-07-17T07:47:17.224000",
       "updated_date": "2026-07-17T07:47:17.224000",
       "created_by_id": "service_d48a428f-24f7-4706-801f-e6843624f6e8",
-      "is_sample": false
+      "is_sample": false,
+      "description_en": "<p><strong>Wayang Kulit Night</strong> at Sonobudoyo Museum is Yogyakarta's most accessible introduction to Java's UNESCO-recognized shadow puppet theatre. A single dalang (master puppeteer) narrates, sings, and manipulates dozens of leather puppets — accompanied by a full <em>gamelan</em> orchestra.</p>\n<h2>The performance</h2>\n<p>Tonight's story is drawn from the <em>Mahabharata</em>. The show lasts two hours (shortened from the traditional all-night version) with English and Bahasa Indonesia subtitles projected beside the screen.</p>\n<h2>Where to sit</h2>\n<p>You can watch from the <strong>front</strong> (the audience side) to see the shadows on the white screen — or walk around to the <strong>back</strong> to see the dalang, gamelan, and colorful puppets in full detail. Both are traditional; the back view is arguably more interesting.</p>\n<h2>Practical notes</h2>\n<ul>\n<li><strong>Free admission.</strong> No booking required — arrive by 6:45 PM for a good seat.</li>\n<li>Performances run every Wednesday and Saturday, 7:00–9:00 PM.</li>\n<li>Located inside <strong>Sonobudoyo Museum</strong>, north side of Alun-Alun Utara, 5 minutes from Malioboro.</li>\n<li>Photography allowed without flash.</li>\n</ul>\n<h2>Before or after</h2>\n<p>Grab dinner at the <em>angkringan</em> stalls near Tugu Station, or walk south to the Kraton square to see the twin banyan trees lit at night.</p>",
+      "description_id": "<p><strong>Malam Wayang Kulit</strong> di Museum Sonobudoyo adalah pengenalan paling mudah pada teater bayangan Jawa yang diakui UNESCO. Seorang dalang menceritakan, menembang, dan memainkan puluhan wayang kulit — diiringi orkestra <em>gamelan</em> lengkap.</p>\n<h2>Pertunjukan</h2>\n<p>Cerita malam ini diambil dari <em>Mahabharata</em>. Durasi dua jam (versi pendek dari lakon semalam suntuk) dengan terjemahan Bahasa Indonesia dan Inggris di samping layar.</p>\n<h2>Posisi menonton</h2>\n<p>Anda bisa menonton dari <strong>depan</strong> untuk melihat bayangan di layar putih — atau memutar ke <strong>belakang</strong> untuk melihat dalang, gamelan, dan wayang berwarna secara langsung. Keduanya tradisional; sisi belakang biasanya lebih menarik.</p>\n<h2>Catatan praktis</h2>\n<ul>\n<li><strong>Gratis.</strong> Tanpa reservasi — datang sebelum 18.45 untuk tempat baik.</li>\n<li>Pertunjukan setiap Rabu dan Sabtu, 19.00–21.00.</li>\n<li>Di <strong>Museum Sonobudoyo</strong>, sisi utara Alun-Alun Utara, 5 menit dari Malioboro.</li>\n<li>Boleh foto tanpa lampu kilat.</li>\n</ul>\n<h2>Sebelum atau sesudah</h2>\n<p>Makan malam di <em>angkringan</em> dekat Stasiun Tugu, atau jalan ke arah selatan menuju Alun-Alun Kraton melihat pohon beringin kembar yang bercahaya di malam hari.</p>"
     },
     {
       "end_date": "2026-07-05T22:00:00.000Z",
@@ -570,11 +572,13 @@
       "venue": "Museum Batik Yogyakarta",
       "price_idr": 30000,
       "is_homepage_highlight": false,
-      "cover_image_url": "https://images.unsplash.com/photo-1606293459339-aa5d34a7b0e1?w=800&q=80",
+      "cover_image_url": "https://images.unsplash.com/photo-1583392416608-3dae1a9ed3e9?w=1200&q=80",
       "created_date": "2026-08-12",
       "updated_date": "2026-08-12",
       "created_by_id": "u1",
-      "is_sample": true
+      "is_sample": true,
+      "description_en": "<p>The <strong>Batik Heritage Exhibition</strong> at Museum Batik Yogyakarta gathers over 200 pieces spanning three centuries — from classical Kraton motifs reserved for royalty to contemporary designers reinterpreting the craft for today.</p>\n<h2>What you'll see</h2>\n<ul>\n<li><strong>Royal Court Batik (Batik Keraton)</strong> — sacred parang and kawung patterns once worn only by the Sultan's family.</li>\n<li><strong>Coastal Batik (Batik Pesisir)</strong> — vivid florals and dragons showing Chinese and Dutch influence.</li>\n<li><strong>Modern Batik</strong> — young designers pushing new palettes and abstract compositions.</li>\n</ul>\n<h2>Live demonstrations</h2>\n<p>Master artisans work daily from 10 AM to 3 PM, demonstrating <em>canting</em> (wax pen) technique on cotton. Visitors can try a small piece for an additional IDR 25,000.</p>\n<h2>Guided tours</h2>\n<p>English and Bahasa Indonesia tours run at 11 AM and 2 PM. Duration: 45 minutes. No booking required — meet at the main entrance.</p>\n<h2>Getting there</h2>\n<p>Museum Batik Yogyakarta is on Jalan Dr. Sutomo 13A, about 10 minutes by taxi from Malioboro. Open Tuesday–Sunday, 9 AM–4 PM. Closed Mondays.</p>",
+      "description_id": "<p><strong>Pameran Warisan Batik</strong> di Museum Batik Yogyakarta menghadirkan lebih dari 200 karya dari tiga abad — mulai dari motif Kraton klasik hingga karya desainer kontemporer.</p>\n<h2>Yang bisa dilihat</h2>\n<ul>\n<li><strong>Batik Keraton</strong> — motif sakral parang dan kawung yang dulu hanya boleh dipakai keluarga Sultan.</li>\n<li><strong>Batik Pesisir</strong> — bunga dan naga berwarna cerah dengan pengaruh Tionghoa dan Belanda.</li>\n<li><strong>Batik Modern</strong> — desainer muda dengan palet dan komposisi abstrak baru.</li>\n</ul>\n<h2>Demonstrasi langsung</h2>\n<p>Pengrajin ahli bekerja setiap hari pukul 10.00–15.00, memperagakan teknik <em>canting</em> di atas kain katun. Pengunjung bisa mencoba dengan biaya tambahan Rp 25.000.</p>\n<h2>Tur berpemandu</h2>\n<p>Tur berbahasa Inggris dan Indonesia pukul 11.00 dan 14.00. Durasi 45 menit. Tanpa reservasi — kumpul di pintu masuk utama.</p>\n<h2>Menuju lokasi</h2>\n<p>Museum Batik Yogyakarta di Jalan Dr. Sutomo 13A, sekitar 10 menit taksi dari Malioboro. Buka Selasa–Minggu, 09.00–16.00. Tutup Senin.</p>"
     },
     {
       "id": "26",
@@ -3002,16 +3006,16 @@
       "is_sample": false
     },
     {
-      "body_en": null,
+      "body_en": "<p>Malioboro is Yogyakarta's beating heart — a one-kilometer stretch of shops, street performers, food stalls, and history stitched together beneath colonial arcades. Walking it end-to-end is the single best way to feel the city's rhythm.</p>\n<h2>Where to start</h2>\n<p>Begin at <strong>Tugu Station</strong> on the northern end. Grab a coffee at one of the small cafes along Jalan Pasar Kembang, then step onto Malioboro proper. Morning light (7–9 AM) is gentle and the vendors are just setting up — the crowds have not yet arrived.</p>\n<h2>What to shop</h2>\n<ul>\n<li><strong>Batik</strong> — from cheap printed cotton to hand-drawn <em>batik tulis</em>. Try <strong>Mirota Batik</strong> for reliable quality.</li>\n<li><strong>Silver</strong> — Kotagede-crafted rings and pendants sold at kiosks along the arcade.</li>\n<li><strong>Snacks</strong> — <em>bakpia pathok</em>, <em>gudeg kaleng</em>, and <em>yangko</em> make easy gifts to bring home.</li>\n</ul>\n<h2>Street food to try</h2>\n<p>By late afternoon, the <em>lesehan</em> (mat-seating) stalls appear along the sidewalks. Sit on the ground, order <strong>gudeg</strong> (jackfruit stew), <strong>nasi kucing</strong> (fist-sized rice packets), or grilled satay. A full meal rarely tops IDR 30,000.</p>\n<h2>Historical stops</h2>\n<p>Malioboro ends at <strong>Titik Nol Kilometer</strong> (Zero Kilometer Point), the symbolic heart of the sultanate. From here, the <strong>Kraton</strong> (royal palace), <strong>Taman Sari</strong> water castle, and <strong>Fort Vredeburg</strong> are all within a 10-minute walk.</p>\n<h2>Practical tips</h2>\n<ul>\n<li>Wear comfortable shoes — sidewalks are uneven.</li>\n<li>Bargain politely — start at half the asking price.</li>\n<li>Andong (horse carriages) and becak (pedicabs) are fun but confirm the fare before boarding.</li>\n<li>Evenings (6–10 PM) are liveliest, with buskers and pop-up performances.</li>\n</ul>\n<p>Give yourself at least half a day. Malioboro rewards slow walkers.</p>",
       "topic_tag": "travel-tips",
-      "cover_image_url": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80",
+      "cover_image_url": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
       "excerpt_en": "Shopping, street food, and history along Jogja's most iconic street.",
       "title_id": "Panduan Jalan Kaki Menyusuri Malioboro",
       "excerpt_id": "Belanja, kuliner, dan sejarah dalam satu jalur ikonik kota Jogja.",
       "title_en": "A Walking Guide Down Malioboro Street",
       "published_date": "2026-06-12",
       "slug": "malioboro-walking-guide",
-      "body_id": null,
+      "body_id": "<p>Malioboro adalah jantung Yogyakarta — satu kilometer penuh toko, seniman jalanan, warung makan, dan sejarah yang berpadu di bawah arkade kolonial. Berjalan kaki menyusurinya adalah cara terbaik merasakan denyut kota.</p>\n<h2>Titik awal</h2>\n<p>Mulailah dari <strong>Stasiun Tugu</strong> di ujung utara. Ngopi dulu di kafe kecil sepanjang Jalan Pasar Kembang, lalu masuk ke Malioboro. Cahaya pagi (pukul 7–9) lembut dan pedagang baru bersiap — belum ramai.</p>\n<h2>Belanja apa</h2>\n<ul>\n<li><strong>Batik</strong> — dari cetak katun murah hingga <em>batik tulis</em>. Coba <strong>Mirota Batik</strong> untuk kualitas terpercaya.</li>\n<li><strong>Perak</strong> — cincin dan liontin buatan Kotagede dijual di kios sepanjang arkade.</li>\n<li><strong>Oleh-oleh</strong> — <em>bakpia pathok</em>, <em>gudeg kaleng</em>, dan <em>yangko</em> pilihan mudah untuk dibawa pulang.</li>\n</ul>\n<h2>Kuliner jalanan</h2>\n<p>Sore hari, warung <em>lesehan</em> bermunculan di sepanjang trotoar. Duduk lesehan, pesan <strong>gudeg</strong>, <strong>nasi kucing</strong>, atau sate bakar. Sekali makan jarang lebih dari Rp 30.000.</p>\n<h2>Titik bersejarah</h2>\n<p>Malioboro berakhir di <strong>Titik Nol Kilometer</strong>, pusat simbolis kesultanan. Dari sini, <strong>Kraton</strong>, <strong>Taman Sari</strong>, dan <strong>Benteng Vredeburg</strong> tinggal 10 menit jalan kaki.</p>\n<h2>Tips praktis</h2>\n<ul>\n<li>Pakai sepatu nyaman — trotoar tidak rata.</li>\n<li>Menawar dengan sopan — mulai dari setengah harga.</li>\n<li>Andong dan becak seru, tapi sepakati tarif sebelum naik.</li>\n<li>Malam hari (18.00–22.00) paling meriah, banyak pengamen dan pertunjukan dadakan.</li>\n</ul>\n<p>Sediakan minimal setengah hari. Malioboro layak dinikmati pelan-pelan.</p>",
       "id": "6a59db500712bc03fe1b9695",
       "created_date": "2026-07-17T07:35:44.972000",
       "updated_date": "2026-07-17T07:35:44.972000",

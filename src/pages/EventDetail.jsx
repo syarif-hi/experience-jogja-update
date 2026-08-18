@@ -86,6 +86,17 @@ export default function EventDetail() {
                 <p className="mt-6 text-[18px] font-semibold" style={{ color: "var(--color-primary)" }}>
                   {event.price_idr > 0 ? `${t("from")} ${formatPrice(event.price_idr, currency)}` : t("free")}
                 </p>
+
+                {(() => {
+                  const body = language === "id" ? event.description_id : event.description_en;
+                  return body ? (
+                    <div
+                      className="prose prose-lg mt-8 max-w-none prose-headings:font-heading prose-a:text-[color:var(--color-primary)]"
+                      style={{ color: "var(--text-primary)" }}
+                      dangerouslySetInnerHTML={{ __html: body }}
+                    />
+                  ) : null;
+                })()}
               </article>
 
               <aside className="lg:sticky lg:top-6 lg:self-start">

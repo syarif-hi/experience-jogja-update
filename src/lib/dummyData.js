@@ -116,7 +116,7 @@ export const DUMMY_VISITOR_INFO = [
   },
   {
     id: 'v5', slug: 'wellness-fitness', icon_name: 'Activity', display_order: 5,
-    title_en: 'Wellness & Health', title_id: 'Kebugaran & Kesehatan',
+    title_en: 'Wellness & Fitness', title_id: 'Kebugaran & Kesejahteraan',
     desc_en: 'Facilities and places for wellness, spa, and fitness activities.',
     desc_id: 'Fasilitas dan tempat untuk aktivitas kebugaran, spa, dan kesehatan.',
     image_url: '/images/visitor-info/wellness-and-health-IMG-00030-w2000.jpg',
