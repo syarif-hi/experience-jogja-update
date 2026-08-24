@@ -28,7 +28,11 @@ export default function CalendarExplorer() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    base44.entities.Event.list("start_date").then(setEvents).catch(() => setEvents([]));
+    base44.entities.Event.list("start_date").then((data) => {
+      // Filter out sample/dummy events - only show real events
+      const realEvents = data.filter(event => !event.is_sample);
+      setEvents(realEvents);
+    }).catch(() => setEvents([]));
   }, []);
 
   const title = (ev) => (language === "id" ? ev.title_id : ev.title_en) || ev.title_en || ev.title_id;

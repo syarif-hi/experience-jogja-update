@@ -22,7 +22,15 @@ export default function EventDetail() {
   const [event, setEvent] = useState(undefined);
 
   useEffect(() => {
-    base44.entities.Event.filter({ slug }).then((r) => setEvent(r[0] || null)).catch(() => setEvent(null));
+    base44.entities.Event.filter({ slug }).then((r) => {
+      const foundEvent = r[0] || null;
+      // Don't show sample/dummy events
+      if (foundEvent && foundEvent.is_sample) {
+        setEvent(null);
+      } else {
+        setEvent(foundEvent);
+      }
+    }).catch(() => setEvent(null));
   }, [slug]);
 
   const locale = language === "id" ? idLocale : enUS;

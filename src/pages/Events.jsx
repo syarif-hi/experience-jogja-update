@@ -23,7 +23,11 @@ export default function Events({ hideShell }) {
   const view = params.get("view"); // "calendar" = group by month
 
   useEffect(() => {
-    base44.entities.Event.list("start_date").then(setItems).catch(() => setItems([]));
+    base44.entities.Event.list("start_date").then((data) => {
+      // Filter out sample/dummy events - only show real events
+      const realEvents = data.filter(event => !event.is_sample);
+      setItems(realEvents);
+    }).catch(() => setItems([]));
   }, []);
 
   const filtered = useMemo(() => {

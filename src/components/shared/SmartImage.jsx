@@ -16,9 +16,16 @@ export default function SmartImage({ src, alt, className = "", ...props }) {
       />
     );
   }
+  let computedSrcSet = undefined;
+  if (src && typeof src === 'string' && src.startsWith('/images/places/') && !src.includes('@2x')) {
+    const src2x = src.replace('.jpg', '@2x.jpg');
+    computedSrcSet = `${src} 1x, ${src2x} 2x`;
+  }
+
   return (
     <img
       src={src}
+      srcSet={computedSrcSet}
       alt={alt}
       loading="lazy"
       onError={() => setFailed(true)}

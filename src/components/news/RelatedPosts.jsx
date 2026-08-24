@@ -19,7 +19,9 @@ export default function RelatedPosts({ currentSlug, topicTag }) {
     base44.entities.Article.list("-published_date", 12)
       .then((all) => {
         if (!active) return;
-        const others = all.filter((a) => a.slug !== currentSlug);
+        // Filter out sample/dummy articles - only show real articles
+        const realArticles = all.filter(article => !article.is_sample);
+        const others = realArticles.filter((a) => a.slug !== currentSlug);
         const sameTopic = others.filter((a) => topicTag && a.topic_tag === topicTag);
         const picked = [...sameTopic, ...others.filter((a) => !sameTopic.includes(a))].slice(0, 8);
         setItems(picked);

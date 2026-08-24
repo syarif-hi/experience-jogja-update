@@ -10,7 +10,11 @@ export default function News() {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
-    base44.entities.Article.list("-published_date").then(setItems).catch(() => setItems([]));
+    base44.entities.Article.list("-published_date").then((data) => {
+      // Filter out sample/dummy articles - only show real articles
+      const realArticles = data.filter(article => !article.is_sample);
+      setItems(realArticles);
+    }).catch(() => setItems([]));
   }, []);
 
   const trail = [

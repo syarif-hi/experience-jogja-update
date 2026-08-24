@@ -39,7 +39,11 @@ export default function CalendarSection() {
   const [nav, setNav] = useState({ atStart: true, atEnd: false, goPrev: () => {}, goNext: () => {} });
 
   useEffect(() => {
-    base44.entities.Event.list("start_date").then(setEvents).catch(() => setEvents([]));
+    base44.entities.Event.list("start_date").then((data) => {
+      // Filter out sample/dummy events - only show real events
+      const realEvents = data.filter(event => !event.is_sample);
+      setEvents(realEvents);
+    }).catch(() => setEvents([]));
   }, []);
 
   const visibleEvents = useMemo(

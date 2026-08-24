@@ -19,7 +19,9 @@ export default function RelatedEvents({ currentSlug }) {
     base44.entities.Event.list("-start_date", 12)
       .then((all) => {
         if (!active) return;
-        const others = all.filter((a) => a.slug !== currentSlug);
+        // Filter out sample/dummy events - only show real events
+        const realEvents = all.filter(event => !event.is_sample);
+        const others = realEvents.filter((a) => a.slug !== currentSlug);
         setItems(others.slice(0, 8));
       })
       .catch(() => setItems([]));

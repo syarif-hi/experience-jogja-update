@@ -54,7 +54,11 @@ export default function EventsPage({ hideShell, defaultTab, defaultCategory, hig
   // Fetch events once
   useEffect(() => {
     base44.entities.Event.list("start_date")
-      .then(setEvents)
+      .then((data) => {
+        // Filter out sample/dummy events - only show real events
+        const realEvents = data.filter(event => !event.is_sample);
+        setEvents(realEvents);
+      })
       .catch(() => setEvents([]));
   }, []);
 

@@ -12,7 +12,9 @@ export default function EventStrip() {
   useEffect(() => {
     let active = true;
     base44.entities.Event.filter({ is_homepage_highlight: true }, "start_date", 8).then((res) => {
-      if (active) setEvents(res);
+      // Filter out sample/dummy events - only show real events
+      const realEvents = res.filter(event => !event.is_sample);
+      if (active) setEvents(realEvents);
     });
     return () => { active = false; };
   }, []);

@@ -12,7 +12,9 @@ export default function NewsSection() {
   useEffect(() => {
     let active = true;
     base44.entities.Article.list("-published_date", 12).then((res) => {
-      if (active) setArticles(res);
+      // Filter out sample/dummy articles - only show real articles
+      const realArticles = res.filter(article => !article.is_sample);
+      if (active) setArticles(realArticles);
     });
     return () => { active = false; };
   }, []);

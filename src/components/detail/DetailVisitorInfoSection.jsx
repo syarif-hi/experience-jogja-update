@@ -25,7 +25,9 @@ export default function DetailVisitorInfoSection({ origin }) {
       base44.entities.Stay.list().catch(() => [])
     ]).then(([dData, eData, sData]) => {
       setDests(dData || []);
-      setEvents(eData || []);
+      // Filter out sample/dummy events - only show real events
+      const realEvents = (eData || []).filter(event => !event.is_sample);
+      setEvents(realEvents);
       setStays(sData || []);
       setLoading(false);
     });
