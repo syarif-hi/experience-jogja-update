@@ -5,6 +5,7 @@ import { X, Search, ChevronDown, User, LogOut } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "@/lib/i18n";
 import { useAuth } from "@/lib/AuthContext";
+import { assetUrl } from "@/lib/constants";
 import Toggles from "@/components/layout/Toggles";
 import { NAV_GROUPS, NAV_STANDALONE } from "@/lib/navConfig";
 
@@ -54,7 +55,7 @@ export default function MobileNavDrawer({ open, onClose, onAuth }) {
                   Experience Jogja
                 </span>
               </div>
-              <img src="/brand-logo-color-9.png" alt="Experience Jogja" className="max-h-[37px] w-auto object-contain" />
+              <img src={assetUrl("/brand-logo-color-9.png")} alt="Experience Jogja" className="max-h-[37px] w-auto object-contain" />
               <button
                 type="button"
                 onClick={onClose}

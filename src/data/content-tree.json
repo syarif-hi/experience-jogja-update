@@ -16,7 +16,7 @@
         "id": "Menuju Jogja"
       },
       "icon": "plane",
-      "coverImage": "/images/visitor-info/getting-to-jogja.jpg",
+      "coverImage": "https://demo.experiencejogja.com/images/visitor-info/getting-to-jogja.jpg",
       "summary": {
         "en": "Planes, trains, and buses.",
         "id": "Pesawat, kereta, dan bus."
@@ -127,7 +127,7 @@
                     "type": "airport"
                   }
                 ],
-                "mapImage": "/images/visitor/yia-area-map.jpg"
+                "mapImage": "https://demo.experiencejogja.com/images/visitor/yia-area-map.jpg"
               },
               "body": {
                 "en": "## Overview\nYogyakarta International Airport (YIA) is Indonesia's newest gateway to the cultural heartland of Java. Opened in 2020 in the Kulon Progo regency, this state-of-the-art facility replaced much of the traffic from the older Adisutjipto Airport (JOG) and now serves as the primary airport for Yogyakarta and the surrounding region.\n\nDesigned by a team of Indonesian architects, the terminal building features a striking contemporary design inspired by traditional Javanese pendopo (open pavilion) architecture, with sweeping roof lines that echo the peaks of nearby Menoreh Hills.\n\n## Terminal & Facilities\nYIA operates from a single integrated terminal handling both domestic and international flights. The terminal is organized into clearly marked zones:\n\n- **Departure Hall (2F)** — Check-in counters, automated kiosks, immigration, and security screening\n- **Arrival Hall (1F)** — Baggage claim carousels, customs, and a visitor information desk\n- **Commercial Zone** — Restaurants, cafes, duty-free shops, and souvenir stores featuring local Javanese crafts\n- **Prayer Rooms** — Located on both floors with ablution facilities\n- **Lounges** — Concordia Lounge (international) and Saphire Lounge (domestic) offer comfortable seating, complimentary food, and Wi-Fi\n\n### Dining & Shopping\nThe airport offers a good selection of dining options ranging from Indonesian cuisine to international fast food:\n\n1. **Jejamuran Restaurant** — Local mushroom-based Javanese cuisine, a must-try\n2. **Gudeg Yu Djum** — Authentic Yogyakarta gudeg, a sweet jackfruit stew\n3. **Starbucks & J.CO Donuts** — Familiar international brands\n4. **Batik Keris** — High-quality batik clothing and accessories\n5. **Dagadu Djokdja** — Iconic Yogyakarta souvenir T-shirts and merchandise\n\n### Currency Exchange & Banking\nMultiple currency exchange counters and ATMs from major Indonesian banks (BCA, BNI, Mandiri, BRI) are available in both arrival and departure areas. Exchange rates at the airport are competitive but slightly below city-center rates.\n\n## Getting To & From YIA\nYIA is located approximately 42 km southwest of Yogyakarta city center. Several transportation options are available:\n\n### Airport Train (Recommended)\nThe **KA Bandara YIA** train connects the airport to Yogyakarta's Tugu Station in about 45 minutes. Trains run every 1–2 hours from early morning to late evening. Tickets cost around IDR 50,000 (≈ $3.20 USD) and can be purchased at the station or via the KAI Access app.\n\n### DAMRI Airport Bus\nDAMRI operates direct buses between YIA and several destinations:\n- **Yogyakarta city center** (Malioboro) — IDR 50,000, approximately 1.5 hours\n- **Magelang** — IDR 50,000, approximately 1 hour\n- **Purworejo** — IDR 35,000, approximately 1 hour\n\n### Taxi & Ride-hailing\nOfficial airport taxis (Blue Bird, Rajawali) are available at the designated taxi stand outside arrivals. Ride-hailing services (Grab, Gojek) can be ordered to the designated pick-up area. Expect to pay around IDR 250,000–350,000 for a ride to central Yogyakarta.\n\n### Car Rental\nSeveral car rental agencies operate counters in the arrival hall, including TRAC Astra and Bluebird Rental. Rates start from around IDR 400,000/day for a basic sedan with driver.\n\n## Airlines & Destinations\nYIA serves a growing number of domestic and international routes:\n\n**Domestic Airlines:** Garuda Indonesia, Lion Air, Batik Air, Citilink, AirAsia Indonesia, NAM Air, Sriwijaya Air\n\n**International Destinations:** Kuala Lumpur (AirAsia), Singapore (Scoot, Jetstar), and seasonal charter flights to various Asian destinations.\n\n## Practical Tips\n\n- **Arrive Early:** Allow at least 2 hours for domestic flights and 3 hours for international flights, as the airport can get busy during peak periods\n- **SIM Cards:** Purchase a local SIM card at counters near the arrival exit for affordable data during your trip\n- **Power Outlets:** Available throughout the terminal with Indonesian Type C/F sockets (220V). Bring a universal adapter\n- **Free Wi-Fi:** Available throughout the terminal — connect to \"YIA-FreeWiFi\" and register with your phone number\n- **Luggage Storage:** Available near the arrival hall, rates start from IDR 30,000/bag for 24 hours\n\n> **Pro Tip:** If you're heading to Borobudur Temple, YIA is actually closer than taking a flight to JOG airport. Consider arranging a direct transfer from YIA to Borobudur (approximately 35 minutes by car).\n",
@@ -315,7 +315,7 @@
         "id": "Berkeliling Jogja"
       },
       "icon": "map",
-      "coverImage": "/images/visitor-info/getting-around.jpg",
+      "coverImage": "https://demo.experiencejogja.com/images/visitor-info/getting-around.jpg",
       "summary": {
         "en": "Local transport and rentals.",
         "id": "Transportasi lokal dan persewaan."
@@ -521,7 +521,7 @@
         "id": "Kesehatan & Darurat"
       },
       "icon": "heart-pulse",
-      "coverImage": "/images/visitor-info/health-and-safety.jpg",
+      "coverImage": "https://demo.experiencejogja.com/images/visitor-info/health-and-safety.jpg",
       "summary": {
         "en": "Medical services and safety.",
         "id": "Layanan medis dan keamanan."
@@ -726,7 +726,7 @@
         "id": "Uang & Komunikasi"
       },
       "icon": "wallet",
-      "coverImage": "/images/visitor-info/money-and-costs.jpg",
+      "coverImage": "https://demo.experiencejogja.com/images/visitor-info/money-and-costs.jpg",
       "summary": {
         "en": "ATMs, SIM cards, and Wi-Fi.",
         "id": "ATM, kartu SIM, dan Wi-Fi."
@@ -879,7 +879,7 @@
         "id": "Kebugaran & Kesejahteraan"
       },
       "icon": "activity",
-      "coverImage": "/images/visitor-info/wellness-and-health-IMG-00030-w2000.jpg",
+      "coverImage": "https://demo.experiencejogja.com/images/visitor-info/wellness-and-health-IMG-00030-w2000.jpg",
       "summary": {
         "en": "Spas, gyms, and sports.",
         "id": "Spa, gym, dan olahraga."
@@ -1062,7 +1062,7 @@
         "id": "Fasilitas Umum"
       },
       "icon": "building",
-      "coverImage": "/images/visitor-info/public-facility-IMG-00036-w2000.jpg",
+      "coverImage": "https://demo.experiencejogja.com/images/visitor-info/public-facility-IMG-00036-w2000.jpg",
       "summary": {
         "en": "Toilets, storage, and more.",
         "id": "Toilet, penyimpanan, dan lainnya."

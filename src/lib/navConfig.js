@@ -14,7 +14,7 @@ export const NAV_GROUPS = [
     ],
   },
   {
-    label_en: "Book & Experience", label_id: "Pesan & Alami",
+    label_en: "Book & Experience", label_id: "Pemesanan & Pengalaman",
     to: "/book-experience",
     items: [
       { label_en: "Attractions", label_id: "Objek Wisata", to: "/book-experience/attractions" },

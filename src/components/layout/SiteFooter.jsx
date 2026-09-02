@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Youtube, Mail, MapPin } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
+import { assetUrl } from "@/lib/constants";
 
 const XIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" {...props}>
@@ -57,7 +58,7 @@ export default function SiteFooter() {
           <div>
             {/* Brand section */}
             <Link to="/" className="flex flex-col gap-2 leading-none">
-              <img src="/brand-logo-black-9.png" alt="Experience Jogja" className="max-h-[60px] md:max-h-[80px] w-auto object-contain object-left" />
+              <img src={assetUrl("/brand-logo-black-9.png")} alt="Experience Jogja" className="max-h-[60px] md:max-h-[80px] w-auto object-contain object-left" />
             </Link>
 
             {/* Explore menu */}

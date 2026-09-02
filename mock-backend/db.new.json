@@ -161,7 +161,7 @@
       "price_idr": 750000,
       "start_date": "2026-07-03T15:00:00Z",
       "end_date": "2026-07-05T23:00:00Z",
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/prambanan_jazz_festival_1787900517646.jpg",
+      "cover_image_url": "/images/generated/prambanan_jazz_festival_1787900517646.jpg",
       "description_en": "<p>The Prambanan Jazz Festival is an annual international music event that beautifully fuses contemporary world-class music with the majestic heritage of the 9th-century Prambanan Temple.</p><p>Experience a magical evening under the stars as renowned local and international artists perform against the stunning, illuminated backdrop of the ancient Hindu shrines.</p><p><img src='https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&q=80' alt='Music festival concert'/></p>",
       "description_id": "<p>Prambanan Jazz Festival adalah acara musik internasional tahunan yang dengan indah memadukan musik kelas dunia kontemporer dengan warisan megah Candi Prambanan dari abad ke-9.</p><p>Rasakan malam magis di bawah bintang-bintang saat artis lokal dan internasional ternama tampil dengan latar belakang kuil Hindu kuno yang diterangi cahaya indah.</p><p><img src='https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&q=80' alt='Music festival concert'/></p>"
     },
@@ -175,7 +175,7 @@
       "price_idr": 75000,
       "start_date": "2026-06-19T10:00:00Z",
       "end_date": "2026-08-30T21:00:00Z",
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/artjog-mmxxvii.jpg",
+      "cover_image_url": "/images/generated/artjog-mmxxvii.jpg",
       "description_en": "<p>ARTJOG is Indonesia's most anticipated contemporary art exhibition. The 2026 edition continues the 'Ars Longa' trilogy with the theme 'Generatio', focusing on the legacy and evolution of art across generations.</p><p>Visitors can explore immersive installations, avant-garde sculptures, and interactive media arts curated from top Southeast Asian creators.</p><p><img src='https://images.unsplash.com/photo-1563810245037-b91cbf7291a5?w=1200&q=80' alt='Contemporary Art Exhibition'/></p>",
       "description_id": "<p>ARTJOG adalah pameran seni kontemporer paling dinanti di Indonesia. Edisi 2026 melanjutkan trilogi 'Ars Longa' dengan tema 'Generatio', berfokus pada warisan dan evolusi seni lintas generasi.</p><p>Pengunjung dapat menjelajahi instalasi imersif, patung avant-garde, dan seni media interaktif yang dikurasi dari para kreator top Asia Tenggara.</p><p><img src='https://images.unsplash.com/photo-1563810245037-b91cbf7291a5?w=1200&q=80' alt='Contemporary Art Exhibition'/></p>"
     },
@@ -189,7 +189,7 @@
       "price_idr": 0,
       "start_date": "2026-09-15T08:00:00Z",
       "end_date": "2026-09-17T17:00:00Z",
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/windwave_festival_jogja_1787900547696.jpg",
+      "cover_image_url": "/images/generated/windwave_festival_jogja_1787900547696.jpg",
       "description_en": "<p>The Jogja Windwave International Festival highlights Yogyakarta's emerging status as a sport-tourism destination. Held along the dramatic southern coast, it features kite surfing, wind surfing, and paragliding competitions.</p><p>Spectators can enjoy the thrilling extreme sports while exploring the lively local beachside culinary scene.</p><p><img src='https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200&q=80' alt='Surfing in ocean'/></p>",
       "description_id": "<p>Festival Internasional Jogja Windwave menyoroti status Yogyakarta yang sedang berkembang sebagai tujuan wisata olahraga. Diadakan di sepanjang pantai selatan yang dramatis, festival ini menampilkan kompetisi selancar layang, selancar angin, dan paralayang.</p><p>Penonton dapat menikmati olahraga ekstrem yang mendebarkan sambil menjelajahi suasana kuliner tepi pantai lokal yang semarak.</p><p><img src='https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200&q=80' alt='Surfing in ocean'/></p>"
     }
@@ -203,7 +203,7 @@
       "category": "culture",
       "location": "Magelang (Near Yogyakarta)",
       "price_idr": 50000,
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/borobudur_sunrise_2026_1787900474828.jpg",
+      "cover_image_url": "/images/generated/borobudur_sunrise_2026_1787900474828.jpg",
       "description_en": "<p>Borobudur Temple is the world's largest Buddhist temple and a UNESCO World Heritage site dating back to the 9th century. A marvel of ancient architecture, it features thousands of relief panels and hundreds of Buddha statues.</p><p>Experiencing the sunrise here is a deeply spiritual experience as the morning mist clears over the lush surrounding jungle.</p><p><img src='https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?w=1200&q=80' alt='Borobudur detail'/></p>",
       "description_id": "<p>Candi Borobudur adalah candi Buddha terbesar di dunia dan situs Warisan Dunia UNESCO yang berasal dari abad ke-9. Sebuah keajaiban arsitektur kuno, candi ini memiliki ribuan panel relief dan ratusan patung Buddha.</p><p>Menikmati matahari terbit di sini adalah pengalaman yang sangat spiritual saat kabut pagi menyingsing di atas hutan lebat di sekitarnya.</p><p><img src='https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?w=1200&q=80' alt='Borobudur detail'/></p>"
     },
@@ -215,7 +215,7 @@
       "category": "adventure",
       "location": "Gunungkidul",
       "price_idr": 500000,
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/jomblang_cave_light_1787900489975.jpg",
+      "cover_image_url": "/images/generated/jomblang_cave_light_1787900489975.jpg",
       "description_en": "<p>Jomblang Cave is a vertical cave system that offers an incredible adrenaline rush. Visitors are lowered down 60 meters into a sinkhole that houses an ancient underground forest.</p><p>At the bottom, you hike through a dark tunnel to witness the famous 'Heavenly Light', a spectacular beam of sunlight that pierces through a hole in the cave roof.</p><p><img src='https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200&q=80' alt='Cave adventure'/></p>",
       "description_id": "<p>Gua Jomblang adalah sistem gua vertikal yang menawarkan sensasi luar biasa. Pengunjung diturunkan 60 meter ke dalam sinkhole yang menyimpan hutan purba bawah tanah.</p><p>Di bagian bawah, Anda mendaki melalui terowongan gelap untuk menyaksikan 'Cahaya Surga' yang terkenal, sebuah pancaran sinar matahari spektakuler yang menembus lubang atap gua.</p><p><img src='https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200&q=80' alt='Cave adventure'/></p>"
     },
@@ -227,7 +227,7 @@
       "category": "nature",
       "location": "Sleman",
       "price_idr": 10000,
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/tebing_breksi_cliff_1787900503823.jpg",
+      "cover_image_url": "/images/generated/tebing_breksi_cliff_1787900503823.jpg",
       "description_en": "<p>Tebing Breksi, or Breksi Cliff, is a former limestone mining site that has been brilliantly repurposed into a tourist park. The massive white cliffs are adorned with intricate, giant carvings depicting local folklore.</p><p>It is best visited during the late afternoon to catch a stunning sunset overlooking the city of Yogyakarta and the surrounding volcanoes.</p><p><img src='https://images.unsplash.com/photo-1627572793237-775b08c6b325?w=1200&q=80' alt='Limestone cliff'/></p>",
       "description_id": "<p>Tebing Breksi adalah bekas lokasi penambangan batu kapur yang secara brilian dialihfungsikan menjadi taman wisata. Tebing putih besar ini dihiasi ukiran raksasa yang rumit dan menggambarkan cerita rakyat setempat.</p><p>Tempat ini paling baik dikunjungi pada sore hari untuk menyaksikan matahari terbenam yang menakjubkan dengan pemandangan kota Yogyakarta dan gunung berapi di sekitarnya.</p><p><img src='https://images.unsplash.com/photo-1627572793237-775b08c6b325?w=1200&q=80' alt='Limestone cliff'/></p>"
     }
@@ -1887,7 +1887,7 @@
       "title_id": "Tingkatkan Perjalanan: Kereta 'New Generation' KAI Tiba di Jogja",
       "category": "news",
       "author": "Travel Desk",
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/kai_new_generation_train_1787900674371.jpg",
+      "cover_image_url": "/images/generated/kai_new_generation_train_1787900674371.jpg",
       "content_en": "<p>PT KAI has significantly upgraded the railway experience in the Daop 6 Yogyakarta region in 2026 by introducing 'Stainless Steel New Generation' trainsets.</p><p>The new carriages boast a sleek stainless exterior and a luxurious interior featuring ergonomic blue captain seats, expansive panoramic windows, and state-of-the-art digital passenger information systems.</p><p>Trains such as the KA Ranggajati and KA Singasari now operate with these advanced sets, making the scenic journey across Java to Yogyakarta more comfortable and visually stunning than ever.</p><p><img src='https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=1200&q=80' alt='Train window view'/></p>",
       "content_id": "<p>PT KAI telah secara signifikan meningkatkan pengalaman kereta api di wilayah Daop 6 Yogyakarta pada tahun 2026 dengan memperkenalkan rangkaian kereta 'Stainless Steel New Generation'.</p><p>Gerbong baru ini menawarkan eksterior baja tahan karat yang ramping dan interior mewah yang menampilkan kursi kapten biru ergonomis, jendela panorama yang luas, dan sistem informasi penumpang digital mutakhir.</p><p>Kereta seperti KA Ranggajati dan KA Singasari kini beroperasi dengan rangkaian canggih ini, menjadikan perjalanan melintasi Jawa menuju Yogyakarta lebih nyaman dan menakjubkan dari sebelumnya.</p><p><img src='https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=1200&q=80' alt='Train window view'/></p>"
     },
@@ -1898,7 +1898,7 @@
       "title_id": "Berlari Melintasi Sejarah: Kebangkitan Wisata Olahraga",
       "category": "guide",
       "author": "Culture & Lifestyle",
-      "cover_image_url": "https://demo.experiencejogja.com/images/generated/jogja_marathon_indonesian_1787901202464.jpg",
+      "cover_image_url": "/images/generated/jogja_marathon_indonesian_1787901202464.jpg",
       "content_en": "\n        <p>Yogyakarta is rapidly establishing itself as the premier hub for sport-tourism in Indonesia. The crown jewel of this initiative is the highly anticipated Jogja Marathon 2026, an event that brings together local runners and international tourists in a celebration of endurance, culture, and history.</p>\n        <p>Unlike typical city runs that weave through concrete jungles, the Jogja Marathon offers an incredibly unique route. Participants start their journey weaving through traditional Javanese villages where locals cheer them on with traditional gamelan music. The route then opens up into lush, emerald-green rice paddies that stretch as far as the eye can see, providing a breathtaking natural backdrop.</p>\n        <p>The climax of the race is undoubtedly the final stretch, which passes right beside ancient ruins like the Prambanan Temple complex. Running past these towering, 9th-century Hindu shrines as the sun rises is described by many as a profoundly spiritual experience.</p>\n        <p><img src=\"https://images.unsplash.com/photo-1552674605-15c9ef044d28?w=1200&q=80\" alt=\"Runners on road\"/></p>\n        <p>This event is not just a race; it's a massive boost to the local economy. Hotels are fully booked months in advance, and local culinary vendors set up extensive food bazaars at the finish line, serving up iconic dishes like Gudeg and Bakmi Jawa to thousands of hungry athletes.</p>\n        <p>The local government has invested heavily in infrastructure to support the marathon, ensuring smooth traffic management and top-tier medical facilities along the route. For anyone visiting Yogyakarta in 2026, the Jogja Marathon is an absolute must-see spectacle, whether you are running the 42K or simply cheering from the sidelines.</p>\n    ",
       "content_id": "\n        <p>Yogyakarta is rapidly establishing itself as the premier hub for sport-tourism in Indonesia. The crown jewel of this initiative is the highly anticipated Jogja Marathon 2026, an event that brings together local runners and international tourists in a celebration of endurance, culture, and history.</p>\n        <p>Unlike typical city runs that weave through concrete jungles, the Jogja Marathon offers an incredibly unique route. Participants start their journey weaving through traditional Javanese villages where locals cheer them on with traditional gamelan music. The route then opens up into lush, emerald-green rice paddies that stretch as far as the eye can see, providing a breathtaking natural backdrop.</p>\n        <p>The climax of the race is undoubtedly the final stretch, which passes right beside ancient ruins like the Prambanan Temple complex. Running past these towering, 9th-century Hindu shrines as the sun rises is described by many as a profoundly spiritual experience.</p>\n        <p><img src=\"https://images.unsplash.com/photo-1552674605-15c9ef044d28?w=1200&q=80\" alt=\"Runners on road\"/></p>\n        <p>This event is not just a race; it's a massive boost to the local economy. Hotels are fully booked months in advance, and local culinary vendors set up extensive food bazaars at the finish line, serving up iconic dishes like Gudeg and Bakmi Jawa to thousands of hungry athletes.</p>\n        <p>The local government has invested heavily in infrastructure to support the marathon, ensuring smooth traffic management and top-tier medical facilities along the route. For anyone visiting Yogyakarta in 2026, the Jogja Marathon is an absolute must-see spectacle, whether you are running the 42K or simply cheering from the sidelines.</p>\n    "
     }
@@ -2007,7 +2007,7 @@
       "cuisine": "javanese",
       "price_range": "$",
       "regency": "kota-yogyakarta",
-      "hero_image_url": "https://demo.experiencejogja.com/images/places/gudeg_2434700507.jpg",
+      "hero_image_url": "/images/places/gudeg_2434700507.jpg",
       "descriptor_en": "The most famous gudeg in Yogyakarta, a must-try local delicacy."
     }
   ],
@@ -2019,7 +2019,7 @@
       "name_id": "Layanan Shuttle Bandara",
       "type": "shuttle",
       "price_idr": 75000,
-      "hero_image_url": "https://demo.experiencejogja.com/images/places/yia_2395487031.jpg",
+      "hero_image_url": "/images/places/yia_2395487031.jpg",
       "descriptor_en": "Comfortable shuttle from YIA Airport to city center hotels."
     },
     {

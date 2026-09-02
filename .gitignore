@@ -30,3 +30,31 @@ dist-ssr
 .env
 .vite
 base44/.app.jsonc
+
+# ── Excluded from GitHub push ──
+
+# Zip exports / extracted exports
+*.zip
+base44_source_export_clean/
+
+# Static images (hosted at demo.experiencejogja.com)
+public/images/
+
+# Planning / documentation files (internal only)
+plan_files/
+plan_files_old/
+plans/
+
+# Internal docs
+EVENTS_SUMMARY.md
+FRONTEND_INTEGRATION.md
+IMAGE_REQUIREMENTS.md
+UI_IMPLEMENTATION.md
+UPDATE_SUMMARY.md
+QUICK_START.md
+
+# VPS deploy script
+deploy.sh
+
+# Internal scripts
+scripts/

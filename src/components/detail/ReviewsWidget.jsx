@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Star, ThumbsUp, ChevronDown, ChevronUp, Camera, X } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
+import { assetUrl } from "@/lib/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -117,7 +118,7 @@ function ReviewImageModal({ review, initialSlide, onClose }) {
         >
           {review.images.map((img, i) => (
             <SwiperSlide key={i} className="flex items-center justify-center h-full w-full">
-              <img src={img} alt={`Review photo ${i+1}`} className="max-h-full max-w-full object-contain p-4 md:p-12" />
+              <img src={assetUrl(img)} alt={`Review photo ${i+1}`} className="max-h-full max-w-full object-contain p-4 md:p-12" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -207,7 +208,7 @@ function ReviewCard({ review }) {
           {review.images.map((img, idx) => (
             <img 
               key={idx} 
-              src={img} 
+              src={assetUrl(img)} 
               alt="User upload" 
               className="h-20 w-20 shrink-0 rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity" 
               style={{ border: "1px solid var(--border-color)" }} 
